@@ -21,8 +21,17 @@ Las tablas se dividen en dos mundos con reglas distintas
 
 | Mundo | Tablas | Lectura | Escritura |
 |---|---|---|---|
-| **Catálogo** | `store`, `category`, `region`, `store_product`, `price_snapshot`, `equivalence_*` | `authenticated` | **Solo `service_role`** (el pipeline) |
+| **Catálogo** | `store`, `category`, `region`, `store_product`, `price_snapshot`, `equivalence_*` | `anon` **y** `authenticated` | **Solo `service_role`** (el pipeline) |
 | **Usuario** | `profile`, `shopping_list`, `list_item`, `list_reminder` | dueño | dueño |
+
+El catálogo es **público**: son precios que las tiendas ya publican, y exigir cuenta para
+consultarlos es fricción sin beneficio (la clave anon es pública de todos modos). Buscar y ver
+precios no necesita cuenta; **guardar listas sí**.
+
+> ⚠️ **`security_invoker` propaga los permisos del invocador a TODAS las tablas de la vista**,
+> incluidas las de subconsultas. Una vista pública que consulte `profile` falla para `anon` con
+> *permission denied*. Encapsular ese acceso en una función `security definer` sin parámetros
+> que solo lea la fila de `auth.uid()` — ver `public.current_region()`.
 
 En las tablas de catálogo, la **ausencia de política de escritura es deliberada y es la
 protección**. Nunca añadir una política de insert/update/delete ahí: si un cliente pudiera

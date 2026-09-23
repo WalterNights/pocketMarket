@@ -154,6 +154,11 @@ herramienta rompe. Verificado 2026-09-23 montando el proyecto:
 - **UPDATE/DELETE bloqueados por RLS no lanzan error**: afectan 0 filas en silencio. Solo
   INSERT/UPDATE con `WITH CHECK` violado devuelven 42501. Los tests deben contar filas
   afectadas, no esperar excepción.
+- **`security_invoker` aplica los permisos del invocador a TODA la vista**, no solo a la tabla
+  principal: una subconsulta a una tabla restringida hace fallar la vista entera para roles sin
+  ese permiso. Confirmado 2026-09-23: `catalog_product` (pública) leía `profile` para resolver
+  región y daba *permission denied for table profile* a `anon`. Solución: función
+  `security definer` sin parámetros que solo lea la fila de `auth.uid()`.
 - **GUC con punto en el nombre necesita comillas**: `set local "request.jwt.claims" = ...`.
 - **Postgres NO admite DML dentro de una subconsulta**: `select count(*) from (update ... returning 1) t`
   da `syntax error at or near "."`. Hay que usar un CTE modificador de datos:
