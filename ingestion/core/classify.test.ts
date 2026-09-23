@@ -102,6 +102,63 @@ describe('classifyProduct — lo que caia en "otros"', () => {
   })
 })
 
+describe('classifyProduct — la forma manda sobre el ingrediente', () => {
+  // Casos reales vistos en la app: el clasificador miraba el ingrediente y
+  // metia bebidas en Frutas y sopas en Verduras.
+
+  it('"sabor a X" no convierte el producto en X', () => {
+    expect(classifyProduct('Bebida refrescante sin calorías sabor a fresa', 'bebidas')).toBe(
+      'jugos',
+    )
+    expect(classifyProduct('Bebida refrescante sin calorías sabor a mandarina', 'bebidas')).toBe(
+      'jugos',
+    )
+    expect(classifyProduct('Sopa instantánea sabor a pollo', 'viveres')).toBe('sopas')
+    expect(classifyProduct('Gelatina sabor a mora', 'viveres')).toBe('yogures')
+  })
+
+  it('las mermeladas son untables, no fruta', () => {
+    expect(classifyProduct('Mermelada de fresa', 'viveres')).toBe('mermeladas')
+    expect(classifyProduct('Mermelada de mora', 'viveres')).toBe('mermeladas')
+  })
+
+  it('las cremas en sobre son sopa, no el vegetal', () => {
+    expect(classifyProduct('Crema de tomate en sobre', 'viveres')).toBe('sopas')
+    expect(classifyProduct('Crema de pollo y champiñones', 'viveres')).toBe('sopas')
+    expect(classifyProduct('Caldo de gallina en cubos', 'viveres')).toBe('sopas')
+  })
+
+  it('lo deshidratado o molido es condimento, no verdura fresca', () => {
+    expect(classifyProduct('Cebolla en polvo', 'viveres')).toBe('sal-condimentos')
+    expect(classifyProduct('Paprika pimentón molido', 'viveres')).toBe('sal-condimentos')
+    expect(classifyProduct('Cilantro deshidratado', 'viveres')).toBe('sal-condimentos')
+  })
+
+  it('lo enlatado es conserva, no producto fresco', () => {
+    expect(classifyProduct('Tomate en lata', 'viveres')).toBe('enlatados')
+    expect(classifyProduct('Duraznos en conserva', 'viveres')).toBe('enlatados')
+  })
+
+  it('las premezclas son harinas', () => {
+    expect(classifyProduct('Premezcla pandeyuca', 'viveres')).toBe('harinas')
+  })
+
+  it('pero las excepciones ganan a la regla de forma', () => {
+    // "en polvo" normalmente es condimento; la leche en polvo sigue siendo leche.
+    expect(classifyProduct('Leche en polvo Klim', 'lacteos')).toBe('leche')
+    expect(classifyProduct('Chocolate en polvo', 'viveres')).toBe('cafe-chocolate')
+    expect(classifyProduct('Café molido Sello Rojo', 'viveres')).toBe('cafe-chocolate')
+    expect(classifyProduct('Panela pulverizada', 'viveres')).toBe('azucar-panela')
+  })
+
+  it('la fruta de verdad sigue siendo fruta', () => {
+    expect(classifyProduct('Fresa fresca', 'frutas-verduras')).toBe('frutas')
+    expect(classifyProduct('Mora de castilla', 'frutas-verduras')).toBe('frutas')
+    expect(classifyProduct('Cebolla cabezona blanca', 'frutas-verduras')).toBe('verduras')
+    expect(classifyProduct('Tomate chonto', 'frutas-verduras')).toBe('verduras')
+  })
+})
+
 describe('classifyProduct — respaldo', () => {
   it('cae a la categoría de origen cuando el nombre no dice nada', () => {
     expect(classifyProduct('Producto raro XYZ', 'mascotas')).toBe('mascotas')

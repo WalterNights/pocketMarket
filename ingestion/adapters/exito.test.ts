@@ -8,7 +8,8 @@ import { exitoAdapter, EXITO_CATEGORIES } from './exito'
  */
 
 const raws = fixture as unknown as Record<string, unknown>[]
-const normalised = raws.map((r) => exitoAdapter.normalize(r))
+const results = raws.map((r) => exitoAdapter.normalize(r))
+const normalised = results.map((r) => (r.status === 'ok' ? r.product : null))
 
 describe('exitoAdapter.normalize — respuesta real', () => {
   it('normaliza todos los productos de la página guardada', () => {
@@ -61,25 +62,25 @@ describe('exitoAdapter.normalize — respuesta real', () => {
 })
 
 describe('exitoAdapter.normalize — entradas rotas', () => {
-  it('descarta un producto sin precio en vez de escribir cero', () => {
+  it('un producto sin precio es agotado, no un error de formato', () => {
     const sinPrecio = structuredClone(raws[0]) as Record<string, unknown>
     // @ts-expect-error navegando una estructura de origen deliberadamente
     sinPrecio.items[0].sellers[0].commertialOffer.Price = 0
-    expect(exitoAdapter.normalize(sinPrecio)).toBeNull()
+    expect(exitoAdapter.normalize(sinPrecio).status).toBe('skipped')
   })
 
   it('descarta un producto sin items', () => {
-    expect(exitoAdapter.normalize({ productId: '1', items: [] })).toBeNull()
+    expect(exitoAdapter.normalize({ productId: '1', items: [] }).status).toBe('failed')
   })
 
   it('descarta un producto sin id', () => {
     const sinId = structuredClone(raws[0]) as Record<string, unknown>
     sinId.productId = ''
-    expect(exitoAdapter.normalize(sinId)).toBeNull()
+    expect(exitoAdapter.normalize(sinId).status).toBe('failed')
   })
 
   it('no revienta con un objeto vacío', () => {
-    expect(exitoAdapter.normalize({})).toBeNull()
+    expect(exitoAdapter.normalize({}).status).toBe('failed')
   })
 
   it('deja la medida en null si el nombre no la trae, sin inventarla', () => {
@@ -87,8 +88,8 @@ describe('exitoAdapter.normalize — entradas rotas', () => {
     // @ts-expect-error navegando una estructura de origen deliberadamente
     sinMedida.items[0].nameComplete = 'Producto sin medida'
     const out = exitoAdapter.normalize(sinMedida)
-    expect(out?.unitValue).toBeNull()
-    expect(out?.unitMeasure).toBeNull()
+    expect(out.status === 'ok' && out.product.unitValue).toBeNull()
+    expect(out.status === 'ok' && out.product.unitMeasure).toBeNull()
   })
 })
 

@@ -215,6 +215,19 @@ items[0].sellers[0].commertialOffer.Price  -> price_cop
 categories[]                               -> ruta completa, para mapear
 ```
 
+### Límite de paginación
+
+**VTEX no pagina más allá de ~2500 resultados.** Pedir `_from=2550` devuelve **400**, no una
+página vacía. Una categoría con más productos que eso no se puede recorrer entera por este
+endpoint.
+
+El adaptador trata ese 400 como *fin de categoría* y sigue con la siguiente; abortar ahí
+perdería todas las categorías pendientes. Consecuencia aceptada: de las categorías más grandes
+(Despensa ronda los 2500) se ingiere el tope y no el total.
+
+Para cobertura completa habría que bajar a las **subcategorías de nivel 3** del árbol, de modo
+que cada consulta devuelva menos de 2500. Pendiente hasta que el tope estorbe de verdad.
+
 ### Lo que hay que normalizar
 
 - **La medida va en el nombre, no en un campo.** `measurementUnit` es siempre `un` y

@@ -38,6 +38,8 @@ insert into public.category (slug, name, sort_order) values
   ('azucar-panela',     'Azúcar y panela',       160),
   ('sal-condimentos',   'Sal, salsas y condimentos', 170),
   ('enlatados',         'Enlatados y conservas', 180),
+  ('sopas',             'Sopas, cremas y caldos',185),
+  ('mermeladas',        'Mermeladas y untables', 187),
   ('harinas',           'Harinas y mezclas',     190),
   ('cafe-chocolate',    'Café y chocolate',      200),
   ('cereales',          'Cereales y avena',      210),

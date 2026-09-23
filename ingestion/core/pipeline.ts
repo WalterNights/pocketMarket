@@ -16,7 +16,10 @@ export type RunReport = {
   storeSlug: string
   seen: number
   normalised: number
-  discarded: number
+  /** Routine: out of stock, no price today. Says nothing about the format. */
+  skipped: number
+  /** The alarm: a record we could not read. This is what the ceiling watches. */
+  failed: number
   productsUpserted: number
   pricesChanged: number
   errors: string[]
@@ -58,7 +61,8 @@ export async function runIngestion(
     storeSlug: adapter.storeSlug,
     seen: 0,
     normalised: 0,
-    discarded: 0,
+    skipped: 0,
+    failed: 0,
     productsUpserted: 0,
     pricesChanged: 0,
     errors: [],
@@ -83,14 +87,18 @@ export async function runIngestion(
     })) {
       report.seen += 1
 
-      const normalised = adapter.normalize(raw)
-      if (normalised === null) {
-        report.discarded += 1
+      const result = adapter.normalize(raw)
+      if (result.status === 'skipped') {
+        report.skipped += 1
+        continue
+      }
+      if (result.status === 'failed') {
+        report.failed += 1
         continue
       }
 
       report.normalised += 1
-      batch.push(normalised)
+      batch.push(result.product)
 
       if (batch.length >= BATCH_SIZE) {
         await flush(supabase, batch, storeId, categoryIds, region, report, options)
@@ -127,12 +135,16 @@ export async function runIngestion(
   return report
 }
 
+/**
+ * Only unreadable records count. Out-of-stock items are routine — deep pages
+ * are full of them — and counting those would abort healthy runs.
+ */
 function discardAbortReason(report: RunReport): string | null {
   if (report.seen < MIN_SAMPLE_FOR_RATIO) return null
-  const ratio = report.discarded / report.seen
+  const ratio = report.failed / report.seen
   if (ratio <= MAX_DISCARD_RATIO) return null
 
-  return `descarte del ${Math.round(ratio * 100)}% (umbral ${MAX_DISCARD_RATIO * 100}%): la fuente probablemente cambió de formato`
+  return `${Math.round(ratio * 100)}% de registros ilegibles (umbral ${MAX_DISCARD_RATIO * 100}%): la fuente probablemente cambió de formato`
 }
 
 async function flush(

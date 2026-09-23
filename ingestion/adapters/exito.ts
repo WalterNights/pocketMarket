@@ -6,8 +6,17 @@ import {
   tidyBrand,
   toCop,
 } from '../core/normalize'
-import { normalizedProductSchema, type NormalizedProduct } from '../core/schemas'
-import { sleep, type FetchContext, type RawProduct, type StoreAdapter } from '../core/types'
+import { normalizedProductSchema } from '../core/schemas'
+import {
+  failed,
+  ok,
+  skipped,
+  sleep,
+  type FetchContext,
+  type NormalizeResult,
+  type RawProduct,
+  type StoreAdapter,
+} from '../core/types'
 
 /**
  * Éxito — VTEX. Research and endpoint details in docs/domain/02-ingestion.md.
@@ -20,6 +29,14 @@ import { sleep, type FetchContext, type RawProduct, type StoreAdapter } from '..
 const BASE = 'https://www.exito.com/api/catalog_system/pub/products/search'
 const MERCADO_ROOT = '34185082'
 const PAGE_SIZE = 50
+
+/**
+ * VTEX refuses to paginate past ~2500 results: asking for _from=2550 returns
+ * 400. A category with more products than that simply cannot be walked whole
+ * through this endpoint, so we stop there and move on rather than aborting the
+ * whole run. Fuller coverage would need the level-3 subcategories.
+ */
+const MAX_OFFSET = 2500
 
 /** Éxito's grocery subcategories mapped onto OUR taxonomy. */
 export const EXITO_CATEGORIES: readonly { id: string; label: string; slug: string }[] = [
@@ -59,10 +76,14 @@ export const exitoAdapter: StoreAdapter = {
 
       for (;;) {
         if (ctx.maxProducts !== undefined && yielded >= ctx.maxProducts) return
+        if (from >= MAX_OFFSET) break
 
         const url = `${BASE}?fq=C:/${MERCADO_ROOT}/${category.id}/&_from=${from}&_to=${from + PAGE_SIZE - 1}`
         const page = await fetchPage(url, ctx)
 
+        // null means the source said "no more" (a 400 past the pagination
+        // ceiling). Not an error: just the end of what this category exposes.
+        if (page === null) break
         if (page.length === 0) break
 
         for (const raw of page) {
@@ -83,22 +104,23 @@ export const exitoAdapter: StoreAdapter = {
     }
   },
 
-  normalize(raw: RawProduct): NormalizedProduct | null {
+  normalize(raw: RawProduct): NormalizeResult {
     const product = raw as ExitoProduct
 
     const item = product.items?.[0]
     const offer = item?.sellers?.[0]?.commertialOffer
-    if (item === undefined || offer === undefined) return null
+    if (item === undefined || offer === undefined) return failed('sin items ni oferta')
 
+    // Price 0 means out of stock today, not a broken record.
     const priceCop = toCop(offer.Price)
-    if (priceCop === null) return null
+    if (priceCop === null) return skipped('sin precio (agotado)')
 
     const listRaw = toCop(offer.ListPrice)
     // Only a real discount is a list price; equal values are just noise.
     const listPriceCop = listRaw !== null && listRaw > priceCop ? listRaw : null
 
     const externalId = String(product.productId ?? '').trim()
-    if (externalId.length === 0) return null
+    if (externalId.length === 0) return failed('sin productId')
 
     const sourceName = item.nameComplete ?? product.productName ?? ''
     const brand = tidyBrand(product.brand)
@@ -106,7 +128,7 @@ export const exitoAdapter: StoreAdapter = {
     const cleaned = cleanProductName(sourceName, product.brand ?? null)
     // Falling back to the raw name beats shipping an empty row.
     const name = capitaliseFirst(cleaned.length > 0 ? cleaned : sourceName.trim())
-    if (name.length === 0) return null
+    if (name.length === 0) return failed('sin nombre')
 
     const measure = extractMeasure(sourceName)
 
@@ -139,16 +161,20 @@ export const exitoAdapter: StoreAdapter = {
       listPriceCop,
     })
 
-    return parsed.success ? parsed.data : null
+    return parsed.success ? ok(parsed.data) : failed(parsed.error.issues[0]?.message ?? 'schema')
   },
 }
 
-async function fetchPage(url: string, ctx: FetchContext): Promise<RawProduct[]> {
+async function fetchPage(url: string, ctx: FetchContext): Promise<RawProduct[] | null> {
   const response = await fetch(url, {
     headers: { 'User-Agent': ctx.userAgent, Accept: 'application/json' },
     signal: ctx.signal,
     redirect: 'follow',
   })
+
+  // 400 past the pagination ceiling is the source saying "no more", not a
+  // failure. Aborting the run there would lose every category still pending.
+  if (response.status === 400) return null
 
   // Paginated VTEX responses come back 206, not 200. Treating that as failure
   // would abort every run.

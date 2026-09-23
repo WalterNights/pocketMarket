@@ -183,6 +183,8 @@ export const CATEGORY_ICONS: Record<string, IconName> = {
   'azucar-panela': 'Candy',
   'sal-condimentos': 'Soup',
   enlatados: 'Fish',
+  sopas: 'Soup',
+  mermeladas: 'Candy',
   harinas: 'Wheat',
   'cafe-chocolate': 'Coffee',
   cereales: 'Wheat',

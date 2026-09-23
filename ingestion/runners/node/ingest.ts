@@ -35,8 +35,10 @@ function printReport(report: RunReport): void {
     `  tienda            ${report.storeSlug}`,
     `  vistos            ${report.seen}`,
     `  normalizados      ${report.normalised}`,
-    `  descartados       ${report.discarded}` +
-      (report.seen > 0 ? ` (${Math.round((report.discarded / report.seen) * 100)}%)` : ''),
+    `  agotados          ${report.skipped}` +
+      (report.seen > 0 ? ` (${Math.round((report.skipped / report.seen) * 100)}%)` : ''),
+    `  ilegibles         ${report.failed}` +
+      (report.seen > 0 ? ` (${Math.round((report.failed / report.seen) * 100)}%)` : ''),
     `  productos escritos ${report.productsUpserted}`,
     `  precios cambiados ${report.pricesChanged}`,
     `  duracion          ${(report.durationMs / 1000).toFixed(1)}s`,

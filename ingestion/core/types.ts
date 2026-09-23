@@ -40,12 +40,29 @@ export interface StoreAdapter {
   /**
    * Raw source record to canonical shape. PURE — no network, no state — so it
    * can be tested against saved fixtures with no connection.
-   *
-   * Returns null for records that cannot be used. The pipeline counts those:
-   * if too many come back null, the source changed format and the run aborts.
    */
-  normalize(raw: RawProduct): NormalizedProduct | null
+  normalize(raw: RawProduct): NormalizeResult
 }
+
+/**
+ * Two ways a record can fail to become a product, and conflating them makes the
+ * abort threshold meaningless.
+ *
+ * `skipped` is routine: an out-of-stock item has Price 0 and is simply not for
+ * sale today. Deep pages are full of them — Éxito's "Comidas preparadas"
+ * returns 32% — and that says nothing about the format.
+ *
+ * `failed` is the alarm: the record had a shape we could not read. THAT is what
+ * the 20% ceiling watches, because it means the source changed.
+ */
+export type NormalizeResult =
+  | { status: 'ok'; product: NormalizedProduct }
+  | { status: 'skipped'; reason: string }
+  | { status: 'failed'; reason: string }
+
+export const ok = (product: NormalizedProduct): NormalizeResult => ({ status: 'ok', product })
+export const skipped = (reason: string): NormalizeResult => ({ status: 'skipped', reason })
+export const failed = (reason: string): NormalizeResult => ({ status: 'failed', reason })
 
 export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms))

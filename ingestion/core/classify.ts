@@ -16,16 +16,99 @@ function normalise(text: string): string {
 }
 
 /**
+ * "Sabor a fresa" does not make something a strawberry, and "sabor a pollo"
+ * does not make an instant soup chicken. The flavour phrase is stripped before
+ * any ingredient rule runs, or every powdered drink lands in Fruits.
+ */
+const FLAVOUR_PHRASE = /\bsabor(?:es)?\s+(?:a|de)\s+\S+(?:\s\S+)?/g
+
+function stripFlavour(text: string): string {
+  return text.replace(FLAVOUR_PHRASE, ' ')
+}
+
+/**
+ * FORM rules, applied BEFORE the ingredient ones.
+ *
+ * How a product is presented outranks what it is made of: a tomato in a tin is
+ * tinned food, powdered onion is a seasoning, and strawberry jam is a spread.
+ * Getting this backwards is what put drinks in Fruits and soup in Vegetables.
+ */
+const EXCEPTIONS: readonly (readonly [string, string])[] = [
+  ['leche en polvo', 'leche'],
+  ['leche deslactosada en polvo', 'leche'],
+  ['crema de leche', 'leche'],
+  ['chocolate en polvo', 'cafe-chocolate'],
+  ['cafe en polvo', 'cafe-chocolate'],
+  ['cafe molido', 'cafe-chocolate'],
+  ['achocolatad', 'cafe-chocolate'],
+  ['cocoa en polvo', 'cafe-chocolate'],
+  ['panela pulverizada', 'azucar-panela'],
+  ['azucar en polvo', 'azucar-panela'],
+  ['gelatina en polvo', 'yogures'],
+]
+
+const FORM_RULES: readonly (readonly [string, string])[] = [
+  // Untables
+  ['mermelada', 'mermeladas'],
+  ['jalea', 'mermeladas'],
+  ['crema de avellana', 'mermeladas'],
+  ['crema de mani', 'mermeladas'],
+
+  // Sopas y caldos: "crema de tomate en sobre" es sopa, no tomate
+  ['sopa', 'sopas'],
+  ['crema de champi', 'sopas'],
+  ['crema de pollo', 'sopas'],
+  ['crema de tomate', 'sopas'],
+  ['crema de espar', 'sopas'],
+  ['crema de verdura', 'sopas'],
+  ['crema de cebolla', 'sopas'],
+  ['caldo', 'sopas'],
+  ['consome', 'sopas'],
+  ['cremita', 'sopas'],
+
+  // Conservas: "tomate en lata" es enlatado, no verdura fresca
+  ['en lata', 'enlatados'],
+  ['enlatad', 'enlatados'],
+  ['en conserva', 'enlatados'],
+  ['encurtid', 'enlatados'],
+  ['al natural en', 'enlatados'],
+
+  // Deshidratados y molidos: son condimentos, no el vegetal fresco
+  ['en polvo', 'sal-condimentos'],
+  ['molido', 'sal-condimentos'],
+  ['deshidratad', 'sal-condimentos'],
+  ['granulad', 'sal-condimentos'],
+
+  // Mezclas para preparar
+  ['premezcla', 'harinas'],
+  ['mezcla lista', 'harinas'],
+  ['mezcla para', 'harinas'],
+
+  // Bebidas en polvo o preparadas: la forma manda sobre el sabor
+  ['bebida refrescante', 'jugos'],
+  ['bebida en polvo', 'jugos'],
+  ['refresco en polvo', 'jugos'],
+  ['bebida hidratante', 'jugos'],
+  ['bebida lactea', 'leche'],
+]
+
+/**
  * Keyword to category slug. ORDER MATTERS: the first match wins, so anything
  * specific must sit above the general rule that would otherwise swallow it.
  * "Leche de coco" is not milk; "leche condensada" is not milk either.
  */
 const RULES: readonly (readonly [string, string])[] = [
   // --- Trampas primero: nombres que contienen una palabra de otra categoría ---
-  ['leche de coco', 'enlatados'],
-  ['leche condensada', 'enlatados'],
+  // Estas van antes que FORM_RULES vía excepción explícita: leche en polvo SÍ
+  // es leche, aunque "en polvo" normalmente indique condimento.
   ['leche en polvo', 'leche'],
   ['crema de leche', 'leche'],
+  ['chocolate en polvo', 'cafe-chocolate'],
+  ['cafe en polvo', 'cafe-chocolate'],
+  ['cafe molido', 'cafe-chocolate'],
+  ['leche deslactosada en polvo', 'leche'],
+  ['leche de coco', 'enlatados'],
+  ['leche condensada', 'enlatados'],
   ['arroz con leche', 'cereales'],
   ['harina de arroz', 'harinas'],
   ['papel higienico', 'aseo-hogar'],
@@ -283,7 +366,19 @@ const SOURCE_FALLBACK: Record<string, string> = {
  * "otros" rather than disappearing from every category listing.
  */
 export function classifyProduct(productName: string, sourceCategory: string | null): string {
-  const haystack = ` ${normalise(productName)} `
+  // Flavour first: it poisons every ingredient rule downstream.
+  const haystack = ` ${stripFlavour(normalise(productName))} `
+
+  // Explicit exceptions outrank even the form rules: milk powder IS milk,
+  // though "en polvo" otherwise means seasoning.
+  for (const [keyword, slug] of EXCEPTIONS) {
+    if (haystack.includes(keyword)) return slug
+  }
+
+  // Form beats ingredient. "Crema de tomate en sobre" is soup, not a tomato.
+  for (const [keyword, slug] of FORM_RULES) {
+    if (haystack.includes(keyword)) return slug
+  }
 
   for (const [keyword, slug] of RULES) {
     if (haystack.includes(keyword)) return slug
