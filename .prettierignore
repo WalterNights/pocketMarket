@@ -11,3 +11,7 @@ src/shared/types/database.types.ts
 docs/
 .claude/
 *.md
+
+# Fixtures: capturadas tal cual de la fuente. Son el contrato con ella,
+# reformatearlas destruiria su proposito.
+ingestion/**/__fixtures__/

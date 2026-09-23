@@ -1,0 +1,62 @@
+{
+  "id": 34185082,
+  "name": "Mercado",
+  "children": [
+    {
+      "id": 34185097,
+      "name": "Pollo, carne y pescado"
+    },
+    {
+      "id": 34185098,
+      "name": "Charcutería y delicatessen"
+    },
+    {
+      "id": 34185099,
+      "name": "Frutas y verduras"
+    },
+    {
+      "id": 34185100,
+      "name": "Panadería y repostería"
+    },
+    {
+      "id": 34185101,
+      "name": "Despensa"
+    },
+    {
+      "id": 34185103,
+      "name": "Lácteos, huevos y refrigerados"
+    },
+    {
+      "id": 34185104,
+      "name": "Congelados"
+    },
+    {
+      "id": 34185105,
+      "name": "Pasabocas y snacks"
+    },
+    {
+      "id": 34185106,
+      "name": "Aseo del hogar"
+    },
+    {
+      "id": 34185107,
+      "name": "Mascotas"
+    },
+    {
+      "id": 346084837,
+      "name": "Bebidas"
+    },
+    {
+      "id": 346098434,
+      "name": "Dulces y chocolatería"
+    },
+    {
+      "id": 347733901,
+      "name": "Alimentación para bebés"
+    },
+    {
+      "id": 348959797,
+      "name": "Comidas preparadas"
+    }
+  ]
+}

@@ -64,6 +64,13 @@ export type Database = {
             referencedRelation: "category"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "category_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "store_category_summary"
+            referencedColumns: ["category_id"]
+          },
         ]
       }
       equivalence_group: {
@@ -452,6 +459,13 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "store_product_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "store_category_summary"
+            referencedColumns: ["category_id"]
+          },
+          {
             foreignKeyName: "store_product_store_id_fkey"
             columns: ["store_id"]
             isOneToOne: false
@@ -496,6 +510,13 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "category"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "store_product_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "store_category_summary"
+            referencedColumns: ["category_id"]
           },
           {
             foreignKeyName: "store_product_store_id_fkey"
@@ -578,6 +599,17 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      store_category_summary: {
+        Row: {
+          category_id: string | null
+          category_name: string | null
+          category_slug: string | null
+          product_count: number | null
+          sort_order: number | null
+          store_slug: string | null
+        }
+        Relationships: []
       }
       store_summary: {
         Row: {

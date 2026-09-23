@@ -165,6 +165,85 @@ Lo que no se puede normalizar con confianza se guarda como `null`, **nunca se ad
 Los precios que ve el usuario son **de hoy**, no de este segundo. La UI lo dice: "Precios
 actualizados hace N horas".
 
+## Fuente: Éxito (VTEX) — investigada 2026-09-23
+
+**Viable.** Catálogo completo con marcas, precios y EAN.
+
+### Endpoints
+
+```
+Árbol de categorías
+  GET /api/catalog_system/pub/category/tree/2
+
+Productos por categoría (paginado, máx. 50 por página)
+  GET /api/catalog_system/pub/products/search?fq=C:/34185082/<subcat>/&_from=0&_to=49
+```
+
+Ambos redirigen (308) a `/io/api/...`, así que hay que seguir redirecciones. La respuesta
+paginada llega con **HTTP 206**, no 200: tratar 206 como éxito.
+
+### Categorías de Mercado (raíz `34185082`)
+
+| ID | Éxito | Nuestra taxonomía |
+|---|---|---|
+| 34185101 | Despensa | `viveres` |
+| 34185103 | Lácteos, huevos y refrigerados | `lacteos` |
+| 34185097 | Pollo, carne y pescado | `carnes` |
+| 34185098 | Charcutería y delicatessen | `carnes` |
+| 34185099 | Frutas y verduras | `frutas-verduras` |
+| 34185100 | Panadería y repostería | `panaderia` |
+| 346084837 | Bebidas | `bebidas` |
+| 34185104 | Congelados | `congelados` |
+| 34185106 | Aseo del hogar | `aseo-hogar` |
+| 34185107 | Mascotas | `mascotas` |
+| 347733901 | Alimentación para bebés | `bebes` |
+| 34185105 · 346098434 · 348959797 | Snacks · Dulces · Comidas preparadas | `otros` |
+
+Filtramos a estas categorías: Éxito vende televisores, y un televisor en una lista de compra
+es ruido además de espacio ([presupuesto](#presupuesto-de-almacenamiento)).
+
+### Forma del dato
+
+```
+productId                                  -> external_id
+productName / items[0].nameComplete        -> name (lleva la medida dentro)
+brand                                      -> brand
+items[0].ean                               -> ean  (presente en todos los vistos)
+items[0].sellers[0].commertialOffer.Price  -> price_cop
+                                 .ListPrice-> list_price_cop
+                                 .IsAvailable
+categories[]                               -> ruta completa, para mapear
+```
+
+### Lo que hay que normalizar
+
+- **La medida va en el nombre, no en un campo.** `measurementUnit` es siempre `un` y
+  `unitMultiplier` siempre `1.0`, así que son inútiles. Hay que parsear
+  `"Pastas DORIA spaghetti clásico (1000  gr)"` → `unitValue: 1000`, `unitMeasure: 'g'`.
+  Ojo al **doble espacio** antes de la unidad y a `gr` (no `g`).
+- **La marca está duplicada** en `brand` y dentro del nombre en mayúsculas. Hay que quitarla
+  del nombre para que la fila no diga "Pastas DORIA spaghetti" con "DORIA" también debajo.
+- **Los precios traen decimales** (`39990.0`, `14407.0`). Redondear a entero COP.
+- Hay un campo `Factor Neto PUM` (precio por unidad de medida) que Éxito ya calcula; útil
+  para contrastar nuestro `unitPriceOf`.
+
+### robots.txt
+
+El archivo está **mal formado**: los `Disallow` (incluido `/api/`) quedan tras una línea en
+blanco que cierra el grupo de `Applebot-Extended`, sin ningún `User-agent` que los preceda. Un
+parser conforme al RFC 9309 los descarta, y el único grupo aplicable a `*` es `Allow: /`.
+Además la ruta efectiva tras la redirección es `/io/api/`, que no casa con el patrón.
+
+Aun así la intención del sitio es visible (`# APIs` seguido de `Disallow`), así que el
+adaptador se comporta de forma conservadora: **una corrida al día**, concurrencia 1, pausa
+entre peticiones, User-Agent identificable con contacto, y solo las categorías de mercado.
+
+### Fixtures
+
+`ingestion/adapters/__fixtures__/exito/` — página de Despensa y árbol de Mercado, capturados
+2026-09-23. Son el contrato con la fuente: cuando Éxito cambie su formato, el test de
+`normalize` falla y dice qué cambió.
+
 ## Presupuesto de almacenamiento
 
 El free tier de Supabase da **500 MB de base de datos**. `price_snapshot` es append-only y crece
