@@ -96,6 +96,19 @@ herramienta rompe. Verificado 2026-09-23 montando el proyecto:
   versiones exactas del SDK (suelen tener dias). De ahi `minimumReleaseAgeExclude` acotado al
   ecosistema del SDK.
 
+### Diagnosticar NativeWind en el bundle (`UI`)
+- **`grep -c "--background"` SIEMPRE devuelve 0**: grep interpreta `--background` como una
+  opcion, no como patron. Usar `grep -c -- "--background"`. Confirmado 2026-09-23: llevo a
+  concluir que NativeWind no compilaba cuando si lo hacia.
+- NativeWind v4 **no** deja los valores crudos (`40 33% 96%`) en el bundle. Compila las clases
+  a una estructura propia y resuelve `hsl(var(--x))` en runtime:
+  `"bg-background":{n:[{s:[62,1],d:[[[{},"hsl",[[{},"var",["--background"],1]]],"backgroundColor"]]}]}`
+  Buscar el valor literal da un falso negativo.
+- Para comprobar de verdad que el CSS entro al bundle, buscar la definicion de la variable:
+  `grep -ao -- '"--background":{light' bundle.js`. Si aparece, NativeWind funciono.
+- Si los estilos se ven rotos en el dispositivo y el bundle contiene esas definiciones, el
+  problema es el bundle cacheado en el telefono: recargar la app.
+
 ### NativeWind / React Native Reusables
 - **shadcn/ui no funciona en React Native.** Es Radix UI: DOM + CSS. Usar React Native
   Reusables, que es su port. No perder tiempo intentando adaptar shadcn/ui directamente.
