@@ -24,7 +24,93 @@
 
 ## Registro
 
-*(Vacío — el proyecto aún no ha empezado a implementarse.)*
+### ING-001: las reglas con "ñ" o tilde nunca casaban
+- **Síntoma**: `piña`, `aliño`, `pañal` y `buñuelo` estaban en la tabla de reglas del
+  clasificador y jamás clasificaron nada. Ningún test fallaba: todos los casos de prueba
+  usaban palabras sin tilde.
+- **Causa raíz**: el texto del producto se normaliza (`NFD` + quitar diacríticos) antes de
+  buscar, pero **las claves de las reglas no**. `normalise('Piña')` da `pina`, que nunca
+  contiene `piña`. La regla existía, se leía bien y era código muerto.
+- **Solución**: `compile()` normaliza las claves al cargar el módulo. Las reglas se siguen
+  escribiendo en español normal.
+- **Prevención**: si un lado de una comparación se normaliza, el otro también. Vale para
+  búsqueda, orden y deduplicación, no solo para esto.
+
+### ING-002: el ingrediente no clasifica un producto procesado
+- **Síntoma**: "Frutas" tenía bebidas en polvo, mermelada, helado y un barquillo de limón.
+  "Verduras" tenía sopa de sobre, tomate en lata y cebolla en polvo. "Pollo" tenía 17
+  productos y ninguno era pollo: era todo jamón, salchicha y mortadela.
+- **Causa raíz**: clasificar por la palabra que aparece en el nombre. Un nombre de fruta
+  aparece en cualquier producto con ese sabor, ese relleno o esa forma.
+- **Solución**: tres capas con precedencia explícita — excepciones, luego **forma**
+  (mermelada, en lata, en polvo, embutido), luego ingrediente — y antes de todo se borran
+  las frases "sabor a X" y "relleno de X", que describen a qué sabe, no qué es. Las reglas
+  de fruta y verdura solo se aplican si la **fuente** dice que el producto viene del pasillo
+  de frutas y verduras: un limón de verdad se vende ahí y un barquillo de limón no.
+- **Prevención**: ante una mala clasificación, preguntar si falta una palabra o si sobra
+  una capa. Añadir palabras a una lista plana solo mueve el problema al siguiente producto.
+
+### ING-003: un 500 en una página profunda mataba la corrida entera
+- **Síntoma**: corrida abortada en el offset 1600 de una categoría, con las categorías
+  siguientes sin visitar. 4.598 productos escritos, el resto perdido.
+- **Causa raíz**: `fetchPage` lanzaba ante cualquier estado que no fuera 200/206, y la
+  excepción subía hasta abortar el `for` de categorías.
+- **Solución**: reintento con backoff exponencial (2s, 4s, 8s) ante 429 y 5xx; agotados los
+  intentos se descarta **la página**, no la corrida. La categoría termina ahí y la
+  siguiente empieza.
+- **Prevención**: distinguir siempre el radio del fallo. Un error de una página no es un
+  error de la tienda, y un error de la tienda no es un error de la corrida.
+
+### ING-004: el umbral de descarte confundía "agotado" con "ilegible"
+- **Síntoma**: corrida abortada al 24% de descartes con el mensaje de "la fuente cambió de
+  formato". La fuente no había cambiado nada.
+- **Causa raíz**: `normalize()` devolvía `null` para dos cosas distintas. Un producto con
+  `Price: 0` está agotado hoy — es rutina, y las páginas profundas van llenas: "Comidas
+  preparadas" da 32% — mientras que un registro con forma ilegible sí significa que el
+  formato cambió. Sumados, el umbral del 20% se dispara solo.
+- **Solución**: `NormalizeResult` discriminado (`ok` / `skipped` / `failed`). El umbral solo
+  vigila `failed`. En la corrida real: 28% agotados, **0% ilegibles**.
+- **Prevención**: una alarma que mide dos cosas distintas no mide ninguna. Antes de subir un
+  umbral que salta de más, mirar si está contando lo que dice contar.
+
+### ING-006: buscar la palabra como subcadena la encuentra dentro de otra palabra
+- **Síntoma**: "Repollo Blanco" en **Pollo**. "Lechuga Morada" y "ESPINACA BOGOTANA" en
+  **Frutas**. "LIMONARIA" en Frutas. Cada uno pareció un caso aislado y cada uno se
+  arregló por separado, tres veces, hasta ver que era el mismo fallo.
+- **Causa raíz**: el clasificador comparaba con `haystack.includes(keyword)`. Las palabras
+  cortas del dominio viven dentro de otras: `pollo` en re**pollo**, `mora` en **mora**da,
+  `limon` en **limon**aria y — tras quitar la tilde — `piña` se vuelve `pina`, que está
+  dentro de es**pina**ca.
+- **Solución**: las reglas se compilan a expresiones regulares de **palabra entera** con
+  plural opcional (`\bpollo(?:e?s)?\b`). Las que de verdad son raíces se marcan con `*`
+  (`enlatad*`, `salchich*`), porque tienen que coger enlatado, enlatada y enlatados.
+- **Prevención**: en español, comparar por subcadena solo es seguro con palabras largas y
+  poco comunes. Por defecto, palabra entera; la raíz se pide explícitamente. Y ojo al
+  interactuar con ING-001: quitar tildes **crea** subcadenas que no existían (`piña` no
+  está en `espinaca`, pero `pina` sí).
+
+### ING-007: una corrida abortada escribía el catálogo sin publicarlo
+- **Síntoma**: la app mostraba "Arroz 111" y una lista vacía. Todas las tiendas en
+  "próximamente", incluida la única que tenía productos.
+- **Causa raíz**: dos eslabones. `current_price` es una vista materializada y **nada es
+  visible hasta refrescarla**; el pipeline tenía `if (!report.aborted)` antes del refresco,
+  así que la corrida que murió por el 500 escribió 4.598 productos y no publicó ninguno.
+  Encima, el contador de cada categoría salía de `store_product` mientras la lista salía de
+  `catalog_product`, que exige precio: dos fuentes de verdad que podían discrepar.
+- **Solución**: refrescar **siempre** que se haya escrito algún precio, también al abortar
+  — los precios ya escritos son correctos, que la corrida acabe pronto no dice nada de
+  ellos. Y los resúmenes (`store_summary`, `store_category_summary`) ahora cuentan
+  únicamente productos con precio, lo mismo que muestra la lista.
+- **Prevención**: un contador es una promesa sobre la pantalla siguiente. Si sale de una
+  consulta distinta a la que llena esa pantalla, algún día mentirá. Y publicar es un paso
+  aparte de escribir: hay que preguntarse siempre quién lo ejecuta cuando algo falla.
+
+### ING-005: el tope de paginación de VTEX responde 400, no una página vacía
+- **Síntoma**: `_from=2550` devolvía 400 y la corrida se interpretaba como error de fuente.
+- **Causa raíz**: VTEX corta la paginación alrededor de 2.500 resultados por consulta.
+- **Solución**: `MAX_OFFSET = 2500` y leer el 400 como fin de categoría.
+- **Prevención**: para categorías con más de 2.500 SKU hay que partir la consulta por
+  subcategoría o por faceta, no pedir offsets mayores.
 
 ---
 

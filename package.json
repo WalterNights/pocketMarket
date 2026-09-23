@@ -24,6 +24,7 @@
     "db:test": "supabase test db",
     "db:types": "supabase gen types typescript --local > src/shared/types/database.types.ts",
     "ingest": "tsx ingestion/runners/node/ingest.ts",
+    "reclassify": "tsx ingestion/runners/node/reclassify.ts",
     "ingest:dry": "tsx ingestion/runners/node/ingest.ts --dry-run --max 100",
     "type-check": "tsc --noEmit",
     "lint": "eslint .",

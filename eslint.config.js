@@ -22,6 +22,12 @@ module.exports = [
     },
   },
   {
+    // A CLI runner whose job is to print a run report. Everywhere else a
+    // console.log is debugging left behind; here it is the output.
+    files: ['ingestion/runners/**/*.ts'],
+    rules: { 'no-console': 'off' },
+  },
+  {
     // Rule 1: app/ -> features/ -> shared/. Never upward, never between features.
     files: ['src/shared/**/*.{ts,tsx}'],
     rules: {

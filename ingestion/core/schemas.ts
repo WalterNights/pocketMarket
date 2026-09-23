@@ -25,6 +25,15 @@ export const normalizedProductSchema = z.object({
   brand: z.string().min(1).nullable(),
   /** Slug in OUR taxonomy, not the store's. */
   categorySlug: z.string().min(1).nullable(),
+  /**
+   * The bucket the SOURCE filed this under, kept as provenance.
+   *
+   * It is what lets the classifier be re-run over the catalogue already in the
+   * database instead of asking the store for it again: classification rules
+   * change far more often than prices do, and a store owes us one visit a day,
+   * not one per idea.
+   */
+  sourceBucket: z.string().min(1).nullable(),
 
   unitKind: z.enum(UNIT_KINDS),
   unitValue: z.number().positive().nullable(),

@@ -7,6 +7,7 @@ const product = (externalId: string, priceCop = 1000): NormalizedProduct => ({
   name: `Producto ${externalId}`,
   brand: null,
   categorySlug: 'otros',
+  sourceBucket: null,
   unitKind: 'unit',
   unitValue: null,
   unitMeasure: null,

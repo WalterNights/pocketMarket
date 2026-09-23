@@ -159,6 +159,107 @@ describe('classifyProduct — la forma manda sobre el ingrediente', () => {
   })
 })
 
+describe('classifyProduct — la fruta solo cuenta donde se vende fruta', () => {
+  // Nombres reales de la corrida del 2026-09-23. Todos caian en Frutas o
+  // Verduras por mencionar una fruta que no es el producto.
+
+  it('un postre con nombre de fruta no es fruta', () => {
+    expect(classifyProduct('Barquillo Deleite Pie De Limón', 'viveres')).toBe('galletas')
+    expect(classifyProduct('HELADO FRESA SOBRE 82 gr', 'congelados')).toBe('congelados')
+    expect(classifyProduct('Alimento lácteo fresa y melocotón x6und', 'lacteos')).toBe('yogures')
+  })
+
+  it('ni un aderezo, ni un snack, ni una aromatica', () => {
+    expect(classifyProduct('Reduccion Balsamico Manzana 180 ml', 'viveres')).toBe('aceites')
+    expect(classifyProduct('Chile Con Limón', 'viveres')).toBe('sal-condimentos')
+    expect(classifyProduct('Té limón', 'bebidas')).toBe('te-aromaticas')
+    expect(classifyProduct('Barra nutritiva maracuyá uchuva', 'viveres')).toBe('cereales')
+  })
+
+  it('el tomate de la despensa es conserva o salsa, no verdura', () => {
+    expect(classifyProduct('Tomates Enteros Pelados 240 gr', 'viveres')).toBe('enlatados')
+    expect(classifyProduct('Puré de tomates natural', 'viveres')).toBe('enlatados')
+    expect(classifyProduct('Aceitunas rellenas con pimentón', 'viveres')).toBe('enlatados')
+    expect(classifyProduct('Snacks Tomate', 'viveres')).toBe('snacks')
+    expect(classifyProduct('Adobo cebolla y ajo', 'viveres')).toBe('sal-condimentos')
+  })
+
+  it('las papas fritas son pasabocas, no papa', () => {
+    expect(classifyProduct('Papas fritas naturales', 'viveres')).toBe('snacks')
+  })
+
+  it('pero en el pasillo de frutas y verduras la regla vuelve a aplicar', () => {
+    expect(classifyProduct('Tomate chonto', 'frutas-verduras')).toBe('verduras')
+    expect(classifyProduct('Papa criolla lavada', 'frutas-verduras')).toBe('verduras')
+    expect(classifyProduct('Limón Tahití', 'frutas-verduras')).toBe('frutas')
+    expect(classifyProduct('Piña gold', 'frutas-verduras')).toBe('frutas')
+  })
+})
+
+describe('classifyProduct — la charcuteria manda sobre el animal', () => {
+  // Pollo tenia 17 productos y ninguno era pollo: era todo jamon y salchicha.
+
+  it('el embutido de pollo es embutido', () => {
+    expect(classifyProduct('Jamón de pollo', 'carnes')).toBe('embutidos')
+    expect(classifyProduct('Salchicha de pollo x30und', 'carnes')).toBe('embutidos')
+    expect(classifyProduct('Salchichón de pollo en barra', 'carnes')).toBe('embutidos')
+    expect(classifyProduct('Mortadela de pollo porcionada', 'carnes')).toBe('embutidos')
+    expect(classifyProduct('Chorizo mixto pollo y cerdo', 'carnes')).toBe('embutidos')
+  })
+
+  it('el pollo de verdad sigue siendo pollo', () => {
+    expect(classifyProduct('Pechuga de pollo fresca', 'carnes')).toBe('pollo')
+    expect(classifyProduct('Muslo de pollo bandeja', 'carnes')).toBe('pollo')
+  })
+
+  it('"sabor pollo" sin conector tambien se descarta', () => {
+    expect(classifyProduct('Ramen sabor pollo picante', 'viveres')).toBe('sopas')
+    expect(classifyProduct('Pastas sabor pollo picante vaso', 'viveres')).toBe('pastas')
+    expect(classifyProduct('Base para pollo pollo champiñones', 'viveres')).toBe('sopas')
+  })
+
+  it('el relleno tampoco define el producto', () => {
+    expect(classifyProduct('Pastas ravioli rellenos de pollo', 'viveres')).toBe('pastas')
+  })
+})
+
+describe('classifyProduct — la fruta se nombra en palabras enteras', () => {
+  // Nombres reales: la subcadena colaba tres verduras en Frutas.
+
+  it('una palabra que CONTIENE una fruta no es esa fruta', () => {
+    expect(classifyProduct('Lechuga Morada Crespa Pet 130 gr', 'frutas-verduras')).toBe('verduras')
+    expect(classifyProduct('ESPINACA BOGOTANA ORGAN 130 gr', 'frutas-verduras')).toBe('verduras')
+    expect(classifyProduct('LIMONARIA BOLSA 50 gr', 'frutas-verduras')).toBe('te-aromaticas')
+  })
+
+  it('la papaya no es papa', () => {
+    expect(classifyProduct('Papaya hawaiana', 'frutas-verduras')).toBe('frutas')
+    expect(classifyProduct('Papa criolla lavada', 'frutas-verduras')).toBe('verduras')
+  })
+
+  it('pero el plural si cuenta', () => {
+    expect(classifyProduct('3 x Peras', 'frutas-verduras')).toBe('frutas')
+    expect(classifyProduct('6 x Limon Tahiti', 'frutas-verduras')).toBe('frutas')
+    expect(classifyProduct('Tomates chonto', 'frutas-verduras')).toBe('verduras')
+  })
+})
+
+describe('classifyProduct — Pollo no es todo lo que suene a pollo', () => {
+  it('el repollo es una verdura', () => {
+    expect(classifyProduct('Repollo Blanco 1 und', 'frutas-verduras')).toBe('verduras')
+  })
+
+  it('el pavo no es pollo', () => {
+    expect(classifyProduct('Pechuga De Pavo', 'carnes')).toBe('carnes')
+    expect(classifyProduct('Pavo En Pechuga Natural', 'carnes')).toBe('carnes')
+  })
+
+  it('la comida de mascota gana al animal del sabor', () => {
+    expect(classifyProduct('Alimento gatos Casserole Pavo Pollo', 'mascotas')).toBe('mascotas')
+    expect(classifyProduct('Alimento para perros sabor a pollo', 'mascotas')).toBe('mascotas')
+  })
+})
+
 describe('classifyProduct — respaldo', () => {
   it('cae a la categoría de origen cuando el nombre no dice nada', () => {
     expect(classifyProduct('Producto raro XYZ', 'mascotas')).toBe('mascotas')

@@ -1,8 +1,10 @@
 import { FlashList } from '@shopify/flash-list'
 import { Stack } from 'expo-router'
 import { useCallback, useState } from 'react'
-import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native'
+import { Pressable, Text, TextInput, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+
+import { PocketLoader } from '@/shared/ui'
 
 import { useProductSearch } from '../hooks/useProductSearch'
 import type { Product } from '../model/product'
@@ -228,8 +230,8 @@ function CatalogBody({
       contentContainerStyle={{ paddingBottom: bottomInset + 16 }}
       ListFooterComponent={
         isFetchingNextPage ? (
-          <View className="py-4">
-            <ActivityIndicator />
+          <View className="items-center py-4">
+            <PocketLoader size={5} label="Cargando más productos" />
           </View>
         ) : null
       }

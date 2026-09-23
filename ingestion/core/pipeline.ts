@@ -39,6 +39,19 @@ const MIN_SAMPLE_FOR_RATIO = 50
 
 const BATCH_SIZE = 200
 
+/**
+ * How many written prices before publishing what we have so far.
+ *
+ * `current_price` is what makes a product visible: a product written but not
+ * published does not exist for the app, and a store with nothing published
+ * shows as "próximamente". Publishing only at the end meant a store stayed
+ * dark for the entire run — twelve minutes on the first one.
+ *
+ * The refresh costs ~35 ms on this catalogue, so the argument for saving them
+ * up never held. The run now lights the store up as it fills.
+ */
+const PUBLISH_EVERY = 1000
+
 export type PipelineOptions = {
   supabaseUrl: string
   serviceRoleKey: string
@@ -78,6 +91,8 @@ export async function runIngestion(
   const categoryIds = await loadCategoryIds(supabase)
 
   let batch: NormalizedProduct[] = []
+  /** Value of `pricesChanged` at the last publish. */
+  let publishedAt = 0
 
   try {
     for await (const raw of adapter.fetchCatalog(region, {
@@ -105,6 +120,11 @@ export async function runIngestion(
         batch = []
       }
 
+      if (report.pricesChanged - publishedAt >= PUBLISH_EVERY) {
+        await publish(supabase, report, options)
+        publishedAt = report.pricesChanged
+      }
+
       // Checked as we go, so a broken source stops early instead of after an
       // hour of writing nonsense.
       const abort = discardAbortReason(report)
@@ -118,21 +138,39 @@ export async function runIngestion(
     if (!report.aborted && batch.length > 0) {
       await flush(supabase, batch, storeId, categoryIds, region, report, options)
     }
-
-    if (!report.aborted && !options.dryRun && report.pricesChanged > 0) {
-      // Without this the app keeps serving old prices even though the
-      // snapshots are new.
-      const { error } = await supabase.rpc('refresh_current_price')
-      if (error) report.errors.push(`refresh_current_price: ${error.message}`)
-    }
   } catch (cause) {
     report.errors.push(cause instanceof Error ? cause.message : String(cause))
     report.aborted = true
     report.abortReason = 'excepción durante la corrida'
   }
 
+  // Always publish at the end, including after an abort: prices already
+  // written are correct prices, and a run ending early says nothing about
+  // them. An aborted run publishes less, never something wrong.
+  if (report.pricesChanged > publishedAt) {
+    await publish(supabase, report, options)
+  }
+
   report.durationMs = Date.now() - startedAt
   return report
+}
+
+/**
+ * Makes everything written so far visible to the app.
+ *
+ * `current_price` is a materialized view, so a price is only real once it is
+ * refreshed. A failure here is reported but never stops the run: the prices
+ * are already safely in `price_snapshot` and the next publish picks them up.
+ */
+async function publish(
+  supabase: SupabaseClient,
+  report: RunReport,
+  options: PipelineOptions,
+): Promise<void> {
+  if (options.dryRun) return
+
+  const { error } = await supabase.rpc('refresh_current_price')
+  if (error) report.errors.push(`refresh_current_price: ${error.message}`)
 }
 
 /**
@@ -179,6 +217,7 @@ async function flush(
     name: p.name,
     brand: p.brand,
     category_id: p.categorySlug === null ? null : (categoryIds.get(p.categorySlug) ?? null),
+    source_bucket: p.sourceBucket,
     unit_kind: p.unitKind,
     unit_value: p.unitValue,
     unit_measure: p.unitMeasure,

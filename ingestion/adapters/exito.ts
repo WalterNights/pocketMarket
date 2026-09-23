@@ -152,6 +152,7 @@ export const exitoAdapter: StoreAdapter = {
       name,
       brand,
       categorySlug,
+      sourceBucket,
       unitKind: measure?.kind ?? 'unit',
       unitValue: measure?.value ?? null,
       unitMeasure: measure?.measure ?? null,
@@ -165,25 +166,47 @@ export const exitoAdapter: StoreAdapter = {
   },
 }
 
+/**
+ * A 500 or a 429 from a page deep inside a category is almost always transient
+ * — one run died at offset 1600 of a single category and lost every category
+ * still pending. Retry with exponential backoff, and only give up on the PAGE,
+ * never on the run.
+ */
+const MAX_ATTEMPTS = 4
+
 async function fetchPage(url: string, ctx: FetchContext): Promise<RawProduct[] | null> {
-  const response = await fetch(url, {
-    headers: { 'User-Agent': ctx.userAgent, Accept: 'application/json' },
-    signal: ctx.signal,
-    redirect: 'follow',
-  })
+  let lastStatus = 0
 
-  // 400 past the pagination ceiling is the source saying "no more", not a
-  // failure. Aborting the run there would lose every category still pending.
-  if (response.status === 400) return null
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+    const response = await fetch(url, {
+      headers: { 'User-Agent': ctx.userAgent, Accept: 'application/json' },
+      signal: ctx.signal,
+      redirect: 'follow',
+    })
 
-  // Paginated VTEX responses come back 206, not 200. Treating that as failure
-  // would abort every run.
-  if (response.status !== 200 && response.status !== 206) {
-    throw new Error(`Éxito respondió ${response.status} en ${url}`)
+    // 400 past the pagination ceiling is the source saying "no more", not a
+    // failure. Aborting the run there would lose every category still pending.
+    if (response.status === 400) return null
+
+    // Paginated VTEX responses come back 206, not 200. Treating that as
+    // failure would abort every run.
+    if (response.status === 200 || response.status === 206) {
+      const body: unknown = await response.json()
+      return Array.isArray(body) ? (body as RawProduct[]) : []
+    }
+
+    lastStatus = response.status
+
+    const retryable = response.status === 429 || response.status >= 500
+    if (!retryable) break
+
+    // 2s, 4s, 8s. Backing off is also the polite thing to do: a 500 under load
+    // means the source is struggling and hammering it makes that worse.
+    if (attempt < MAX_ATTEMPTS) await sleep(ctx.delayMs * 2 ** attempt)
   }
 
-  const body: unknown = await response.json()
-  return Array.isArray(body) ? (body as RawProduct[]) : []
+  console.warn(`  página descartada tras ${MAX_ATTEMPTS} intentos (${lastStatus}): ${url}`)
+  return []
 }
 
 /** Shape of what Éxito returns. Only the parts we read. */
