@@ -16,6 +16,7 @@ allowBuilds:
   # que su script solo es fallback de compilacion desde fuente. Verificado
   # 2026-09-23: los .node de win32-x64 estan presentes y las herramientas funcionan.
   '@parcel/watcher': false # install: build-from-source.js (fallback)
+  esbuild: false # postinstall: verifica el binario; trae @esbuild/<plataforma> opcional
   'unrs-resolver': false # postinstall: postinstall.js (fallback)
   # Cada excepción va aquí, con el motivo y tras leer qué hace el script.
   # Verificado 2026-09-22: `supabase` NO necesita entrada — no tiene preinstall/install/

@@ -31,6 +31,14 @@ module.exports = {
       },
     },
     {
+      displayName: 'ingestion',
+      testEnvironment: 'node',
+      testMatch: ['<rootDir>/ingestion/**/*.test.ts'],
+      transform: {
+        '^.+\.(ts|js)$': ['babel-jest', { presets: ['babel-preset-expo'] }],
+      },
+    },
+    {
       displayName: 'components',
       preset: 'jest-expo',
       setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],

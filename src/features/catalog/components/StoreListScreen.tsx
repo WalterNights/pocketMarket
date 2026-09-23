@@ -22,7 +22,7 @@ export function StoreListScreen() {
 
   const openStore = useCallback(
     (slug: string, name: string) =>
-      router.push({ pathname: '/store/[slug]/index', params: { slug, name } }),
+      router.push({ pathname: '/store/[slug]', params: { slug, name } }),
     [router],
   )
 
