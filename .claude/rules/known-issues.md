@@ -56,6 +56,37 @@ promueve al registro de arriba con su ID.
 - No toda librería de RN es compatible con la New Architecture. Verificar antes de instalar
   (React Native Directory marca la compatibilidad).
 
+### Toolchain: NO instalar "latest" del tooling (`EXPO`)
+Expo calibra su SDK contra versiones concretas del tooling. Instalar la ultima de cada
+herramienta rompe. Verificado 2026-09-23 montando el proyecto:
+
+- **TypeScript 7 elimino `baseUrl`** de tsconfig. Hay que usar rutas relativas en `paths`
+  (`"@/*": ["./src/*"]`). Todos los tutoriales de Expo siguen usando `baseUrl`.
+- **typescript-eslint no soporta TS 7.0** todavia. Con TS 7 instalado, `eslint` muere con
+  "typescript-eslint does not support TS 7.0". Usamos **TypeScript 6.x**.
+- **eslint-plugin-react no soporta ESLint 10**: `contextOrFilename.getFilename is not a
+  function`. `eslint-config-expo` declara `eslint >=8.10` pero en la practica necesita 9.x.
+  Usamos **ESLint 9.x**.
+- `newArchEnabled` y `edgeToEdgeEnabled` **ya no existen** en el tipo `ExpoConfig` del SDK 57:
+  la New Architecture es obligatoria desde SDK 55 y edge-to-edge es el comportamiento por
+  defecto. Dejarlos da error de tipos.
+- El import de `global.css` necesita `declare module '*.css'`; `nativewind/types` solo cubre
+  `className`.
+
+### pnpm 12: builds ignorados fallan el install (`SEC`)
+- pnpm 12 **falla** el install si hay paquetes con scripts que no tienen decision declarada en
+  `allowBuilds`, y escribe entradas placeholder en `pnpm-workspace.yaml` (`set this to true or
+  false`). Hay que declarar `false` explicito y borrar el placeholder, o el YAML queda con
+  claves duplicadas y no parsea.
+- **`trustPolicy: no-downgrade` genera falsos positivos sistematicos** con paquetes publicados
+  antes de que npm generalizara las attestations (~2023-2024): las versiones nuevas tienen
+  provenance y las viejas no, asi que se marcan como "downgrade". Verificar siempre antes de
+  excluir: repo oficial, mantenedores, ausencia de scripts, advisories. Casos confirmados:
+  `semver@6.3.1`, `eslint-import-resolver-typescript@3.10.1`.
+- `minimumReleaseAge` es **estructuralmente incompatible** con `expo install`, que fija las
+  versiones exactas del SDK (suelen tener dias). De ahi `minimumReleaseAgeExclude` acotado al
+  ecosistema del SDK.
+
 ### NativeWind / React Native Reusables
 - **shadcn/ui no funciona en React Native.** Es Radix UI: DOM + CSS. Usar React Native
   Reusables, que es su port. No perder tiempo intentando adaptar shadcn/ui directamente.

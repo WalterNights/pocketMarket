@@ -10,6 +10,13 @@
 # Denegar por defecto; permitir uno a uno, con justificación.
 allowBuilds:
   '*': false
+  # Denegaciones EXPLICITAS. pnpm 12 falla el install si hay builds ignorados sin
+  # decision declarada; dejarlas aqui documenta que se evaluaron y se rechazaron.
+  # Ambos traen binario precompilado por plataforma via optionalDependencies, asi
+  # que su script solo es fallback de compilacion desde fuente. Verificado
+  # 2026-09-23: los .node de win32-x64 estan presentes y las herramientas funcionan.
+  '@parcel/watcher': false # install: build-from-source.js (fallback)
+  'unrs-resolver': false # postinstall: postinstall.js (fallback)
   # Cada excepción va aquí, con el motivo y tras leer qué hace el script.
   # Verificado 2026-09-22: `supabase` NO necesita entrada — no tiene preinstall/install/
   # postinstall; distribuye el binario como optionalDependency por plataforma.
@@ -22,6 +29,32 @@ allowBuilds:
 # la versión publicada esta mañana.
 minimumReleaseAge: 10080
 
+# Excepciones a la cuarentena — DECISION CONSCIENTE, ver .claude/rules/dependencies.md
+#
+# Expo publica su SDK como un CONJUNTO COORDINADO: `expo install` fija las versiones
+# exactas que el SDK declara compatibles entre si, y esas versiones suelen tener pocos
+# dias. La cuarentena de 7 dias es estructuralmente incompatible con eso: bloquearia
+# cada release del SDK.
+#
+# El trade-off aceptado: para ESTOS paquetes preferimos el riesgo (hipotetico) de una
+# version recien publicada al riesgo (real y probable) de mezclar versiones que el SDK
+# no valido en conjunto. Fuera de esta lista, la cuarentena de 7 dias sigue intacta.
+minimumReleaseAgeExclude:
+  - 'expo'
+  - 'expo-*'
+  - '@expo/*'
+  - 'react'
+  - 'react-dom'
+  - 'react-native'
+  - '@react-native/*'
+  - 'react-native-safe-area-context'
+  - 'react-native-screens'
+  - 'react-native-reanimated'
+  - 'react-native-gesture-handler'
+  # runtime de worklets que Reanimated 4 separo en su propio paquete
+  - 'react-native-worklets'
+  - '@react-native-community/*'
+
 # --- Defensa 3: sin fuentes exóticas en dependencias transitivas ---
 # Una dependencia directa desde git es una decisión consciente.
 # Una transitiva desde git es cómo se cuela código que nadie revisó.
@@ -31,3 +64,18 @@ blockExoticSubdeps: true
 # Falla si un paquete pierde procedencia/firma que sí tenía antes: síntoma habitual
 # de un mantenedor comprometido publicando fuera del pipeline original.
 trustPolicy: no-downgrade
+
+# Excepciones puntuales, con version EXACTA y motivo verificado.
+# No usamos trustPolicyIgnoreAfter: eximiria a todo paquete antiguo de golpe.
+trustPolicyExclude:
+  # semver 6.3.1 (2023-07-10) es anterior a que npm generalizara las attestations
+  # de procedencia, asi que 7.x las tiene y 6.3.1 no -> se marca como "downgrade".
+  # Verificado 2026-09-23: repo oficial npm/node-semver, mantenido por npm-cli-ops,
+  # sin scripts de instalacion, y 6.3.1 es justamente el parche del ReDoS (<6.3.1
+  # es lo vulnerable). Falso positivo por antiguedad, no compromiso.
+  - 'semver@6.3.1'
+  # eslint-import-resolver-typescript 3.10.1 (2025-04-21): el mantenedor empezo a
+  # firmar con provenance a partir de la 4.x, asi que la 3.x se marca como downgrade.
+  # Verificado 2026-09-23: sin scripts de instalacion, sin advisories, mantenida por
+  # jounqin y bradzacher (typescript-eslint). La trae eslint-config-expo.
+  - 'eslint-import-resolver-typescript@3.10.1'

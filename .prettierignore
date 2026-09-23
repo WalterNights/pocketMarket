@@ -1,0 +1,13 @@
+node_modules/
+.expo/
+dist/
+ios/
+android/
+pnpm-lock.yaml
+src/shared/types/database.types.ts
+
+# La documentación se escribe a mano a 100 columnas. Prettier reflowea las tablas
+# markdown y produce diffs enormes sin aportar nada.
+docs/
+.claude/
+*.md

@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design tokens. Warm off-white base, desaturated accents, zero neon.
+ * See docs/design/00-visual-direction.md
+ *
+ * --card is pure white over a cream --background: that contrast is what lets us
+ * drop shadows entirely. Cards separate by surface and border, not elevation.
+ */
+@layer base {
+  :root {
+    --background: 40 33% 96%; /* #FAF8F3 warm cream — the canvas */
+    --foreground: 20 8% 11%; /* #1F1D1B warm near-black, never #000 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 8% 11%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 30 7% 45%; /* #78726B */
+
+    --primary: 20 8% 11%; /* actions are typographic, not chromatic */
+    --primary-foreground: 40 33% 96%;
+
+    --destructive: 0 44% 44%; /* #A33F3F muted red */
+    --destructive-foreground: 40 33% 96%;
+
+    --border: 36 23% 88%; /* #E8E3DA barely-there line */
+    --input: 36 23% 88%;
+    --ring: 20 8% 11%;
+
+    --radius: 0.75rem;
+
+    /* Price signals: the only colour that carries information. Desaturated on
+       purpose — traffic-light red/green would turn a grocery list into a
+       trading screen. Never the sole carrier: always paired with arrow + figure. */
+    --price-down: 149 27% 33%; /* #3D6B52 muted sage */
+    --price-up: 16 44% 44%; /* #A3583F muted terracotta */
+  }
+
+  .dark:root {
+    --background: 30 8% 7%; /* #141311 warm dark, never blue-black */
+    --foreground: 40 20% 90%;
+
+    --card: 30 8% 10%;
+    --card-foreground: 40 20% 90%;
+
+    --muted: 30 7% 14%;
+    --muted-foreground: 35 8% 58%;
+
+    --primary: 40 20% 90%;
+    --primary-foreground: 30 8% 7%;
+
+    --destructive: 0 44% 58%;
+    --destructive-foreground: 40 20% 90%;
+
+    --border: 30 7% 18%;
+    --input: 30 7% 18%;
+    --ring: 40 20% 90%;
+
+    --price-down: 149 25% 52%;
+    --price-up: 16 42% 60%;
+  }
+}
