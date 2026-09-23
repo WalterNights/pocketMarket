@@ -11,16 +11,22 @@ import { ProductRow } from './ProductRow'
 /** Stable ids so the skeleton never keys off an array index. */
 const SKELETON_ROWS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8'] as const
 
-/**
- * Container: owns the data and decides which of the four states to render.
- * Every view backed by remote data resolves loading / error / empty / data —
- * "no network and no cache" is an everyday state on mobile, not an edge case
- * (rule 6 in CLAUDE.md).
- */
+const NO_DRAFT: Record<string, number> = {}
+const noop = () => {}
+
 type CatalogScreenProps = {
   /** Scopes the catalogue to one store. Undefined searches across all of them. */
   storeSlug?: string
   storeName?: string
+  /** Scopes further to a single category. */
+  categorySlug?: string
+  categoryName?: string
+  /**
+   * Search term supplied from outside. When present the screen renders no
+   * search box of its own — CategoryListScreen already owns one, and two
+   * stacked inputs would be nonsense.
+   */
+  embeddedQuery?: string
   /**
    * Units already in the draft list, keyed by product id.
    *
@@ -33,30 +39,32 @@ type CatalogScreenProps = {
   onProductPress?: (productId: string) => void
 }
 
-const NO_DRAFT: Record<string, number> = {}
-const noop = () => {}
-
+/**
+ * Container: owns the data and decides which of the four states to render.
+ * Every view backed by remote data resolves loading / error / empty / data —
+ * "no network and no cache" is an everyday state on mobile, not an edge case
+ * (rule 6 in CLAUDE.md).
+ */
 export function CatalogScreen({
   storeSlug,
   storeName,
+  categorySlug,
+  categoryName,
+  embeddedQuery,
   draftQuantities = NO_DRAFT,
   onProductPress = noop,
 }: CatalogScreenProps = {}) {
   const insets = useSafeAreaInsets()
-  const [query, setQuery] = useState('')
+  const [ownQuery, setOwnQuery] = useState('')
 
-  const {
-    data,
-    isPending,
-    isError,
-    error,
-    refetch,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-  } = useProductSearch({ query, storeSlug })
+  const embedded = embeddedQuery !== undefined
+  const query = embedded ? embeddedQuery : ownQuery
+
+  const { data, isPending, isError, refetch, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useProductSearch({ query, storeSlug, categorySlug })
 
   // Defined outside the render path of each row so memoisation actually holds.
+  // Inside a single store the store name on every row is noise.
   const showStore = storeSlug === undefined
   const renderItem = useCallback(
     ({ item }: { item: Product }) => (
@@ -72,18 +80,20 @@ export function CatalogScreen({
   const keyExtractor = useCallback((item: Product) => item.id, [])
 
   const products = data?.pages.flat() ?? []
+  const headerTitle = categoryName ?? storeName
+  const ownsHeader = !embedded && headerTitle !== undefined
 
   return (
     <View
       className="flex-1 bg-background"
-      style={{ paddingTop: storeSlug === undefined ? insets.top : 0 }}
+      style={{ paddingTop: embedded || ownsHeader ? 0 : insets.top }}
     >
-      {storeName !== undefined ? (
+      {ownsHeader ? (
         <Stack.Screen
           options={{
-            title: storeName,
+            title: headerTitle,
             headerShown: true,
-            headerBackTitle: 'Tiendas',
+            headerBackTitle: 'Atrás',
             headerStyle: { backgroundColor: '#FAF8F3' },
             headerTintColor: '#1F1D1B',
             // Flat header: separation comes from surface and border, never shadow
@@ -93,25 +103,27 @@ export function CatalogScreen({
         />
       ) : null}
 
-      <View className="px-4 pb-3 pt-2">
-        {storeSlug === undefined ? (
-          <Text className="text-2xl font-semibold text-foreground">Buscar productos</Text>
-        ) : null}
-        <TextInput
-          value={query}
-          onChangeText={setQuery}
-          placeholder="Arroz, leche, aceite…"
-          returnKeyType="search"
-          autoCorrect={false}
-          accessibilityLabel="Buscar productos"
-          className="mt-2 h-12 rounded-md border border-input bg-card px-3 text-base text-foreground"
-        />
-      </View>
+      {!embedded ? (
+        <View className="px-4 pb-3 pt-2">
+          {headerTitle === undefined ? (
+            <Text className="text-2xl font-semibold text-foreground">Buscar productos</Text>
+          ) : null}
+          <TextInput
+            value={ownQuery}
+            onChangeText={setOwnQuery}
+            placeholder="Arroz, leche, aceite…"
+            returnKeyType="search"
+            autoCorrect={false}
+            clearButtonMode="while-editing"
+            accessibilityLabel="Buscar productos"
+            className="mt-2 h-12 rounded-md border border-input bg-card px-3 text-base text-foreground"
+          />
+        </View>
+      ) : null}
 
       <CatalogBody
         isPending={isPending}
         isError={isError}
-        error={error}
         onRetry={refetch}
         products={products}
         query={query}
@@ -130,7 +142,6 @@ export function CatalogScreen({
 type CatalogBodyProps = {
   isPending: boolean
   isError: boolean
-  error: Error | null
   onRetry: () => void
   products: Product[]
   query: string

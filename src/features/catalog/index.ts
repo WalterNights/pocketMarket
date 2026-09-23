@@ -4,12 +4,18 @@
  * widening of the surface visible in the diff (01-overview.md).
  */
 export { CatalogScreen } from './components/CatalogScreen'
+export { CategoryListScreen } from './components/CategoryListScreen'
 export { ProductIcon } from './components/ProductIcon'
 export { StoreListScreen } from './components/StoreListScreen'
 export { useProductSearch } from './hooks/useProductSearch'
 export { useProduct } from './hooks/useProduct'
 export { useStores } from './hooks/useStores'
-export { routeParamsSchema, productIdParamSchema } from './model/route-params'
+export { useStoreCategories } from './hooks/useStoreCategories'
+export {
+  routeParamsSchema,
+  categoryRouteParamsSchema,
+  productIdParamSchema,
+} from './model/route-params'
 export { unitPriceOf, priceChangeOf } from './model/product'
 export {
   presentationOf,
@@ -24,4 +30,5 @@ export {
 export { isBrowsable, freshnessLabel } from './model/store'
 export type { Product, UnitPrice, PriceChange } from './model/product'
 export type { Store } from './model/store'
+export type { StoreCategory } from './model/category'
 export type { Presentation } from './model/presentation'

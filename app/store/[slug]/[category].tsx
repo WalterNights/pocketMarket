@@ -2,21 +2,13 @@ import { useLocalSearchParams, useRouter } from 'expo-router'
 import { useCallback, useMemo } from 'react'
 import { View } from 'react-native'
 
-import { CatalogScreen, routeParamsSchema } from '@/features/catalog'
+import { CatalogScreen, categoryRouteParamsSchema } from '@/features/catalog'
 import { DraftListBar, useDraftListStore } from '@/features/lists'
 
-/**
- * Route: wires the catalog and lists features together.
- *
- * Neither feature imports the other — that would be a cycle — so the
- * composition happens here, which is exactly what app/ is for (01-overview.md).
- *
- * Params are validated, not cast: a deep link is untrusted input and
- * useLocalSearchParams returns `string | string[]` (05-navigation.md).
- */
-export default function StoreCatalogRoute() {
+/** Route: products of one category inside one store. Composition only. */
+export default function StoreCategoryRoute() {
   const router = useRouter()
-  const parsed = routeParamsSchema.safeParse(useLocalSearchParams())
+  const parsed = categoryRouteParamsSchema.safeParse(useLocalSearchParams())
 
   const draftItems = useDraftListStore((s) => s.items)
   const draftQuantities = useMemo(
@@ -29,11 +21,14 @@ export default function StoreCatalogRoute() {
     [router],
   )
 
+  if (!parsed.success) return null
+
   return (
     <View className="flex-1 bg-background">
       <CatalogScreen
-        storeSlug={parsed.success ? parsed.data.slug : undefined}
-        storeName={parsed.success ? parsed.data.name : undefined}
+        storeSlug={parsed.data.slug}
+        categorySlug={parsed.data.category}
+        categoryName={parsed.data.categoryName}
         draftQuantities={draftQuantities}
         onProductPress={openProduct}
       />

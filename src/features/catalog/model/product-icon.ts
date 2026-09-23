@@ -160,7 +160,7 @@ const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
   ['crispeta', 'Popcorn'],
 ]
 
-const CATEGORY_ICONS: Record<string, IconName> = {
+export const CATEGORY_ICONS: Record<string, IconName> = {
   viveres: 'Wheat',
   'frutas-verduras': 'Apple',
   carnes: 'Beef',
@@ -200,4 +200,9 @@ export function productIconName(productName: string, categorySlug: string | null
   }
 
   return FALLBACK
+}
+
+/** Icon for a category on its own, with no product to inspect. */
+export function categoryIconName(categorySlug: string): IconName {
+  return CATEGORY_ICONS[categorySlug] ?? FALLBACK
 }
