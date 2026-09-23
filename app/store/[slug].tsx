@@ -1,16 +1,15 @@
-import { useRouter } from 'expo-router'
-import { useLocalSearchParams } from 'expo-router'
+import { useLocalSearchParams, useRouter } from 'expo-router'
 import { useCallback, useMemo } from 'react'
+import { View } from 'react-native'
 
 import { CatalogScreen, routeParamsSchema } from '@/features/catalog'
-import { useDraftListStore } from '@/features/lists'
+import { DraftListBar, useDraftListStore } from '@/features/lists'
 
 /**
  * Route: wires the catalog and lists features together.
  *
  * Neither feature imports the other — that would be a cycle — so the
- * composition happens here, which is exactly what app/ is for
- * (01-overview.md).
+ * composition happens here, which is exactly what app/ is for (01-overview.md).
  *
  * Params are validated, not cast: a deep link is untrusted input and
  * useLocalSearchParams returns `string | string[]` (05-navigation.md).
@@ -30,16 +29,15 @@ export default function StoreCatalogRoute() {
     [router],
   )
 
-  if (!parsed.success) {
-    return <CatalogScreen draftQuantities={draftQuantities} onProductPress={openProduct} />
-  }
-
   return (
-    <CatalogScreen
-      storeSlug={parsed.data.slug}
-      storeName={parsed.data.name}
-      draftQuantities={draftQuantities}
-      onProductPress={openProduct}
-    />
+    <View className="flex-1 bg-background">
+      <CatalogScreen
+        storeSlug={parsed.success ? parsed.data.slug : undefined}
+        storeName={parsed.success ? parsed.data.name : undefined}
+        draftQuantities={draftQuantities}
+        onProductPress={openProduct}
+      />
+      <DraftListBar />
+    </View>
   )
 }

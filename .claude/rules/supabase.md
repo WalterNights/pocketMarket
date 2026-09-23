@@ -68,9 +68,10 @@ create policy "owner inserts own products"
 - **`price_cop`** → lo escribe el pipeline. El cliente ni siquiera tiene política para tocarlo.
 - **`price_cop_at_add`** → lo pone un trigger leyendo `current_price`, no el payload. Si lo
   enviara el cliente, podría falsear la variación de precio.
-- **Totales de una lista** → vista SQL. No se guardan ni se suman en el cliente: un total
-  almacenado queda obsoleto en cuanto cambia un precio, que es justo lo contrario del propósito
-  de la app.
+- **Totales de una lista guardada** → vista SQL (`list_totals`). No se almacenan: un total
+  guardado queda obsoleto en cuanto cambia un precio, que es justo lo contrario del propósito de
+  la app. El borrador en memoria sí suma en cliente, porque todavía no existe en la BD y no hay
+  a quién preguntarle; en cuanto se guarda, el total viene del servidor.
 - Roles y permisos → tabla de servidor, nunca un campo del perfil editable por el usuario.
 - `captured_at` / `created_at` / `updated_at` → `default now()` y triggers. El reloj del
   dispositivo no es confiable ni honesto.

@@ -2,6 +2,8 @@ import { create } from 'zustand'
 
 import type { Product } from '@/features/catalog'
 
+import type { DraftItem } from '../model/totals'
+
 /**
  * The list being built right now, before it is saved.
  *
@@ -13,11 +15,6 @@ import type { Product } from '@/features/catalog'
  * Saving to Supabase needs an account (lists are private, RLS by owner), so
  * that arrives with auth. Until then the draft lives for the session.
  */
-export type DraftItem = {
-  product: Product
-  quantity: number
-}
-
 type DraftListState = {
   items: Record<string, DraftItem>
   addItem: (product: Product, quantity: number) => void

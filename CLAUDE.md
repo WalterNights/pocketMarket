@@ -157,7 +157,10 @@ Estas no se negocian caso a caso. Cambiarlas exige modificar antes la documentac
     `ingestion/core/schemas.ts`.
 15. **Dinero en `integer` COP.** Nunca float, nunca decimal. El peso colombiano no usa centavos.
 16. **Nunca borrar un `store_product`.** Hay `list_item` apuntando: se marca `is_available`.
-17. **Los totales se calculan en servidor**, no se guardan ni se suman en el cliente.
+17. **Los totales de una lista guardada se calculan en servidor** (vista `list_totals`) y no se
+    almacenan: un total guardado queda obsoleto en cuanto cambia un precio. El **borrador** en
+    memoria es la excepción: aún no existe en la BD, así que suma en cliente
+    (`features/lists/model/totals.ts`) con precios que vienen del servidor.
 18. **pnpm exclusivamente.** Nunca `npm install` ni `yarn`: anula las defensas de
     `pnpm-workspace.yaml` (`allowBuilds`, `minimumReleaseAge`, `blockExoticSubdeps`).
 19. **Ningún paquete ejecuta scripts de instalación** salvo entrada explícita y justificada en
