@@ -151,9 +151,16 @@ async function flush(
 
   const now = new Date().toISOString()
 
+  // A product can sit in two of Éxito's categories at once (a ham is both
+  // "Charcutería" and "Pollo, carne y pescado"), and we walk category by
+  // category, so the same external_id can reach the same batch twice. Postgres
+  // refuses that: "ON CONFLICT DO UPDATE command cannot affect row a second
+  // time". Keep the first occurrence.
+  const deduped = dedupeByExternalId(batch)
+
   // 4. Upsert. store_product is never deleted — list_item rows point at it, so
   //    a product that vanishes gets is_available = false instead (rule 16).
-  const rows = batch.map((p) => ({
+  const rows = deduped.map((p) => ({
     store_id: storeId,
     external_id: p.externalId,
     ean: p.ean,
@@ -205,7 +212,7 @@ async function flush(
   // 6. Append a snapshot ONLY when the price actually moved. Writing an
   //    identical row every day inflates the table without adding information,
   //    and captured_at would stop meaning "has had this price since".
-  const snapshots = batch.flatMap((p) => {
+  const snapshots = deduped.flatMap((p) => {
     const id = idByExternal.get(p.externalId)
     if (id === undefined) return []
     if (priceById.get(id) === p.priceCop) return []
@@ -229,6 +236,20 @@ async function flush(
   }
 
   report.pricesChanged += snapshots.length
+}
+
+/** First occurrence wins; later duplicates of the same SKU are dropped. */
+export function dedupeByExternalId(products: NormalizedProduct[]): NormalizedProduct[] {
+  const seen = new Set<string>()
+  const out: NormalizedProduct[] = []
+
+  for (const p of products) {
+    if (seen.has(p.externalId)) continue
+    seen.add(p.externalId)
+    out.push(p)
+  }
+
+  return out
 }
 
 async function resolveStoreId(supabase: SupabaseClient, slug: string): Promise<string> {

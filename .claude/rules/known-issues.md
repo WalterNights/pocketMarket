@@ -239,6 +239,13 @@ herramienta rompe. Verificado 2026-09-23 montando el proyecto:
 - **Presentar una equivalencia `fuzzy` como hecho**: recomendar comprar en otra tienda algo que
   no es el mismo producto destruye la confianza en la app.
 - **Ara no tiene catálogo online.** Solo folletos en su app. Ya se investigó; no repetirlo.
+- **Un producto puede estar en DOS categorías de la fuente** (un jamón es "Charcutería" y
+  "Pollo, carne y pescado"). Recorriendo categoría por categoría, el mismo `external_id` llega
+  dos veces al mismo lote y Postgres rechaza el upsert entero: *"ON CONFLICT DO UPDATE command
+  cannot affect row a second time"*. Hay que deduplicar por `external_id` antes de escribir.
+- **Clasificar con el nombre CRUDO no funciona**: lleva la marca incrustada en medio
+  ("Chocolate CORONA de mesa"), así que cualquier regla de varias palabras falla en silencio.
+  Clasificar con el nombre ya limpio.
 - **El free tier de Supabase son 500 MB**, y `price_snapshot` crece de forma lineal con el
   tiempo. Ingerir el catálogo completo de 3 tiendas daría ~841 MB al año: no cabe. De ahí el
   filtro por categorías de mercado y la retención a 90 días

@@ -1,3 +1,4 @@
+import { classifyProduct } from '../core/classify'
 import {
   capitaliseFirst,
   cleanProductName,
@@ -110,8 +111,16 @@ export const exitoAdapter: StoreAdapter = {
     const measure = extractMeasure(sourceName)
 
     const sourceCategoryId = (raw as Record<symbol, unknown>)[SOURCE_CATEGORY]
-    const categorySlug =
+    const sourceBucket =
       typeof sourceCategoryId === 'string' ? (CATEGORY_BY_ID.get(sourceCategoryId) ?? null) : null
+
+    // Éxito's buckets are too coarse — "Despensa" holds rice, pasta, oil and
+    // tinned fish at once — so the aisle is deduced from the name, with the
+    // source bucket as fallback (ingestion/core/classify.ts).
+    // Con el nombre LIMPIO, no el crudo: el original lleva la marca incrustada
+    // en medio ("Chocolate CORONA de mesa"), y eso rompe cualquier regla de
+    // varias palabras.
+    const categorySlug = classifyProduct(name, sourceBucket)
 
     const ean = typeof item.ean === 'string' && /^\d{8,14}$/.test(item.ean) ? item.ean : null
 

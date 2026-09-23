@@ -161,12 +161,44 @@ const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
 ]
 
 export const CATEGORY_ICONS: Record<string, IconName> = {
-  viveres: 'Wheat',
-  'frutas-verduras': 'Apple',
+  // Frescos
+  frutas: 'Apple',
+  verduras: 'Carrot',
+  // Proteínas
   carnes: 'Beef',
-  lacteos: 'Milk',
-  panaderia: 'Croissant',
-  bebidas: 'CupSoda',
+  pollo: 'Drumstick',
+  pescados: 'Fish',
+  embutidos: 'Ham',
+  huevos: 'Egg',
+  // Lácteos
+  leche: 'Milk',
+  quesos: 'Milk',
+  yogures: 'Milk',
+  mantequilla: 'Milk',
+  // Despensa
+  arroz: 'Wheat',
+  granos: 'Bean',
+  pastas: 'Wheat',
+  aceites: 'Droplet',
+  'azucar-panela': 'Candy',
+  'sal-condimentos': 'Soup',
+  enlatados: 'Fish',
+  harinas: 'Wheat',
+  'cafe-chocolate': 'Coffee',
+  cereales: 'Wheat',
+  'te-aromaticas': 'Coffee',
+  // Panadería
+  pan: 'Croissant',
+  arepas: 'Croissant',
+  galletas: 'Cookie',
+  // Bebidas
+  gaseosas: 'CupSoda',
+  jugos: 'CupSoda',
+  agua: 'CupSoda',
+  licores: 'Wine',
+  // Otros
+  snacks: 'Popcorn',
+  dulces: 'Candy',
   congelados: 'Snowflake',
   'aseo-hogar': 'SprayCan',
   'cuidado-personal': 'Bath',
