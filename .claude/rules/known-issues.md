@@ -53,6 +53,15 @@ promueve al registro de arriba con su ID.
   cambio nativo va en un **config plugin**.
 - Añadir una librería con código nativo requiere **build nueva**: no basta `expo start`.
 - Metro cachea con entusiasmo. Ante comportamiento inexplicable: `pnpm expo start --clear`.
+- **`Android Bundled ... entry.js (1 module)` significa bundle ROTO, no bundle pequeño.** Un
+  proyecto sano reporta miles de modulos. Con el bundle roto la app renderiza los estados por
+  defecto (listas vacias, "aun no hay datos") y parece un bug de datos o de RLS cuando no lo es.
+  Confirmado 2026-09-23: la vista devolvia sus 8 categorias por REST todo el tiempo.
+- **Detonante conocido: reestructurar `app/` con Metro corriendo.** Mover o renombrar ficheros
+  de ruta en caliente (p. ej. `app/store/[slug].tsx` -> `app/store/[slug]/index.tsx`) corrompe
+  la cache. Tras cualquier cambio de estructura de rutas, reiniciar con `--clear`.
+- Antes de culpar a los datos, mirar el log de Metro: si hay `Unable to resolve` de imports que
+  ya corregiste, estas viendo codigo viejo.
 - No toda librería de RN es compatible con la New Architecture. Verificar antes de instalar
   (React Native Directory marca la compatibilidad).
 
