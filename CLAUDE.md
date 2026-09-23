@@ -23,7 +23,8 @@ Dominio completo en [`docs/domain/`](docs/domain/). Leerlo antes de tocar modelo
 ingesta.
 
 > **Para retomar el trabajo:** [`docs/ESTADO.md`](docs/ESTADO.md) dice qué funciona hoy, qué
-> falta y cuál es el siguiente paso. **Leerlo primero al empezar una sesión.**
+> falta y cuál es el siguiente paso. **Leerlo primero al empezar una sesión.** Los planes
+> pendientes viven en [`docs/plans/`](docs/plans/).
 
 ## Stack
 

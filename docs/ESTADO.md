@@ -4,7 +4,7 @@
 > Para las reglas permanentes, ver [CLAUDE.md](../CLAUDE.md); para el porqué de cada decisión,
 > [`docs/adr/`](adr/).
 
-**Última actualización:** 2026-09-24 · rama `main` · commit `971ad38`
+**Última actualización:** 2026-09-24 · rama `main` · commit `034aa6d`
 
 ---
 
@@ -30,7 +30,7 @@ Corre fuera del dispositivo y es lo único que escribe el catálogo.
 | Reclasificar sin volver a la fuente (`pnpm run reclassify`) | ✅ |
 | Adaptadores de D1, Dollarcity | ❌ requieren Playwright |
 | Ara | ❌ **no tiene catálogo online** — solo folletos. Ya se investigó |
-| Cron de GitHub Actions | ❌ |
+| Cron diario | ❌ **pendiente** — [plan 0002](plans/0002-cron-de-ingesta-diaria.md) |
 
 **Última corrida:** 27.217 vistos · 13.750 escritos · 49% agotados · **0% ilegibles** · 23 min.
 
@@ -59,7 +59,7 @@ el catálogo *es* la protección.
 | Pantalla de carga propia (`PocketLoader`) | ✅ |
 | Guardar listas | ❌ **necesita auth** |
 | Recordatorios | ❌ |
-| Mapa de tiendas | ❌ planificado, sin implementar |
+| Mapa de tiendas | ❌ **pendiente** — [plan 0001](plans/0001-mapa-de-tiendas.md) |
 
 ---
 
@@ -118,14 +118,32 @@ marcan con `*` (`enlatad*`, `salchich*`). Esto no es un detalle: ver `ING-006`.
 
 ---
 
+## Tareas pendientes con plan escrito
+
+| # | Tarea | Estado | Bloqueo |
+|---|---|---|---|
+| [0001](plans/0001-mapa-de-tiendas.md) | Mapa de tiendas con las más cercanas | plan listo | 3 preguntas abiertas + exige development build |
+| [0002](plans/0002-cron-de-ingesta-diaria.md) | Cron diario que actualiza la base | plan listo | contradice a ADR-0003: hay que decidir y documentar primero |
+
+**0002 es el más urgente en la práctica**: sin él los precios se quedan congelados en la
+última corrida manual, que es justo lo contrario de lo que promete la app. Y tiene un efecto
+secundario que importa: el free tier de Supabase **pausa el proyecto tras una semana sin
+actividad**, y el cron diario lo mantiene despierto.
+
+Ojo con 0002: el ADR decidió Edge Function para Éxito, pero una corrida tarda **23 minutos** y
+una Edge Function no dura tanto. El plan explica las dos salidas y cuál se recomienda.
+
+---
+
 ## Siguiente paso sugerido
 
 **Autenticación**, porque desbloquea guardar listas y sin eso el producto está a medias.
 Después, o bien los recordatorios (cierran el ciclo del producto) o bien el mapa (que además
 obliga al development build y destraba todo lo nativo).
 
-El plan del mapa está hecho y tiene tres preguntas abiertas sin responder, entre ellas si
-Homecenter y Falabella deben aparecer sabiendo que no tendrán precios.
+Los dos planes escritos ([0001](plans/0001-mapa-de-tiendas.md) y
+[0002](plans/0002-cron-de-ingesta-diaria.md)) están listos para implementar en cuanto se
+respondan sus preguntas abiertas.
 
 ---
 
