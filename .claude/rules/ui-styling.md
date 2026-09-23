@@ -82,7 +82,8 @@ Ver [dirección visual](../../docs/design/00-visual-direction.md).
 
 - `FlashList` para cualquier colección remota o de longitud desconocida.
 - **Nunca** `ScrollView` + `.map()` sobre datos remotos.
-- `estimatedItemSize` siempre.
+- **FlashList v2 calcula el tamaño solo**: `estimatedItemSize` ya no existe (daba error de
+  tipos). Mantener la altura de fila constante sigue ayudando al reciclado.
 - Sin lógica pesada en `renderItem`: formateo memoizado o precalculado.
 
 ## Imágenes

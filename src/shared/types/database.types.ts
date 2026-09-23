@@ -115,6 +115,13 @@ export type Database = {
             foreignKeyName: "equivalence_member_store_product_id_fkey"
             columns: ["store_product_id"]
             isOneToOne: false
+            referencedRelation: "catalog_product"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "equivalence_member_store_product_id_fkey"
+            columns: ["store_product_id"]
+            isOneToOne: false
             referencedRelation: "store_product"
             referencedColumns: ["id"]
           },
@@ -160,6 +167,13 @@ export type Database = {
             columns: ["list_id"]
             isOneToOne: false
             referencedRelation: "shopping_list"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "list_item_store_product_id_fkey"
+            columns: ["store_product_id"]
+            isOneToOne: false
+            referencedRelation: "catalog_product"
             referencedColumns: ["id"]
           },
           {
@@ -250,6 +264,13 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "region"
             referencedColumns: ["code"]
+          },
+          {
+            foreignKeyName: "price_snapshot_store_product_id_fkey"
+            columns: ["store_product_id"]
+            isOneToOne: false
+            referencedRelation: "catalog_product"
+            referencedColumns: ["id"]
           },
           {
             foreignKeyName: "price_snapshot_store_product_id_fkey"
@@ -441,6 +462,43 @@ export type Database = {
       }
     }
     Views: {
+      catalog_product: {
+        Row: {
+          brand: string | null
+          category_id: string | null
+          category_slug: string | null
+          ean: string | null
+          id: string | null
+          image_url: string | null
+          is_available: boolean | null
+          last_seen_at: string | null
+          name: string | null
+          price_cop: number | null
+          search_vector: unknown
+          store_id: string | null
+          store_name: string | null
+          store_slug: string | null
+          unit_kind: string | null
+          unit_measure: string | null
+          unit_value: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "store_product_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "category"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "store_product_store_id_fkey"
+            columns: ["store_id"]
+            isOneToOne: false
+            referencedRelation: "store"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       current_price: {
         Row: {
           captured_at: string | null
@@ -456,6 +514,13 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "region"
             referencedColumns: ["code"]
+          },
+          {
+            foreignKeyName: "price_snapshot_store_product_id_fkey"
+            columns: ["store_product_id"]
+            isOneToOne: false
+            referencedRelation: "catalog_product"
+            referencedColumns: ["id"]
           },
           {
             foreignKeyName: "price_snapshot_store_product_id_fkey"

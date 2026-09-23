@@ -98,6 +98,12 @@ herramienta rompe. Verificado 2026-09-23 montando el proyecto:
 - NativeWind añade una capa a la cadena de build de Metro: ante fallos raros tras un upgrade,
   sospechar de ella y limpiar caché.
 
+### FlashList v2 / TypeScript 6 (`UI`)
+- **FlashList v2 elimino `estimatedItemSize`**: ahora mide solo. Pasarlo da error de tipos.
+  Casi toda la documentacion de internet sigue mostrando la v1.
+- **TS 6 exige `override`** al redeclarar un miembro de la clase base. Una clase de error
+  con `readonly cause` necesita `override readonly cause`, porque `Error.cause` ya existe.
+
 ### EAS Update / OTA
 - **El fallo más caro del stack:** servir un bundle JS que usa un módulo nativo ausente en el
   binario instalado → crash al arrancar, y el usuario no puede ni actualizar. Por eso
