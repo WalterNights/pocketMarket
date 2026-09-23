@@ -1,0 +1,17 @@
+# Normaliza finales de línea. Sin esto, en Windows los .sql se commitean con CRLF
+# y psql o el CLI de Supabase pueden comportarse de forma distinta a como lo hacen en CI.
+* text=auto eol=lf
+
+# Binarios: nunca tocar
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ttf  binary
+*.otf  binary
+*.keystore binary
+*.jks  binary
+
+# El lockfile se versiona y se revisa: marcarlo como generado colapsa el diff por defecto,
+# pero sigue siendo auditable al expandirlo.
+pnpm-lock.yaml linguist-generated=true diff=text

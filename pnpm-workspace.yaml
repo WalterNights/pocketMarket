@@ -1,0 +1,33 @@
+# Configuración de pnpm — política de cadena de suministro.
+# Ver .claude/rules/dependencies.md para el razonamiento de cada ajuste.
+#
+# OJO: en pnpm 12 una setting mal escrita aquí FALLA el install (no se ignora).
+# Eso es intencional: detecta typos en vez de dejarte creer que estás protegido.
+
+# --- Defensa 1: ningún paquete ejecuta scripts de instalación sin permiso explícito ---
+# preinstall / install / postinstall son el vector nº1 de supply chain: se ejecutan
+# con tus permisos al instalar, sin que llegues a usar el paquete.
+# Denegar por defecto; permitir uno a uno, con justificación.
+allowBuilds:
+  '*': false
+  # Cada excepción va aquí, con el motivo y tras leer qué hace el script.
+  # Verificado 2026-09-22: `supabase` NO necesita entrada — no tiene preinstall/install/
+  # postinstall; distribuye el binario como optionalDependency por plataforma.
+  # Candidato futuro (aún no instalado):
+  #   playwright: true   # descarga los navegadores para el scraping de ingesta
+
+# --- Defensa 2: cuarentena de versiones recién publicadas ---
+# El malware en npm suele detectarse y retirarse en horas. 7 días cubre esa ventana.
+# El default de pnpm es 1440 (1 día); subimos porque este proyecto no necesita
+# la versión publicada esta mañana.
+minimumReleaseAge: 10080
+
+# --- Defensa 3: sin fuentes exóticas en dependencias transitivas ---
+# Una dependencia directa desde git es una decisión consciente.
+# Una transitiva desde git es cómo se cuela código que nadie revisó.
+blockExoticSubdeps: true
+
+# --- Defensa 4: detectar pérdida de confianza ---
+# Falla si un paquete pierde procedencia/firma que sí tenía antes: síntoma habitual
+# de un mantenedor comprometido publicando fuera del pipeline original.
+trustPolicy: no-downgrade

@@ -1,0 +1,32 @@
+{
+  "name": "pocket-market",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Planea el mercado y sabe cuánto cuesta antes de ir. App móvil React Native + Supabase.",
+  "packageManager": "pnpm@12.5.1",
+  "engines": {
+    "node": ">=20.19.0",
+    "pnpm": ">=11.0.0"
+  },
+  "scripts": {
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "db:status": "supabase status",
+    "db:reset": "supabase db reset",
+    "db:new": "supabase migration new",
+    "db:diff": "supabase db diff -f",
+    "db:lint": "supabase db lint --level warning",
+    "db:push": "supabase db push",
+    "db:test": "supabase test db",
+    "db:types": "supabase gen types typescript --local > src/shared/types/database.types.ts",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest",
+    "quality": "pnpm run type-check && pnpm run lint && pnpm run format:check && pnpm test"
+  },
+  "devDependencies": {
+    "supabase": "^2.117.0"
+  }
+}

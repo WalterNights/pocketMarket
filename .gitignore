@@ -1,0 +1,48 @@
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Proyectos nativos — GENERADOS por CNG (expo prebuild). Ver ADR-0001.
+# Si aparecen en git status, algo se ejecutó de más.
+/ios/
+/android/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Secretos — NUNCA versionados
+.env
+.env.*
+!.env.example
+
+# Supabase local
+supabase/.temp/
+supabase/.branches/
+
+# NOTA: src/shared/types/database.types.ts SÍ se versiona.
+# Es generado (no se edita a mano) pero CI necesita type-check sin levantar Supabase.
+
+# Ingesta: fixtures crudas de trabajo (las curadas SÍ se versionan)
+ingestion/**/__fixtures__/*.raw.json
+
+# Build y caché
+*.tsbuildinfo
+.cache/
+coverage/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Editor
+.idea/
+*.swp
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
