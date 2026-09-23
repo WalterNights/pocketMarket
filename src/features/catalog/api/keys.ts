@@ -13,6 +13,7 @@ export type ProductSearchFilters = {
 
 export const catalogKeys = {
   all: ['catalog'] as const,
+  stores: () => [...catalogKeys.all, 'stores'] as const,
   searches: () => [...catalogKeys.all, 'search'] as const,
   search: (filters: ProductSearchFilters) => [...catalogKeys.searches(), filters] as const,
   details: () => [...catalogKeys.all, 'detail'] as const,

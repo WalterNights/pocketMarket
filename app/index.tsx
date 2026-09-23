@@ -1,9 +1,6 @@
-import { CatalogScreen } from '@/features/catalog'
+import { StoreListScreen } from '@/features/catalog'
 
-/**
- * Route: composition only. Translates navigation into a feature component
- * and nothing else (rule 2 in CLAUDE.md).
- */
+/** Route: composition only (rule 2 in CLAUDE.md). */
 export default function HomeRoute() {
-  return <CatalogScreen />
+  return <StoreListScreen />
 }

@@ -458,6 +458,13 @@ export type Database = {
             referencedRelation: "store"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "store_product_store_id_fkey"
+            columns: ["store_id"]
+            isOneToOne: false
+            referencedRelation: "store_summary"
+            referencedColumns: ["id"]
+          },
         ]
       }
     }
@@ -495,6 +502,13 @@ export type Database = {
             columns: ["store_id"]
             isOneToOne: false
             referencedRelation: "store"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "store_product_store_id_fkey"
+            columns: ["store_id"]
+            isOneToOne: false
+            referencedRelation: "store_summary"
             referencedColumns: ["id"]
           },
         ]
@@ -556,10 +570,31 @@ export type Database = {
             referencedRelation: "store"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "store_product_store_id_fkey"
+            columns: ["store_id"]
+            isOneToOne: false
+            referencedRelation: "store_summary"
+            referencedColumns: ["id"]
+          },
         ]
+      }
+      store_summary: {
+        Row: {
+          id: string | null
+          is_active: boolean | null
+          last_updated_at: string | null
+          logo_path: string | null
+          name: string | null
+          product_count: number | null
+          slug: string | null
+          source_type: string | null
+        }
+        Relationships: []
       }
     }
     Functions: {
+      current_region: { Args: never; Returns: string }
       immutable_unaccent: { Args: { "": string }; Returns: string }
       price_for: {
         Args: { p_region_code: string; p_store_product_id: string }

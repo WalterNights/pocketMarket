@@ -1,4 +1,5 @@
 import { FlashList } from '@shopify/flash-list'
+import { Stack } from 'expo-router'
 import { useCallback, useState } from 'react'
 import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -16,7 +17,13 @@ const SKELETON_ROWS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8'] as const
  * "no network and no cache" is an everyday state on mobile, not an edge case
  * (rule 6 in CLAUDE.md).
  */
-export function CatalogScreen() {
+type CatalogScreenProps = {
+  /** Scopes the catalogue to one store. Undefined searches across all of them. */
+  storeSlug?: string
+  storeName?: string
+}
+
+export function CatalogScreen({ storeSlug, storeName }: CatalogScreenProps = {}) {
   const insets = useSafeAreaInsets()
   const [query, setQuery] = useState('')
 
@@ -29,18 +36,42 @@ export function CatalogScreen() {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-  } = useProductSearch({ query })
+  } = useProductSearch({ query, storeSlug })
 
   // Defined outside the render path of each row so memoisation actually holds.
-  const renderItem = useCallback(({ item }: { item: Product }) => <ProductRow product={item} />, [])
+  const showStore = storeSlug === undefined
+  const renderItem = useCallback(
+    ({ item }: { item: Product }) => <ProductRow product={item} showStore={showStore} />,
+    [showStore],
+  )
   const keyExtractor = useCallback((item: Product) => item.id, [])
 
   const products = data?.pages.flat() ?? []
 
   return (
-    <View className="flex-1 bg-background" style={{ paddingTop: insets.top }}>
+    <View
+      className="flex-1 bg-background"
+      style={{ paddingTop: storeSlug === undefined ? insets.top : 0 }}
+    >
+      {storeName !== undefined ? (
+        <Stack.Screen
+          options={{
+            title: storeName,
+            headerShown: true,
+            headerBackTitle: 'Tiendas',
+            headerStyle: { backgroundColor: '#FAF8F3' },
+            headerTintColor: '#1F1D1B',
+            // Flat header: separation comes from surface and border, never shadow
+            // (docs/design/00-visual-direction.md).
+            headerShadowVisible: false,
+          }}
+        />
+      ) : null}
+
       <View className="px-4 pb-3 pt-2">
-        <Text className="text-2xl font-semibold text-foreground">Buscar productos</Text>
+        {storeSlug === undefined ? (
+          <Text className="text-2xl font-semibold text-foreground">Buscar productos</Text>
+        ) : null}
         <TextInput
           value={query}
           onChangeText={setQuery}
@@ -48,7 +79,7 @@ export function CatalogScreen() {
           returnKeyType="search"
           autoCorrect={false}
           accessibilityLabel="Buscar productos"
-          className="mt-3 h-12 rounded-md border border-input bg-card px-3 text-base text-foreground"
+          className="mt-2 h-12 rounded-md border border-input bg-card px-3 text-base text-foreground"
         />
       </View>
 
