@@ -158,6 +158,13 @@ promueve al registro de arriba con su ID.
 - **Presentar una equivalencia `fuzzy` como hecho**: recomendar comprar en otra tienda algo que
   no es el mismo producto destruye la confianza en la app.
 - **Ara no tiene catálogo online.** Solo folletos en su app. Ya se investigó; no repetirlo.
+- **El free tier de Supabase son 500 MB**, y `price_snapshot` crece de forma lineal con el
+  tiempo. Ingerir el catálogo completo de 3 tiendas daría ~841 MB al año: no cabe. De ahí el
+  filtro por categorías de mercado y la retención a 90 días
+  ([presupuesto](../../docs/domain/02-ingestion.md#presupuesto-de-almacenamiento)).
+- **Free tier: máximo 2 proyectos activos y pausa tras 1 semana sin actividad.** El cron diario
+  de ingesta evita la pausa como efecto secundario. Sin backups en free: `supabase db dump`
+  periódico para los datos de usuario (el catálogo se regenera con el pipeline).
 
 ### Recordatorios (`NOTIF`)
 - **iOS limita a 64 notificaciones locales pendientes por app.** Al superarlo se descartan en

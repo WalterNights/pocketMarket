@@ -120,8 +120,17 @@ Toda `EXPO_PUBLIC_*` acaba dentro del bundle. Si dudas si puede ser pública, no
 
 ## Entornos
 
-Un proyecto de Supabase por entorno (dev / staging / prod), alineado con los perfiles de EAS.
-**Nunca desarrollar contra producción.**
+El free tier permite **2 proyectos activos**, así que "uno por entorno" no cabe. Reparto real:
+
+| Entorno | Dónde | Perfil EAS |
+|---|---|---|
+| **dev** | Supabase **local** (Docker). Gratis, ilimitado, sin cuenta | `development` |
+| **staging/prod** | Proyecto remoto | `preview` / `production` |
+
+**Nunca desarrollar contra producción.** El desarrollo diario va contra local: `pnpm run db:start`.
+
+Los proyectos free **se pausan tras una semana sin actividad** y dejan de responder hasta
+restaurarlos desde el dashboard. El cron diario de ingesta lo evita como efecto secundario.
 
 ## Realtime
 

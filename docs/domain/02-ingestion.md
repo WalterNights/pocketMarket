@@ -165,6 +165,45 @@ Lo que no se puede normalizar con confianza se guarda como `null`, **nunca se ad
 Los precios que ve el usuario son **de hoy**, no de este segundo. La UI lo dice: "Precios
 actualizados hace N horas".
 
+## Presupuesto de almacenamiento
+
+El free tier de Supabase da **500 MB de base de datos**. `price_snapshot` es append-only y crece
+de forma lineal con el tiempo, así que el límite no se alcanza de golpe: se alcanza un martes
+cualquiera dentro de unos meses. Estimación (fila + índices):
+
+| Escenario | Catálogo | Snapshots/año | Total |
+|---|---|---|---|
+| **v1: Éxito, solo categorías de mercado** (~20k SKU) | 25 MB | 87 MB | **112 MB** |
+| Éxito catálogo completo (~50k SKU) | 63 MB | 218 MB | 280 MB |
+| 3 tiendas, categorías de mercado | 76 MB | 261 MB | 337 MB |
+| 3 tiendas, catálogo completo | 189 MB | 653 MB | **841 MB — no cabe** |
+
+Dos consecuencias de diseño, ambas desde el principio y no cuando explote:
+
+### 1. Ingerir solo lo que es mercado
+
+Éxito vende electrodomésticos, ropa y muebles. Esta app es de **mercado**: el adaptador filtra
+por las categorías de la taxonomía propia y descarta el resto. No es solo ahorro de espacio —
+un televisor en los resultados de búsqueda de una lista de compra es ruido.
+
+### 2. Retención del histórico
+
+Los snapshots antiguos pierden valor rápido: para "¿cuánto costaba en marzo?" basta un punto al
+mes, no uno por cada cambio. Política:
+
+| Antigüedad | Qué se conserva |
+|---|---|
+| < 90 días | Todos los snapshots |
+| > 90 días | El primero y el último de cada mes, por producto y región |
+
+Ejecutada por `pg_cron` una vez al mes. Nunca se borra el snapshot más reciente de un
+`(store_product_id, region_code)`: es lo que alimenta `current_price`.
+
+> Vigilar el consumo real tras la primera corrida completa:
+> `select pg_size_pretty(pg_database_size(current_database()));`
+> La estimación de arriba usa medias; los índices GIN sobre `tsvector` y trigram son los
+> componentes más difíciles de predecir.
+
 ## Comportarse bien con las fuentes
 
 No es cortesía: un scraper agresivo se gana un bloqueo y deja la app sin datos.
