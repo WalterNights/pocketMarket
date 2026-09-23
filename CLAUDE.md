@@ -22,6 +22,9 @@ de mercado con precios reales.
 Dominio completo en [`docs/domain/`](docs/domain/). Leerlo antes de tocar modelo de datos o
 ingesta.
 
+> **Para retomar el trabajo:** [`docs/ESTADO.md`](docs/ESTADO.md) dice qué funciona hoy, qué
+> falta y cuál es el siguiente paso. **Leerlo primero al empezar una sesión.**
+
 ## Stack
 
 | Capa | Elección |
@@ -100,9 +103,13 @@ Toda decisión estructural está documentada. **Consúltala antes de proponer ca
 | `rn-perf-audit` | Auditar rendimiento móvil (TTI, listas, re-renders, animaciones) |
 | `rn-implement` | Implementar siguiendo el plan y las reglas |
 | `rn-source-adapter` | Añadir o arreglar la fuente de precios de una tienda |
+| `rn-security` | Auditoría de seguridad: bundle, RLS, filtración en dispositivo, cadena de suministro |
 
-Skills globales aplicables: `vet-dependency` (antes de instalar), `security-audit`,
-`load-context`, `model-routing`.
+Skills globales aplicables: `vet-dependency` (antes de instalar), `load-context`,
+`model-routing`.
+
+> ⚠️ **No usar el `security-audit` global aquí**: está escrito para un proyecto Next.js/NestJS
+> y ejecuta `npm audit`, que viola la regla 18. Para este repo, `rn-security`.
 
 ## Comandos
 

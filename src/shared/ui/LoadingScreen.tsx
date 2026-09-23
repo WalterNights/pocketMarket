@@ -22,7 +22,16 @@ export function LoadingScreen({ message = 'Cargando' }: LoadingScreenProps) {
     <View className="flex-1 items-center justify-center bg-background px-8">
       <PocketLoader label={message} />
 
-      <Text className="mt-8 text-sm text-muted-foreground" accessibilityElementsHidden>
+      {/*
+        The mark above already carries the label, so this text is decoration
+        for the eye. Both props are needed: accessibilityElementsHidden is iOS
+        only and without the Android one the message is announced twice.
+      */}
+      <Text
+        className="mt-8 text-sm text-muted-foreground"
+        accessibilityElementsHidden
+        importantForAccessibility="no-hide-descendants"
+      >
         {message}
       </Text>
     </View>

@@ -11,7 +11,8 @@ solos mostrando cuánto cambió cada producto desde que lo agregaste.
 No es una app de compra: no hay pago, pedido ni entrega. Es una calculadora de presupuesto de
 mercado con precios reales.
 
-> ⚠️ **Estado: arquitectura y dominio documentados. Sin código todavía.**
+> **Estado:** catálogo real de Éxito (13.750 productos) navegable con listas en memoria.
+> Falta autenticación para guardarlas. Detalle en [docs/ESTADO.md](docs/ESTADO.md).
 
 ## Arquitectura en una imagen
 

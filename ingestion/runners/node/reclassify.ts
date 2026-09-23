@@ -44,6 +44,7 @@ async function main(): Promise<void> {
   if (catError !== null) throw new Error(`categorías: ${catError.message}`)
 
   const idBySlug = new Map((categories ?? []).map((c) => [c.slug as string, c.id as string]))
+  const slugById = new Map((categories ?? []).map((c) => [c.id as string, c.slug as string]))
 
   let from = 0
   let seen = 0
@@ -62,7 +63,11 @@ async function main(): Promise<void> {
     const rows = (data ?? []) as Row[]
     if (rows.length === 0) break
 
-    const updates: { id: string; category_id: string | null }[] = []
+    // Grouped by destination, because PostgREST updates one set of values per
+    // request. One request per category (39 at most) instead of one per row —
+    // and an upsert is not an option here: it builds an INSERT, which fails on
+    // every NOT NULL column these partial rows do not carry.
+    const byTarget = new Map<string | null, string[]>()
 
     for (const row of rows) {
       seen += 1
@@ -73,19 +78,24 @@ async function main(): Promise<void> {
       if (target === row.category_id) continue
 
       moved += 1
-      const before = categories?.find((c) => c.id === row.category_id)?.slug ?? 'sin categoría'
+      const before = slugById.get(row.category_id ?? '') ?? 'sin categoría'
       const key = `${before} -> ${slug}`
       movements.set(key, (movements.get(key) ?? 0) + 1)
-      updates.push({ id: row.id, category_id: target })
+
+      const ids = byTarget.get(target)
+      if (ids === undefined) byTarget.set(target, [row.id])
+      else ids.push(row.id)
     }
 
-    if (!dryRun && updates.length > 0) {
-      // upsert, not update-per-row: one round trip instead of a thousand.
-      const { error: writeError } = await supabase
-        .from('store_product')
-        .upsert(updates, { onConflict: 'id' })
+    if (!dryRun) {
+      for (const [target, ids] of byTarget) {
+        const { error: writeError } = await supabase
+          .from('store_product')
+          .update({ category_id: target })
+          .in('id', ids)
 
-      if (writeError !== null) throw new Error(`escritura: ${writeError.message}`)
+        if (writeError !== null) throw new Error(`escritura: ${writeError.message}`)
+      }
     }
 
     if (rows.length < PAGE) break

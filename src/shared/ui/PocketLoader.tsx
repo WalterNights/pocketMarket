@@ -26,12 +26,14 @@ import Animated, {
  * without a single conditional.
  */
 
+type Percent = `${number}%`
+
 /** Item bars, with the width each one settles at. */
-const ITEMS = [
+const ITEMS: readonly { id: string; width: Percent }[] = [
   { id: 'a', width: '62%' },
   { id: 'b', width: '84%' },
   { id: 'c', width: '48%' },
-] as const
+]
 
 const ITEM_MS = 260
 const HOLD_MS = 420
@@ -119,7 +121,7 @@ function ItemBar({
   size,
   progress,
   reduced,
-}: BarProps & { index: number; width: string }) {
+}: BarProps & { index: number; width: Percent }) {
   // Where in the cycle this bar belongs. Items share the first stretch, the
   // total owns the last.
   const span = 1 / (ITEMS.length + TOTAL_MS / ITEM_MS)
@@ -135,10 +137,7 @@ function ItemBar({
 
   return (
     <Animated.View
-      style={[
-        style,
-        { width: width as `${number}%`, height: size, borderRadius: size / 2, marginTop: size },
-      ]}
+      style={[style, { width, height: size, borderRadius: size / 2, marginTop: size }]}
       className="bg-muted"
     />
   )
