@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Text, View } from 'react-native'
+import { Pressable, Text, View } from 'react-native'
 
 import { formatCop } from '@/shared/utils/format-money'
 
@@ -10,6 +10,9 @@ type ProductRowProps = {
   product: Product
   /** Inside a single store the name is redundant on every row. */
   showStore?: boolean
+  onPress: (productId: string) => void
+  /** Units already in the draft list, 0 when not added. */
+  inListQuantity: number
 }
 
 /**
@@ -19,7 +22,12 @@ type ProductRowProps = {
  * Memoised with primitive-only props: passing a fresh object per row would
  * defeat memo entirely.
  */
-function ProductRowComponent({ product, showStore = true }: ProductRowProps) {
+function ProductRowComponent({
+  product,
+  showStore = true,
+  onPress,
+  inListQuantity,
+}: ProductRowProps) {
   const unitPrice = unitPriceOf(product)
 
   const subtitle = [
@@ -32,8 +40,17 @@ function ProductRowComponent({ product, showStore = true }: ProductRowProps) {
     .filter(Boolean)
     .join(' · ')
 
+  const inList = inListQuantity > 0
+
   return (
-    <View className="h-[72px] flex-row items-center border-b border-border px-4">
+    <Pressable
+      onPress={() => onPress(product.id)}
+      accessibilityRole="button"
+      accessibilityLabel={`${product.name}, ${formatCop(product.priceCop)}${
+        inList ? `, ${inListQuantity} en la lista` : ''
+      }`}
+      className="h-[72px] flex-row items-center border-b border-border px-4 active:bg-muted"
+    >
       <View className="mr-3 h-9 w-9 items-center justify-center rounded-md bg-muted">
         <ProductIcon productName={product.name} categorySlug={product.categorySlug} />
       </View>
@@ -61,7 +78,17 @@ function ProductRowComponent({ product, showStore = true }: ProductRowProps) {
           </Text>
         ) : null}
       </View>
-    </View>
+
+      {/* Quantity already in the list. Text, not just a coloured dot: colour is
+          never the only carrier of a signal (06-design-system.md). */}
+      {inList ? (
+        <View className="ml-2 h-6 min-w-[24px] items-center justify-center rounded-full bg-primary px-1.5">
+          <Text className="text-xs font-medium tabular-nums text-primary-foreground">
+            {inListQuantity}
+          </Text>
+        </View>
+      ) : null}
+    </Pressable>
   )
 }
 

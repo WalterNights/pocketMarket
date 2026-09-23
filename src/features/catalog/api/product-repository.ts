@@ -82,4 +82,29 @@ export const productRepository = {
       })),
     )
   },
+
+  async byId(id: string, signal?: AbortSignal): Promise<Product> {
+    // abortSignal must come before single(): single() returns a builder that
+    // no longer exposes it.
+    const base = supabase.from('catalog_product').select(COLUMNS).eq('id', id)
+    const request = signal ? base.abortSignal(signal) : base
+
+    const { data, error } = await request.single()
+    if (error) throw new RepositoryError('catalog.byId', error)
+
+    return productSchema.parse({
+      id: data.id,
+      name: data.name,
+      brand: data.brand,
+      storeSlug: data.store_slug,
+      storeName: data.store_name,
+      categorySlug: data.category_slug,
+      unitKind: data.unit_kind,
+      unitValue: data.unit_value === null ? null : Number(data.unit_value),
+      unitMeasure: data.unit_measure,
+      imageUrl: data.image_url,
+      isAvailable: data.is_available,
+      priceCop: data.price_cop,
+    })
+  },
 }

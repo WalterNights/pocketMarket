@@ -21,9 +21,27 @@ type CatalogScreenProps = {
   /** Scopes the catalogue to one store. Undefined searches across all of them. */
   storeSlug?: string
   storeName?: string
+  /**
+   * Units already in the draft list, keyed by product id.
+   *
+   * Injected rather than read from the lists feature: catalog must not import
+   * lists, and lists already imports catalog. A cycle between features is the
+   * one thing the dependency rule never allows, so the route wires them
+   * together (01-overview.md).
+   */
+  draftQuantities?: Record<string, number>
+  onProductPress?: (productId: string) => void
 }
 
-export function CatalogScreen({ storeSlug, storeName }: CatalogScreenProps = {}) {
+const NO_DRAFT: Record<string, number> = {}
+const noop = () => {}
+
+export function CatalogScreen({
+  storeSlug,
+  storeName,
+  draftQuantities = NO_DRAFT,
+  onProductPress = noop,
+}: CatalogScreenProps = {}) {
   const insets = useSafeAreaInsets()
   const [query, setQuery] = useState('')
 
@@ -41,8 +59,15 @@ export function CatalogScreen({ storeSlug, storeName }: CatalogScreenProps = {})
   // Defined outside the render path of each row so memoisation actually holds.
   const showStore = storeSlug === undefined
   const renderItem = useCallback(
-    ({ item }: { item: Product }) => <ProductRow product={item} showStore={showStore} />,
-    [showStore],
+    ({ item }: { item: Product }) => (
+      <ProductRow
+        product={item}
+        showStore={showStore}
+        onPress={onProductPress}
+        inListQuantity={draftQuantities[item.id] ?? 0}
+      />
+    ),
+    [showStore, onProductPress, draftQuantities],
   )
   const keyExtractor = useCallback((item: Product) => item.id, [])
 

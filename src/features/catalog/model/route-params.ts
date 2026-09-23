@@ -15,3 +15,9 @@ export const routeParamsSchema = z.object({
 })
 
 export type RouteParams = z.infer<typeof routeParamsSchema>
+
+export const productIdParamSchema = z.object({
+  id: firstOf.pipe(z.string().uuid()),
+})
+
+export type ProductIdParam = z.infer<typeof productIdParamSchema>
