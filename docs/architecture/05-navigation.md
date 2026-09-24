@@ -21,6 +21,11 @@ reglas de acceso distintas sin ensuciar la URL.
 
 ## Guard de sesión
 
+> **En este proyecto** ([ADR-0005](../adr/0005-autenticacion.md)) el catálogo es público y
+> solo están detrás del guard las rutas de `app/(private)/` (mis listas, cuenta). El grupo
+> `(auth)` tiene inicio de sesión y registro. Al redirigir a login se pasa `redirectTo`, que se
+> valida con Zod como ruta interna antes de usarla: nunca un `//host` ni un esquema externo.
+
 El guard va en el `_layout.tsx` del grupo, no en cada pantalla:
 
 ```tsx

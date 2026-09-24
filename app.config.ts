@@ -33,6 +33,9 @@ const config: ExpoConfig = {
   plugins: [
     'expo-router',
     'expo-secure-store',
+    // Local notifications only: no push, no APNs/FCM credentials
+    // (docs/domain/03-reminders.md).
+    'expo-notifications',
     [
       'expo-splash-screen',
       {

@@ -4,15 +4,15 @@
 > Para las reglas permanentes, ver [CLAUDE.md](../CLAUDE.md); para el porqué de cada decisión,
 > [`docs/adr/`](adr/).
 
-**Última actualización:** 2026-09-24 · rama `main` · commit `034aa6d`
+**Última actualización:** 2026-09-24 · rama `main` · ver `git log` para el último commit
 
 ---
 
 ## En una frase
 
 La app lee un catálogo real de Éxito (13.750 productos, precios de verdad) desde Supabase
-local, permite armar una lista y ver el total. **No hay autenticación todavía**, así que las
-listas viven en memoria y se pierden al cerrar.
+local. Con cuenta (email y contraseña), el usuario **guarda listas con nombre, las edita y les
+pone un aviso** semanal, quincenal o mensual. Sin cuenta puede ver precios y armar un borrador.
 
 ---
 
@@ -41,7 +41,7 @@ variante ni en otro vendedor.
 
 ### Base de datos (`supabase/`)
 
-13 migraciones aplicadas. RLS en todas las tablas, 27 tests pgTAP en verde.
+14 migraciones aplicadas. RLS en todas las tablas, 50 tests pgTAP en verde.
 
 Dos mundos con reglas distintas: **catálogo** (lectura pública, escribe solo `service_role`) y
 **datos de usuario** (lectura y escritura del dueño). La ausencia de política de escritura en
@@ -57,16 +57,20 @@ el catálogo *es* la protección.
 | Hoja de producto: cantidad y presentación (cartón, docena, panal…) | ✅ |
 | Barra de borrador con total y contador | ✅ |
 | Pantalla de carga propia (`PocketLoader`) | ✅ |
-| Guardar listas | ❌ **necesita auth** |
-| Recordatorios | ❌ |
+| Inicio de sesión y registro (email + contraseña) | ✅ [ADR-0005](adr/0005-autenticacion.md) |
+| Guardar lista con nombre (`save_list`, una transacción) | ✅ |
+| Mis listas, con total de hoy y variación | ✅ totales en servidor (`list_summary`) |
+| Editar productos de una lista guardada | ✅ conserva el precio de referencia |
+| Avisos semanal / quincenal / mensual | ✅ notificaciones locales — **sin probar en teléfono** |
 | Mapa de tiendas | ❌ **pendiente** — [plan 0001](plans/0001-mapa-de-tiendas.md) |
 
 ---
 
 ## Qué NO funciona todavía, y por qué importa
 
-1. **No hay autenticación.** Es lo que bloquea guardar listas, que es la mitad del producto.
-   Es el siguiente paso natural.
+1. **Los avisos no se han visto sonar en un teléfono.** La lógica tiene 32 tests y el servidor
+   se probó de punta a punta, pero `expo-notifications` en Expo Go (sobre todo Android) hay que
+   comprobarlo con un aviso real. Si Expo Go no lo permite, hace falta development build.
 2. **Expo Go, no development build.** Todo lo que lleve código nativo está fuera de alcance
    hasta que se haga una build: mapa, MMKV, notificaciones. El splash crema tampoco se ve en
    Expo Go, que usa el suyo blanco.
@@ -75,7 +79,7 @@ el catálogo *es* la protección.
 4. **Sin error boundary en la raíz.** `app/_layout.tsx` no define uno, así que un error de
    render deja pantalla blanca sin explicación. Pendiente.
 5. **Tests de componente vacíos.** El proyecto `components` de Jest está configurado pero sin
-   tests. Los de `model/` e ingesta sí existen: 137 en total.
+   tests. Los de `model/` e ingesta sí existen: 206 en total.
 
 ---
 
@@ -137,20 +141,38 @@ una Edge Function no dura tanto. El plan explica las dos salidas y cuál se reco
 
 ## Siguiente paso sugerido
 
-**Autenticación**, porque desbloquea guardar listas y sin eso el producto está a medias.
-Después, o bien los recordatorios (cierran el ciclo del producto) o bien el mapa (que además
-obliga al development build y destraba todo lo nativo).
+1. **Probar en el teléfono** el ciclo completo: registrarse, guardar una lista con aviso,
+   editarla, y **ver sonar un aviso** (programarlo a pocos minutos). Es lo único de la última
+   sesión que no se ha visto funcionar. Si Expo Go no muestra notificaciones locales, eso
+   adelanta el development build.
+2. **Cron diario (0002)**: sin él los precios de las listas guardadas nunca cambian, y la
+   variación "subió $X" que ya muestra la app se queda en cero.
+3. **Mapa (0001)**, que además obliga al development build y destraba lo nativo (MMKV para
+   persistir el borrador).
 
-Los dos planes escritos ([0001](plans/0001-mapa-de-tiendas.md) y
-[0002](plans/0002-cron-de-ingesta-diaria.md)) están listos para implementar en cuanto se
-respondan sus preguntas abiertas.
+### Decisiones pendientes del usuario
+
+- **Comida preparada** (empanadas, lasaña, raviolis, tamal, sándwich) sale en Pollo: ¿categoría
+  nueva "Comidas preparadas" o congelados/otros?
+- **Papas y pasabocas "sabor pollo"** siguen en Pollo: moverlas a snacks (arreglo claro, falta
+  hacerlo).
+
+### Última sesión (2026-09-24)
+
+- Mascotas: el pasillo de la fuente manda (`ING-008`); 292 productos reubicados.
+- Supabase local movido a puertos 553xx por la reserva de Hyper-V (`SB-001`).
+- Autenticación con email ([ADR-0005](adr/0005-autenticacion.md)); sesión troceada en
+  SecureStore (`SEC-001`).
+- Listas guardadas, edición y avisos. Los avisos se programan como fechas concretas, no como
+  triggers que se repiten ([03-reminders](domain/03-reminders.md)).
+- Rutas tipadas corruptas con Metro corriendo en Windows (`EXPO-001`).
 
 ---
 
 ## Comandos que se usan a diario
 
 ```bash
-pnpm run db:start                # Supabase local
+pnpm run db:start                # Supabase local — puertos 553xx, ver SB-001
 pnpm run db:reset                # migraciones + seed desde cero (BORRA el catálogo)
 pnpm exec supabase migration up --local   # aplicar solo lo nuevo, sin borrar
 

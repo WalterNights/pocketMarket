@@ -27,11 +27,27 @@ dispositivos. La programación real es local y se **reconcilia** cada vez que la
 
 ## Las tres frecuencias
 
+> **Decisión de implementación (2026-09-24):** las tres frecuencias se programan igual, como
+> **fechas concretas** (trigger `DATE`), no con triggers de calendario que se repiten solos. Ver
+> "Por qué fechas concretas" abajo.
+
 | Frecuencia | Soporte nativo | Cómo se implementa |
 |---|---|---|
-| **Semanal** | ✅ Sí | Trigger de calendario con `weekday` + `repeats: true`. Una sola notificación programada, se repite sola |
-| **Mensual** | ✅ Sí | Trigger de calendario con `day` + `repeats: true` |
-| **Quincenal** | ❌ **No existe** | Programar N ocurrencias futuras como triggers de fecha únicos, y reponerlas al abrir la app |
+| **Semanal** | ✅ Existe, no se usa | Próximas fechas de ese día de la semana |
+| **Mensual** | ⚠️ Existe, pero **se salta meses** con el día 31 | Próximas fechas, con el día recortado al último del mes |
+| **Quincenal** | ❌ **No existe** | Próximas fechas cada 14 días desde `anchor_date` |
+
+### Por qué fechas concretas
+
+- El trigger mensual nativo con día 31 no suena en los meses de 30 días. La regla de este
+  documento es "último día del mes, nunca se salta": con el trigger nativo no se puede cumplir.
+- La quincenal ya obligaba a fechas concretas. Con un solo mecanismo hay un solo presupuesto y
+  un solo camino de código.
+- Coste: las fechas se consumen y hay que reponerlas. La reconciliación lo hace en cada arranque
+  y cada vuelta a primer plano, así que solo deja de sonar para quien no abre la app en meses.
+
+Código: `src/features/reminders/model/reminder.ts` (calendario) y `model/plan.ts`
+(presupuesto y reconciliación). Cada caso de la tabla de abajo es un test.
 
 ### Por qué la quincenal es el caso difícil
 
@@ -58,13 +74,15 @@ Reparto:
 
 | Concepto | Presupuesto |
 |---|---|
-| Recordatorios semanales y mensuales | 1 notificación cada uno (se repiten solos) |
-| Cada recordatorio quincenal | Hasta 12 ocurrencias programadas |
 | Reserva para notificaciones puntuales | 8 |
-| **Tope duro de recordatorios quincenales simultáneos** | **4** |
+| Disponibles para recordatorios | **56** |
+| Candidatas por recordatorio | Sus 8 próximas fechas |
 
-Si el usuario intenta crear un quinto recordatorio quincenal, la app lo dice explícitamente en
-vez de fallar en silencio. Un recordatorio que no suena es peor que uno que no se pudo crear.
+Las candidatas de **todos** los recordatorios se ordenan por fecha y se toman las 56 más
+cercanas. No hay tope por tipo: con muchos recordatorios, cada uno conserva sus próximas fechas
+en vez de que los primeros se coman el presupuesto, y la reconciliación repone el resto. Así el
+límite de iOS no se puede superar por construcción, y no hace falta rechazar un quinto
+quincenal.
 
 ## Reconciliación al arrancar
 
@@ -82,8 +100,11 @@ En cada arranque (y al volver de background tras un tiempo largo):
 La reconciliación es **idempotente**: ejecutarla dos veces deja el mismo estado. Sin esa
 propiedad, cada arranque duplicaría notificaciones.
 
-Cada recordatorio guarda localmente (MMKV) los identificadores de notificación que programó,
-para poder cancelarlos con precisión en vez de borrar todo y reprogramar.
+Los identificadores son **deterministas**: `reminder:<listId>:<AAAAMMDDhhmm>`. Programar dos
+veces la misma fecha reemplaza en vez de duplicar, y lo que sobra se detecta comparando contra
+`getAllScheduledNotificationsAsync()`. No hace falta guardar nada en el dispositivo (el plan
+original usaba MMKV, que además no existe en Expo Go). Solo se tocan identificadores con el
+prefijo `reminder:`.
 
 ## Casos borde del calendario
 

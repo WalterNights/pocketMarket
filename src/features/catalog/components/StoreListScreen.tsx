@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router'
 import ChevronRight from 'lucide-react-native/icons/chevron-right'
 import StoreIcon from 'lucide-react-native/icons/store'
-import { useCallback } from 'react'
+import { useCallback, type ReactNode } from 'react'
 import { Pressable, ScrollView, Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
@@ -15,7 +15,15 @@ import { freshnessLabel, isBrowsable, type Store } from '../model/store'
  * there are four stores and the count is bounded by how many chains exist, not
  * by remote data. FlashList is for collections of unknown length.
  */
-export function StoreListScreen() {
+type StoreListScreenProps = {
+  /**
+   * Slot at the right of the title. The account button lives in another
+   * feature, so the route composes it in rather than catalog importing it.
+   */
+  headerAction?: ReactNode
+}
+
+export function StoreListScreen({ headerAction }: StoreListScreenProps) {
   const insets = useSafeAreaInsets()
   const router = useRouter()
   const { data: stores, isPending, isError, refetch } = useStores()
@@ -28,9 +36,14 @@ export function StoreListScreen() {
 
   return (
     <View className="flex-1 bg-background" style={{ paddingTop: insets.top }}>
-      <View className="px-4 pb-4 pt-2">
-        <Text className="text-2xl font-semibold text-foreground">Tiendas</Text>
-        <Text className="mt-1 text-sm text-muted-foreground">Elige dónde quieres ver precios</Text>
+      <View className="flex-row items-start justify-between px-4 pb-4 pt-2">
+        <View className="flex-1">
+          <Text className="text-2xl font-semibold text-foreground">Tiendas</Text>
+          <Text className="mt-1 text-sm text-muted-foreground">
+            Elige dónde quieres ver precios
+          </Text>
+        </View>
+        {headerAction}
       </View>
 
       <StoreListBody

@@ -91,6 +91,11 @@ perfil completo.
 **Configurar el cliente de Supabase con SecureStore como storage de auth**, no con el
 AsyncStorage por defecto.
 
+La sesión de Supabase **no cabe** en un valor de SecureStore (2.209 bytes medidos frente a un
+límite de 2.048). Se guarda troceada, con todos los trozos dentro de SecureStore
+(`shared/utils/chunked-storage.ts`, [ADR-0005](../adr/0005-autenticacion.md)). No moverla a
+AsyncStorage "porque no cabe": ese es exactamente el atajo que esta regla prohíbe.
+
 ## Sesión
 
 - **Logout borra todo**: sesión de Supabase, `queryClient.clear()`, storage del persister,

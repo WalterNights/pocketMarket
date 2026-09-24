@@ -173,6 +173,13 @@ export type Database = {
             foreignKeyName: "list_item_list_id_fkey"
             columns: ["list_id"]
             isOneToOne: false
+            referencedRelation: "list_summary"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "list_item_list_id_fkey"
+            columns: ["list_id"]
+            isOneToOne: false
             referencedRelation: "shopping_list"
             referencedColumns: ["id"]
           },
@@ -233,7 +240,14 @@ export type Database = {
           {
             foreignKeyName: "list_reminder_list_id_fkey"
             columns: ["list_id"]
-            isOneToOne: false
+            isOneToOne: true
+            referencedRelation: "list_summary"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "list_reminder_list_id_fkey"
+            columns: ["list_id"]
+            isOneToOne: true
             referencedRelation: "shopping_list"
             referencedColumns: ["id"]
           },
@@ -569,6 +583,18 @@ export type Database = {
           },
         ]
       }
+      list_summary: {
+        Row: {
+          id: string | null
+          item_count: number | null
+          name: string | null
+          store_count: number | null
+          total_at_add_cop: number | null
+          total_cop: number | null
+          updated_at: string | null
+        }
+        Relationships: []
+      }
       list_totals: {
         Row: {
           item_count: number | null
@@ -580,6 +606,13 @@ export type Database = {
           subtotal_cop: number | null
         }
         Relationships: [
+          {
+            foreignKeyName: "list_item_list_id_fkey"
+            columns: ["list_id"]
+            isOneToOne: false
+            referencedRelation: "list_summary"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "list_item_list_id_fkey"
             columns: ["list_id"]
@@ -631,11 +664,23 @@ export type Database = {
     Functions: {
       current_region: { Args: never; Returns: string }
       immutable_unaccent: { Args: { "": string }; Returns: string }
+      parse_list_items: {
+        Args: { p_items: Json }
+        Returns: {
+          position: number
+          quantity: number
+          store_product_id: string
+        }[]
+      }
       price_for: {
         Args: { p_region_code: string; p_store_product_id: string }
         Returns: number
       }
       refresh_current_price: { Args: never; Returns: undefined }
+      save_list: {
+        Args: { p_items: Json; p_list_id?: string; p_name: string }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never

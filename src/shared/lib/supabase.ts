@@ -3,19 +3,20 @@ import * as SecureStore from 'expo-secure-store'
 
 import { env } from '@/shared/config/env'
 import type { Database } from '@/shared/types/database.types'
+import { createChunkedStorage } from '@/shared/utils/chunked-storage'
 
 /**
  * Session tokens go in the Keychain / Keystore, never in plain storage where a
  * rooted device or a backup could read them (08-security.md).
  *
- * SecureStore has a practical size limit per entry, so this holds the session
- * token and nothing else.
+ * The session (2.2 KB) does not fit in one SecureStore value (~2 KB), so it is
+ * split across several — all of them still in SecureStore (ADR-0005).
  */
-const secureStorage = {
-  getItem: (key: string) => SecureStore.getItemAsync(key),
-  setItem: (key: string, value: string) => SecureStore.setItemAsync(key, value),
-  removeItem: (key: string) => SecureStore.deleteItemAsync(key),
-}
+const secureStorage = createChunkedStorage({
+  getItem: (key) => SecureStore.getItemAsync(key),
+  setItem: (key, value) => SecureStore.setItemAsync(key, value),
+  removeItem: (key) => SecureStore.deleteItemAsync(key),
+})
 
 /**
  * Single Supabase client. Nothing outside `features/*_/api/` may import this

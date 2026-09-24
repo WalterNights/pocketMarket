@@ -19,4 +19,5 @@ export const catalogKeys = {
   search: (filters: ProductSearchFilters) => [...catalogKeys.searches(), filters] as const,
   details: () => [...catalogKeys.all, 'detail'] as const,
   detail: (id: string) => [...catalogKeys.details(), id] as const,
+  byIds: (ids: readonly string[]) => [...catalogKeys.all, 'by-ids', [...ids].sort()] as const,
 }

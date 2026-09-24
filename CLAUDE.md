@@ -79,6 +79,7 @@ Toda decisión estructural está documentada. **Consúltala antes de proponer ca
 | [0002](docs/adr/0002-estilos.md) | NativeWind v4 + React Native Reusables (port de shadcn/ui) |
 | [0003](docs/adr/0003-ingesta-centralizada.md) | Ingesta centralizada, híbrida Edge Functions + GH Actions |
 | [0004](docs/adr/0004-catalogo-y-equivalencias.md) | `store_product` como unidad; equivalencias opcionales |
+| [0005](docs/adr/0005-autenticacion.md) | Email + contraseña con Supabase Auth; catálogo público; sesión troceada en SecureStore |
 
 ## Reglas activas
 

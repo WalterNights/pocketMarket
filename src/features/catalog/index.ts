@@ -9,6 +9,7 @@ export { ProductIcon } from './components/ProductIcon'
 export { StoreListScreen } from './components/StoreListScreen'
 export { useProductSearch } from './hooks/useProductSearch'
 export { useProduct } from './hooks/useProduct'
+export { useProductsByIds } from './hooks/useProductsByIds'
 export { useStores } from './hooks/useStores'
 export { useStoreCategories } from './hooks/useStoreCategories'
 export {

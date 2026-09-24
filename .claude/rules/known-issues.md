@@ -105,6 +105,69 @@
   consulta distinta a la que llena esa pantalla, algún día mentirá. Y publicar es un paso
   aparte de escribir: hay que preguntarse siempre quién lo ejecuta cuando algo falla.
 
+### ING-008: la comida de perro salía en Pollo aunque la fuente dijera "mascotas"
+- **Síntoma**: "Comida para perros adultos carne cerdo y pollo" en **Pollo**. Al mirar el
+  pasillo entero: **292 de 2.082** productos de mascotas en categorías de personas — 115 en
+  condimentos (golosinas "deshidratadas"), 35 en carnes ("Pulmón de cerdo x kilo"), 34 en
+  pescados, 10 pañales de perro en Bebés, arena "aroma café" en Café.
+- **Causa raíz**: las reglas de mascota solo cubrían "alimento para perro" y la palabra
+  suelta `perro` estaba **debajo** de `pollo`. El nombre no dice "sabor pollo", así que
+  `stripModifiers` no lo borraba. Y el `source_bucket`, que ya decía `mascotas`, solo se
+  consultaba como último recurso.
+- **Solución**: `AUTHORITATIVE_SOURCES` — hay pasillos de la fuente cuyo veredicto es final.
+  `mascotas` es uno: no contiene comida de personas. Además, reglas por nombre (`para perro`,
+  `para gato`, `cachorro`, `felino`) antes de los animales, para cuando no hay pasillo.
+- **Prevención**: antes de pelear palabra por palabra, preguntar si la fuente ya respondió.
+  Solo es autoritativo un pasillo **homogéneo**: `carnes` no lo es, porque mezcla pollo, res
+  y pescado y el nombre tiene que separarlos. Misma idea que la llave de frescos de ING-002.
+
+### SB-001: Supabase arranca pero la app se queda en el skeleton para siempre (Windows)
+- **Síntoma**: tras reiniciar el PC, la app muestra el skeleton de tiendas y nunca carga.
+  `docker ps` dice que todo está *healthy*, pero `curl :54321` da conexión rechazada y
+  `docker port supabase_kong_pocket-market` no devuelve nada. Al reiniciar con `db:start`:
+  *"bind: Intento de acceso a un socket no permitido por sus permisos de acceso"*.
+- **Causa raíz**: Hyper-V/WinNAT reserva al arrancar rangos de puertos aleatorios
+  (`netsh int ipv4 show excludedportrange protocol=tcp`), y cayó en 54318–54417, justo
+  encima de los puertos de Supabase (54321–54327). Docker Desktop relanza los contenedores
+  solo, así que parecen vivos aunque no publiquen nada.
+- **Solución aplicada**: mover Supabase de 543xx a **553xx** en `supabase/config.toml` y
+  `EXPO_PUBLIC_SUPABASE_URL` en `.env`. Tras cambiar el `.env` hay que reiniciar Metro con
+  `--clear`: las `EXPO_PUBLIC_*` se incrustan en el bundle. El volumen de datos no depende
+  del puerto; el catálogo sobrevive al cambio.
+- **Si vuelve a pasar con el rango nuevo**: comprobar `excludedportrange` y mover otra vez,
+  o reservar el rango como administrador (`net stop winnat` →
+  `netsh int ipv4 add excludedportrange protocol=tcp startport=55320 numberofports=10` →
+  `net start winnat`), que es persistente.
+- **Prevención**: ante un skeleton infinito, antes de mirar la app, `curl` a la API desde el
+  PC. Si el PC tampoco llega, no es un problema de la app, ni de RLS, ni de la red del teléfono.
+
+### SEC-001: la sesión de Supabase no cabe en un valor de SecureStore
+- **Síntoma**: ninguno todavía — se midió antes de que fallara. Una sesión de usuario con
+  email ocupa **2.209 bytes**; `expo-secure-store` admite ~2.048 por valor y según la versión
+  avisa o lanza. Con identidades OAuth crece más.
+- **Causa raíz**: la sesión incluye el objeto `user` completo (metadatos, identidades), no
+  solo el token.
+- **Solución**: `shared/utils/chunked-storage.ts` la parte en trozos de 600 unidades UTF-16
+  (≤1,8 KB aun con caracteres de 3 bytes), todos en SecureStore. El contador se escribe al
+  final: una escritura cortada se lee como "sin sesión", nunca como sesión corrupta.
+- **Prevención**: la guía de Supabase para Expo propone AES + AsyncStorage. Aquí no: saca el
+  token del Keychain y añade dos dependencias ([ADR-0005](../../docs/adr/0005-autenticacion.md)).
+
+### EXPO-001: las rutas tipadas se corrompen con Metro corriendo (Windows)
+- **Síntoma**: `tsc` falla con `'"/lists"' is not assignable to parameter of type ...` para una
+  ruta que existe. El tipo lista cosas como `"/../src/features/lists/api/keys"` y
+  `/lists/index` en vez de `/lists`.
+- **Causa raíz**: el watcher incremental de Expo que regenera `.expo/types/router.d.ts` trata
+  como ruta **cualquier** `.ts` añadido o cambiado, también los de `src/`, y no colapsa
+  `index`. La generación completa al arrancar sale bien; se estropea con cada guardado
+  posterior. Un `prettier --write` basta para reescribirlo mal.
+- **Solución**: reiniciar Metro, o regenerar sin servidor:
+  ```bash
+  node -e "const p=require('path');const c=p.dirname(require.resolve('@expo/cli/package.json',{paths:[p.dirname(require.resolve('expo/package.json'))]}));process.env.EXPO_ROUTER_APP_ROOT=p.resolve('app');require(require.resolve('@expo/router-server/build/typed-routes',{paths:[c]})).regenerateDeclarations(p.resolve('.expo/types'),{})"
+  ```
+- **Prevención**: antes de pelearse con un error de tipos de rutas, mirar si el tipo contiene
+  rutas `/../src/...`. Si las contiene, el código está bien y el archivo generado no.
+
 ### ING-005: el tope de paginación de VTEX responde 400, no una página vacía
 - **Síntoma**: `_from=2550` devolvía 400 y la corrida se interpretaba como error de fuente.
 - **Causa raíz**: VTEX corta la paginación alrededor de 2.500 resultados por consulta.
