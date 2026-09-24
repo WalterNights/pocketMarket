@@ -203,6 +203,11 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['alimento para perro', 'mascotas'],
   ['alimento gato', 'mascotas'],
   ['alimento perro', 'mascotas'],
+  ['para perro', 'mascotas'],
+  ['para gato', 'mascotas'],
+  ['para mascota', 'mascotas'],
+  ['cachorro', 'mascotas'],
+  ['felino', 'mascotas'],
   ['mascota', 'mascotas'],
   ['fórmula infantil', 'bebes'],
   ['compota', 'bebes'],
@@ -440,6 +445,13 @@ const PRODUCE_RULES: readonly (readonly [RegExp, string])[] = compile([
 const PRODUCE_SOURCES: ReadonlySet<string | null> = new Set(['frutas-verduras', null])
 
 /**
+ * Source buckets whose word is final, whatever the name says. Only buckets
+ * with no human food in them belong here: "carnes" does not, because it holds
+ * chicken, beef and fish that the name has to tell apart.
+ */
+const AUTHORITATIVE_SOURCES: ReadonlySet<string> = new Set(['mascotas'])
+
+/**
  * Fallback when the name says nothing: the source's own coarse bucket, mapped
  * to the closest aisle we have.
  */
@@ -463,6 +475,14 @@ const SOURCE_FALLBACK: Record<string, string> = {
  * "otros" rather than disappearing from every category listing.
  */
 export function classifyProduct(productName: string, sourceCategory: string | null): string {
+  // The pet aisle is authoritative. Everything the source files there is for
+  // animals, but the names are full of human food words: "comida para perros
+  // carne cerdo y pollo", "pulmon de cerdo", "pañal macho", "arena aroma cafe".
+  // No word list keeps up with that; the aisle already answered the question.
+  if (sourceCategory !== null && AUTHORITATIVE_SOURCES.has(sourceCategory)) {
+    return SOURCE_FALLBACK[sourceCategory] ?? 'otros'
+  }
+
   // Flavour and filling first: they poison every ingredient rule downstream.
   const haystack = ` ${stripModifiers(normalise(productName))} `
 

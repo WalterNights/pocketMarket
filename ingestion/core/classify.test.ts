@@ -260,6 +260,42 @@ describe('classifyProduct — Pollo no es todo lo que suene a pollo', () => {
   })
 })
 
+describe('classifyProduct — el pasillo de mascotas manda', () => {
+  // Real names from the Éxito pet aisle that were landing in human aisles.
+  it('la comida de perro y gato no es pollo, aunque no diga "sabor"', () => {
+    expect(classifyProduct('Comida para perros adultos carne cerdo y pollo', 'mascotas')).toBe(
+      'mascotas',
+    )
+    expect(classifyProduct('Comida Húmeda Para Gato Adulto Bon Appetita Pollo', 'mascotas')).toBe(
+      'mascotas',
+    )
+    expect(classifyProduct('Snack cremoso pollo x4und', 'mascotas')).toBe('mascotas')
+  })
+
+  it('tampoco es carne, pescado, condimento ni pañal de bebé', () => {
+    expect(classifyProduct('Pulmón De Cerdo X Kilo', 'mascotas')).toBe('mascotas')
+    expect(classifyProduct('Comida para gatos pate salmón', 'mascotas')).toBe('mascotas')
+    expect(
+      classifyProduct('Alitas De Pollo Naturales Y Deshidratadas Para Perros', 'mascotas'),
+    ).toBe('mascotas')
+    expect(classifyProduct('Pañal Macho Talla M Paquete Por 24 Und', 'mascotas')).toBe('mascotas')
+    expect(classifyProduct('Arena 25 Kg Aroma Cafe', 'mascotas')).toBe('mascotas')
+  })
+
+  it('sin pasillo, el nombre basta si dice para quién es', () => {
+    expect(classifyProduct('Comida para perro sabor pollo', null)).toBe('mascotas')
+    expect(classifyProduct('Comida para perros adultos y cachorros carne pollo', null)).toBe(
+      'mascotas',
+    )
+    expect(classifyProduct('Galletas para perros bocaditos con verduras', null)).toBe('mascotas')
+  })
+
+  it('el perro caliente sigue siendo comida de personas', () => {
+    expect(classifyProduct('Salchicha súper perro x8und', 'lacteos')).toBe('embutidos')
+    expect(classifyProduct('Pan perro x6und', 'panaderia')).toBe('pan')
+  })
+})
+
 describe('classifyProduct — respaldo', () => {
   it('cae a la categoría de origen cuando el nombre no dice nada', () => {
     expect(classifyProduct('Producto raro XYZ', 'mascotas')).toBe('mascotas')
