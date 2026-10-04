@@ -1,0 +1,930 @@
+{
+ "ResultsFrom": 1,
+ "ResultsTo": 179,
+ "PageNumber": 1,
+ "TotalResults": 179,
+ "TotalPages": 1,
+ "ContinuationToken": null,
+ "StoreLocations": [
+  {
+   "LocationId": "5bfc64f4-4d56-48b9-aa5c-b65e933f9b1e",
+   "LocationNumber": "9001255651",
+   "Name": "Dollarcity Icarus Soacha",
+   "Address": "Carrera 17 # 20 - 222",
+   "Amenities": [],
+   "PaymentMethods": [],
+   "Location": {
+    "type": "Point",
+    "coordinates": [
+     -74.244422,
+     4.579861
+    ]
+   },
+   "Distance": 6.556976554745125,
+   "ExtraData": {
+    "ReferenceCode": "3408",
+    "BusinessStatus": 0,
+    "Name": {
+     "Name": "Dollarcity Icarus Soacha",
+     "LongName": "Dollarcity Icarus Soacha",
+     "Locale": 58,
+     "Description": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles. ¡Conoce esta ubicación y visítanos!",
+     "ShortDescription": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles.",
+     "LongDescription": "En Dollarcity encontrarás los mejores productos a un excelente precio: artículos de primera necesidad, accesorios en decoración, hogar, cocina, oficina, mascotas, jardinería, productos de temporada y mucho más. Encuentra aquí más información sobre esta tienda. ¡Te esperamos!"
+    },
+    "Address": {
+     "AddressNonStruct_Line1": "Carrera 17 # 20 - 222",
+     "AddressNonStruct_Line2": null,
+     "Neighborhood": null,
+     "Locality": "Soacha",
+     "Region": "Cundinamarca",
+     "RegionCode": "CUN",
+     "RegionName": "Cundinamarca",
+     "PostalCode": "250052",
+     "CountryCode": "CO"
+    },
+    "Phone": "+576013876000",
+    "CustomerServicePhone": null,
+    "HoursOfOperations": "09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM",
+    "HoursOfOpStruct": {
+     "Su": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Mo": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Tu": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "We": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Th": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Fr": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Sa": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "SpecialHours": null
+    }
+   }
+  },
+  {
+   "LocationId": "fbe0fe66-8648-4284-9de8-ad4b87c12a3e",
+   "LocationNumber": "9000662528",
+   "Name": "Dollarcity",
+   "Address": "Calle 18 Sur # 10 H - 34",
+   "Amenities": [],
+   "PaymentMethods": [],
+   "Location": {
+    "type": "Point",
+    "coordinates": [
+     -74.237247,
+     4.568016
+    ]
+   },
+   "Distance": 7.81016194445192,
+   "ExtraData": {
+    "ReferenceCode": "3197",
+    "BusinessStatus": 0,
+    "Name": {
+     "Name": "Dollarcity",
+     "LongName": "Dollarcity Soacha Compartir",
+     "Locale": 58,
+     "Description": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles. ¡Conoce esta ubicación y visítanos!",
+     "ShortDescription": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles.",
+     "LongDescription": "En Dollarcity encontrarás los mejores productos a un excelente precio: artículos de primera necesidad, accesorios en decoración, hogar, cocina, oficina, mascotas, jardinería, productos de temporada y mucho más. Encuentra aquí más información sobre esta tienda. ¡Te esperamos!"
+    },
+    "Address": {
+     "AddressNonStruct_Line1": "Calle 18 Sur # 10 H - 34",
+     "AddressNonStruct_Line2": null,
+     "Neighborhood": null,
+     "Locality": "Soacha",
+     "Region": "Cundinamarca",
+     "RegionCode": "CUN",
+     "RegionName": "Cundinamarca",
+     "PostalCode": "250053",
+     "CountryCode": "CO"
+    },
+    "Phone": "+576013876000",
+    "CustomerServicePhone": null,
+    "HoursOfOperations": "09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM",
+    "HoursOfOpStruct": {
+     "Su": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Mo": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Tu": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "We": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Th": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Fr": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Sa": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "SpecialHours": null
+    }
+   }
+  },
+  {
+   "LocationId": "263cc2af-da16-44dd-9781-12eb147bacee",
+   "LocationNumber": "9001153723",
+   "Name": "Dollarcity",
+   "Address": "Carrera 3 # 29A - 02",
+   "Amenities": [],
+   "PaymentMethods": [],
+   "Location": {
+    "type": "Point",
+    "coordinates": [
+     -74.206306,
+     4.584289
+    ]
+   },
+   "Distance": 10.540869961172417,
+   "ExtraData": {
+    "ReferenceCode": "3360",
+    "BusinessStatus": 0,
+    "Name": {
+     "Name": "Dollarcity",
+     "LongName": "Dollarcity CC Unisur",
+     "Locale": 58,
+     "Description": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles. ¡Conoce esta ubicación y visítanos!",
+     "ShortDescription": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles.",
+     "LongDescription": "En Dollarcity encontrarás los mejores productos a un excelente precio: artículos de primera necesidad, accesorios en decoración, hogar, cocina, oficina, mascotas, jardinería, productos de temporada y mucho más. Encuentra aquí más información sobre esta tienda. ¡Te esperamos!"
+    },
+    "Address": {
+     "AddressNonStruct_Line1": "Carrera 3 # 29A - 02",
+     "AddressNonStruct_Line2": "Centro Comercial Unisur, Locales 27 al 40",
+     "Neighborhood": null,
+     "Locality": "Soacha",
+     "Region": "Cundinamarca",
+     "RegionCode": "CUN",
+     "RegionName": "Cundinamarca",
+     "PostalCode": "250054",
+     "CountryCode": "CO"
+    },
+    "Phone": "+576013876000",
+    "CustomerServicePhone": null,
+    "HoursOfOperations": "09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM",
+    "HoursOfOpStruct": {
+     "Su": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Mo": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Tu": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "We": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Th": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Fr": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Sa": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "SpecialHours": null
+    }
+   }
+  },
+  {
+   "LocationId": "777dafa9-3008-497f-b095-ef40ef7f77bf",
+   "LocationNumber": "9000484773",
+   "Name": "Dollarcity",
+   "Address": "Carrera 4 Este # 31 - 40",
+   "Amenities": [],
+   "PaymentMethods": [],
+   "Location": {
+    "type": "Point",
+    "coordinates": [
+     -74.20575,
+     4.5871
+    ]
+   },
+   "Distance": 10.555222958205123,
+   "ExtraData": {
+    "ReferenceCode": "3135",
+    "BusinessStatus": 0,
+    "Name": {
+     "Name": "Dollarcity",
+     "LongName": "Dollarcity Gran Plaza Soacha",
+     "Locale": 64,
+     "Description": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles. ¡Conoce esta ubicación y visítanos!",
+     "ShortDescription": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles.",
+     "LongDescription": null
+    },
+    "Address": {
+     "AddressNonStruct_Line1": "Carrera 4 Este # 31 - 40",
+     "AddressNonStruct_Line2": "Centro Comercial Gran Plaza Soacha, local 122",
+     "Neighborhood": null,
+     "Locality": "Soacha",
+     "Region": "Cundinamarca",
+     "RegionCode": "CUN",
+     "RegionName": "Cundinamarca",
+     "PostalCode": "250057",
+     "CountryCode": "CO"
+    },
+    "Phone": "+576013876000",
+    "CustomerServicePhone": null,
+    "HoursOfOperations": "09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM",
+    "HoursOfOpStruct": {
+     "Su": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Mo": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Tu": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "We": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Th": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Fr": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Sa": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "SpecialHours": null
+    }
+   }
+  },
+  {
+   "LocationId": "9e0dcc8f-7a44-4d28-8fbd-59b835dedd83",
+   "LocationNumber": "9001223317",
+   "Name": "Dollarcity",
+   "Address": "Carrera 7 # 32 - 35",
+   "Amenities": [],
+   "PaymentMethods": [],
+   "Location": {
+    "type": "Point",
+    "coordinates": [
+     -74.204542,
+     4.588767
+    ]
+   },
+   "Distance": 10.665002889134099,
+   "ExtraData": {
+    "ReferenceCode": "3389",
+    "BusinessStatus": 0,
+    "Name": {
+     "Name": "Dollarcity",
+     "LongName": "Dollarcity CC Mercurio",
+     "Locale": 58,
+     "Description": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles. ¡Conoce esta ubicación y visítanos!",
+     "ShortDescription": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles.",
+     "LongDescription": "En Dollarcity encontrarás los mejores productos a un excelente precio: artículos de primera necesidad, accesorios en decoración, hogar, cocina, oficina, mascotas, jardinería, productos de temporada y mucho más. Encuentra aquí más información sobre esta tienda. ¡Te esperamos!"
+    },
+    "Address": {
+     "AddressNonStruct_Line1": "Carrera 7 # 32 - 35",
+     "AddressNonStruct_Line2": "Mercurio Centro Comercial, locales 309, 310, 311, 312, 313, 314, 315 y 316",
+     "Neighborhood": null,
+     "Locality": "Soacha",
+     "Region": "CUN",
+     "RegionCode": "CUN",
+     "RegionName": "Cundinamarca",
+     "PostalCode": "250051",
+     "CountryCode": "CO"
+    },
+    "Phone": "+576013876000",
+    "CustomerServicePhone": null,
+    "HoursOfOperations": "09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM",
+    "HoursOfOpStruct": {
+     "Su": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Mo": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Tu": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "We": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Th": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Fr": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Sa": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "SpecialHours": null
+    }
+   }
+  },
+  {
+   "LocationId": "9a8a5d37-42fb-4ead-87da-9269507eaf58",
+   "LocationNumber": "9000814468",
+   "Name": "Dollarcity",
+   "Address": "Carrera 97C # 69A - 08 Sur",
+   "Amenities": [],
+   "PaymentMethods": [],
+   "Location": {
+    "type": "Point",
+    "coordinates": [
+     -74.200758,
+     4.632984
+    ]
+   },
+   "Distance": 11.600304832378077,
+   "ExtraData": {
+    "ReferenceCode": "3246",
+    "BusinessStatus": 0,
+    "Name": {
+     "Name": "Dollarcity",
+     "LongName": "Dollarcity Metrorecreo",
+     "Locale": 58,
+     "Description": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles. ¡Conoce esta ubicación y visítanos!",
+     "ShortDescription": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles.",
+     "LongDescription": "En Dollarcity encontrarás los mejores productos a un excelente precio: artículos de primera necesidad, accesorios en decoración, hogar, cocina, oficina, mascotas, jardinería, productos de temporada y mucho más. Encuentra aquí más información sobre esta tienda. ¡Te esperamos!"
+    },
+    "Address": {
+     "AddressNonStruct_Line1": "Carrera 97C # 69A - 08 Sur",
+     "AddressNonStruct_Line2": null,
+     "Neighborhood": null,
+     "Locality": "Bogotá",
+     "Region": "Cundinamarca",
+     "RegionCode": "CUN",
+     "RegionName": "Cundinamarca",
+     "PostalCode": "110721",
+     "CountryCode": "CO"
+    },
+    "Phone": "+576013876000",
+    "CustomerServicePhone": null,
+    "HoursOfOperations": "09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM|09:00AM-09:00PM",
+    "HoursOfOpStruct": {
+     "Su": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Mo": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Tu": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "We": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Th": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Fr": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Sa": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "SpecialHours": null
+    }
+   }
+  },
+  {
+   "LocationId": "0de762c9-dd65-4fbe-814a-641ce98c431a",
+   "LocationNumber": "9000482689",
+   "Name": "Dollarcity",
+   "Address": "Carrera 1a #38-53",
+   "Amenities": [],
+   "PaymentMethods": [],
+   "Location": {
+    "type": "Point",
+    "coordinates": [
+     -74.194927,
+     4.588741
+    ]
+   },
+   "Distance": 11.725625738799414,
+   "ExtraData": {
+    "ReferenceCode": "3043",
+    "BusinessStatus": 0,
+    "Name": {
+     "Name": "Dollarcity",
+     "LongName": "Dollarcity Ventura Terreros Soacha",
+     "Locale": 64,
+     "Description": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles. ¡Conoce esta ubicación y visítanos!",
+     "ShortDescription": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles.",
+     "LongDescription": null
+    },
+    "Address": {
+     "AddressNonStruct_Line1": "Carrera 1a #38-53",
+     "AddressNonStruct_Line2": "CC Ventura Terreros, locales 1-26 y 1-27A",
+     "Neighborhood": null,
+     "Locality": "Soacha",
+     "Region": "Cundinamarca",
+     "RegionCode": "CUN",
+     "RegionName": "Cundinamarca",
+     "PostalCode": "250053",
+     "CountryCode": "CO"
+    },
+    "Phone": "+576013876000",
+    "CustomerServicePhone": null,
+    "HoursOfOperations": "10:00AM-09:00PM|10:00AM-09:00PM|10:00AM-09:00PM|10:00AM-09:00PM|10:00AM-09:00PM|10:00AM-09:00PM|10:00AM-09:00PM",
+    "HoursOfOpStruct": {
+     "Su": {
+      "Ranges": [
+       {
+        "StartTime": "10:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Mo": {
+      "Ranges": [
+       {
+        "StartTime": "10:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Tu": {
+      "Ranges": [
+       {
+        "StartTime": "10:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "We": {
+      "Ranges": [
+       {
+        "StartTime": "10:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Th": {
+      "Ranges": [
+       {
+        "StartTime": "10:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Fr": {
+      "Ranges": [
+       {
+        "StartTime": "10:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Sa": {
+      "Ranges": [
+       {
+        "StartTime": "10:00AM",
+        "EndTime": "09:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "SpecialHours": null
+    }
+   }
+  },
+  {
+   "LocationId": "2d45bd79-e221-4f3e-91e6-27790678ecb3",
+   "LocationNumber": "9001266231",
+   "Name": "Dollarcity Quintanares",
+   "Address": "Calle 46 # 3 - 43 Este",
+   "Amenities": [],
+   "PaymentMethods": [],
+   "Location": {
+    "type": "Point",
+    "coordinates": [
+     -74.191675,
+     4.58705
+    ]
+   },
+   "Distance": 12.105210523140757,
+   "ExtraData": {
+    "ReferenceCode": "3417",
+    "BusinessStatus": 0,
+    "Name": {
+     "Name": "Dollarcity Quintanares",
+     "LongName": "Dollarcity Quintanares",
+     "Locale": 58,
+     "Description": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles. ¡Conoce esta ubicación y visítanos!",
+     "ShortDescription": "En Dollarcity encuentras todo lo que necesitas para la decoración, el hogar, artículos de oficina, mascotas y mucho más con precios increíbles.",
+     "LongDescription": "En Dollarcity encontrarás los mejores productos a un excelente precio: artículos de primera necesidad, accesorios en decoración, hogar, cocina, oficina, mascotas, jardinería, productos de temporada y mucho más. Encuentra aquí más información sobre esta tienda. ¡Te esperamos!"
+    },
+    "Address": {
+     "AddressNonStruct_Line1": "Calle 46 # 3 - 43 Este",
+     "AddressNonStruct_Line2": null,
+     "Neighborhood": null,
+     "Locality": "Soacha",
+     "Region": "Cundinamarca",
+     "RegionCode": "CUN",
+     "RegionName": "Cundinamarca",
+     "PostalCode": "250051",
+     "CountryCode": "CO"
+    },
+    "Phone": "+576013876000",
+    "CustomerServicePhone": null,
+    "HoursOfOperations": "09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM|09:00AM-08:00PM",
+    "HoursOfOpStruct": {
+     "Su": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Mo": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Tu": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "We": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Th": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Fr": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "Sa": {
+      "Ranges": [
+       {
+        "StartTime": "09:00AM",
+        "EndTime": "08:00PM"
+       }
+      ],
+      "State": 0,
+      "AdditionalInfo": null
+     },
+     "SpecialHours": null
+    }
+   }
+  }
+ ]
+}

@@ -20,6 +20,14 @@ export type FetchContext = {
   /** Stop early — used by tests and by the run's own limits. */
   maxProducts?: number
   signal?: AbortSignal
+  /**
+   * Called every time a request is given up on (retries exhausted, a status
+   * that is not worth retrying, or a body we could not read). The adapter
+   * moves on — one bad page is not a bad source (ING-003) — but the run must
+   * know, because a run with holes cannot tell "gone from the source" from
+   * "we never asked".
+   */
+  onRequestDropped?: (url: string, reason: string) => void
 }
 
 export interface StoreAdapter {

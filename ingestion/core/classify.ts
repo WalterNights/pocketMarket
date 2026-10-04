@@ -9,9 +9,17 @@
  * Pure module: no network, no state. Every rule here is a test case.
  */
 
-const COMBINING_MARKS = new RegExp('[̀-ͯ]', 'g')
+/**
+ * Unicode combining diacritics. Written as escapes on purpose: the literal
+ * characters are invisible in the source and impossible to review.
+ */
+const COMBINING_MARKS = new RegExp('[\u0300-\u036f]', 'g')
 
-function normalise(text: string): string {
+/**
+ * Lower case, accents stripped: "Piña" -> "pina". Whatever is compared
+ * against normalised text must be normalised too (ING-001).
+ */
+export function normalise(text: string): string {
   return text.toLowerCase().normalize('NFD').replace(COMBINING_MARKS, '')
 }
 
@@ -31,11 +39,6 @@ function stripModifiers(text: string): string {
   return text.replace(FLAVOUR_PHRASE, ' ').replace(FILLING_PHRASE, ' ')
 }
 
-/**
- * Rules are written in plain Spanish but matched against normalised text, so
- * the keywords have to lose their accents too. Without this every rule holding
- * an "n with tilde" -- pina, alino, panal, bunuelo -- silently never matched.
- */
 /**
  * Turns a rule table into matchers.
  *
@@ -93,7 +96,7 @@ const FORM_RULES: readonly (readonly [RegExp, string])[] = compile([
   ['crema de avellana', 'mermeladas'],
   ['crema de mani', 'mermeladas'],
 
-  // Sopas y caldos: "crema de tomate en sobre" es sopa, no tomate
+  // Soups and stocks: "crema de tomate en sobre" is soup, not a tomato
   ['sopa', 'sopas'],
   ['crema de champi*', 'sopas'],
   ['crema de pollo', 'sopas'],
@@ -105,27 +108,27 @@ const FORM_RULES: readonly (readonly [RegExp, string])[] = compile([
   ['consome', 'sopas'],
   ['cremita', 'sopas'],
 
-  // Conservas: "tomate en lata" es enlatado, no verdura fresca
+  // Preserves: "tomate en lata" is tinned food, not a fresh vegetable
   ['en lata', 'enlatados'],
   ['enlatad*', 'enlatados'],
   ['en conserva', 'enlatados'],
   ['encurtid*', 'enlatados'],
   ['al natural en', 'enlatados'],
 
-  // Deshidratados y molidos: son condimentos, no el vegetal fresco
+  // Dried and ground: seasonings, not the fresh vegetable
   ['en polvo', 'sal-condimentos'],
-  // Palabra entera a proposito: como raiz se traga "carne de res molida".
-  // Las especias molidas ya entran por su propio nombre.
+  // Whole word on purpose: as a stem it swallows "carne de res molida".
+  // Ground spices already match by their own name.
   ['molido', 'sal-condimentos'],
   ['deshidratad*', 'sal-condimentos'],
   ['granulad*', 'sal-condimentos'],
 
-  // Mezclas para preparar
+  // Ready-to-prepare mixes
   ['premezcla', 'harinas'],
   ['mezcla lista', 'harinas'],
   ['mezcla para', 'harinas'],
 
-  // Bebidas en polvo o preparadas: la forma manda sobre el sabor
+  // Powdered or prepared drinks: the form outranks the flavour
   ['bebida refrescante', 'jugos'],
   ['bebida en polvo', 'jugos'],
   ['refresco en polvo', 'jugos'],
@@ -133,12 +136,12 @@ const FORM_RULES: readonly (readonly [RegExp, string])[] = compile([
   ['bebida láctea', 'leche'],
   ['alimento lácteo', 'yogures'],
 
-  // Sopas instantáneas y bases: el animal del sabor no es el producto
+  // Instant soups and bases: the animal in the flavour is not the product
   ['ramen', 'sopas'],
   ['base para', 'sopas'],
 
-  // Embutidos: la charcutería manda sobre el animal. "Salchicha de pollo" es
-  // un embutido, no pollo, y así estaba cayendo todo el jamón en Pollo.
+  // Cold cuts: charcuterie outranks the animal. "Salchicha de pollo" is a
+  // sausage, not chicken, and that is how all the ham was landing in Chicken.
   ['jamón', 'embutidos'],
   ['salchich*', 'embutidos'],
   ['chorizo', 'embutidos'],
@@ -147,7 +150,7 @@ const FORM_RULES: readonly (readonly [RegExp, string])[] = compile([
   ['butifarra', 'embutidos'],
   ['salami', 'embutidos'],
 
-  // Preparados y aderezos
+  // Dressings and prepared sauces
   ['adobo', 'sal-condimentos'],
   ['puré de papa', 'sopas'],
   ['puré de', 'enlatados'],
@@ -162,9 +165,9 @@ const FORM_RULES: readonly (readonly [RegExp, string])[] = compile([
  * "Leche de coco" is not milk; "leche condensada" is not milk either.
  */
 const RULES: readonly (readonly [RegExp, string])[] = compile([
-  // --- Trampas primero: nombres que contienen una palabra de otra categoría ---
-  // Estas van antes que FORM_RULES vía excepción explícita: leche en polvo SÍ
-  // es leche, aunque "en polvo" normalmente indique condimento.
+  // --- Traps first: names holding a word from another category ---
+  // These outrank FORM_RULES through an explicit exception: milk powder IS
+  // milk, though "en polvo" usually means seasoning.
   ['leche en polvo', 'leche'],
   ['crema de leche', 'leche'],
   ['chocolate en polvo', 'cafe-chocolate'],
@@ -180,10 +183,10 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['agua de panela', 'azucar-panela'],
   ['jugo de limon', 'sal-condimentos'],
 
-  // --- Huevos: categoría propia, se compran solos ---
+  // --- Eggs: their own category, bought on their own ---
   ['huevo', 'huevos'],
 
-  // --- Lácteos, cada uno por su lado ---
+  // --- Dairy, each kind apart ---
   ['yogur', 'yogures'],
   ['kumis', 'yogures'],
   ['avena en bolsa', 'yogures'],
@@ -196,9 +199,9 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['margarina', 'mantequilla'],
   ['leche', 'leche'],
 
-  // --- Mascotas y bebés, antes que cualquier animal ---
-  // "Alimento para gatos sabor pollo" es comida de gato. La regla del animal
-  // se lo llevaba a Pollo porque estaba más arriba.
+  // --- Pets and babies, before any animal ---
+  // "Alimento para gatos sabor pollo" is cat food. The animal rule used to
+  // take it to Chicken because it sat higher up.
   ['alimento para gato', 'mascotas'],
   ['alimento para perro', 'mascotas'],
   ['alimento gato', 'mascotas'],
@@ -212,8 +215,8 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['fórmula infantil', 'bebes'],
   ['compota', 'bebes'],
 
-  // --- Proteínas ---
-  // El pavo no es pollo, y "pechuga" a secas sí lo es: el pavo va primero.
+  // --- Proteins ---
+  // Turkey is not chicken, and a bare "pechuga" is: turkey goes first.
   ['pavo', 'carnes'],
   ['pollo', 'pollo'],
   ['pechuga', 'pollo'],
@@ -235,7 +238,7 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['sobrebarriga', 'carnes'],
   ['chicharron', 'carnes'],
 
-  // --- Despensa ---
+  // --- Pantry ---
   ['arroz', 'arroz'],
   ['lenteja', 'granos'],
   ['frijol', 'granos'],
@@ -284,7 +287,7 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['chocolate de mesa', 'cafe-chocolate'],
   ['cocoa', 'cafe-chocolate'],
   ['cacao', 'cafe-chocolate'],
-  // Maiz y feculas
+  // Maize and starches
   ['maiz pira', 'snacks'],
   ['maiz trillado', 'granos'],
   ['fecula', 'harinas'],
@@ -293,7 +296,7 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['cereal', 'cereales'],
   ['granola', 'cereales'],
   ['muesli', 'cereales'],
-  // Especias: iban a "otros" y son condimentos
+  // Spices: they used to land in "otros" and are seasonings
   ['pimienta', 'sal-condimentos'],
   ['canela', 'sal-condimentos'],
   ['oregano', 'sal-condimentos'],
@@ -315,7 +318,7 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['ssa', 'sal-condimentos'],
   ['sazonador', 'sal-condimentos'],
 
-  // --- Panadería ---
+  // --- Bakery ---
   ['pan', 'pan'],
   ['pandebono', 'pan'],
   ['pandeyuca', 'pan'],
@@ -330,7 +333,7 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['barquillo', 'galletas'],
   ['oblea', 'galletas'],
 
-  // --- Bebidas, desglosadas ---
+  // --- Drinks, broken down ---
   ['gaseosa', 'gaseosas'],
   ['coca cola', 'gaseosas'],
   ['coca-cola', 'gaseosas'],
@@ -353,7 +356,7 @@ const RULES: readonly (readonly [RegExp, string])[] = compile([
   ['whisky', 'licores'],
   ['tequila', 'licores'],
 
-  // --- Otros ---
+  // --- Other ---
   ['papas fritas', 'snacks'],
   ['pasabocas', 'snacks'],
   ['snack', 'snacks'],

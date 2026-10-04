@@ -1,4 +1,5 @@
 import { classifyProduct } from '../core/classify'
+import { fetchJsonResult } from '../core/http'
 import {
   capitaliseFirst,
   cleanProductName,
@@ -81,8 +82,8 @@ export const exitoAdapter: StoreAdapter = {
         const url = `${BASE}?fq=C:/${MERCADO_ROOT}/${category.id}/&_from=${from}&_to=${from + PAGE_SIZE - 1}`
         const page = await fetchPage(url, ctx)
 
-        // null means the source said "no more" (a 400 past the pagination
-        // ceiling). Not an error: just the end of what this category exposes.
+        // null: the source said "no more" (a 400 past the pagination ceiling),
+        // or the page was dropped and already reported to the run.
         if (page === null) break
         if (page.length === 0) break
 
@@ -139,9 +140,9 @@ export const exitoAdapter: StoreAdapter = {
     // Éxito's buckets are too coarse — "Despensa" holds rice, pasta, oil and
     // tinned fish at once — so the aisle is deduced from the name, with the
     // source bucket as fallback (ingestion/core/classify.ts).
-    // Con el nombre LIMPIO, no el crudo: el original lleva la marca incrustada
-    // en medio ("Chocolate CORONA de mesa"), y eso rompe cualquier regla de
-    // varias palabras.
+    // Classified with the CLEAN name, not the raw one: the raw name carries
+    // the brand in the middle ("Chocolate CORONA de mesa"), which breaks any
+    // multi-word rule.
     const categorySlug = classifyProduct(name, sourceBucket)
 
     const ean = typeof item.ean === 'string' && /^\d{8,14}$/.test(item.ean) ? item.ean : null
@@ -169,44 +170,27 @@ export const exitoAdapter: StoreAdapter = {
 /**
  * A 500 or a 429 from a page deep inside a category is almost always transient
  * — one run died at offset 1600 of a single category and lost every category
- * still pending. Retry with exponential backoff, and only give up on the PAGE,
- * never on the run.
+ * still pending. core/http retries with exponential backoff (network errors
+ * and timeouts included) and only gives up on the PAGE, never on the run; the
+ * dropped page reaches the run report through ctx.onRequestDropped.
  */
 const MAX_ATTEMPTS = 4
 
+/** null = the category has no more pages, for whatever reason. */
 async function fetchPage(url: string, ctx: FetchContext): Promise<RawProduct[] | null> {
-  let lastStatus = 0
-
-  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
-    const response = await fetch(url, {
-      headers: { 'User-Agent': ctx.userAgent, Accept: 'application/json' },
-      signal: ctx.signal,
-      redirect: 'follow',
-    })
-
+  const result = await fetchJsonResult(url, ctx, {
+    attempts: MAX_ATTEMPTS,
     // 400 past the pagination ceiling is the source saying "no more", not a
     // failure. Aborting the run there would lose every category still pending.
-    if (response.status === 400) return null
+    endStatuses: [400],
+  })
 
-    // Paginated VTEX responses come back 206, not 200. Treating that as
-    // failure would abort every run.
-    if (response.status === 200 || response.status === 206) {
-      const body: unknown = await response.json()
-      return Array.isArray(body) ? (body as RawProduct[]) : []
-    }
-
-    lastStatus = response.status
-
-    const retryable = response.status === 429 || response.status >= 500
-    if (!retryable) break
-
-    // 2s, 4s, 8s. Backing off is also the polite thing to do: a 500 under load
-    // means the source is struggling and hammering it makes that worse.
-    if (attempt < MAX_ATTEMPTS) await sleep(ctx.delayMs * 2 ** attempt)
+  if (result.kind === 'ok') {
+    return Array.isArray(result.body) ? (result.body as RawProduct[]) : []
   }
-
-  console.warn(`  página descartada tras ${MAX_ATTEMPTS} intentos (${lastStatus}): ${url}`)
-  return []
+  // 'end' is routine; 'dropped' was already reported by fetchJsonResult. In
+  // both cases the offsets after this one are unknown, so the category ends.
+  return null
 }
 
 /** Shape of what Éxito returns. Only the parts we read. */

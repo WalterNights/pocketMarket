@@ -1,0 +1,56 @@
+# Store branches (where each chain's shops are) — monthly, apart from prices.
+# docs/plans/0001-mapa-de-tiendas.md
+#
+# Needs repository secrets SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY of the
+# REMOTE project. service_role bypasses RLS: it lives only here, never in the
+# app (rule 13).
+#
+# The schedule stays off until the remote Supabase project exists: a monthly
+# run with nowhere to write would only fail. Then uncomment `schedule`.
+
+name: Sucursales
+
+on:
+  workflow_dispatch:
+    inputs:
+      store:
+        description: 'Cadena (ara, dollarcity, exito, d1) o all'
+        required: true
+        default: 'all'
+  # schedule:
+  #   - cron: '0 8 1 * *' # day 1 of every month, 03:00 Colombia
+
+permissions:
+  contents: read
+
+concurrency:
+  group: branches
+  cancel-in-progress: false
+
+jobs:
+  branches:
+    runs-on: ubuntu-latest
+    # D1's national grid is hundreds of polite requests; leave headroom.
+    timeout-minutes: 45
+    steps:
+      # Pinned by commit SHA: a moved tag cannot swap the code that runs with
+      # the service_role secret. Bump deliberately (the comment names the tag).
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: '.nvmrc'
+
+      # pnpm version comes from package.json's packageManager field (Corepack).
+      - run: corepack enable
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Cargar sucursales
+        # The input goes through env, never interpolated into the script:
+        # `${{ }}` inside `run` is a shell-injection vector.
+        run: pnpm run branches -- --store "$STORE"
+        env:
+          STORE: ${{ inputs.store || 'all' }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

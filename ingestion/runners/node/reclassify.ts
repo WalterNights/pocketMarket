@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 
 import { classifyProduct } from '../../core/classify'
+import { flag } from './cli'
 
 /**
  * Re-files the catalogue already in the database under the current rules.
@@ -25,10 +26,6 @@ type Row = {
   category_id: string | null
 }
 
-function flag(name: string): boolean {
-  return process.argv.includes(`--${name}`)
-}
-
 async function main(): Promise<void> {
   const url = process.env.SUPABASE_URL
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -41,7 +38,7 @@ async function main(): Promise<void> {
   const supabase = createClient(url, key, { auth: { persistSession: false } })
 
   const { data: categories, error: catError } = await supabase.from('category').select('id, slug')
-  if (catError !== null) throw new Error(`categorías: ${catError.message}`)
+  if (catError !== null) throw new Error(`categorías: ${catError.message}`, { cause: catError })
 
   const idBySlug = new Map((categories ?? []).map((c) => [c.slug as string, c.id as string]))
   const slugById = new Map((categories ?? []).map((c) => [c.id as string, c.slug as string]))
@@ -58,7 +55,7 @@ async function main(): Promise<void> {
       .order('id')
       .range(from, from + PAGE - 1)
 
-    if (error !== null) throw new Error(`lectura: ${error.message}`)
+    if (error !== null) throw new Error(`lectura: ${error.message}`, { cause: error })
 
     const rows = (data ?? []) as Row[]
     if (rows.length === 0) break
@@ -94,7 +91,8 @@ async function main(): Promise<void> {
           .update({ category_id: target })
           .in('id', ids)
 
-        if (writeError !== null) throw new Error(`escritura: ${writeError.message}`)
+        if (writeError !== null)
+          throw new Error(`escritura: ${writeError.message}`, { cause: writeError })
       }
     }
 

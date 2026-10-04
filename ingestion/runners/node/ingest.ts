@@ -1,5 +1,8 @@
+import { z } from 'zod'
+
 import { exitoAdapter } from '../../adapters/exito'
 import { runIngestion, type RunReport } from '../../core/pipeline'
+import { arg, DELAY_MS, flag, parseArgs, positiveIntArg, supabaseEnv, USER_AGENT } from './cli'
 
 /**
  * Entry point for a run. Used locally and from GitHub Actions.
@@ -8,25 +11,23 @@ import { runIngestion, type RunReport } from '../../core/pipeline'
  *
  * SUPABASE_SERVICE_ROLE_KEY bypasses RLS: it lives in GitHub secrets or the
  * local .env, never in the app bundle (rule 13 in CLAUDE.md).
+ *
+ * Exit code is non-zero when the run aborted, hit an error, or dropped any
+ * source page. A dropped page does not stop the run (ING-003) — what was read
+ * is written and published — but part of the catalogue was not refreshed, and
+ * CI has to show that in red rather than bury it in a log.
  */
 
 const ADAPTERS = { exito: exitoAdapter } as const
-type AdapterName = keyof typeof ADAPTERS
 
-/** Identifies us and gives the source a way to get in touch. */
-const USER_AGENT =
-  'PocketMarket/0.1 (proyecto personal de comparacion de precios; sm9349168@gmail.com)'
+const argsSchema = z.object({
+  store: z.enum(Object.keys(ADAPTERS) as [keyof typeof ADAPTERS]).default('exito'),
+  max: positiveIntArg,
+  'dry-run': z.boolean(),
+})
 
-/** One request at a time with a pause. Never lower this to "go faster". */
-const DELAY_MS = 1200
-
-function arg(name: string): string | undefined {
-  const i = process.argv.indexOf(`--${name}`)
-  return i >= 0 ? process.argv[i + 1] : undefined
-}
-
-function flag(name: string): boolean {
-  return process.argv.includes(`--${name}`)
+function percent(part: number, whole: number): string {
+  return whole > 0 ? ` (${Math.round((part / whole) * 100)}%)` : ''
 }
 
 function printReport(report: RunReport): void {
@@ -35,15 +36,22 @@ function printReport(report: RunReport): void {
     `  tienda            ${report.storeSlug}`,
     `  vistos            ${report.seen}`,
     `  normalizados      ${report.normalised}`,
-    `  agotados          ${report.skipped}` +
-      (report.seen > 0 ? ` (${Math.round((report.skipped / report.seen) * 100)}%)` : ''),
-    `  ilegibles         ${report.failed}` +
-      (report.seen > 0 ? ` (${Math.round((report.failed / report.seen) * 100)}%)` : ''),
+    `  agotados          ${report.skipped}${percent(report.skipped, report.seen)}`,
+    `  ilegibles         ${report.failed}${percent(report.failed, report.seen)}`,
     `  productos escritos ${report.productsUpserted}`,
     `  precios cambiados ${report.pricesChanged}`,
+    `  precios absurdos  ${report.priceJumpsRejected} (descartados, salto x10 o mas)`,
+    `  paginas perdidas  ${report.pagesDropped}`,
+    `  retirados         ${report.retired}` +
+      (report.retireSkipped === null ? '' : ` (OMITIDO: ${report.retireSkipped})`),
     `  duracion          ${(report.durationMs / 1000).toFixed(1)}s`,
   ]
 
+  if (report.pagesDropped > 0) {
+    lines.push(
+      `  ATENCION          ${report.pagesDropped} paginas descartadas: catalogo incompleto`,
+    )
+  }
   if (report.aborted) lines.push(`  ABORTADA          ${report.abortReason ?? ''}`)
   for (const e of report.errors) lines.push(`  error             ${e}`)
   lines.push('')
@@ -53,19 +61,14 @@ function printReport(report: RunReport): void {
 }
 
 async function main(): Promise<void> {
-  const name = (arg('store') ?? 'exito') as AdapterName
-  const adapter = ADAPTERS[name]
-  if (adapter === undefined) throw new Error(`Adaptador desconocido: ${name}`)
-
-  const supabaseUrl = process.env.SUPABASE_URL ?? process.env.EXPO_PUBLIC_SUPABASE_URL
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-
-  if (supabaseUrl === undefined || serviceRoleKey === undefined) {
-    throw new Error('Faltan SUPABASE_URL y/o SUPABASE_SERVICE_ROLE_KEY')
-  }
-
-  const maxRaw = arg('max')
-  const dryRun = flag('dry-run')
+  const args = parseArgs(argsSchema, {
+    store: arg('store'),
+    max: arg('max'),
+    'dry-run': flag('dry-run'),
+  })
+  const adapter = ADAPTERS[args.store]
+  const { supabaseUrl, serviceRoleKey } = supabaseEnv()
+  const dryRun = args['dry-run']
 
   console.log(`\nIngesta de ${adapter.storeSlug}${dryRun ? ' (DRY RUN, no escribe)' : ''}`)
 
@@ -74,12 +77,13 @@ async function main(): Promise<void> {
     serviceRoleKey,
     userAgent: USER_AGENT,
     delayMs: DELAY_MS,
-    maxProducts: maxRaw === undefined ? undefined : Number(maxRaw),
+    maxProducts: args.max,
     dryRun,
   })
 
   printReport(report)
-  process.exit(report.aborted || report.errors.length > 0 ? 1 : 0)
+  const failed = report.aborted || report.errors.length > 0 || report.pagesDropped > 0
+  process.exit(failed ? 1 : 0)
 }
 
 main().catch((cause: unknown) => {

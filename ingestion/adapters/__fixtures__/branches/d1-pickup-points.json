@@ -1,0 +1,660 @@
+{
+ "paging": {
+  "page": 1,
+  "pageSize": 50,
+  "total": 300,
+  "pages": 6
+ },
+ "items": [
+  {
+   "distance": 0.6428181634400001,
+   "pickupPoint": {
+    "friendlyName": "BOG BENJAMIN HERRERA",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A330091",
+     "isDisposable": true,
+     "postalCode": "221516",
+     "city": "BOGOTA, D.C.",
+     "state": "BOGOTA",
+     "country": "COL",
+     "street": "CR 28 # 63 B - 51 ",
+     "number": "",
+     "neighborhood": "BENJAMIN HERRERA",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.075844,
+      4.65405
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A330091",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 0.75681443193,
+   "pickupPoint": {
+    "friendlyName": "BOG PAULO VI",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A060304",
+     "isDisposable": true,
+     "postalCode": "111321",
+     "city": "BOGOTA, D.C.",
+     "state": "BOGOTA",
+     "country": "COL",
+     "street": "CR 53 56B 04",
+     "number": "",
+     "neighborhood": "PAULO VI",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.08674,
+      4.6489492
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A060304",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 0.90272259037,
+   "pickupPoint": {
+    "friendlyName": "CC GALERIAS 53",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A060415",
+     "isDisposable": true,
+     "postalCode": "111311",
+     "city": "BOGOTA, D.C.",
+     "state": "CUNDINAMARCA",
+     "country": "COL",
+     "street": "CL 53B 25 21 LC 2051",
+     "number": "",
+     "neighborhood": "GALERIAS",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.075724,
+      4.643055
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A060415",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:30:00",
+      "ClosingTime": "21:30:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:30:00",
+      "ClosingTime": "21:30:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:30:00",
+      "ClosingTime": "21:30:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:30:00",
+      "ClosingTime": "21:30:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:30:00",
+      "ClosingTime": "21:30:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:30:00",
+      "ClosingTime": "21:30:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "08:30:00",
+      "ClosingTime": "21:30:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 0.94380639311,
+   "pickupPoint": {
+    "friendlyName": "BOG CAMPIN",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A060041",
+     "isDisposable": true,
+     "postalCode": "11131",
+     "city": "BOGOTA, D.C.",
+     "state": "BOGOTA",
+     "country": "COL",
+     "street": "CL 57 # 24 - 33 ",
+     "number": "",
+     "neighborhood": "GALERIAS",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.072951,
+      4.645223
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A060041",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 1.11888639715,
+   "pickupPoint": {
+    "friendlyName": "BOG CODAZZI",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A060028",
+     "isDisposable": true,
+     "postalCode": "111311",
+     "city": "BOGOTA, D.C.",
+     "state": "BOGOTA",
+     "country": "COL",
+     "street": "CR 30 # 49 A - 64 ",
+     "number": "",
+     "neighborhood": "BELALCAZAR",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.078781,
+      4.639956
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A060028",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 1.13832166616,
+   "pickupPoint": {
+    "friendlyName": "BOG AV QUITO II",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A060034",
+     "isDisposable": true,
+     "postalCode": "111221",
+     "city": "BOGOTA, D.C.",
+     "state": "BOGOTA",
+     "country": "COL",
+     "street": "AK 30 # 64 A - 41 -49 ",
+     "number": "",
+     "neighborhood": "SAN MIGUEL",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.077816,
+      4.660058
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A060034",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 1.18536339098,
+   "pickupPoint": {
+    "friendlyName": "BOG GALERIAS",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A060009",
+     "isDisposable": true,
+     "postalCode": "111311",
+     "city": "BOGOTA, D.C.",
+     "state": "BOGOTA",
+     "country": "COL",
+     "street": "CL 51 # 26 - 16 ",
+     "number": "",
+     "neighborhood": "GALERIAS",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.075863,
+      4.640117
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A060009",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 1.33433781574,
+   "pickupPoint": {
+    "friendlyName": "ESMERALDA CL 53",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A060413",
+     "isDisposable": true,
+     "postalCode": "111321",
+     "city": "BOGOTA, D.C.",
+     "state": "CUNDINAMARCA",
+     "country": "COL",
+     "street": " AC 53 58 33",
+     "number": "",
+     "neighborhood": "Nicolas de Federman",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.09201,
+      4.65062
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A060413",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 1.35530615677,
+   "pickupPoint": {
+    "friendlyName": "BOG 7 DE AGOSTO",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A330018",
+     "isDisposable": true,
+     "postalCode": "221372",
+     "city": "BOGOTA, D.C.",
+     "state": "BOGOTA",
+     "country": "COL",
+     "street": "CL 66 # 21 - 43",
+     "number": "",
+     "neighborhood": "SIETE DE AGOSTO",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.0694522,
+      4.656181
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A330018",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 1.3968902706900002,
+   "pickupPoint": {
+    "friendlyName": "LA ESMERALDA",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "6A060160",
+     "isDisposable": true,
+     "postalCode": "111321",
+     "city": "BOGOTA, D.C.",
+     "state": "BOGOTA",
+     "country": "COL",
+     "street": "CL 44 50 62",
+     "number": "",
+     "neighborhood": "LA ESMERALDA",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.0905134,
+      4.6430508
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_6A060160",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  }
+ ]
+}

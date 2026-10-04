@@ -412,6 +412,73 @@ export type Database = {
         }
         Relationships: []
       }
+      store_branch: {
+        Row: {
+          address: string | null
+          city: string | null
+          created_at: string
+          external_id: string
+          id: string
+          is_active: boolean
+          last_seen_at: string
+          location: unknown
+          name: string
+          region_code: string | null
+          source: string
+          store_id: string
+        }
+        Insert: {
+          address?: string | null
+          city?: string | null
+          created_at?: string
+          external_id: string
+          id?: string
+          is_active?: boolean
+          last_seen_at?: string
+          location: unknown
+          name: string
+          region_code?: string | null
+          source: string
+          store_id: string
+        }
+        Update: {
+          address?: string | null
+          city?: string | null
+          created_at?: string
+          external_id?: string
+          id?: string
+          is_active?: boolean
+          last_seen_at?: string
+          location?: unknown
+          name?: string
+          region_code?: string | null
+          source?: string
+          store_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "store_branch_region_code_fkey"
+            columns: ["region_code"]
+            isOneToOne: false
+            referencedRelation: "region"
+            referencedColumns: ["code"]
+          },
+          {
+            foreignKeyName: "store_branch_store_id_fkey"
+            columns: ["store_id"]
+            isOneToOne: false
+            referencedRelation: "store"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "store_branch_store_id_fkey"
+            columns: ["store_id"]
+            isOneToOne: false
+            referencedRelation: "store_summary"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       store_product: {
         Row: {
           brand: string | null
@@ -664,6 +731,26 @@ export type Database = {
     Functions: {
       current_region: { Args: never; Returns: string }
       immutable_unaccent: { Args: { "": string }; Returns: string }
+      nearest_branches: {
+        Args: {
+          p_lat: number
+          p_limit?: number
+          p_lng: number
+          p_max_radius_m?: number
+        }
+        Returns: {
+          address: string
+          city: string
+          distance_m: number
+          has_prices: boolean
+          id: string
+          lat: number
+          lng: number
+          name: string
+          store_name: string
+          store_slug: string
+        }[]
+      }
       parse_list_items: {
         Args: { p_items: Json }
         Returns: {

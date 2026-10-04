@@ -1,0 +1,3265 @@
+{
+ "paging": {
+  "page": 1,
+  "pageSize": 50,
+  "total": 64,
+  "pages": 2
+ },
+ "items": [
+  {
+   "distance": 1.83162047931,
+   "pickupPoint": {
+    "friendlyName": "Exito calle 51",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_285",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra. 15 #51-45",
+     "number": "5145",
+     "neighborhood": "Teusaquillo",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.06712,
+      4.63964
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol285_ptorecogida_285",
+    "isActive": false,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 1.94619485726,
+   "pickupPoint": {
+    "friendlyName": "Exito Chapinero",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0094",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Calle 52 # 13-70",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.066034,
+      4.6393523
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0094",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 1.94656832959,
+   "pickupPoint": {
+    "friendlyName": " Exito Chapinero",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_094",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cl. 52 #13-70",
+     "number": "1370",
+     "neighborhood": "Comuna Chapinero",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.06603,
+      4.639352
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol094_ptorecogida_094",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 2.09740927044,
+   "pickupPoint": {
+    "friendlyName": "Exito Express Cr 7 con 60",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_277",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Ak 7 #60a-1",
+     "number": "60a1",
+     "neighborhood": "Chapinero",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.0614326,
+      4.6464413
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol277_ptorecogida_277",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 2.36159759791,
+   "pickupPoint": {
+    "friendlyName": " Exito Gran Estación",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_356",
+     "isDisposable": true,
+     "postalCode": "111321",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Avenida calle 26 # 62 - 47",
+     "number": "62-47",
+     "neighborhood": "",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.101145,
+      4.647562
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol356_ptorecogida_356",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 2.38929794627,
+   "pickupPoint": {
+    "friendlyName": "Exito Gran Estación",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0356",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av. Esperanza",
+     "number": "62 - 49 Local 134 ",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.1014608,
+      4.6482223
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0356",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 3.33524786508,
+   "pickupPoint": {
+    "friendlyName": "Exito Plaza Salitre",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0307",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra 68 B No 40 - 39",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.109895,
+      4.65315001
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0307",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 3.33909179465,
+   "pickupPoint": {
+    "friendlyName": "Exito Plaza Salitre",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_307",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra. 68b #24-39",
+     "number": "24-39",
+     "neighborhood": "Fontibón",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.109877,
+      4.65362
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol307_ptorecogida_307",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 3.54836018079,
+   "pickupPoint": {
+    "friendlyName": "Exito Mall Plaza Nqs",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4043",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av. Ciudad de Lima # 28 -80",
+     "number": "# 28 -80",
+     "neighborhood": "Los Mártires",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.0869367,
+      4.6186758
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol4043_ptorecogida_4043",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 3.55520163776,
+   "pickupPoint": {
+    "friendlyName": "Exito mall plaza NQS",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4043",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Carrera 30 ",
+     "number": "19 - 80",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.0860231,
+      4.6184231
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_4043",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 3.76263478311,
+   "pickupPoint": {
+    "friendlyName": "Exito Calle 80",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0086",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Carrera 59 A # 79 - 30 ",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.0806858,
+      4.6840189
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0086",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 3.76265529176,
+   "pickupPoint": {
+    "friendlyName": "Exito Calle 80",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_086",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Ak 68 #80-1",
+     "number": "801",
+     "neighborhood": "Engativá",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.08069,
+      4.684019
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol086_ptorecogida_086",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 4.0944045025,
+   "pickupPoint": {
+    "friendlyName": "Exito Floresta",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0281",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogota",
+     "state": "Cundinamarca",
+     "country": "COL",
+     "street": "Av. Carrera 68",
+     "number": "90 - 88 ",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.0739124,
+      4.6865188
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0281",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 7,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 8,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 4.09447025207,
+   "pickupPoint": {
+    "friendlyName": "Exito Floresta ",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_281",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Ak 68 #90-88",
+     "number": "90-88",
+     "neighborhood": "Barrios Unidos",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.07391,
+      4.686519
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol281_ptorecogida_281",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 5.10182063855,
+   "pickupPoint": {
+    "friendlyName": "ÉXITO LA FELICIDAD",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4029",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av. Boyacá #19-80",
+     "number": "1980",
+     "neighborhood": "Fontibón",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.12593,
+      4.652169
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol4029_ptorecogida_4029",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 5.10225444453,
+   "pickupPoint": {
+    "friendlyName": "Exito La Felicidad",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4029",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Carrera 72 A",
+     "number": "18-90",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.1259339,
+      4.6521693
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_4029",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 5.16951628548,
+   "pickupPoint": {
+    "friendlyName": " Exito Americas",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_084",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Avenida de las Américas",
+     "number": null,
+     "neighborhood": null,
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.12257,
+      4.631003
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol084_ptorecogida_084",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "09:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 5.16971121475,
+   "pickupPoint": {
+    "friendlyName": "Exito Americas",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0084",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av. Americas # 68 A 94 ",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.1225721,
+      4.6310034
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0084",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 5.5292692846,
+   "pickupPoint": {
+    "friendlyName": "Exito WOW Nuestro Bogota",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4052",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra 86",
+     "number": "63-20",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.117224,
+      4.6832449
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_4052",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 5.52977391429,
+   "pickupPoint": {
+    "friendlyName": " Exito WOW Nuestro Bogota",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4052",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av. Carrera 86 # 63 - 20",
+     "number": "20",
+     "neighborhood": "Engativá",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.11723,
+      4.683245
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol4052_ptorecogida_4052",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 6.22951833474,
+   "pickupPoint": {
+    "friendlyName": "Exito Niza",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_556",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cl. 120 #60-31",
+     "number": "6031",
+     "neighborhood": "Suba",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.07143,
+      4.705674
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol556_ptorecogida_556",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 6.56641266833,
+   "pickupPoint": {
+    "friendlyName": "Exito Primavera Calle 80",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4068",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cl. 80 # 89A-03",
+     "number": "# 89A-03",
+     "neighborhood": "Engativá",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.1032943,
+      4.7045876
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol4068_ptorecogida_4068",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 6.79680301711,
+   "pickupPoint": {
+    "friendlyName": "Exito Alamos",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0355",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Transversal 96",
+     "number": "70 A 85 ",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.114679,
+      4.700667
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0355",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 6.79680301711,
+   "pickupPoint": {
+    "friendlyName": "Exito Alamos",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_355",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Tv. 96 #70-85",
+     "number": "7085",
+     "neighborhood": "Engativá",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.114679,
+      4.700667
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol355_ptorecogida_355",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 7.18971155169,
+   "pickupPoint": {
+    "friendlyName": "Exito Restrepo",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0291",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra 20 #14-17",
+     "number": "14-17",
+     "neighborhood": "Antonio Nariño",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.099992,
+      4.5881548
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0291",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 7.32796719973,
+   "pickupPoint": {
+    "friendlyName": "Exito Unicentro Bogota",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_303",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Cundinamarca",
+     "country": "COL",
+     "street": "Falabella Unicentro",
+     "number": null,
+     "neighborhood": null,
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.04144,
+      4.703801
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol303_ptorecogida_303",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "22:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "22:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "23:59:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "01:00:00",
+      "ClosingTime": "22:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "22:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "07:59:00",
+      "ClosingTime": "22:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "22:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 7.328096755190001,
+   "pickupPoint": {
+    "friendlyName": "Exito Unicentro Bogota",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0303",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av. 15 # 123 - 30 local 1233 ",
+     "number": "123 - 30 local 1233 ",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.041438,
+      4.703801
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0303",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 7.51913059652,
+   "pickupPoint": {
+    "friendlyName": "Exito Villa Mayor",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0083",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Autopista Sur 32-84",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.1190393,
+      4.5944214
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0083",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 7.51921149902,
+   "pickupPoint": {
+    "friendlyName": "Exito Villa Mayor",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_083",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Transversal 35",
+     "number": null,
+     "neighborhood": null,
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.11904,
+      4.594421
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol083_ptorecogida_083",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 7.56427401921,
+   "pickupPoint": {
+    "friendlyName": "Exito Parque Fontibon",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4069",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra. 99 #18a-25",
+     "number": "18a25",
+     "neighborhood": "Fontibón",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.1439523,
+      4.6737003
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol4069_ptorecogida_4069",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 8.50866483055,
+   "pickupPoint": {
+    "friendlyName": "Exito Fontibon",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0089",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av.Centenario con la 106/104 al frente de la zona Franca ",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.15350001,
+      4.67195001
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0089",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 8.59344237502,
+   "pickupPoint": {
+    "friendlyName": " Exito Country",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_081",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cl. 134 #9a45",
+     "number": "9a45",
+     "neighborhood": "Usaquén",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.03452,
+      4.712903
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol081_ptorecogida_081",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "07:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 8.59359873702,
+   "pickupPoint": {
+    "friendlyName": "Exito Country",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0081",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Calle 134 # 9 - 51 ",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.0345176,
+      4.712903
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0081",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 8.75476993347,
+   "pickupPoint": {
+    "friendlyName": "Exito Nuevo Kennedy",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0283",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Carrera 78 K",
+     "number": "37 A 53 Sur ",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.1543654,
+      4.6235417
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0283",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 8.75476993347,
+   "pickupPoint": {
+    "friendlyName": "Exito Nuevo Kennedy",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_283",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Sur",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra. 78k #37A-53",
+     "number": "37A-53",
+     "neighborhood": "Kennedy",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.1543654,
+      4.6235417
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol283_ptorecogida_283",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 8.77354807415,
+   "pickupPoint": {
+    "friendlyName": "Exito Veinte De Julio Caf",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0284",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": " CLL 21 SUR",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.0922001,
+      4.57161001
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0284",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 9.17524315318,
+   "pickupPoint": {
+    "friendlyName": "Exito Occidente",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0091",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Carrera 114 A # 78 B 35 ",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.1225974,
+      4.7211182
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0091",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 9.17537279174,
+   "pickupPoint": {
+    "friendlyName": "Exito Occidente",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_091",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra. 114a #78-85",
+     "number": "7885",
+     "neighborhood": "Engativá",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.1226,
+      4.721118
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol091_ptorecogida_091",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 9.3869051898,
+   "pickupPoint": {
+    "friendlyName": "Exito Tintal Caf",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0282",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av. carrera 86",
+     "number": "6-37 local 177 Centro comercial TINTAL ",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.1646001,
+      4.64971001
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0282",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 9.486626192309998,
+   "pickupPoint": {
+    "friendlyName": "Exito Colina",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0088",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Av. Boyaca Cra 72 # 146 B",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.0665183,
+      4.7347153
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0088",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 9.54560682272,
+   "pickupPoint": {
+    "friendlyName": "Exito Colina",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_088",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Cundinamarca",
+     "country": "COL",
+     "street": "Av. Boyacá #146a25",
+     "number": "146a25",
+     "neighborhood": "Caminos de San Lorenzo",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.0661602,
+      4.7351976
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol088_ptorecogida_088",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 9.72757851508,
+   "pickupPoint": {
+    "friendlyName": "Exito Ciudad Tunal",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0302",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cl. 47b Sur #24B 33",
+     "number": "24B 33",
+     "neighborhood": "",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.130241,
+      4.5779114
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0302",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 10.52701780985,
+   "pickupPoint": {
+    "friendlyName": "Exito El Ensueno",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4050",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": " CALLE 59 SUR",
+     "number": "51 - 21",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.146528001,
+      4.582132001
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_4050",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 11.03578847077,
+   "pickupPoint": {
+    "friendlyName": "Exito Suba",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_93",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cl. 145 #105c-58",
+     "number": "105c58",
+     "neighborhood": "Suba",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.09741,
+      4.748257
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol093_ptorecogida_93",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 11.03588558059,
+   "pickupPoint": {
+    "friendlyName": "Exito Suba",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0093",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Calle 145 # 105 B 58",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.097415,
+      4.748257
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0093",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 11.12280329252,
+   "pickupPoint": {
+    "friendlyName": "Exito Ciudadela",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_4082",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cra. 113c #142A-98",
+     "number": "142A-98",
+     "neighborhood": "Suba",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.1030895,
+      4.7478804
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol4082_ptorecogida_4082",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 12.16094595119,
+   "pickupPoint": {
+    "friendlyName": " Exito Norte",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_092",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Exito Norte",
+     "number": null,
+     "neighborhood": "Usaquén",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.04494,
+      4.754195
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol092_ptorecogida_092",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "19:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 12.16115889388,
+   "pickupPoint": {
+    "friendlyName": "Exito Norte",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0092",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Calle 175 # 22-13 ",
+     "number": "",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.044934,
+      4.754195
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0092",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 12.4783703842,
+   "pickupPoint": {
+    "friendlyName": "Exito Bosa",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_0376",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Calle 65 Sur",
+     "number": "78H- 54 ",
+     "neighborhood": "",
+     "complement": "",
+     "reference": null,
+     "geoCoordinates": [
+      -74.1830892,
+      4.6049055
+     ]
+    },
+    "additionalInfo": null,
+    "id": "1_ptorecogida_0376",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "09:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 12.4783703842,
+   "pickupPoint": {
+    "friendlyName": "EXITO Bosa",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "ptorecogida_376",
+     "isDisposable": true,
+     "postalCode": "11001",
+     "city": "Bogotá, D.c.",
+     "state": "Bogotá, D.C.",
+     "country": "COL",
+     "street": "Cl. 65 Sur #78h-54",
+     "number": "78h1",
+     "neighborhood": "Bosa",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -74.1830892,
+      4.6049055
+     ]
+    },
+    "additionalInfo": null,
+    "id": "exitocol376_ptorecogida_376",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "20:00:00"
+     }
+    ]
+   }
+  }
+ ]
+}
