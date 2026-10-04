@@ -9,6 +9,8 @@
  * happens in the UI layer, because model/ may not import React (rule 3).
  */
 
+import { compileKeywordTable, firstMatch } from './keyword-match'
+
 export const ICON_NAMES = [
   'Egg',
   'Wheat',
@@ -50,12 +52,16 @@ const FALLBACK: IconName = 'ShoppingBasket'
 
 /**
  * Keyword to icon. Order matters: the first match wins, so more specific terms
- * must come before broader ones ("aceite de oliva" before "oliva").
+ * must come before broader ones ("pasta dental" before "pasta").
  *
- * Keywords are accent-free and lowercase; the input is normalised the same way,
- * so "Plátano" matches "platano".
+ * Whole words with an optional plural; a trailing `*` marks an explicit stem
+ * (see keyword-match.ts). Keys and input are normalised the same way, so
+ * "Plátano" matches "platano".
  */
-const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
+const KEYWORD_ICONS = compileKeywordTable<IconName>([
+  // Non-food products whose names contain a food word.
+  ['pasta dental', 'Bath'],
+  ['crema dental', 'Bath'],
   // Huevos
   ['huevo', 'Egg'],
   // Granos, cereales y harinas
@@ -87,9 +93,9 @@ const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
   ['miel', 'Droplet'],
   // Café, chocolate y dulces
   ['cafe', 'Coffee'],
-  ['chocolate', 'Cookie'],
+  ['chocolat*', 'Cookie'],
   ['cacao', 'Cookie'],
-  ['galleta', 'Cookie'],
+  ['gallet*', 'Cookie'],
   ['panela', 'Candy'],
   ['azucar', 'Candy'],
   ['dulce', 'Candy'],
@@ -98,7 +104,7 @@ const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
   ['ponque', 'Cake'],
   // Lácteos
   ['leche', 'Milk'],
-  ['yogur', 'Milk'],
+  ['yogur*', 'Milk'],
   ['kumis', 'Milk'],
   ['queso', 'Milk'],
   ['mantequilla', 'Milk'],
@@ -109,7 +115,7 @@ const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
   ['pechuga', 'Drumstick'],
   ['jamon', 'Ham'],
   ['tocineta', 'Ham'],
-  ['salchich', 'Ham'],
+  ['salchich*', 'Ham'],
   ['chorizo', 'Ham'],
   ['carne', 'Beef'],
   ['res', 'Beef'],
@@ -130,6 +136,7 @@ const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
   ['mandarina', 'Citrus'],
   ['uva', 'Grape'],
   ['zanahoria', 'Carrot'],
+  ['papas fritas', 'Popcorn'],
   ['papa', 'Carrot'],
   ['yuca', 'Carrot'],
   ['cebolla', 'Carrot'],
@@ -147,7 +154,7 @@ const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
   ['jugo', 'CupSoda'],
   ['refresco', 'CupSoda'],
   ['agua', 'CupSoda'],
-  ['te ', 'CupSoda'],
+  ['te', 'CupSoda'],
   ['vino', 'Wine'],
   ['cerveza', 'Beer'],
   // Preparados
@@ -156,9 +163,8 @@ const KEYWORD_ICONS: readonly (readonly [string, IconName])[] = [
   ['crema de', 'Soup'],
   ['sal', 'Soup'],
   ['pasabocas', 'Popcorn'],
-  ['papas fritas', 'Popcorn'],
   ['crispeta', 'Popcorn'],
-]
+])
 
 export const CATEGORY_ICONS: Record<string, IconName> = {
   // Frescos
@@ -209,24 +215,13 @@ export const CATEGORY_ICONS: Record<string, IconName> = {
   otros: 'ShoppingBasket',
 }
 
-/** Combining diacritics left behind by NFD normalisation. */
-const COMBINING_MARKS = new RegExp('[\u0300-\u036f]', 'g')
-
-/** Lowercase and strip accents so "Plátano" matches the keyword "platano". */
-function normalise(text: string): string {
-  return text.toLowerCase().normalize('NFD').replace(COMBINING_MARKS, '')
-}
-
 /**
  * Best icon for a product. Never returns null: an unknown product gets a
  * neutral basket rather than an empty gap in the row.
  */
 export function productIconName(productName: string, categorySlug: string | null): IconName {
-  const haystack = normalise(productName)
-
-  for (const [keyword, icon] of KEYWORD_ICONS) {
-    if (haystack.includes(keyword)) return icon
-  }
+  const byName = firstMatch(KEYWORD_ICONS, productName)
+  if (byName !== undefined) return byName
 
   if (categorySlug !== null) {
     const byCategory = CATEGORY_ICONS[categorySlug]

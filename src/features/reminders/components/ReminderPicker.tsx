@@ -5,6 +5,7 @@ import {
   describeReminder,
   END_OF_MONTH,
   formatTime,
+  FREQUENCIES,
   MONTH_DAYS,
   REMINDER_TIMES,
   toReminder,
@@ -20,6 +21,9 @@ const FREQUENCY_LABELS: Record<Frequency, string> = {
 }
 
 const WEEKDAY_INITIALS = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
+
+/** Any valid uuid: the preview sentence does not depend on which list it is. */
+const PREVIEW_LIST_ID = '00000000-0000-4000-8000-000000000000'
 
 type ReminderPickerProps = {
   value: ReminderDraft
@@ -41,7 +45,7 @@ export function ReminderPicker({ value, onChange }: ReminderPickerProps) {
   return (
     <View>
       <Group label="Frecuencia">
-        {(['weekly', 'biweekly', 'monthly'] as const).map((frequency) => (
+        {FREQUENCIES.map((frequency) => (
           <Chip
             key={frequency}
             label={FREQUENCY_LABELS[frequency]}
@@ -98,8 +102,6 @@ export function ReminderPicker({ value, onChange }: ReminderPickerProps) {
     </View>
   )
 }
-
-const PREVIEW_LIST_ID = '00000000-0000-4000-8000-000000000000'
 
 function Group({ label, children }: { label: string; children: ReactNode }) {
   return (

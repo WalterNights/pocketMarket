@@ -1,7 +1,7 @@
 import { supabase } from '@/shared/lib/supabase'
 
 import { storeSchema, type Store } from '../model/store'
-import { RepositoryError } from './product-repository'
+import { parseResponse, RepositoryError } from './errors'
 
 const COLUMNS = 'id, slug, name, source_type, is_active, product_count, last_updated_at'
 
@@ -17,7 +17,8 @@ export const storeRepository = {
     const { data, error } = await (signal ? request.abortSignal(signal) : request)
     if (error) throw new RepositoryError('catalog.stores', error)
 
-    return storeSchema.array().parse(
+    return parseResponse(
+      storeSchema.array(),
       (data ?? []).map((row) => ({
         id: row.id,
         slug: row.slug,
@@ -27,6 +28,7 @@ export const storeRepository = {
         productCount: row.product_count ?? 0,
         lastUpdatedAt: row.last_updated_at,
       })),
+      'catalog.stores',
     )
   },
 }

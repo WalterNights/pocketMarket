@@ -6,6 +6,7 @@ import { Pressable, Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { priceChangeOf } from '@/features/catalog'
+import { ErrorState } from '@/shared/ui'
 import { formatCop } from '@/shared/utils/format-money'
 
 import { useSavedLists } from '../hooks/useSavedLists'
@@ -43,18 +44,7 @@ export function SavedListsScreen({ onOpenList, onBrowse }: SavedListsScreenProps
   }
 
   if (isError) {
-    return (
-      <View className="flex-1 items-center justify-center bg-background px-8">
-        <Text className="text-center text-base text-foreground">No pudimos cargar tus listas.</Text>
-        <Pressable
-          onPress={() => void refetch()}
-          accessibilityRole="button"
-          className="mt-4 h-11 justify-center rounded-md bg-primary px-5"
-        >
-          <Text className="text-base font-medium text-primary-foreground">Reintentar</Text>
-        </Pressable>
-      </View>
-    )
+    return <ErrorState title="No pudimos cargar tus listas" onRetry={() => void refetch()} />
   }
 
   if (data.length === 0) {

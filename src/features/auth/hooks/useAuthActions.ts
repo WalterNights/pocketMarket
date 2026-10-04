@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 
 import { authRepository } from '../api/auth-repository'
 import type { SignInCredentials, SignUpCredentials } from '../model/credentials'
@@ -26,13 +26,12 @@ export function useSignUp() {
 }
 
 /**
- * Signing out forgets everything cached for this user. Without `clear()` the
- * next person to sign in on this phone would see the previous one's lists
- * until each query happened to refetch (08-security.md, "Logout borra todo").
+ * The cache is not cleared here: Supabase emits SIGNED_OUT even when the
+ * server call fails (the local session is dropped regardless), and
+ * `useSessionListener` clears on that event — the same path an expired or
+ * revoked session takes (08-security.md, "Logout borra todo").
  */
 export function useSignOut() {
-  const queryClient = useQueryClient()
-
   return useMutation({
     mutationFn: () => authRepository.signOut(),
     networkMode: 'always',
@@ -40,6 +39,5 @@ export function useSignOut() {
     // The account screen has already navigated away, so nothing on screen can
     // show this; it is logged instead of lost. Local sign-out rarely fails.
     onError: (cause) => console.warn('Sign-out failed', cause),
-    onSettled: () => queryClient.clear(),
   })
 }

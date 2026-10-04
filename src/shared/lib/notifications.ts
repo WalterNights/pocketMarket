@@ -1,4 +1,5 @@
-import * as Notifications from 'expo-notifications'
+import { isRunningInExpoGo } from 'expo'
+import type * as ExpoNotifications from 'expo-notifications'
 import { Linking, Platform } from 'react-native'
 
 /**
@@ -12,33 +13,70 @@ import { Linking, Platform } from 'react-native'
 /** Android groups notifications by channel; the user can mute ours by name. */
 const CHANNEL_ID = 'reminders'
 
-export type PermissionState = 'granted' | 'denied' | 'undetermined'
+/**
+ * `unavailable`: this runtime cannot show notifications at all — Expo Go on
+ * Android. Not the user's choice, so the UI must not send them to Settings.
+ */
+export type PermissionState = 'granted' | 'denied' | 'undetermined' | 'unavailable'
 
-// Shown while the app is open too: a reminder the user misses because the app
-// happened to be in the foreground is a reminder that did not work.
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowBanner: true,
-    shouldShowList: true,
-    shouldPlaySound: true,
-    shouldSetBadge: false,
-  }),
-})
+type NotificationsModule = typeof ExpoNotifications
+
+let loaded: NotificationsModule | null | undefined
+
+/**
+ * Loaded lazily, never at import time. Since SDK 53, merely importing
+ * expo-notifications in Expo Go on Android THROWS — and because the reminders
+ * feature is reachable from the root layout, a top-level import took the whole
+ * app down with it (EXPO-003). Development and store builds load it normally.
+ */
+function load(): NotificationsModule | null {
+  if (loaded !== undefined) return loaded
+
+  if (Platform.OS === 'android' && isRunningInExpoGo()) {
+    loaded = null
+    return loaded
+  }
+
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports -- lazy on purpose: a static import throws in Expo Go (see above)
+    const module: NotificationsModule = require('expo-notifications')
+
+    // Shown while the app is open too: a reminder missed because the app
+    // happened to be in the foreground is a reminder that did not work.
+    module.setNotificationHandler({
+      handleNotification: async () => ({
+        shouldShowBanner: true,
+        shouldShowList: true,
+        shouldPlaySound: true,
+        shouldSetBadge: false,
+      }),
+    })
+
+    loaded = module
+  } catch (cause) {
+    console.warn('expo-notifications could not be loaded; reminders will not ring', cause)
+    loaded = null
+  }
+
+  return loaded
+}
 
 let channelReady: Promise<void> | null = null
 
-function ensureChannel(): Promise<void> {
+function ensureChannel(module: NotificationsModule): Promise<void> {
   if (Platform.OS !== 'android') return Promise.resolve()
 
-  channelReady ??= Notifications.setNotificationChannelAsync(CHANNEL_ID, {
-    name: 'Recordatorios de mercado',
-    importance: Notifications.AndroidImportance.DEFAULT,
-  }).then(() => undefined)
+  channelReady ??= module
+    .setNotificationChannelAsync(CHANNEL_ID, {
+      name: 'Recordatorios de mercado',
+      importance: module.AndroidImportance.DEFAULT,
+    })
+    .then(() => undefined)
 
   return channelReady
 }
 
-function toState(status: Notifications.NotificationPermissionsStatus): PermissionState {
+function toState(status: ExpoNotifications.NotificationPermissionsStatus): PermissionState {
   if (status.granted) return 'granted'
   // Denied for good: iOS never asks twice, Android stops asking after two no's.
   return status.canAskAgain ? 'undetermined' : 'denied'
@@ -46,7 +84,9 @@ function toState(status: Notifications.NotificationPermissionsStatus): Permissio
 
 export const notifications = {
   async permission(): Promise<PermissionState> {
-    return toState(await Notifications.getPermissionsAsync())
+    const module = load()
+    if (module === null) return 'unavailable'
+    return toState(await module.getPermissionsAsync())
   },
 
   /**
@@ -55,9 +95,12 @@ export const notifications = {
    * no, and on iOS that no is final (03-reminders.md, "Permisos").
    */
   async request(): Promise<PermissionState> {
-    const current = await Notifications.getPermissionsAsync()
+    const module = load()
+    if (module === null) return 'unavailable'
+
+    const current = await module.getPermissionsAsync()
     if (current.granted || !current.canAskAgain) return toState(current)
-    return toState(await Notifications.requestPermissionsAsync())
+    return toState(await module.requestPermissionsAsync())
   },
 
   /** The app's page in system settings, the way back after a denial. */
@@ -66,7 +109,10 @@ export const notifications = {
   },
 
   async scheduledIds(): Promise<string[]> {
-    const requests = await Notifications.getAllScheduledNotificationsAsync()
+    const module = load()
+    if (module === null) return []
+
+    const requests = await module.getAllScheduledNotificationsAsync()
     return requests.map((request) => request.identifier)
   },
 
@@ -78,20 +124,25 @@ export const notifications = {
     body: string
     data: Record<string, string>
   }): Promise<void> {
-    await ensureChannel()
-    await Notifications.scheduleNotificationAsync({
+    const module = load()
+    if (module === null) return
+
+    await ensureChannel(module)
+    await module.scheduleNotificationAsync({
       identifier: input.identifier,
       content: { title: input.title, body: input.body, data: input.data },
       trigger: {
-        type: Notifications.SchedulableTriggerInputTypes.DATE,
+        type: module.SchedulableTriggerInputTypes.DATE,
         date: input.date,
         channelId: CHANNEL_ID,
       },
     })
   },
 
-  cancel(identifier: string): Promise<void> {
-    return Notifications.cancelScheduledNotificationAsync(identifier)
+  async cancel(identifier: string): Promise<void> {
+    const module = load()
+    if (module === null) return
+    await module.cancelScheduledNotificationAsync(identifier)
   },
 
   /**
@@ -99,13 +150,16 @@ export const notifications = {
    * the tap that cold-started the app. Returns the unsubscribe.
    */
   onOpen(onOpen: (data: unknown) => void): () => void {
-    const last = Notifications.getLastNotificationResponse()
+    const module = load()
+    if (module === null) return () => undefined
+
+    const last = module.getLastNotificationResponse()
     if (last !== null) {
       onOpen(last.notification.request.content.data)
-      Notifications.clearLastNotificationResponse()
+      module.clearLastNotificationResponse()
     }
 
-    const subscription = Notifications.addNotificationResponseReceivedListener((response) =>
+    const subscription = module.addNotificationResponseReceivedListener((response) =>
       onOpen(response.notification.request.content.data),
     )
     return () => subscription.remove()

@@ -3,6 +3,7 @@ import { Pressable, Text, View } from 'react-native'
 
 import { formatCop } from '@/shared/utils/format-money'
 
+import { formatMeasure } from '../model/presentation'
 import { unitPriceOf, type Product } from '../model/product'
 import { ProductIcon } from './ProductIcon'
 
@@ -34,7 +35,7 @@ function ProductRowComponent({
     product.brand,
     showStore ? product.storeName : null,
     product.unitValue !== null && product.unitMeasure !== null
-      ? `${product.unitValue}${product.unitMeasure}`
+      ? formatMeasure(product.unitValue, product.unitMeasure)
       : null,
   ]
     .filter(Boolean)

@@ -1,6 +1,7 @@
 import { View } from 'react-native'
 
 import { AccountButton } from '@/features/auth'
+import { MapButton } from '@/features/branches'
 import { StoreListScreen } from '@/features/catalog'
 import { DraftListBar, MyListsButton } from '@/features/lists'
 
@@ -11,6 +12,7 @@ export default function HomeRoute() {
       <StoreListScreen
         headerAction={
           <View className="flex-row items-center">
+            <MapButton />
             <MyListsButton />
             <AccountButton />
           </View>

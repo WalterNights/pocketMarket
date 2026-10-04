@@ -37,7 +37,7 @@ export function useAppBoot(): boolean {
       } catch (cause) {
         // Not swallowed: if this fails the splash stays up and the app is
         // stuck behind an image with no way out, which looks like a freeze.
-        console.warn('No se pudo ocultar el splash nativo', cause)
+        console.warn('Could not hide the native splash screen', cause)
       }
     }
 

@@ -6,7 +6,7 @@ import { z } from 'zod'
  * JSON the client itself wrote at sign-up.
  */
 export const sessionUserSchema = z.object({
-  id: z.string().uuid(),
+  id: z.uuid(),
   email: z.string().nullable(),
   displayName: z.string().nullable(),
 })

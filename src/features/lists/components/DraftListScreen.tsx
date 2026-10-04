@@ -2,8 +2,8 @@ import { FlashList } from '@shopify/flash-list'
 import { useRouter } from 'expo-router'
 import ShoppingCart from 'lucide-react-native/icons/shopping-cart'
 import Trash from 'lucide-react-native/icons/trash'
-import { useCallback, useMemo } from 'react'
-import { Pressable, Text, View } from 'react-native'
+import { memo, useCallback, useMemo } from 'react'
+import { Alert, Pressable, Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { formatQuantity, ProductIcon } from '@/features/catalog'
@@ -43,6 +43,16 @@ export function DraftListScreen() {
 
   const keyExtractor = useCallback((item: DraftItem) => item.product.id, [])
 
+  // Destructive and with no undo: the draft is not persisted anywhere else.
+  const confirmClear = useCallback(
+    () =>
+      Alert.alert('Vaciar la lista', 'Se quitarán todos los productos. No se puede deshacer.', [
+        { text: 'Cancelar', style: 'cancel' },
+        { text: 'Vaciar', style: 'destructive', onPress: clear },
+      ]),
+    [clear],
+  )
+
   // Leaving edit mode drops the unsaved changes; the saved list is untouched.
   const cancelEdit = useCallback(() => {
     clear()
@@ -72,7 +82,7 @@ export function DraftListScreen() {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         contentContainerStyle={{ paddingBottom: 16 }}
-        ListFooterComponent={editing ? null : <ClearButton onPress={clear} />}
+        ListFooterComponent={editing ? null : <ClearButton onPress={confirmClear} />}
       />
 
       {/* Totals bar: overall total in the largest type, per-store breakdown
@@ -128,7 +138,8 @@ type DraftRowProps = {
   onPress: (productId: string) => void
 }
 
-function DraftRow({ item, onPress }: DraftRowProps) {
+/** Memoised: changing one item must not re-render every other row. */
+const DraftRow = memo(function DraftRow({ item, onPress }: DraftRowProps) {
   const { product, quantity } = item
 
   return (
@@ -158,7 +169,7 @@ function DraftRow({ item, onPress }: DraftRowProps) {
       </Text>
     </Pressable>
   )
-}
+})
 
 function ClearButton({ onPress }: { onPress: () => void }) {
   return (

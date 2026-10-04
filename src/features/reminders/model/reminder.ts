@@ -27,7 +27,7 @@ const time = z
 
 export const reminderSchema = z
   .object({
-    listId: z.string().uuid(),
+    listId: z.uuid(),
     frequency: z.enum(FREQUENCIES),
     weekday: z.number().int().min(1).max(7).nullable(),
     dayOfMonth: z.number().int().min(1).max(31).nullable(),
@@ -80,6 +80,16 @@ export function draftOf(reminder: Reminder): ReminderDraft {
     dayOfMonth: reminder.dayOfMonth ?? DEFAULT_DRAFT.dayOfMonth,
     timeLocal: reminder.timeLocal,
   }
+}
+
+/**
+ * Whether two drafts would save the same reminder. Only the fields the
+ * frequency uses count: the weekday kept while "Mensual" is selected is
+ * remembered for convenience, not something the user would lose.
+ */
+export function sameSchedule(a: ReminderDraft, b: ReminderDraft): boolean {
+  if (a.frequency !== b.frequency || a.timeLocal !== b.timeLocal) return false
+  return a.frequency === 'monthly' ? a.dayOfMonth === b.dayOfMonth : a.weekday === b.weekday
 }
 
 /**

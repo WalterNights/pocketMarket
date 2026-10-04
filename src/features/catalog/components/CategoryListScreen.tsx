@@ -4,9 +4,12 @@ import LayoutGrid from 'lucide-react-native/icons/layout-grid'
 import { useState } from 'react'
 import { Pressable, ScrollView, Text, TextInput, View } from 'react-native'
 
+import { useDebouncedValue } from '@/shared/hooks/useDebouncedValue'
+import { ErrorState, flatHeaderOptions } from '@/shared/ui'
+
 import { useStoreCategories } from '../hooks/useStoreCategories'
 import type { StoreCategory } from '../model/category'
-import { CatalogScreen } from './CatalogScreen'
+import { CatalogScreen, SEARCH_DEBOUNCE_MS } from './CatalogScreen'
 import { CategoryIcon } from './CategoryIcon'
 
 const MUTED = '#78726B'
@@ -37,19 +40,16 @@ export function CategoryListScreen({
   const [query, setQuery] = useState('')
   const { data: categories, isPending, isError, refetch } = useStoreCategories(storeSlug)
 
-  const searching = query.trim().length > 0
+  // Both the switch and the search read the debounced term: switching on the
+  // live one would mount the results with an empty query and fetch the whole
+  // store before the first debounced value arrives.
+  const debouncedQuery = useDebouncedValue(query, SEARCH_DEBOUNCE_MS)
+  const searching = debouncedQuery.trim().length > 0
 
   return (
     <View className="flex-1 bg-background">
       <Stack.Screen
-        options={{
-          title: storeName ?? 'Tienda',
-          headerShown: true,
-          headerBackTitle: 'Tiendas',
-          headerStyle: { backgroundColor: '#FAF8F3' },
-          headerTintColor: '#1F1D1B',
-          headerShadowVisible: false,
-        }}
+        options={{ ...flatHeaderOptions, title: storeName ?? 'Tienda', headerBackTitle: 'Tiendas' }}
       />
 
       <View className="px-4 pb-3 pt-2">
@@ -68,7 +68,7 @@ export function CategoryListScreen({
       {searching ? (
         <CatalogScreen
           storeSlug={storeSlug}
-          embeddedQuery={query}
+          embeddedQuery={debouncedQuery}
           draftQuantities={draftQuantities}
           onProductPress={onProductPress}
         />
@@ -117,20 +117,11 @@ function CategoryBody({
 
   if (isError) {
     return (
-      <View className="flex-1 items-center justify-center px-8">
-        <LayoutGrid size={32} color={MUTED} strokeWidth={1.5} />
-        <Text className="mt-3 text-center text-base text-foreground">
-          No se pudieron cargar las categorías
-        </Text>
-        <Pressable
-          onPress={onRetry}
-          accessibilityRole="button"
-          accessibilityLabel="Reintentar"
-          className="mt-4 h-11 justify-center rounded-md bg-primary px-5"
-        >
-          <Text className="text-base font-medium text-primary-foreground">Reintentar</Text>
-        </Pressable>
-      </View>
+      <ErrorState
+        title="No se pudieron cargar las categorías"
+        onRetry={onRetry}
+        icon={<LayoutGrid size={32} color={MUTED} strokeWidth={1.5} />}
+      />
     )
   }
 

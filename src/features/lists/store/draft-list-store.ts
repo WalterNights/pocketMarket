@@ -73,11 +73,4 @@ useSessionStore.subscribe((state, previous) => {
  * Selectors. Consuming the store without one re-renders the whole screen on
  * any change (03-patterns.md).
  */
-export const selectItemCount = (state: DraftListState): number => Object.keys(state.items).length
-
-export const selectQuantityOf =
-  (productId: string) =>
-  (state: DraftListState): number =>
-    state.items[productId]?.quantity ?? 0
-
 export const selectEditing = (state: DraftListState): EditingList | null => state.editing

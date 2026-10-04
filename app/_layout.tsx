@@ -11,7 +11,17 @@ import { useSessionListener } from '@/features/auth'
 import { useOpenListFromNotification, useReminderSync } from '@/features/reminders'
 import { useAppBoot } from '@/shared/lib/app-boot'
 import { queryClient } from '@/shared/lib/query-client'
+import { useQueryLifecycle } from '@/shared/lib/query-lifecycle'
 import { LoadingScreen } from '@/shared/ui'
+
+/**
+ * Whatever the previous user had cached goes when their session ends, however
+ * it ends (08-security.md, "Logout borra todo"). Module scope keeps it stable,
+ * so the session listener subscribes once.
+ */
+function clearUserCache(): void {
+  queryClient.clear()
+}
 
 /**
  * Root layout. Composition only: providers, theming and the navigator.
@@ -19,7 +29,8 @@ import { LoadingScreen } from '@/shared/ui'
  */
 export default function RootLayout() {
   const ready = useAppBoot()
-  useSessionListener()
+  useQueryLifecycle()
+  useSessionListener({ onSignedOut: clearUserCache })
   useReminderSync()
 
   return (

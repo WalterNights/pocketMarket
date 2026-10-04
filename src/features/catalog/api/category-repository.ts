@@ -1,7 +1,7 @@
 import { supabase } from '@/shared/lib/supabase'
 
 import { storeCategorySchema, type StoreCategory } from '../model/category'
-import { RepositoryError } from './product-repository'
+import { parseResponse, RepositoryError } from './errors'
 
 const COLUMNS = 'category_id, category_slug, category_name, product_count, sort_order'
 
@@ -20,13 +20,15 @@ export const categoryRepository = {
     const { data, error } = await (signal ? base.abortSignal(signal) : base)
     if (error) throw new RepositoryError('catalog.categories', error)
 
-    return storeCategorySchema.array().parse(
+    return parseResponse(
+      storeCategorySchema.array(),
       (data ?? []).map((row) => ({
         id: row.category_id,
         slug: row.category_slug,
         name: row.category_name,
         productCount: row.product_count,
       })),
+      'catalog.categories',
     )
   },
 }

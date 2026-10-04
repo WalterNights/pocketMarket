@@ -6,6 +6,7 @@ import {
   isoWeekday,
   nextOccurrences,
   reminderSchema,
+  sameSchedule,
   toReminder,
   DEFAULT_DRAFT,
   type Reminder,
@@ -185,5 +186,24 @@ describe('toReminder', () => {
         reminderSchema.safeParse(toReminder({ ...DEFAULT_DRAFT, frequency }, LIST, WED)).success,
       ).toBe(true)
     }
+  })
+})
+
+describe('sameSchedule', () => {
+  it('el mismo borrador es el mismo aviso', () => {
+    expect(sameSchedule(DEFAULT_DRAFT, { ...DEFAULT_DRAFT })).toBe(true)
+  })
+
+  it('cambiar frecuencia, día u hora es un cambio', () => {
+    expect(sameSchedule(DEFAULT_DRAFT, { ...DEFAULT_DRAFT, frequency: 'biweekly' })).toBe(false)
+    expect(sameSchedule(DEFAULT_DRAFT, { ...DEFAULT_DRAFT, weekday: 7 })).toBe(false)
+    expect(sameSchedule(DEFAULT_DRAFT, { ...DEFAULT_DRAFT, timeLocal: '18:00' })).toBe(false)
+  })
+
+  it('el campo que la frecuencia no usa no cuenta', () => {
+    expect(sameSchedule(DEFAULT_DRAFT, { ...DEFAULT_DRAFT, dayOfMonth: 1 })).toBe(true)
+    const monthlyDraft = { ...DEFAULT_DRAFT, frequency: 'monthly' as const }
+    expect(sameSchedule(monthlyDraft, { ...monthlyDraft, weekday: 1 })).toBe(true)
+    expect(sameSchedule(monthlyDraft, { ...monthlyDraft, dayOfMonth: 31 })).toBe(false)
   })
 })

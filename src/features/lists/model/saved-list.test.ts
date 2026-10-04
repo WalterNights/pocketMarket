@@ -99,6 +99,12 @@ describe('saveListErrorMessage', () => {
     expect(saveListErrorMessage('P0002')).toMatch(/ya no existe/)
   })
 
+  it('los límites del servidor tienen mensaje propio', () => {
+    expect(saveListErrorMessage('54000')).toMatch(/demasiados productos/)
+    expect(saveListErrorMessage('22001')).toMatch(/demasiado largo/)
+    expect(saveListErrorMessage('22003')).toMatch(/cantidad/)
+  })
+
   it('un código desconocido nunca muestra el mensaje crudo', () => {
     expect(saveListErrorMessage('XX000')).toBe('No se pudo guardar. Vuelve a intentarlo.')
     expect(saveListErrorMessage(undefined)).toBe('No se pudo guardar. Vuelve a intentarlo.')

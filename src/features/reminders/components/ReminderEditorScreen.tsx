@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useNavigation } from 'expo-router'
+import { usePreventRemove } from 'expo-router/react-navigation'
+import { useRef, useState } from 'react'
 import { ActivityIndicator, Alert, Pressable, ScrollView, Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import type { PermissionState } from '@/shared/lib/notifications'
 
 import { useListReminder, useRemoveReminder, useSaveReminder } from '../hooks/useListReminder'
-import { DEFAULT_DRAFT, draftOf, toReminder, type Reminder } from '../model/reminder'
+import { DEFAULT_DRAFT, draftOf, sameSchedule, toReminder, type Reminder } from '../model/reminder'
 import { ReminderPicker } from './ReminderPicker'
 
 type ReminderEditorScreenProps = {
@@ -49,6 +51,14 @@ export function ReminderEditorScreen({ listId, onDone }: ReminderEditorScreenPro
  */
 export function explainPermission(permission: PermissionState): void {
   if (permission === 'granted') return
+  if (permission === 'unavailable') {
+    Alert.alert(
+      'Aviso guardado',
+      'Esta versión de prueba no puede mostrar avisos. Verás la fecha del próximo mercado ' +
+        'en la lista, y el aviso sonará en la app instalada.',
+    )
+    return
+  }
   Alert.alert(
     'Aviso guardado',
     'Las notificaciones están desactivadas, así que el teléfono no sonará. ' +
@@ -64,22 +74,53 @@ type EditorProps = {
 
 function Editor({ listId, existing, onDone }: EditorProps) {
   const insets = useSafeAreaInsets()
-  const [draft, setDraft] = useState(existing ? draftOf(existing) : DEFAULT_DRAFT)
+  const navigation = useNavigation()
+  const [initial] = useState(() => (existing ? draftOf(existing) : DEFAULT_DRAFT))
+  const [draft, setDraft] = useState(initial)
   const save = useSaveReminder()
   const remove = useRemoveReminder()
   const busy = save.isPending || remove.isPending
 
-  const submit = () =>
+  // Set right before `onDone`: a saved or removed reminder has nothing left
+  // to lose, and the success callback runs before a re-render could lift the
+  // guard below.
+  const finished = useRef(false)
+  const finish = () => {
+    finished.current = true
+    onDone()
+  }
+
+  // Android back, iOS swipe and the header button all go through here
+  // (rules/react-native.md: back is handled explicitly with unsaved state).
+  usePreventRemove(!sameSchedule(draft, initial), ({ data }) => {
+    if (finished.current) {
+      navigation.dispatch(data.action)
+      return
+    }
+    Alert.alert('¿Salir sin guardar?', 'Los cambios de este aviso se perderán.', [
+      { text: 'Seguir editando', style: 'cancel' },
+      {
+        text: 'Salir',
+        style: 'destructive',
+        onPress: () => navigation.dispatch(data.action),
+      },
+    ])
+  })
+
+  const submit = () => {
+    remove.reset()
     save.mutate(toReminder(draft, listId, new Date(), existing), {
       onSuccess: ({ permission }) => {
         explainPermission(permission)
-        onDone()
+        finish()
       },
     })
+  }
 
-  const removeReminder = () => remove.mutate(listId, { onSuccess: onDone })
-
-  const failed = save.isError || remove.isError
+  const removeReminder = () => {
+    save.reset()
+    remove.mutate(listId, { onSuccess: finish })
+  }
 
   return (
     <ScrollView
@@ -92,9 +133,15 @@ function Editor({ listId, existing, onDone }: EditorProps) {
 
       <ReminderPicker value={draft} onChange={setDraft} />
 
-      {failed ? (
+      {save.isError ? (
         <Text className="mt-4 text-sm text-destructive" accessibilityLiveRegion="assertive">
           No se pudo guardar. Revisa tu conexión y vuelve a intentarlo.
+        </Text>
+      ) : null}
+
+      {remove.isError ? (
+        <Text className="mt-4 text-sm text-destructive" accessibilityLiveRegion="assertive">
+          No se pudo quitar el aviso. Revisa tu conexión y vuelve a intentarlo.
         </Text>
       ) : null}
 

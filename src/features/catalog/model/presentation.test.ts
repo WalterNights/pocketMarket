@@ -71,6 +71,16 @@ describe('presentationOf — envases', () => {
     expect(presentationOf(base)).toMatchObject({ singular: 'paquete', label: 'Paquete 500 g' })
   })
 
+  it('el aguacate no es una botella de agua', () => {
+    const avocado = p({ name: 'Aguacate hass', unitKind: 'unit', unitValue: 1, unitMeasure: 'un' })
+    expect(presentationOf(avocado)).toMatchObject({ singular: 'unidad', label: 'Unidad' })
+  })
+
+  it('el agua sí viene en botella', () => {
+    const water = p({ name: 'Agua sin gas', unitKind: 'volume', unitValue: 600, unitMeasure: 'ml' })
+    expect(presentationOf(water)).toMatchObject({ singular: 'botella', label: 'Botella 600 ml' })
+  })
+
   it('una sola unidad no lleva sufijo', () => {
     const one = p({ name: 'Escoba', unitKind: 'unit', unitValue: 1, unitMeasure: 'un' })
     expect(presentationOf(one)).toMatchObject({ singular: 'unidad', label: 'Unidad' })

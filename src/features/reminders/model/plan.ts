@@ -108,3 +108,29 @@ export function reconcile(
     schedule: [...planned],
   }
 }
+
+export type ScheduledReminder = {
+  identifier: string
+  listId: string
+  date: Date
+}
+
+const IDENTIFIER_PATTERN = /^reminder:([0-9a-f-]{36}):(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})$/
+
+/**
+ * Reads back what a scheduled id means. The id carries the list and the local
+ * date it fires on, so the diagnostics screen can show what the phone holds
+ * without depending on the platform-specific shape of the native trigger.
+ * Anything that is not ours returns null.
+ */
+export function parseScheduledIdentifier(identifier: string): ScheduledReminder | null {
+  const match = IDENTIFIER_PATTERN.exec(identifier)
+  if (match === null) return null
+
+  const [, listId = '', year, month, day, hours, minutes] = match
+  return {
+    identifier,
+    listId,
+    date: new Date(Number(year), Number(month) - 1, Number(day), Number(hours), Number(minutes)),
+  }
+}

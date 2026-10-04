@@ -1,7 +1,7 @@
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router'
-import { Text, View } from 'react-native'
 
 import { listIdParamSchema, SavedListScreen } from '@/features/lists'
+import { NotFound } from '@/shared/ui'
 
 /**
  * Route: a saved list. Also the target of a reminder notification, so the id
@@ -13,10 +13,10 @@ export default function SavedListRoute() {
 
   if (!parsed.success) {
     return (
-      <View className="flex-1 items-center justify-center bg-background px-8">
+      <>
         <Stack.Screen options={{ title: '' }} />
-        <Text className="text-center text-base text-foreground">Esta lista no existe.</Text>
-      </View>
+        <NotFound title="Esta lista no existe" />
+      </>
     )
   }
 

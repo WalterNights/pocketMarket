@@ -7,6 +7,7 @@
  * (01-overview.md).
  */
 export { ReminderCard } from './components/ReminderCard'
+export { ReminderDiagnosticsScreen } from './components/ReminderDiagnosticsScreen'
 export { ReminderEditorScreen, explainPermission } from './components/ReminderEditorScreen'
 export { ReminderPicker } from './components/ReminderPicker'
 export { useListReminder, useRemoveReminder, useSaveReminder } from './hooks/useListReminder'

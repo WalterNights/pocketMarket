@@ -7,6 +7,15 @@ import { z } from 'zod'
  */
 export const MIN_PASSWORD_LENGTH = 8
 
+/**
+ * bcrypt, which Supabase Auth hashes with, reads only the first 72 bytes of a
+ * password: anything past that would be silently ignored, so it is refused.
+ */
+export const MAX_PASSWORD_LENGTH = 72
+
+/** A greeting, not a biography: long enough for any real name. */
+export const MAX_DISPLAY_NAME_LENGTH = 60
+
 const email = z
   .string()
   .trim()
@@ -20,12 +29,16 @@ export const signInSchema = z.object({
 })
 
 export const signUpSchema = z.object({
-  displayName: z.string().trim().min(1, 'Escribe tu nombre').max(60, 'Máximo 60 caracteres'),
+  displayName: z
+    .string()
+    .trim()
+    .min(1, 'Escribe tu nombre')
+    .max(MAX_DISPLAY_NAME_LENGTH, `Máximo ${MAX_DISPLAY_NAME_LENGTH} caracteres`),
   email,
   password: z
     .string()
     .min(MIN_PASSWORD_LENGTH, `Mínimo ${MIN_PASSWORD_LENGTH} caracteres`)
-    .max(72, 'Máximo 72 caracteres'),
+    .max(MAX_PASSWORD_LENGTH, `Máximo ${MAX_PASSWORD_LENGTH} caracteres`),
 })
 
 /** What the form holds while typing, before trimming and lowercasing. */

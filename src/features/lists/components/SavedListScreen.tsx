@@ -13,6 +13,7 @@ import {
   type Product,
 } from '@/features/catalog'
 import { ReminderCard } from '@/features/reminders'
+import { ErrorState } from '@/shared/ui'
 import { formatCop } from '@/shared/utils/format-money'
 
 import { useDeleteList, useSavedList, useSavedListTotals } from '../hooks/useSavedLists'
@@ -56,12 +57,18 @@ export function SavedListScreen({
     [products.data],
   )
 
+  const priceStatus = products.status
   const renderItem = useCallback(
     ({ item }: { item: SavedListItem }) => (
-      <SavedItemRow item={item} product={productById.get(item.productId)} />
+      <SavedItemRow
+        item={item}
+        product={productById.get(item.productId)}
+        priceStatus={priceStatus}
+      />
     ),
-    [productById],
+    [productById, priceStatus],
   )
+  const rowsExtraData = useMemo(() => ({ productById, priceStatus }), [productById, priceStatus])
 
   if (list.isPending) {
     return (
@@ -75,18 +82,7 @@ export function SavedListScreen({
   }
 
   if (list.isError) {
-    return (
-      <View className="flex-1 items-center justify-center bg-background px-8">
-        <Text className="text-center text-base text-foreground">No pudimos cargar esta lista.</Text>
-        <Pressable
-          onPress={() => void list.refetch()}
-          accessibilityRole="button"
-          className="mt-4 h-11 justify-center rounded-md bg-primary px-5"
-        >
-          <Text className="text-base font-medium text-primary-foreground">Reintentar</Text>
-        </Pressable>
-      </View>
-    )
+    return <ErrorState title="No pudimos cargar esta lista" onRetry={() => void list.refetch()} />
   }
 
   const saved = list.data
@@ -139,7 +135,7 @@ export function SavedListScreen({
         data={saved.items}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        extraData={productById}
+        extraData={rowsExtraData}
         ListHeaderComponent={
           <View className="px-4 pb-2 pt-4">
             <ReminderCard listId={saved.id} onEdit={onEditReminder} />
@@ -238,16 +234,38 @@ const keyExtractor = (item: SavedListItem) => item.productId
 
 type SavedItemRowProps = {
   item: SavedListItem
-  /** Absent when the product has no price today. */
+  /** Absent while today's prices load, when they failed, or when it has none. */
   product: Product | undefined
+  /** Status of today's prices: only a success can say a product has none. */
+  priceStatus: 'pending' | 'error' | 'success'
 }
 
-const SavedItemRow = memo(function SavedItemRow({ item, product }: SavedItemRowProps) {
+const SavedItemRow = memo(function SavedItemRow({ item, product, priceStatus }: SavedItemRowProps) {
   const quantityText = product
     ? formatQuantity(product, item.quantity)
     : `${item.quantity} ${item.quantity === 1 ? 'unidad' : 'unidades'}`
 
+  if (product === undefined && priceStatus === 'pending') {
+    return (
+      <View
+        className="h-[72px] flex-row items-center border-b border-border px-4"
+        accessibilityLabel={`${item.productName}, cargando el precio de hoy`}
+      >
+        <View className="flex-1 pr-3">
+          <Text className="text-base text-foreground" numberOfLines={1}>
+            {item.productName}
+          </Text>
+          <View className="mt-1.5 h-3 w-1/3 rounded-sm bg-muted" />
+        </View>
+        <View className="h-4 w-20 rounded-sm bg-muted" />
+      </View>
+    )
+  }
+
   if (product === undefined) {
+    // Only a successful fetch proves the product has no price today. On error
+    // the price is just unknown: the footer offers the retry.
+    const status = priceStatus === 'success' ? ' · Sin precio hoy' : ''
     return (
       <View className="h-[72px] flex-row items-center border-b border-border px-4 opacity-60">
         <View className="flex-1 pr-3">
@@ -255,7 +273,8 @@ const SavedItemRow = memo(function SavedItemRow({ item, product }: SavedItemRowP
             {item.productName}
           </Text>
           <Text className="mt-0.5 text-xs text-muted-foreground">
-            {quantityText} · Sin precio hoy
+            {quantityText}
+            {status}
           </Text>
         </View>
         <Text className="text-sm tabular-nums text-muted-foreground">

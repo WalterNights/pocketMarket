@@ -1,4 +1,10 @@
-import { NOTIFICATION_BUDGET, planNotifications, reconcile, type ReminderContext } from './plan'
+import {
+  NOTIFICATION_BUDGET,
+  parseScheduledIdentifier,
+  planNotifications,
+  reconcile,
+  type ReminderContext,
+} from './plan'
 import type { Reminder } from './reminder'
 
 const WED = new Date(2025, 9, 1, 10, 0)
@@ -82,5 +88,24 @@ describe('reconcile', () => {
 
   it('no toca notificaciones que no son suyas', () => {
     expect(reconcile(plan, ['otra-cosa:123']).cancel).toEqual([])
+  })
+})
+
+describe('parseScheduledIdentifier', () => {
+  it('lee de vuelta la lista y la fecha de un id programado', () => {
+    const [first] = planNotifications([context(uuid(1))], WED)
+    const parsed = parseScheduledIdentifier(first?.identifier ?? '')
+
+    expect(parsed).toEqual({
+      identifier: first?.identifier,
+      listId: uuid(1),
+      date: new Date(2025, 9, 4, 8, 0),
+    })
+  })
+
+  it('ignora lo que no es un recordatorio nuestro', () => {
+    expect(parseScheduledIdentifier('debug:1727000000000')).toBeNull()
+    expect(parseScheduledIdentifier('reminder:no-es-uuid:202510040800')).toBeNull()
+    expect(parseScheduledIdentifier('otra-app:123')).toBeNull()
   })
 })

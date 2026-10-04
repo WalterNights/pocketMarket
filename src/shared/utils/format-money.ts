@@ -15,10 +15,3 @@ const copFormatter = new Intl.NumberFormat('es-CO', {
 export function formatCop(amountCop: number): string {
   return copFormatter.format(amountCop)
 }
-
-/** Without the currency symbol, for places where the context already says COP. */
-const plainFormatter = new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 })
-
-export function formatCopPlain(amountCop: number): string {
-  return plainFormatter.format(amountCop)
-}

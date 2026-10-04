@@ -1,30 +1,38 @@
+import { z } from 'zod'
+
 import { supabase } from '@/shared/lib/supabase'
+import type { Tables } from '@/shared/types/database.types'
 
 import type { ReminderContext } from '../model/plan'
 import { reminderSchema, type Reminder } from '../model/reminder'
 
-/** Carries the Postgres/PostgREST code; the UI words it (03-patterns.md). */
+/**
+ * `code` is the PostgREST/Postgres code, `'network'` when the request never
+ * reached the server, or `'signed_out'` when there is no session to write as.
+ * The UI words it (03-patterns.md); the message is for logs only.
+ */
 export class ReminderError extends Error {
   constructor(
     readonly operation: string,
-    override readonly cause: unknown,
+    readonly code: string | undefined,
+    override readonly cause?: unknown,
   ) {
-    super(`Fallo en ${operation}`)
+    super(`${operation} failed${code === undefined ? '' : ` (${code})`}`)
     this.name = 'ReminderError'
   }
 }
 
+function fail(operation: string, error: { code?: string }): ReminderError {
+  // PostgREST reports a request that never reached the server with an empty code.
+  return new ReminderError(operation, error.code === '' ? 'network' : error.code, error)
+}
+
 const COLUMNS = 'list_id, frequency, weekday, day_of_month, time_local, anchor_date, is_enabled'
 
-type ReminderRow = {
-  list_id: string
-  frequency: string
-  weekday: number | null
-  day_of_month: number | null
-  time_local: string
-  anchor_date: string | null
-  is_enabled: boolean
-}
+type ReminderRow = Pick<
+  Tables<'list_reminder'>,
+  'list_id' | 'frequency' | 'weekday' | 'day_of_month' | 'time_local' | 'anchor_date' | 'is_enabled'
+>
 
 function toReminder(row: ReminderRow): Reminder {
   return reminderSchema.parse({
@@ -38,6 +46,17 @@ function toReminder(row: ReminderRow): Reminder {
   })
 }
 
+/**
+ * What a notification says about its list. Every column of a view is nullable
+ * to PostgREST; a missing name means the list is archived or gone.
+ */
+const listSummarySchema = z.object({
+  id: z.uuid(),
+  name: z.string().nullable(),
+  item_count: z.number().int().nonnegative().nullable(),
+  total_cop: z.number().int().nonnegative().nullable(),
+})
+
 async function currentUserId(): Promise<string | null> {
   const { data } = await supabase.auth.getSession()
   return data.session?.user.id ?? null
@@ -47,7 +66,7 @@ export const reminderRepository = {
   async forList(listId: string, signal?: AbortSignal): Promise<Reminder | null> {
     const base = supabase.from('list_reminder').select(COLUMNS).eq('list_id', listId)
     const { data, error } = await (signal ? base.abortSignal(signal) : base).maybeSingle()
-    if (error) throw new ReminderError('reminders.forList', error)
+    if (error) throw fail('reminders.forList', error)
 
     return data === null ? null : toReminder(data)
   },
@@ -64,7 +83,7 @@ export const reminderRepository = {
       .from('list_reminder')
       .select(COLUMNS)
       .eq('is_enabled', true)
-    if (error) throw new ReminderError('reminders.contexts', error)
+    if (error) throw fail('reminders.contexts', error)
     if (reminders.length === 0) return []
 
     const { data: lists, error: listsError } = await supabase
@@ -74,9 +93,14 @@ export const reminderRepository = {
         'id',
         reminders.map((r) => r.list_id),
       )
-    if (listsError) throw new ReminderError('reminders.contexts.lists', listsError)
+    if (listsError) throw fail('reminders.contexts.lists', listsError)
 
-    const byId = new Map(lists.map((list) => [list.id, list]))
+    const byId = new Map(
+      z
+        .array(listSummarySchema)
+        .parse(lists)
+        .map((list) => [list.id, list]),
+    )
 
     return reminders.flatMap((row) => {
       const list = byId.get(row.list_id)
@@ -96,7 +120,7 @@ export const reminderRepository = {
   /** One reminder per list (list_reminder_one_per_list): upsert on list_id. */
   async save(reminder: Reminder): Promise<void> {
     const ownerId = await currentUserId()
-    if (ownerId === null) throw new ReminderError('reminders.save', 'signed out')
+    if (ownerId === null) throw new ReminderError('reminders.save', 'signed_out')
 
     const { error } = await supabase.from('list_reminder').upsert(
       {
@@ -112,11 +136,11 @@ export const reminderRepository = {
       },
       { onConflict: 'list_id' },
     )
-    if (error) throw new ReminderError('reminders.save', error)
+    if (error) throw fail('reminders.save', error)
   },
 
   async remove(listId: string): Promise<void> {
     const { error } = await supabase.from('list_reminder').delete().eq('list_id', listId)
-    if (error) throw new ReminderError('reminders.remove', error)
+    if (error) throw fail('reminders.remove', error)
   },
 }

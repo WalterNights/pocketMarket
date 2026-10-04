@@ -46,4 +46,36 @@ describe('productIconName', () => {
   it('nunca devuelve vacío, para no dejar un hueco en la fila', () => {
     expect(productIconName('', null)).toBeTruthy()
   })
+
+  describe('palabra entera, no subcadena (ING-006)', () => {
+    it('un refresco no es carne de res', () => {
+      expect(productIconName('Refresco de fresa', null)).toBe('CupSoda')
+    })
+
+    it('la carne de res sigue siendo carne', () => {
+      expect(productIconName('Carne de res molida', null)).toBe('Beef')
+    })
+
+    it('un pañal no es pan', () => {
+      expect(productIconName('Pañales etapa 3 x 30', 'bebes')).toBe('Baby')
+    })
+
+    it('el pan y los panes siguen siendo pan', () => {
+      expect(productIconName('Pan tajado', null)).toBe('Croissant')
+      expect(productIconName('Panes de bono', null)).toBe('Croissant')
+    })
+
+    it('la pasta dental no es pasta', () => {
+      expect(productIconName('Pasta dental triple acción', 'cuidado-personal')).toBe('Bath')
+    })
+
+    it('el aguacate no es agua', () => {
+      expect(productIconName('Aguacate hass', null)).toBe('Salad')
+    })
+
+    it('una raíz marcada con * coge todas sus formas', () => {
+      expect(productIconName('Salchichón cervecero', null)).toBe('Ham')
+      expect(productIconName('Yogurt griego', null)).toBe('Milk')
+    })
+  })
 })

@@ -1,9 +1,10 @@
 import { useLocalSearchParams, useRouter } from 'expo-router'
-import { useCallback, useMemo } from 'react'
+import { useCallback } from 'react'
 import { View } from 'react-native'
 
 import { CategoryListScreen, routeParamsSchema } from '@/features/catalog'
-import { DraftListBar, useDraftListStore } from '@/features/lists'
+import { DraftListBar, useDraftQuantities } from '@/features/lists'
+import { NotFound } from '@/shared/ui'
 
 /**
  * Route: categories within a store, the step before the product list.
@@ -15,30 +16,29 @@ import { DraftListBar, useDraftListStore } from '@/features/lists'
 export default function StoreCategoriesRoute() {
   const router = useRouter()
   const parsed = routeParamsSchema.safeParse(useLocalSearchParams())
+  const slug = parsed.success ? parsed.data.slug : null
 
-  const draftItems = useDraftListStore((s) => s.items)
-  const draftQuantities = useMemo(
-    () => Object.fromEntries(Object.entries(draftItems).map(([id, item]) => [id, item.quantity])),
-    [draftItems],
-  )
+  const draftQuantities = useDraftQuantities()
 
   const openProduct = useCallback(
     (productId: string) => router.push({ pathname: '/product/[id]', params: { id: productId } }),
     [router],
   )
 
+  // Depends on the slug string, not on `parsed`: safeParse returns a new object
+  // every render, which would recreate this callback every time.
   const openCategory = useCallback(
     (categorySlug: string, categoryName: string) => {
-      if (!parsed.success) return
+      if (slug === null) return
       router.push({
         pathname: '/store/[slug]/[category]',
-        params: { slug: parsed.data.slug, category: categorySlug, categoryName },
+        params: { slug, category: categorySlug, categoryName },
       })
     },
-    [router, parsed],
+    [router, slug],
   )
 
-  if (!parsed.success) return null
+  if (!parsed.success) return <NotFound title="Esta tienda no existe" />
 
   return (
     <View className="flex-1 bg-background">

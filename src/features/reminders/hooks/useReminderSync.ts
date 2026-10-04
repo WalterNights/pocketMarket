@@ -50,12 +50,16 @@ export function syncReminders(): Promise<void> {
     try {
       do {
         again = false
-        await runOnce()
+        // Caught per pass, not around the loop: a re-run requested while a
+        // failing pass was in flight (a save that just landed) must still run.
+        try {
+          await runOnce()
+        } catch (cause) {
+          // Reported, not swallowed: the next foreground retries, and a failed
+          // sync leaves the previous schedule in place rather than none.
+          console.warn('Could not sync reminders', cause)
+        }
       } while (again)
-    } catch (cause) {
-      // Reported, not swallowed: the next foreground retries, and a failed
-      // sync leaves the previous schedule in place rather than none.
-      console.warn('No se pudieron sincronizar los recordatorios', cause)
     } finally {
       running = null
     }
@@ -85,7 +89,7 @@ export function useReminderSync(): void {
   }, [])
 }
 
-const notificationDataSchema = z.object({ listId: z.string().uuid() })
+const notificationDataSchema = z.object({ listId: z.uuid() })
 
 /**
  * Tapping a reminder opens its list. The payload is untrusted input like any

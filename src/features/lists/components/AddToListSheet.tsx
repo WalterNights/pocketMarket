@@ -15,12 +15,13 @@ import {
   MIN_QUANTITY,
   presentationOf,
   ProductIcon,
-  quantityStep,
+  QUANTITY_STEP,
   totalContentOf,
   unitPriceOf,
   useProduct,
   type Product,
 } from '@/features/catalog'
+import { ErrorState } from '@/shared/ui'
 import { formatCop } from '@/shared/utils/format-money'
 
 import { useDraftListStore } from '../store/draft-list-store'
@@ -46,19 +47,7 @@ export function AddToListSheet({ productId }: AddToListSheetProps) {
   }
 
   if (isError || product === undefined) {
-    return (
-      <View className="flex-1 items-center justify-center bg-background p-6">
-        <Text className="text-center text-base text-foreground">No se pudo cargar el producto</Text>
-        <Pressable
-          onPress={() => refetch()}
-          accessibilityRole="button"
-          accessibilityLabel="Reintentar"
-          className="mt-4 h-11 justify-center rounded-md bg-primary px-5"
-        >
-          <Text className="text-base font-medium text-primary-foreground">Reintentar</Text>
-        </Pressable>
-      </View>
-    )
+    return <ErrorState title="No se pudo cargar el producto" onRetry={() => void refetch()} />
   }
 
   return <SheetContent product={product} />
@@ -75,7 +64,6 @@ function SheetContent({ product }: { product: Product }) {
 
   const presentation = presentationOf(product)
   const unitPrice = unitPriceOf(product)
-  const step = quantityStep(product)
   const total = product.priceCop * quantity
   const totalContent = totalContentOf(product, quantity)
 
@@ -117,7 +105,7 @@ function SheetContent({ product }: { product: Product }) {
       <View className="mt-3 flex-row items-center justify-between">
         <StepperButton
           label="Quitar uno"
-          onPress={() => changeBy(-step)}
+          onPress={() => changeBy(-QUANTITY_STEP)}
           disabled={quantity <= MIN_QUANTITY}
           icon="minus"
         />
@@ -133,7 +121,7 @@ function SheetContent({ product }: { product: Product }) {
 
         <StepperButton
           label="Añadir uno"
-          onPress={() => changeBy(step)}
+          onPress={() => changeBy(QUANTITY_STEP)}
           disabled={quantity >= MAX_QUANTITY}
           icon="plus"
         />

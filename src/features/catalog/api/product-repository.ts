@@ -1,18 +1,8 @@
 import { supabase } from '@/shared/lib/supabase'
 
 import { productSchema, type Product } from '../model/product'
+import { parseResponse, RepositoryError } from './errors'
 import type { ProductSearchFilters } from './keys'
-
-/** Typed error so callers never have to unpack Supabase's `{ data, error }`. */
-export class RepositoryError extends Error {
-  constructor(
-    readonly operation: string,
-    override readonly cause: unknown,
-  ) {
-    super(`Fallo en ${operation}`)
-    this.name = 'RepositoryError'
-  }
-}
 
 export const PAGE_SIZE = 20
 
@@ -81,7 +71,10 @@ export const productRepository = {
       .select(COLUMNS)
       .eq('is_available', true)
       .not('price_cop', 'is', null)
+      // `id` breaks ties: names repeat across stores and sizes, and without a
+      // total order the same product can land on two pages or on none.
       .order('name')
+      .order('id')
       .range(offset, offset + PAGE_SIZE - 1)
 
     const trimmed = query.trim()
@@ -101,7 +94,7 @@ export const productRepository = {
 
     // Validate at the boundary: a migration applied without regenerating types
     // makes TypeScript confidently wrong about what actually arrived.
-    return productSchema.array().parse((data ?? []).map(toProductInput))
+    return parseResponse(productSchema.array(), (data ?? []).map(toProductInput), 'catalog.search')
   },
 
   async byId(id: string, signal?: AbortSignal): Promise<Product> {
@@ -113,7 +106,7 @@ export const productRepository = {
     const { data, error } = await request.single()
     if (error) throw new RepositoryError('catalog.byId', error)
 
-    return productSchema.parse(toProductInput(data))
+    return parseResponse(productSchema, toProductInput(data), 'catalog.byId')
   },
 
   /**
@@ -132,6 +125,6 @@ export const productRepository = {
     const { data, error } = await (signal ? base.abortSignal(signal) : base)
     if (error) throw new RepositoryError('catalog.byIds', error)
 
-    return productSchema.array().parse((data ?? []).map(toProductInput))
+    return parseResponse(productSchema.array(), (data ?? []).map(toProductInput), 'catalog.byIds')
   },
 }

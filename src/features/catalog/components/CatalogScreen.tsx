@@ -1,10 +1,11 @@
 import { FlashList } from '@shopify/flash-list'
 import { Stack } from 'expo-router'
-import { useCallback, useState } from 'react'
-import { Pressable, Text, TextInput, View } from 'react-native'
+import { useCallback, useMemo, useState } from 'react'
+import { Text, TextInput, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { PocketLoader } from '@/shared/ui'
+import { useDebouncedValue } from '@/shared/hooks/useDebouncedValue'
+import { ErrorState, flatHeaderOptions, PocketLoader } from '@/shared/ui'
 
 import { useProductSearch } from '../hooks/useProductSearch'
 import type { Product } from '../model/product'
@@ -12,6 +13,9 @@ import { ProductRow } from './ProductRow'
 
 /** Stable ids so the skeleton never keys off an array index. */
 const SKELETON_ROWS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8'] as const
+
+/** Long enough to skip the keystrokes of a word, short enough to feel live. */
+export const SEARCH_DEBOUNCE_MS = 300
 
 const NO_DRAFT: Record<string, number> = {}
 const noop = () => {}
@@ -26,7 +30,7 @@ type CatalogScreenProps = {
   /**
    * Search term supplied from outside. When present the screen renders no
    * search box of its own — CategoryListScreen already owns one, and two
-   * stacked inputs would be nonsense.
+   * stacked inputs would be nonsense. Expected already debounced.
    */
   embeddedQuery?: string
   /**
@@ -59,8 +63,11 @@ export function CatalogScreen({
   const insets = useSafeAreaInsets()
   const [ownQuery, setOwnQuery] = useState('')
 
+  // Only the own box is debounced here: an embedded query arrives debounced
+  // by its owner, and debouncing it twice would double the wait.
+  const debouncedOwnQuery = useDebouncedValue(ownQuery, SEARCH_DEBOUNCE_MS)
   const embedded = embeddedQuery !== undefined
-  const query = embedded ? embeddedQuery : ownQuery
+  const query = embedded ? embeddedQuery : debouncedOwnQuery
 
   const { data, isPending, isError, refetch, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useProductSearch({ query, storeSlug, categorySlug })
@@ -81,7 +88,7 @@ export function CatalogScreen({
   )
   const keyExtractor = useCallback((item: Product) => item.id, [])
 
-  const products = data?.pages.flat() ?? []
+  const products = useMemo(() => data?.pages.flat() ?? [], [data])
   const headerTitle = categoryName ?? storeName
   const ownsHeader = !embedded && headerTitle !== undefined
 
@@ -90,20 +97,7 @@ export function CatalogScreen({
       className="flex-1 bg-background"
       style={{ paddingTop: embedded || ownsHeader ? 0 : insets.top }}
     >
-      {ownsHeader ? (
-        <Stack.Screen
-          options={{
-            title: headerTitle,
-            headerShown: true,
-            headerBackTitle: 'Atrás',
-            headerStyle: { backgroundColor: '#FAF8F3' },
-            headerTintColor: '#1F1D1B',
-            // Flat header: separation comes from surface and border, never shadow
-            // (docs/design/00-visual-direction.md).
-            headerShadowVisible: false,
-          }}
-        />
-      ) : null}
+      {ownsHeader ? <Stack.Screen options={{ ...flatHeaderOptions, title: headerTitle }} /> : null}
 
       {!embedded ? (
         <View className="px-4 pb-3 pt-2">
@@ -182,24 +176,7 @@ function CatalogBody({
 
   // 2. Error — actionable, with a retry. Never a dead end.
   if (isError) {
-    return (
-      <View className="flex-1 items-center justify-center px-8">
-        <Text className="text-center text-base text-foreground">
-          No se pudieron cargar los productos
-        </Text>
-        <Text className="mt-1 text-center text-sm text-muted-foreground">
-          Revisa tu conexión e inténtalo de nuevo.
-        </Text>
-        <Pressable
-          onPress={onRetry}
-          accessibilityRole="button"
-          accessibilityLabel="Reintentar"
-          className="mt-4 h-11 justify-center rounded-md bg-primary px-5"
-        >
-          <Text className="text-base font-medium text-primary-foreground">Reintentar</Text>
-        </Pressable>
-      </View>
-    )
+    return <ErrorState title="No se pudieron cargar los productos" onRetry={onRetry} />
   }
 
   // 3. Empty — a line icon, a sentence and an action. No illustration.

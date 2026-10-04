@@ -2,6 +2,7 @@ import { Stack, useLocalSearchParams } from 'expo-router'
 
 import { productIdParamSchema } from '@/features/catalog'
 import { AddToListSheet } from '@/features/lists'
+import { NotFound } from '@/shared/ui'
 
 /**
  * Route: translates navigation params into feature props.
@@ -27,7 +28,11 @@ export default function ProductRoute() {
           contentStyle: { backgroundColor: '#FAF8F3' },
         }}
       />
-      {parsed.success ? <AddToListSheet productId={parsed.data.id} /> : null}
+      {parsed.success ? (
+        <AddToListSheet productId={parsed.data.id} />
+      ) : (
+        <NotFound title="Este producto no existe" />
+      )}
     </>
   )
 }

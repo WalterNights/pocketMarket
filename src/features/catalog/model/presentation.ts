@@ -1,3 +1,6 @@
+import { normaliseText } from '@/shared/utils/normalise-text'
+
+import { compileKeyword, compileKeywordTable, firstMatch } from './keyword-match'
 import type { Product } from './product'
 
 /**
@@ -20,15 +23,12 @@ export type Presentation = {
   label: string
 }
 
-/** Lowercase and strip accents so "Plátano" matches "platano". */
-const COMBINING_MARKS = new RegExp('[̀-ͯ]', 'g')
-
-function normalise(text: string): string {
-  return text.toLowerCase().normalize('NFD').replace(COMBINING_MARKS, '')
-}
-
-/** Containers keyed by a word in the product name. First match wins. */
-const CONTAINER_KEYWORDS: readonly (readonly [string, [string, string]])[] = [
+/**
+ * Containers keyed by a whole word in the product name. First match wins.
+ * Whole words, not substrings: "agua" must not turn an aguacate into a bottle
+ * (see keyword-match.ts).
+ */
+const CONTAINER_KEYWORDS = compileKeywordTable<readonly [string, string]>([
   ['leche', ['bolsa', 'bolsas']],
   ['aceite', ['botella', 'botellas']],
   ['gaseosa', ['botella', 'botellas']],
@@ -37,8 +37,10 @@ const CONTAINER_KEYWORDS: readonly (readonly [string, [string, string]])[] = [
   ['vino', ['botella', 'botellas']],
   ['cerveza', ['lata', 'latas']],
   ['atun', ['lata', 'latas']],
-  ['yogur', ['vaso', 'vasos']],
-]
+  ['yogur*', ['vaso', 'vasos']],
+])
+
+const EGG_KEYWORD = compileKeyword('huevo')
 
 const MEASURE_LABELS: Record<string, string> = {
   g: 'g',
@@ -73,20 +75,19 @@ function trimZeros(value: number): string {
  * panal. Getting that wrong makes the quantity picker read as nonsense.
  */
 export function presentationOf(product: Product): Presentation {
-  const name = normalise(product.name)
-  const { unitKind, unitValue, unitMeasure } = product
+  const { name, unitKind, unitValue, unitMeasure } = product
 
-  if (name.includes('huevo') && unitValue !== null) {
+  if (unitValue !== null && EGG_KEYWORD.test(normaliseText(name))) {
     if (unitValue >= 24) return withLabel('cartón', 'cartones', `x ${unitValue}`)
     if (unitValue === 12) return withLabel('docena', 'docenas', '')
     if (unitValue === 6) return withLabel('media docena', 'medias docenas', '')
     return withLabel('panal', 'panales', `x ${unitValue}`)
   }
 
-  for (const [keyword, [singular, plural]] of CONTAINER_KEYWORDS) {
-    if (name.includes(keyword)) {
-      return withLabel(singular, plural, measureSuffix(unitValue, unitMeasure))
-    }
+  const container = firstMatch(CONTAINER_KEYWORDS, name)
+  if (container !== undefined) {
+    const [singular, plural] = container
+    return withLabel(singular, plural, measureSuffix(unitValue, unitMeasure))
   }
 
   if (unitKind === 'unit') {
@@ -127,9 +128,7 @@ export const MAX_QUANTITY = 99
  * buy half a carton. Bulk goods (sold by loose weight) would step by 0.1, but
  * no source publishes them yet — when one does, this is where it changes.
  */
-export function quantityStep(_product: Product): number {
-  return 1
-}
+export const QUANTITY_STEP = 1
 
 export function clampQuantity(quantity: number): number {
   if (Number.isNaN(quantity)) return MIN_QUANTITY

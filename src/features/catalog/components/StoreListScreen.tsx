@@ -5,6 +5,8 @@ import { useCallback, type ReactNode } from 'react'
 import { Pressable, ScrollView, Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
+import { ErrorState } from '@/shared/ui'
+
 import { useStores } from '../hooks/useStores'
 import { freshnessLabel, isBrowsable, type Store } from '../model/store'
 
@@ -92,23 +94,11 @@ function StoreListBody({
 
   if (isError) {
     return (
-      <View className="flex-1 items-center justify-center px-8">
-        <StoreIcon size={32} color="#78726B" strokeWidth={1.5} />
-        <Text className="mt-3 text-center text-base text-foreground">
-          No se pudieron cargar las tiendas
-        </Text>
-        <Text className="mt-1 text-center text-sm text-muted-foreground">
-          Revisa tu conexión e inténtalo de nuevo.
-        </Text>
-        <Pressable
-          onPress={onRetry}
-          accessibilityRole="button"
-          accessibilityLabel="Reintentar"
-          className="mt-4 h-11 justify-center rounded-md bg-primary px-5"
-        >
-          <Text className="text-base font-medium text-primary-foreground">Reintentar</Text>
-        </Pressable>
-      </View>
+      <ErrorState
+        title="No se pudieron cargar las tiendas"
+        onRetry={onRetry}
+        icon={<StoreIcon size={32} color="#78726B" strokeWidth={1.5} />}
+      />
     )
   }
 

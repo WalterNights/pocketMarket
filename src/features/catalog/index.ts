@@ -23,7 +23,7 @@ export {
   formatQuantity,
   formatMeasure,
   totalContentOf,
-  quantityStep,
+  QUANTITY_STEP,
   clampQuantity,
   MIN_QUANTITY,
   MAX_QUANTITY,

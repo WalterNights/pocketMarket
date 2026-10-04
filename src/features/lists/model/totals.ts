@@ -1,3 +1,5 @@
+import { z } from 'zod'
+
 import type { Product } from '@/features/catalog'
 
 /**
@@ -20,12 +22,15 @@ export type DraftItem = {
   quantity: number
 }
 
-export type StoreTotal = {
-  storeSlug: string
-  storeName: string
-  itemCount: number
-  subtotalCop: number
-}
+/** One store's share of a list. For a saved list it comes from `list_totals`. */
+export const storeTotalSchema = z.object({
+  storeSlug: z.string().min(1),
+  storeName: z.string().min(1),
+  itemCount: z.number().int().nonnegative(),
+  subtotalCop: z.number().int().nonnegative(),
+})
+
+export type StoreTotal = z.infer<typeof storeTotalSchema>
 
 export function itemCountOf(items: DraftItem[]): number {
   return items.length

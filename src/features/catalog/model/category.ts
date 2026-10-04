@@ -10,11 +10,3 @@ export const storeCategorySchema = z.object({
 })
 
 export type StoreCategory = z.infer<typeof storeCategorySchema>
-
-/**
- * Total products across categories. Shown on the store card so the user knows
- * the size of what they are entering.
- */
-export function totalProductsIn(categories: StoreCategory[]): number {
-  return categories.reduce((sum, c) => sum + c.productCount, 0)
-}

@@ -5,7 +5,11 @@ import { Pressable, Text, View } from 'react-native'
 
 import { notifications } from '@/shared/lib/notifications'
 
-import { useListReminder, useNotificationPermission } from '../hooks/useListReminder'
+import {
+  useListReminder,
+  useNotificationPermission,
+  useRequestNotificationPermission,
+} from '../hooks/useListReminder'
 import { describeReminder, formatShortDate, nextOccurrences } from '../model/reminder'
 
 const FOREGROUND = '#1F1D1B'
@@ -25,6 +29,7 @@ type ReminderCardProps = {
 export function ReminderCard({ listId, onEdit }: ReminderCardProps) {
   const reminder = useListReminder(listId)
   const permission = useNotificationPermission()
+  const requestPermission = useRequestNotificationPermission()
 
   if (reminder.isPending) {
     return <View className="h-[76px] rounded-lg border border-border bg-card" />
@@ -53,6 +58,9 @@ export function ReminderCard({ listId, onEdit }: ReminderCardProps) {
 
   const next = nextOccurrences(reminder.data, new Date(), 1)[0]
   const denied = permission.data === 'denied'
+  const unavailable = permission.data === 'unavailable'
+  // Android after a first "no": the OS will still ask, so ask from here.
+  const undetermined = permission.data === 'undetermined'
 
   return (
     <CardFrame icon={<BellRing size={20} color={FOREGROUND} strokeWidth={1.75} />}>
@@ -72,6 +80,24 @@ export function ReminderCard({ listId, onEdit }: ReminderCardProps) {
         </View>
       ) : null}
 
+      {undetermined ? (
+        <View className="mt-2">
+          <Text className="text-xs text-muted-foreground">El teléfono no sonará todavía.</Text>
+          <Action
+            label={requestPermission.isPending ? 'Activando…' : 'Activar avisos'}
+            disabled={requestPermission.isPending}
+            onPress={() => requestPermission.mutate()}
+          />
+        </View>
+      ) : null}
+
+      {unavailable ? (
+        // Not the user's doing, so no Settings link: there is nothing there to turn on.
+        <Text className="mt-2 text-xs text-muted-foreground">
+          Esta versión de prueba no puede mostrar avisos. Sonarán en la app instalada.
+        </Text>
+      ) : null}
+
       <Action label="Cambiar aviso" onPress={onEdit} />
     </CardFrame>
   )
@@ -86,11 +112,21 @@ function CardFrame({ icon, children }: { icon: ReactNode; children: ReactNode })
   )
 }
 
-function Action({ label, onPress }: { label: string; onPress: () => void }) {
+function Action({
+  label,
+  onPress,
+  disabled = false,
+}: {
+  label: string
+  onPress: () => void
+  disabled?: boolean
+}) {
   return (
     <Pressable
       onPress={onPress}
+      disabled={disabled}
       accessibilityRole="button"
+      accessibilityState={{ disabled }}
       hitSlop={8}
       className="mt-2 h-11 justify-center self-start"
     >

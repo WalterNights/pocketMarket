@@ -26,7 +26,12 @@ import { formatCop } from '@/shared/utils/format-money'
 
 import { ListError } from '../api/list-repository'
 import { useSaveList } from '../hooks/useSavedLists'
-import { listNameSchema, saveListErrorMessage, toSavePayload } from '../model/saved-list'
+import {
+  LIST_NAME_MAX,
+  listNameSchema,
+  saveListErrorMessage,
+  toSavePayload,
+} from '../model/saved-list'
 import { grandTotalOf } from '../model/totals'
 import { selectEditing, useDraftListStore } from '../store/draft-list-store'
 
@@ -144,7 +149,7 @@ export function SaveListScreen({ onSaved }: SaveListScreenProps) {
               accessibilityLabel="Nombre de la lista"
               autoFocus={editing === null}
               returnKeyType="done"
-              maxLength={80}
+              maxLength={LIST_NAME_MAX}
               className={`h-12 rounded-md border bg-card px-3 text-base text-foreground ${
                 formState.errors.name ? 'border-destructive' : 'border-input'
               }`}

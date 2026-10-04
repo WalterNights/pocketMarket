@@ -110,6 +110,12 @@ const SAVE_MESSAGES: Record<string, string> = {
   P0001: 'Uno de los productos ya no tiene precio en la tienda. Quítalo y vuelve a guardar.',
   '42501': 'Inicia sesión para guardar tus listas.',
   '22023': 'Añade al menos un producto antes de guardar.',
+  // Server-side bounds in save_list (20261005000000_save_list_bounds.sql). The
+  // app's own limits keep normal use well inside them; these only show if a
+  // client bypasses those limits or they drift apart.
+  '54000': 'La lista tiene demasiados productos para guardarla.',
+  '22001': 'El nombre de la lista es demasiado largo.',
+  '22003': 'Alguna cantidad no es válida. Revísala y vuelve a guardar.',
   network: 'Sin conexión. Tu lista sigue aquí; vuelve a intentarlo cuando tengas internet.',
 }
 
