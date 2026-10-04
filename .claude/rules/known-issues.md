@@ -168,6 +168,82 @@
 - **Prevención**: antes de pelearse con un error de tipos de rutas, mirar si el tipo contiene
   rutas `/../src/...`. Si las contiene, el código está bien y el archivo generado no.
 
+### EXPO-002: `NoRouteToHostException: Host unreachable` al iniciar sesión
+- **Síntoma**: en Metro, `WARN [AuthRetryableFetchError: fetch failed:
+  java.net.NoRouteToHostException: Host unreachable]`. La app no carga nada, aunque Supabase
+  está *healthy* y `curl` desde el PC responde 200.
+- **Causa raíz**: el router asignó otra IP al PC por DHCP (`.158` → `.154`), y
+  `EXPO_PUBLIC_SUPABASE_URL` sigue apuntando a la vieja. El teléfono busca un equipo que ya no
+  está ahí.
+- **Solución**: `ipconfig` → poner la IPv4 de la red local (la `192.168.x.x`, no la de WSL
+  `172.x`) en `.env` → reiniciar Metro con `--clear`, porque las `EXPO_PUBLIC_*` van
+  incrustadas en el bundle.
+- **Prevención**: reservar la IP del PC en el router (reserva DHCP por MAC). Distinguir de
+  `SB-001`: allí el PC tampoco llega a `localhost`; aquí el PC llega y el teléfono no.
+
+### EXPO-003: importar expo-notifications tumba la app entera en Expo Go (Android)
+- **Síntoma**: la app no arranca. Metro repite `ERROR expo-notifications: Android Push
+  notifications (remote notifications) functionality ... was removed from Expo Go with the
+  release of SDK 53`, apuntando a `import * as Notifications from 'expo-notifications'`, y
+  termina en `TypeError: Cannot read property 'ErrorBoundary' of undefined` en expo-router.
+- **Causa raíz**: desde el SDK 53, en Expo Go para Android el **import** del módulo lanza,
+  aunque solo se usen notificaciones locales. El adaptador lo importaba arriba del archivo, y
+  la cadena `app/_layout.tsx → reminders → ReminderCard → shared/lib/notifications` hizo que
+  el layout raíz no llegara a evaluarse: el `ErrorBoundary of undefined` es expo-router
+  encontrándose ese módulo vacío, no un segundo fallo.
+- **Solución**: el adaptador solo tiene `import type` (se borra al compilar) y carga el
+  módulo con `require` perezoso la primera vez que se usa. En Expo Go para Android
+  (`isRunningInExpoGo()` de `expo`, **no** `ExecutionEnvironment.StoreClient`, que incluye
+  también los development builds) no lo carga y responde `unavailable`: el aviso se guarda,
+  la lista muestra la fecha y un texto explica que sonará en la app instalada.
+- **Prevención**: un módulo nativo que puede fallar al cargarse nunca va en un import de
+  nivel superior en la cadena del layout raíz. Y "funciona en la build" no es "funciona en
+  Expo Go": para probar avisos de verdad hace falta development build.
+
+### EXPO-004: `TurboModuleRegistry.getEnforcing(...): '<Modulo>' could not be found`
+- **Síntoma**: al abrir una pantalla nueva, `Invariant Violation: ... 'RNMapsAirModule' could not
+  be found. Verify that a module by this name is registered in the native binary`, seguido de
+  `Route "./index.tsx" is missing the required default export` y `ErrorBoundary of undefined`.
+- **Causa raíz**: el JS que sirve Metro usa un módulo **nativo** que la app instalada no trae: se
+  añadió la dependencia pero el teléfono sigue con el development build anterior. Los `WARN` de
+  rutas sin export y el `ErrorBoundary` son la misma cadena (el import falla → el módulo de la ruta
+  queda vacío), no fallos aparte.
+- **Solución**: build nueva (`eas build --profile development`), **instalarla primero** y solo
+  después conectar Metro.
+- **Prevención**: tras añadir o cambiar una dependencia nativa o un config plugin, el orden es
+  siempre build → instalar → `expo start --dev-client --clear`. Es el mismo fallo que el OTA más
+  caro del stack (JS nuevo sobre binario viejo), en versión de desarrollo.
+
+### BUILD-001: `drawable/splashscreen_logo not found` en la primera build de Android
+- **Síntoma**: EAS Build falla en `:app:processDebugResources` con *Android resource linking
+  failed ... resource drawable/splashscreen_logo not found*. La terminal solo muestra cientos de
+  `w: ... is deprecated` (advertencias inofensivas de librerías) y un "unknown error"; el error
+  real está en el log completo de la fase *Run gradlew* en expo.dev.
+- **Causa raíz**: el plugin `expo-splash-screen` estaba configurado solo con colores, sin
+  `image`. El tema nativo que genera referencia igualmente `@drawable/splashscreen_logo`, que
+  nunca se crea. En Expo Go no se ve porque usa su propio splash.
+- **Solución**: `image` (y `dark.image`, con el glifo claro para fondo oscuro) en el plugin.
+  Añadidos también `icon` y `adaptiveIcon.foregroundImage`. Arte **provisional** en `assets/`.
+- **Prevención**: antes de mandar una build a la nube, `pnpm expo prebuild --platform android
+  --no-install --clean` y revisar los recursos generados (luego borrar `android/`): cuesta
+  segundos frente a 15 minutos de cola. Para leer el log de una build fallida:
+  `pnpm dlx eas-cli@latest build:view <id> --json` → `logFiles` (NDJSON, pedirlo con
+  `curl --compressed`; la URL caduca a los 15 min).
+
+### ING-009: Dollarcity falla con `UNABLE_TO_VERIFY_LEAF_SIGNATURE` en Node (y no en curl)
+- **Síntoma**: el runner de sucursales muere con `fetch failed ... unable to verify the first
+  certificate` contra `dollarcity.com`. Con `curl` en Windows y en el navegador funciona.
+- **Causa raíz**: el servidor sirve solo su certificado, **sin el intermedio** "Go Daddy Secure
+  Certificate Authority - G2". Navegadores y Windows descargan el intermedio que falta (AIA);
+  Node no. `--use-system-ca` lo "arregla" en Windows, pero en el Linux de GitHub Actions no.
+- **Solución**: el intermedio (público) vive en `ingestion/certs/` y `core/tls.ts` lo añade a los
+  certificados de confianza del runner con `tls.setDefaultCACertificates`. **La verificación
+  sigue activa**: la cadena se comprueba hasta una raíz que Node ya trae. Antes de versionarlo
+  se verificó con `openssl verify` contra las raíces de Node. Caduca en 2031.
+- **Prevención**: **nunca** `NODE_TLS_REJECT_UNAUTHORIZED=0` ni `rejectUnauthorized: false`
+  para "que pase": eso acepta cualquier certificado, también el de un atacante. Ante este
+  error, mirar la cadena con `openssl s_client -showcerts` antes de tocar nada.
+
 ### ING-005: el tope de paginación de VTEX responde 400, no una página vacía
 - **Síntoma**: `_from=2550` devolvía 400 y la corrida se interpretaba como error de fuente.
 - **Causa raíz**: VTEX corta la paginación alrededor de 2.500 resultados por consulta.

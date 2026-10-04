@@ -23,8 +23,9 @@ Dominio completo en [`docs/domain/`](docs/domain/). Leerlo antes de tocar modelo
 ingesta.
 
 > **Para retomar el trabajo:** [`docs/ESTADO.md`](docs/ESTADO.md) dice qué funciona hoy, qué
-> falta y cuál es el siguiente paso. **Leerlo primero al empezar una sesión.** Los planes
-> pendientes viven en [`docs/plans/`](docs/plans/).
+> falta y cuál es el siguiente paso. **Leerlo primero al empezar una sesión.** La
+> [`docs/BITACORA.md`](docs/BITACORA.md) cuenta sesión a sesión cómo se llegó ahí, y **se le añade
+> una entrada al cerrar cada sesión**. Los planes pendientes viven en [`docs/plans/`](docs/plans/).
 
 ## Stack
 
@@ -80,6 +81,8 @@ Toda decisión estructural está documentada. **Consúltala antes de proponer ca
 | [0003](docs/adr/0003-ingesta-centralizada.md) | Ingesta centralizada, híbrida Edge Functions + GH Actions |
 | [0004](docs/adr/0004-catalogo-y-equivalencias.md) | `store_product` como unidad; equivalencias opcionales |
 | [0005](docs/adr/0005-autenticacion.md) | Email + contraseña con Supabase Auth; catálogo público; sesión troceada en SecureStore |
+| [0006](docs/adr/0006-mapa-maplibre.md) | Mapa con MapLibre + OpenFreeMap: sin key ni facturación; estilo sin negocios |
+| [0007](docs/adr/0007-rutas-openrouteservice.md) | Rutas en el mapa con OpenRouteService detrás de una Edge Function (key fuera del bundle) |
 
 ## Reglas activas
 
@@ -125,6 +128,7 @@ pnpm run db:test                 # tests pgTAP de RLS — OBLIGATORIO tras tocar
 pnpm run db:lint                 # linter de Supabase sobre el schema
 pnpm run db:new <nombre>         # crear migración nueva
 pnpm run db:types                # regenerar database.types.ts
+pnpm run functions               # servir Edge Functions locales (rutas del mapa)
 
 # App
 pnpm expo start                  # desarrollo

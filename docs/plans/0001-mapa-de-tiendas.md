@@ -1,7 +1,7 @@
 # Plan 0001 — Mapa de tiendas con las más cercanas
 
-**Estado:** pendiente, sin empezar · **Complejidad:** alta · **¿OTA-able?:** no
-**Escrito:** 2026-09-24 · **Aprobación:** pendiente (hay 3 preguntas abiertas al final)
+**Estado:** ✅ implementado (2026-10-04) · **Complejidad:** alta · **¿OTA-able?:** no
+**Escrito:** 2026-09-24 · **Aprobado:** 2026-10-04 (preguntas respondidas al final)
 
 ---
 
@@ -19,6 +19,35 @@ arrancar.
 La decisión estructural: las sucursales son **catálogo público con su propio ritmo**. Los
 precios cambian a diario; las sucursales casi nunca. Van por un pipeline aparte que corre una
 vez al mes, no en el cron diario.
+
+> **Implementado el 2026-10-04.** Queda: la carga mensual de sucursales en CI (necesita el
+> Supabase remoto) y probar la navegación en la calle. El recorrido completo está en la
+> [bitácora](../BITACORA.md); las decisiones nuevas, en [ADR-0006](../adr/0006-mapa-maplibre.md)
+> (MapLibre) y [ADR-0007](../adr/0007-rutas-openrouteservice.md) (rutas y navegación).
+
+## Actualización 2026-10-04 — lo que cambió desde que se escribió
+
+- **Ya hay development build con EAS** (`guias/probar-avisos.md`), así que perder Expo Go dejó de
+  ser el freno: el orden de pasos de abajo se mantiene por el dato, no por la build.
+- **"Solo tiendas, ningún otro negocio"** tiene dos mitades: nuestros marcadores son solo
+  sucursales de las cadenas, **y** el mapa base no muestra negocios (restaurantes, bancos…).
+- **Proveedor: MapLibre + OpenFreeMap** ([ADR-0006](../adr/0006-mapa-maplibre.md)). Se empezó
+  con Google Maps, pero exige una cuenta de facturación en Google Cloud que no hay. El estilo
+  `positron` de OpenFreeMap **no tiene capa de negocios**, así que la segunda mitad sale de
+  fábrica. Sin key, sin cuenta, mismo motor en Android e iOS.
+- **Radio:** resuelto en la consulta: *las 30 más cercanas, nunca a más de 25 km*. Se adapta solo
+  entre Bogotá y un pueblo, sin radio por ciudad.
+- **Fuentes de sucursales** (investigadas con llamadas reales el 2026-10-04):
+
+| Cadena | Fuente | Coste por corrida | Notas |
+|---|---|---|---|
+| Ara | `aratiendas.com/wp-json/map-ara/v1/stores` | 1 llamada | 1.657 tiendas, coordenadas como texto |
+| Dollarcity | `dollarcity.com/ubicaciones/locations/GetDataByCoordinates` (POST) | ~10 llamadas | tope ~160 km por punto; GeoJSON `[lng, lat]` |
+| Éxito | VTEX `www.exito.com/api/checkout/pub/pickup-points` | cuadrícula de ciudades | cada tienda sale con dos ids (`1_ptorecogida_0094` / `exitocol094_…`): se unifican por el número |
+| D1 | VTEX `www.d1.com.co/api/checkout/pub/pickup-points` | cientos de llamadas | tope de 300 por punto: cuadrícula densa en ciudades grandes |
+
+  Descartados: Google Places (cobra y prohíbe guardar resultados) y OpenStreetMap como fuente
+  principal (cubre el 25–30 %).
 
 ## La restricción que decide el orden de todo
 
@@ -68,7 +97,8 @@ tocar la app y no quitan Expo Go. Solo el paso 5 obliga al dev build.
    consume aunque no se mire. Precisión `Balanced`, no `High`: para "qué tienda me queda cerca"
    sobra, y `High` enciende el GPS.
 6. **Background → foreground** — Una lectura al abrir, y otra al volver **solo si el mapa está
-   visible** y la anterior ya es vieja. Nada de `watchPositionAsync`: eso es GPS continuo.
+   visible** y la anterior ya es vieja. Nada de `watchPositionAsync`: eso es GPS continuo. *Excepción posterior:* durante una
+   navegación activa sí, con sus límites ([ADR-0007](../adr/0007-rutas-openrouteservice.md)).
 7. **OTA** — **No.** Dos módulos nativos nuevos. Es el fallo más caro del stack: servir JS que
    usa un módulo nativo ausente **crashea al arrancar** y el usuario no puede ni actualizar.
    `runtimeVersion: fingerprint` cubre esto, pero el orden importa: primero la build, después
@@ -144,11 +174,20 @@ correctos, que es donde de verdad se pierde el tiempo.
 
 ## Fuera de alcance
 
-- Rutas o navegación paso a paso. Enlazar a Google/Apple Maps y que lo haga quien sabe hacerlo.
+- Navegación paso a paso: se delega en Google Maps / Waze. (Dibujar la ruta en nuestro mapa
+  entró después: [ADR-0007](../adr/0007-rutas-openrouteservice.md).)
 - Horarios de apertura.
 - Filtrar el catálogo por sucursal concreta: los precios son por región, no por local.
 
-## Preguntas abiertas — responder antes de implementar
+## Preguntas — respondidas el 2026-10-04
+
+1. **Cadenas:** las 4 del proyecto (Éxito, D1, Dollarcity, Ara). Las que aún no tienen catálogo
+   aparecen con "Precios próximamente" (`has_prices` en la consulta).
+2. **Acceso:** botón de mapa en la cabecera de Tiendas, pantalla propia (`app/map.tsx`). Sin
+   barra de pestañas.
+3. **Radio:** adaptable por construcción (ver arriba).
+
+### Preguntas originales
 
 1. **Homecenter y Falabella no son mercado.** Metro sí (es del Grupo Éxito). Si el mapa las
    muestra, alguien tocará una y llegará a un catálogo vacío. ¿Se muestran igual marcadas como

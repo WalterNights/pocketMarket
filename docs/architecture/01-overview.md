@@ -58,6 +58,19 @@ En orden de preferencia:
 
 Duplicar dos veces está bien. Se extrae en la tercera repetición, no antes.
 
+### Grafo actual entre features
+
+Solo hacia features base declarados en su README, y siempre por `index.ts`. Sin ciclos.
+
+```
+lists ──► catalog     (base)
+lists ──► auth        (base)
+lists ──► reminders   (base) ──► auth
+branches              (no depende de ningún feature)
+```
+
+Añadir una flecha nueva exige declararla en el README del feature destino y aquí.
+
 ## Dentro de un feature
 
 ```

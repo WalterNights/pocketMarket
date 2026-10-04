@@ -2,17 +2,18 @@
 
 > Foto de dónde está Pocket Market **hoy**. Se actualiza al terminar cada sesión de trabajo.
 > Para las reglas permanentes, ver [CLAUDE.md](../CLAUDE.md); para el porqué de cada decisión,
-> [`docs/adr/`](adr/).
+> [`docs/adr/`](adr/); para **cómo se llegó aquí**, sesión a sesión, la [BITACORA](BITACORA.md).
 
-**Última actualización:** 2026-09-24 · rama `main` · ver `git log` para el último commit
+**Última actualización:** 2026-10-05 · rama `main` · todo subido (ver `git log`)
 
 ---
 
 ## En una frase
 
-La app lee un catálogo real de Éxito (13.750 productos, precios de verdad) desde Supabase
-local. Con cuenta (email y contraseña), el usuario **guarda listas con nombre, las edita y les
-pone un aviso** semanal, quincenal o mensual. Sin cuenta puede ver precios y armar un borrador.
+La app lee un catálogo real de Éxito (13.750 productos) desde Supabase local. Con cuenta, el
+usuario **guarda listas, las edita y les pone avisos**; y en un **mapa** ve las tiendas de Éxito,
+D1, Dollarcity y Ara más cercanas (4.557 cargadas) y puede **navegar hasta una** dentro de la app,
+a pie o en vehículo. Se prueba con un **development build** de EAS, no con Expo Go.
 
 ---
 
@@ -24,62 +25,63 @@ Corre fuera del dispositivo y es lo único que escribe el catálogo.
 
 | Pieza | Estado |
 |---|---|
-| Adaptador de Éxito (API VTEX pública) | ✅ 14 subcategorías de "Mercado" |
+| Precios de Éxito (API VTEX pública), 14 subcategorías de "Mercado" | ✅ |
 | Pipeline: fetch → normalize → validate → upsert → diff → append → publish | ✅ |
-| Clasificador a taxonomía colombiana (39 categorías) | ✅ 4 capas, ver abajo |
+| Clasificador a taxonomía colombiana (39 categorías) | ✅ ver abajo |
 | Reclasificar sin volver a la fuente (`pnpm run reclassify`) | ✅ |
-| Adaptadores de D1, Dollarcity | ❌ requieren Playwright |
-| Ara | ❌ **no tiene catálogo online** — solo folletos. Ya se investigó |
-| Cron diario | ❌ **pendiente** — [plan 0002](plans/0002-cron-de-ingesta-diaria.md) |
+| Sucursales de las 4 cadenas (`pnpm run branches`) | ✅ Ara 1.657 · Dollarcity 421 · Éxito 154 · D1 2.325 |
+| Precios de D1 y Dollarcity | ❌ requieren Playwright |
+| Precios de Ara | ❌ **no tiene catálogo online** — solo folletos. Ya se investigó |
+| Cron diario de precios | ❌ **pendiente** — [plan 0002](plans/0002-cron-de-ingesta-diaria.md) |
+| Carga mensual de sucursales en CI | 🟡 workflow `branches.yml` listo, en manual hasta tener Supabase remoto |
 
-**Última corrida:** 27.217 vistos · 13.750 escritos · 49% agotados · **0% ilegibles** · 23 min.
-
-El 49% de agotados es real y está verificado contra la fuente: VTEX ordena los disponibles
-primero, así que la cola de cada categoría es stock agotado (Bebidas en el offset 1500 da
-100%). Se descartó que fuera un fallo de lectura — ningún producto esconde precio en otra
-variante ni en otro vendedor.
+**Última corrida de precios:** 27.217 vistos · 13.750 escritos · 49% agotados · **0% ilegibles**.
+El 49% de agotados es real: VTEX ordena los disponibles primero y la cola de cada categoría es
+stock agotado.
 
 ### Base de datos (`supabase/`)
 
-14 migraciones aplicadas. RLS en todas las tablas, 50 tests pgTAP en verde.
+17 migraciones. RLS en todas las tablas; **85 tests pgTAP** en verde.
 
-Dos mundos con reglas distintas: **catálogo** (lectura pública, escribe solo `service_role`) y
-**datos de usuario** (lectura y escritura del dueño). La ausencia de política de escritura en
-el catálogo *es* la protección.
+Dos mundos con reglas distintas: **catálogo** (precios, sucursales — lectura pública, escribe solo
+`service_role`) y **datos de usuario** (listas, avisos — solo el dueño). La ausencia de política de
+escritura en el catálogo *es* la protección.
+
+Edge Function `route` (rutas del mapa): valida y llama a OpenRouteService con su key guardada
+como secreto, nunca en la app ([ADR-0007](adr/0007-rutas-openrouteservice.md)).
 
 ### App (`src/`, `app/`)
 
 | Pantalla | Estado |
 |---|---|
-| Lista de tiendas | ✅ con contador y frescura |
-| Categorías de una tienda | ✅ |
-| Productos de una categoría, con búsqueda y scroll infinito | ✅ |
+| Tiendas → categorías → productos, con búsqueda y scroll infinito | ✅ |
 | Hoja de producto: cantidad y presentación (cartón, docena, panal…) | ✅ |
-| Barra de borrador con total y contador | ✅ |
-| Pantalla de carga propia (`PocketLoader`) | ✅ |
+| Borrador con total por tienda | ✅ en memoria (se pierde al cerrar la app) |
 | Inicio de sesión y registro (email + contraseña) | ✅ [ADR-0005](adr/0005-autenticacion.md) |
-| Guardar lista con nombre (`save_list`, una transacción) | ✅ |
-| Mis listas, con total de hoy y variación | ✅ totales en servidor (`list_summary`) |
-| Editar productos de una lista guardada | ✅ conserva el precio de referencia |
-| Avisos semanal / quincenal / mensual | ✅ notificaciones locales — **sin probar en teléfono** |
-| Mapa de tiendas | ❌ **pendiente** — [plan 0001](plans/0001-mapa-de-tiendas.md) |
+| Guardar lista, "Mis listas" con total de hoy y variación, editar | ✅ totales en servidor |
+| Avisos semanal / quincenal / mensual | ✅ se guardan y reconcilian — 🟡 **falta oírlos sonar** en el development build |
+| Mapa de tiendas cercanas, sin otros negocios | ✅ MapLibre + OpenFreeMap ([ADR-0006](adr/0006-mapa-maplibre.md)), probado |
+| Ruta dibujada a pie / en vehículo | ✅ probado en el teléfono |
+| Navegación en vivo (tiempo restante, recálculo, llegada) | 🟡 **sin probar caminando** |
+
+**Tests:** 318 de Jest (modelo puro, ingesta y utilidades) + 85 pgTAP. `pnpm run quality` en
+verde. Revisión general de código hecha el 2026-10-05 ([bitácora](BITACORA.md)).
 
 ---
 
 ## Qué NO funciona todavía, y por qué importa
 
-1. **Los avisos no se han visto sonar en un teléfono.** La lógica tiene 32 tests y el servidor
-   se probó de punta a punta, pero `expo-notifications` en Expo Go (sobre todo Android) hay que
-   comprobarlo con un aviso real. Si Expo Go no lo permite, hace falta development build.
-2. **Expo Go, no development build.** Todo lo que lleve código nativo está fuera de alcance
-   hasta que se haga una build: mapa, MMKV, notificaciones. El splash crema tampoco se ve en
-   Expo Go, que usa el suyo blanco.
-3. **Solo Supabase local.** No hay proyecto remoto. El free tier permite 2 proyectos activos,
-   así que dev va contra local (Docker) y staging/prod compartirán el remoto.
-4. **Sin error boundary en la raíz.** `app/_layout.tsx` no define uno, así que un error de
-   render deja pantalla blanca sin explicación. Pendiente.
+1. **Solo Supabase local.** No hay proyecto remoto. Sin él no hay cron de precios, ni carga
+   mensual de sucursales, ni versión que se pueda instalar fuera de la red de casa.
+2. **Los precios no se actualizan solos** (plan 0002): la variación "subió $X" de las listas se
+   queda en cero mientras no haya corridas nuevas.
+3. **El borrador se pierde al cerrar la app.** Ya hay development build, así que MMKV es viable;
+   falta hacerlo.
+4. **Sin error boundary en la raíz.** Un error de render deja la pantalla en blanco.
 5. **Tests de componente vacíos.** El proyecto `components` de Jest está configurado pero sin
-   tests. Los de `model/` e ingesta sí existen: 206 en total.
+   tests.
+6. **OpenFreeMap no garantiza disponibilidad** y el cupo de OpenRouteService (~2.000 rutas/día)
+   es de toda la app. Si alguno falla, la lista de tiendas sigue funcionando.
 
 ---
 
@@ -88,67 +90,50 @@ el catálogo *es* la protección.
 Están en los ADR, pero estas son las que más veces han vuelto a surgir:
 
 - **No es una app de compra.** Ni pago, ni pedido, ni entrega. Calculadora de presupuesto.
-- **shadcn/ui no funciona en React Native** (es Radix: DOM + CSS). Se usa React Native
-  Reusables, que es su port, y los componentes se **copian** a `shared/ui/`.
+- **shadcn/ui no funciona en React Native.** Se usa React Native Reusables, copiado a
+  `shared/ui/`.
 - **Dinero en `integer` COP.** El peso no usa centavos y los flotantes pierden dinero.
 - **Nunca borrar un `store_product`.** Hay `list_item` apuntando: se marca `is_available`.
-- **Los totales de una lista guardada se calculan en servidor.** El borrador en memoria es la
-  excepción, porque todavía no existe en la base.
-- **Taxonomía colombiana, no "víveres y abarrotes".** Los huevos son su propia categoría
-  porque se compran solos, y las gaseosas no están enterradas en "bebidas".
+- **Los totales de una lista guardada se calculan en servidor.** El borrador es la excepción.
+- **Taxonomía colombiana, no "víveres y abarrotes".**
+- **El mapa no usa Google** ([ADR-0006](adr/0006-mapa-maplibre.md)): exige facturación. MapLibre
+  + OpenFreeMap, cuyo estilo ya no trae negocios.
+- **Ninguna key de terceros va en la app** ([ADR-0007](adr/0007-rutas-openrouteservice.md)): pasa
+  por una Edge Function.
+- **GPS continuo solo durante una navegación activa**, nunca en segundo plano, nunca guardado.
+- **pnpm exclusivamente**, y toda dependencia nueva pasa por `vet-dependency` y por la cuarentena
+  de 7 días.
 
 ---
 
 ## El clasificador, que es donde más se ha iterado
 
-`ingestion/core/classify.ts` decide en qué pasillo va cada producto. Cuatro capas, en orden:
+`ingestion/core/classify.ts` decide en qué pasillo va cada producto. En orden:
 
-1. **Se borran los modificadores** — `sabor [a] X` y `relleno de X` describen a qué sabe algo,
-   no qué es.
-2. **Excepciones** — la leche en polvo SÍ es leche, aunque "en polvo" suela ser condimento.
-3. **Forma** — mermelada, en lata, en polvo, embutido. La presentación manda sobre el
-   ingrediente: una crema de tomate en sobre es sopa.
-4. **Ingrediente** — lo evidente.
-5. **Frescos, con llave** — las reglas de fruta y verdura **solo** se aplican si la fuente dice
-   que el producto viene del pasillo de frutas y verduras. Un limón de verdad se vende ahí; un
-   barquillo de limón, no.
+1. **Pasillos con autoridad** — si la fuente dice `mascotas`, es de mascotas (`ING-008`).
+2. **Se borran los modificadores** — `sabor [a] X` y `relleno de X` dicen a qué sabe, no qué es.
+3. **Excepciones** — la leche en polvo SÍ es leche, aunque "en polvo" suela ser condimento.
+4. **Forma** — mermelada, en lata, en polvo, embutido. La presentación manda sobre el
+   ingrediente.
+5. **Ingrediente** — lo evidente.
+6. **Frescos, con llave** — fruta y verdura **solo** si la fuente dice pasillo de frutas y
+   verduras.
 
-Las reglas se comparan por **palabra entera** con plural. Las que de verdad son raíces se
-marcan con `*` (`enlatad*`, `salchich*`). Esto no es un detalle: ver `ING-006`.
+Reglas por **palabra entera** con plural; las raíces se marcan con `*` (`ING-006`).
 
-**Para arreglar una mala clasificación:** añadir la regla, añadir su test, y
-`pnpm run reclassify`. No hace falta volver a pedirle el catálogo a Éxito — para eso se guarda
-`source_bucket`.
-
----
-
-## Tareas pendientes con plan escrito
-
-| # | Tarea | Estado | Bloqueo |
-|---|---|---|---|
-| [0001](plans/0001-mapa-de-tiendas.md) | Mapa de tiendas con las más cercanas | plan listo | 3 preguntas abiertas + exige development build |
-| [0002](plans/0002-cron-de-ingesta-diaria.md) | Cron diario que actualiza la base | plan listo | contradice a ADR-0003: hay que decidir y documentar primero |
-
-**0002 es el más urgente en la práctica**: sin él los precios se quedan congelados en la
-última corrida manual, que es justo lo contrario de lo que promete la app. Y tiene un efecto
-secundario que importa: el free tier de Supabase **pausa el proyecto tras una semana sin
-actividad**, y el cron diario lo mantiene despierto.
-
-Ojo con 0002: el ADR decidió Edge Function para Éxito, pero una corrida tarda **23 minutos** y
-una Edge Function no dura tanto. El plan explica las dos salidas y cuál se recomienda.
+**Para arreglar una mala clasificación:** añadir la regla y su test, y `pnpm run reclassify`.
 
 ---
 
 ## Siguiente paso sugerido
 
-1. **Probar en el teléfono** el ciclo completo: registrarse, guardar una lista con aviso,
-   editarla, y **ver sonar un aviso** (programarlo a pocos minutos). Es lo único de la última
-   sesión que no se ha visto funcionar. Si Expo Go no muestra notificaciones locales, eso
-   adelanta el development build.
-2. **Cron diario (0002)**: sin él los precios de las listas guardadas nunca cambian, y la
-   variación "subió $X" que ya muestra la app se queda en cero.
-3. **Mapa (0001)**, que además obliga al development build y destraba lo nativo (MMKV para
-   persistir el borrador).
+1. **Probar en la calle** la navegación en vivo y **oír sonar un aviso**
+   ([guias/probar-avisos.md](guias/probar-avisos.md)).
+2. **Proyecto remoto de Supabase**: destraba el cron de precios (0002), la carga de sucursales y
+   una build que funcione fuera de casa.
+3. **Cron diario de precios** ([plan 0002](plans/0002-cron-de-ingesta-diaria.md)).
+4. **Borrador persistente con MMKV** y error boundary en la raíz.
+5. **Mejora de la clasificación** aplicada a las demás tiendas cuando tengan catálogo.
 
 ### Decisiones pendientes del usuario
 
@@ -156,31 +141,35 @@ una Edge Function no dura tanto. El plan explica las dos salidas y cuál se reco
   nueva "Comidas preparadas" o congelados/otros?
 - **Papas y pasabocas "sabor pollo"** siguen en Pollo: moverlas a snacks (arreglo claro, falta
   hacerlo).
-
-### Última sesión (2026-09-24)
-
-- Mascotas: el pasillo de la fuente manda (`ING-008`); 292 productos reubicados.
-- Supabase local movido a puertos 553xx por la reserva de Hyper-V (`SB-001`).
-- Autenticación con email ([ADR-0005](adr/0005-autenticacion.md)); sesión troceada en
-  SecureStore (`SEC-001`).
-- Listas guardadas, edición y avisos. Los avisos se programan como fechas concretas, no como
-  triggers que se repiten ([03-reminders](domain/03-reminders.md)).
-- Rutas tipadas corruptas con Metro corriendo en Windows (`EXPO-001`).
+- **Icono definitivo de la app**: el actual es provisional.
 
 ---
 
-## Comandos que se usan a diario
+## Para trabajar
+
+Hacen falta **cuatro piezas** corriendo, más el development build instalado en el teléfono:
 
 ```bash
-pnpm run db:start                # Supabase local — puertos 553xx, ver SB-001
-pnpm run db:reset                # migraciones + seed desde cero (BORRA el catálogo)
-pnpm exec supabase migration up --local   # aplicar solo lo nuevo, sin borrar
+pnpm run db:start                      # Supabase local — puertos 553xx (SB-001)
+pnpm run functions                     # Edge Functions locales (rutas del mapa)
+pnpm expo start --dev-client --clear   # Metro; abrir "Pocket Market", no Expo Go
+```
 
-pnpm run ingest                  # corrida completa (~23 min, una al día)
-pnpm run reclassify -- --dry-run # refilar sin tocar la fuente
+- La IP de `.env` tiene que ser la del PC (`EXPO-002`).
+- Si se añade una dependencia nativa o se toca `app.config.ts`: **build nueva primero**
+  (`pnpm dlx eas-cli@latest build --profile development --platform android`), instalarla y
+  después Metro (`EXPO-004`).
+- La key de OpenRouteService va en `supabase/functions/.env` (no se versiona).
 
-pnpm run quality                 # type-check + lint + format + test
+```bash
+pnpm run quality                 # type-check + lint + format + test — gate obligatorio
 pnpm run db:test                 # pgTAP de RLS
+pnpm exec supabase migration up --local   # aplicar migraciones nuevas sin borrar datos
+pnpm run db:reset                # desde cero (BORRA catálogo y sucursales)
+
+pnpm run ingest                  # precios de Éxito (~23 min, una al día)
+pnpm run reclassify -- --dry-run # refilar sin tocar la fuente
+pnpm run branches -- --store all # sucursales (D1 tarda ~13 min; mensual)
 ```
 
 La ingesta necesita `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY`, que salen de
