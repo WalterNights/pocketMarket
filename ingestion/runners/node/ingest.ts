@@ -1,27 +1,40 @@
 import { z } from 'zod'
 
+import { d1Adapter } from '../../adapters/d1'
 import { exitoAdapter } from '../../adapters/exito'
+import { olimpicaAdapter } from '../../adapters/olimpica'
+import { supermuAdapter } from '../../adapters/supermu'
 import { runIngestion, type RunReport } from '../../core/pipeline'
 import { arg, DELAY_MS, flag, parseArgs, positiveIntArg, supabaseEnv, USER_AGENT } from './cli'
 
 /**
  * Entry point for a run. Used locally and from GitHub Actions.
  *
- *   pnpm run ingest:exito -- --dry-run --max 100
+ *   pnpm run ingest -- --store d1 --dry-run --max 100
+ *   pnpm run ingest -- --store all
  *
  * SUPABASE_SERVICE_ROLE_KEY bypasses RLS: it lives in GitHub secrets or the
  * local .env, never in the app bundle (rule 13 in CLAUDE.md).
  *
- * Exit code is non-zero when the run aborted, hit an error, or dropped any
- * source page. A dropped page does not stop the run (ING-003) — what was read
+ * Exit code is non-zero when a store aborted, threw, hit an error, or dropped
+ * any source page. A dropped page does not stop the run (ING-003) — what was read
  * is written and published — but part of the catalogue was not refreshed, and
  * CI has to show that in red rather than bury it in a log.
  */
 
-const ADAPTERS = { exito: exitoAdapter } as const
+const ADAPTERS = {
+  exito: exitoAdapter,
+  d1: d1Adapter,
+  olimpica: olimpicaAdapter,
+  supermu: supermuAdapter,
+} as const
+
+const STORE_ARGS = ['exito', 'd1', 'olimpica', 'supermu', 'all'] as const satisfies readonly (
+  keyof typeof ADAPTERS | 'all'
+)[]
 
 const argsSchema = z.object({
-  store: z.enum(Object.keys(ADAPTERS) as [keyof typeof ADAPTERS]).default('exito'),
+  store: z.enum(STORE_ARGS).default('exito'),
   max: positiveIntArg,
   'dry-run': z.boolean(),
 })
@@ -36,7 +49,9 @@ function printReport(report: RunReport): void {
     `  tienda            ${report.storeSlug}`,
     `  vistos            ${report.seen}`,
     `  normalizados      ${report.normalised}`,
-    `  agotados          ${report.skipped}${percent(report.skipped, report.seen)}`,
+    // Not only out-of-stock: out-of-scope and aisle-less records are skips
+    // too, and RunReport carries one total with no per-reason breakdown.
+    `  saltados          ${report.skipped}${percent(report.skipped, report.seen)}`,
     `  ilegibles         ${report.failed}${percent(report.failed, report.seen)}`,
     `  productos escritos ${report.productsUpserted}`,
     `  precios cambiados ${report.pricesChanged}`,
@@ -66,24 +81,39 @@ async function main(): Promise<void> {
     max: arg('max'),
     'dry-run': flag('dry-run'),
   })
-  const adapter = ADAPTERS[args.store]
   const { supabaseUrl, serviceRoleKey } = supabaseEnv()
   const dryRun = args['dry-run']
+  // One store after another, never in parallel: each source gets its own
+  // polite, sequential run, and one store failing does not skip the rest.
+  const adapters = args.store === 'all' ? Object.values(ADAPTERS) : [ADAPTERS[args.store]]
+  let anyFailed = false
 
-  console.log(`\nIngesta de ${adapter.storeSlug}${dryRun ? ' (DRY RUN, no escribe)' : ''}`)
+  for (const adapter of adapters) {
+    console.log(`\nIngesta de ${adapter.storeSlug}${dryRun ? ' (DRY RUN, no escribe)' : ''}`)
 
-  const report = await runIngestion(adapter, {
-    supabaseUrl,
-    serviceRoleKey,
-    userAgent: USER_AGENT,
-    delayMs: DELAY_MS,
-    maxProducts: args.max,
-    dryRun,
-  })
+    try {
+      const report = await runIngestion(adapter, {
+        supabaseUrl,
+        serviceRoleKey,
+        userAgent: USER_AGENT,
+        delayMs: DELAY_MS,
+        maxProducts: args.max,
+        dryRun,
+      })
 
-  printReport(report)
-  const failed = report.aborted || report.errors.length > 0 || report.pagesDropped > 0
-  process.exit(failed ? 1 : 0)
+      printReport(report)
+      anyFailed ||= report.aborted || report.errors.length > 0 || report.pagesDropped > 0
+    } catch (cause) {
+      // runIngestion catches what happens while walking the catalogue, but its
+      // setup (resolving the store, loading categories) and its closing steps
+      // can still throw. One store failing is not the run failing (ING-003):
+      // report it and go on to the next.
+      console.error(`  ERROR en ${adapter.storeSlug}:`, cause)
+      anyFailed = true
+    }
+  }
+
+  process.exit(anyFailed ? 1 : 0)
 }
 
 main().catch((cause: unknown) => {

@@ -94,8 +94,60 @@ describe('exitoAdapter.normalize — entradas rotas', () => {
 })
 
 describe('mapeo de categorías', () => {
-  it('cubre las 14 subcategorías de Mercado', () => {
-    expect(EXITO_CATEGORIES).toHaveLength(14)
+  // Path under the "Mercado" root: the aisle id, then any subcategory ids.
+  const aisleOf = (id: string) => id.split('/')[0]
+
+  it('cubre los 14 pasillos de Mercado', () => {
+    expect(new Set(EXITO_CATEGORIES.map((c) => aisleOf(c.id))).size).toBe(14)
+  })
+
+  it('los pasillos que pasan del tope de VTEX se recorren por subcategoría (ING-005)', () => {
+    // Totals measured 2026-10-05 are in exito.ts. Listing one of these aisles
+    // whole would truncate it at 2.500 and mark every run as incomplete.
+    const split = [
+      '34185101', // Despensa
+      '34185103', // Lácteos, huevos y refrigerados
+      '34185097', // Pollo, carne y pescado
+      '34185100', // Panadería y repostería
+      '346084837', // Bebidas
+      '34185106', // Aseo del hogar
+      '34185107', // Mascotas
+      '34185105', // Pasabocas y snacks
+      '346098434', // Dulces y chocolatería
+    ]
+    const ids = new Set(EXITO_CATEGORIES.map((c) => c.id))
+    for (const aisle of split) {
+      expect(ids.has(aisle)).toBe(false)
+      expect(EXITO_CATEGORIES.some((c) => c.id.startsWith(`${aisle}/`))).toBe(true)
+    }
+    expect(EXITO_CATEGORIES).toHaveLength(74)
+  })
+
+  it('"Perros" nunca entra entero: 9.984 productos, casi todo marketplace', () => {
+    const ids = EXITO_CATEGORIES.map((c) => c.id)
+    expect(ids).not.toContain('34185107/34185333')
+    expect(ids.some((id) => id.startsWith('34185107/347733851'))).toBe(false)
+  })
+
+  it('no repite ninguna categoría y los ids son rutas numéricas', () => {
+    const ids = EXITO_CATEGORIES.map((c) => c.id)
+    expect(new Set(ids).size).toBe(ids.length)
+    for (const id of ids) expect(id).toMatch(/^\d+(\/\d+){0,2}$/)
+  })
+
+  it('los pasillos van juntos: gana el primer pasillo que lista un producto', () => {
+    // The adapter yields a product once, for the FIRST category listing it, so
+    // an aisle's children must be contiguous or the order stops meaning anything.
+    const aisles = EXITO_CATEGORIES.map((c) => aisleOf(c.id))
+    const runs = aisles.filter((aisle, i) => aisle !== aisles[i - 1])
+    expect(runs).toHaveLength(14)
+    expect(runs[0]).toBe('34185101')
+  })
+
+  it('las etiquetas dicen de qué pasillo sale cada subcategoría', () => {
+    for (const c of EXITO_CATEGORIES) {
+      expect(c.label.includes(' > ')).toBe(c.id.includes('/'))
+    }
   })
 
   it('todas apuntan a un slug de nuestra taxonomía', () => {

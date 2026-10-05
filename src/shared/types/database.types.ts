@@ -491,6 +491,7 @@ export type Database = {
           is_available: boolean
           last_seen_at: string
           name: string
+          search_prefix: unknown
           search_vector: unknown
           source_bucket: string | null
           store_id: string
@@ -509,6 +510,7 @@ export type Database = {
           is_available?: boolean
           last_seen_at?: string
           name: string
+          search_prefix?: unknown
           search_vector?: unknown
           source_bucket?: string | null
           store_id: string
@@ -527,6 +529,7 @@ export type Database = {
           is_available?: boolean
           last_seen_at?: string
           name?: string
+          search_prefix?: unknown
           search_vector?: unknown
           source_bucket?: string | null
           store_id?: string
@@ -579,6 +582,7 @@ export type Database = {
           last_seen_at: string | null
           name: string | null
           price_cop: number | null
+          search_prefix: unknown
           search_vector: unknown
           store_id: string | null
           store_name: string | null
@@ -767,6 +771,20 @@ export type Database = {
       save_list: {
         Args: { p_items: Json; p_list_id?: string; p_name: string }
         Returns: string
+      }
+      stores_near: {
+        Args: { p_lat: number; p_lng: number; p_radius_m?: number }
+        Returns: {
+          id: string
+          is_active: boolean
+          last_updated_at: string
+          logo_path: string
+          name: string
+          nearest_m: number
+          product_count: number
+          slug: string
+          source_type: string
+        }[]
       }
     }
     Enums: {

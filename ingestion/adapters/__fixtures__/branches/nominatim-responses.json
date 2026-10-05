@@ -1,0 +1,3027 @@
+{
+ "Calle 27A Sur 47-61, Envigado, Antioquia": [
+  {
+   "place_id": 307781730,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "relation",
+   "osm_id": 19584787,
+   "lat": "6.1810803",
+   "lon": "-75.5868351",
+   "category": "building",
+   "type": "barn",
+   "place_rank": 30,
+   "importance": 0.00005655985351334428,
+   "addresstype": "building",
+   "name": "Mercado Madrid",
+   "display_name": "Mercado Madrid, 47 - 61, Calle 27A Sur, La Magnolia, Envigado, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 055422, Colombia",
+   "address": {
+    "building": "Mercado Madrid",
+    "house_number": "47 - 61",
+    "road": "Calle 27A Sur",
+    "neighbourhood": "La Magnolia",
+    "town": "Envigado",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "055422",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.1807868",
+    "6.1811899",
+    "-75.5870717",
+    "-75.5866413"
+   ]
+  }
+ ],
+ "Calle 8, Melgar, Tolima": [
+  {
+   "place_id": 307325765,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 71229364,
+   "lat": "4.2021859",
+   "lon": "-74.6432372",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05338460135805291,
+   "addresstype": "road",
+   "name": "Calle 8",
+   "display_name": "Calle 8, El Centro, Melgar, Oriente, Tolima, RAP Eje Cafetero, 734001, Colombia",
+   "address": {
+    "road": "Calle 8",
+    "neighbourhood": "El Centro",
+    "town": "Melgar",
+    "state_district": "Oriente",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP Eje Cafetero",
+    "postcode": "734001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "4.2020214",
+    "4.2023945",
+    "-74.6436630",
+    "-74.6428326"
+   ]
+  },
+  {
+   "place_id": 308698342,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 71264043,
+   "lat": "4.2134255",
+   "lon": "-74.6281431",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338051651789117,
+   "addresstype": "road",
+   "name": "Calle 8",
+   "display_name": "Calle 8, Los Arrayanes, Melgar, Oriente, Tolima, RAP Eje Cafetero, 734001, Colombia",
+   "address": {
+    "road": "Calle 8",
+    "neighbourhood": "Los Arrayanes",
+    "town": "Melgar",
+    "state_district": "Oriente",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP Eje Cafetero",
+    "postcode": "734001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "4.2124804",
+    "4.2144688",
+    "-74.6283211",
+    "-74.6276166"
+   ]
+  },
+  {
+   "place_id": 309792764,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 614558333,
+   "lat": "4.1995929",
+   "lon": "-74.6290404",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338051651789117,
+   "addresstype": "road",
+   "name": "Calle 8",
+   "display_name": "Calle 8, Selva Morada, Melgar, Oriente, Tolima, RAP Eje Cafetero, 734001, Colombia",
+   "address": {
+    "road": "Calle 8",
+    "neighbourhood": "Selva Morada",
+    "town": "Melgar",
+    "state_district": "Oriente",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP Eje Cafetero",
+    "postcode": "734001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "4.1992913",
+    "4.1998944",
+    "-74.6294960",
+    "-74.6285848"
+   ]
+  },
+  {
+   "place_id": 308666905,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 783190285,
+   "lat": "4.2051626",
+   "lon": "-74.6331733",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05338051651789117,
+   "addresstype": "road",
+   "name": "Calle 8",
+   "display_name": "Calle 8, Altos de Laureles, Melgar, Oriente, Tolima, RAP Eje Cafetero, 734001, Colombia",
+   "address": {
+    "road": "Calle 8",
+    "neighbourhood": "Altos de Laureles",
+    "town": "Melgar",
+    "state_district": "Oriente",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP Eje Cafetero",
+    "postcode": "734001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "4.2048579",
+    "4.2055158",
+    "-74.6334961",
+    "-74.6328121"
+   ]
+  },
+  {
+   "place_id": 310011060,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 781108922,
+   "lat": "4.2054604",
+   "lon": "-74.6344016",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338051651789117,
+   "addresstype": "road",
+   "name": "Calle 8",
+   "display_name": "Calle 8, Altos de Laureles, Melgar, Oriente, Tolima, RAP Eje Cafetero, 734001, Colombia",
+   "address": {
+    "road": "Calle 8",
+    "neighbourhood": "Altos de Laureles",
+    "town": "Melgar",
+    "state_district": "Oriente",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP Eje Cafetero",
+    "postcode": "734001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "4.2054415",
+    "4.2054899",
+    "-74.6348366",
+    "-74.6339674"
+   ]
+  }
+ ],
+ "Carrera 24, Melgar, Tolima": [
+  {
+   "place_id": 309687992,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 71229558,
+   "lat": "4.2048546",
+   "lon": "-74.6421824",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338460135805291,
+   "addresstype": "road",
+   "name": "Carrera 24",
+   "display_name": "Carrera 24, El Centro, Melgar, Oriente, Tolima, RAP Eje Cafetero, 734001, Colombia",
+   "address": {
+    "road": "Carrera 24",
+    "neighbourhood": "El Centro",
+    "town": "Melgar",
+    "state_district": "Oriente",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP Eje Cafetero",
+    "postcode": "734001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "4.2039107",
+    "4.2057985",
+    "-74.6430718",
+    "-74.6412929"
+   ]
+  },
+  {
+   "place_id": 309666234,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1024014734,
+   "lat": "4.2037752",
+   "lon": "-74.6411640",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338460135805291,
+   "addresstype": "road",
+   "name": "Carrera 24",
+   "display_name": "Carrera 24, Alameda, Melgar, Oriente, Tolima, RAP Eje Cafetero, 734001, Colombia",
+   "address": {
+    "road": "Carrera 24",
+    "neighbourhood": "Alameda",
+    "town": "Melgar",
+    "state_district": "Oriente",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP Eje Cafetero",
+    "postcode": "734001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "4.2036397",
+    "4.2039107",
+    "-74.6412929",
+    "-74.6410352"
+   ]
+  },
+  {
+   "place_id": 311035388,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 71264574,
+   "lat": "4.2000232",
+   "lon": "-74.6374502",
+   "category": "highway",
+   "type": "unclassified",
+   "place_rank": 26,
+   "importance": 0.05338051651789117,
+   "addresstype": "road",
+   "name": "Carrera 24",
+   "display_name": "Carrera 24, Alameda, Melgar, Oriente, Tolima, RAP Eje Cafetero, 734001, Colombia",
+   "address": {
+    "road": "Carrera 24",
+    "neighbourhood": "Alameda",
+    "town": "Melgar",
+    "state_district": "Oriente",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP Eje Cafetero",
+    "postcode": "734001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "4.1977694",
+    "4.2021061",
+    "-74.6392951",
+    "-74.6365862"
+   ]
+  }
+ ],
+ "Carrera 80 50-87, Medellin, Antioquia": [
+  {
+   "place_id": 308838201,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 32289560,
+   "lat": "6.2473907",
+   "lon": "-75.5997212",
+   "category": "highway",
+   "type": "tertiary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 80",
+   "display_name": "Carrera 80, Lorena, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050031, Colombia",
+   "address": {
+    "road": "Carrera 80",
+    "neighbourhood": "Lorena",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050031",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2466087",
+    "6.2481003",
+    "-75.5997940",
+    "-75.5994145"
+   ]
+  },
+  {
+   "place_id": 309411503,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 369676850,
+   "lat": "6.2124414",
+   "lon": "-75.6038784",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 80",
+   "display_name": "Carrera 80, El Rincón, Comuna 16 - Belén, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050026, Colombia",
+   "address": {
+    "road": "Carrera 80",
+    "neighbourhood": "El Rincón",
+    "suburb": "Comuna 16 - Belén",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050026",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2120288",
+    "6.2128540",
+    "-75.6041274",
+    "-75.6036294"
+   ]
+  },
+  {
+   "place_id": 309858840,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 576476626,
+   "lat": "6.2460683",
+   "lon": "-75.5998704",
+   "category": "highway",
+   "type": "tertiary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 80",
+   "display_name": "Carrera 80, Lorena, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050032, Colombia",
+   "address": {
+    "road": "Carrera 80",
+    "neighbourhood": "Lorena",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050032",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2455285",
+    "6.2466087",
+    "-75.5999513",
+    "-75.5997940"
+   ]
+  },
+  {
+   "place_id": 308849636,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 309922333,
+   "lat": "6.2197972",
+   "lon": "-75.6026974",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 80",
+   "display_name": "Carrera 80, Loma de Los Bernal, Comuna 16 - Belén, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050026, Colombia",
+   "address": {
+    "road": "Carrera 80",
+    "neighbourhood": "Loma de Los Bernal",
+    "suburb": "Comuna 16 - Belén",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050026",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2190352",
+    "6.2205602",
+    "-75.6027581",
+    "-75.6026490"
+   ]
+  },
+  {
+   "place_id": 309879063,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 211937231,
+   "lat": "6.2061116",
+   "lon": "-75.6030459",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 80",
+   "display_name": "Carrera 80, El Rincón, Comuna 16 - Belén, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050023, Colombia",
+   "address": {
+    "road": "Carrera 80",
+    "neighbourhood": "El Rincón",
+    "suburb": "Comuna 16 - Belén",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050023",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2058827",
+    "6.2063264",
+    "-75.6031624",
+    "-75.6029609"
+   ]
+  },
+  {
+   "place_id": 310172643,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 369676849,
+   "lat": "6.2158672",
+   "lon": "-75.6044742",
+   "category": "highway",
+   "type": "pedestrian",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 80",
+   "display_name": "Carrera 80, Urbanización Balcones de la Serranía, Comuna 16 - Belén, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050026, Colombia",
+   "address": {
+    "road": "Carrera 80",
+    "residential": "Urbanización Balcones de la Serranía",
+    "suburb": "Comuna 16 - Belén",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050026",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2156466",
+    "6.2160878",
+    "-75.6045288",
+    "-75.6044195"
+   ]
+  },
+  {
+   "place_id": 310076423,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 576485658,
+   "lat": "6.2423015",
+   "lon": "-75.6001964",
+   "category": "highway",
+   "type": "tertiary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 80",
+   "display_name": "Carrera 80, Laureles, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050032, Colombia",
+   "address": {
+    "road": "Carrera 80",
+    "neighbourhood": "Laureles",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050032",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2420274",
+    "6.2425757",
+    "-75.6002122",
+    "-75.6001807"
+   ]
+  },
+  {
+   "place_id": 309954310,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 571136702,
+   "lat": "6.2738150",
+   "lon": "-75.5912944",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, Villa Flora, Comuna 7 - Robledo, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050034, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "neighbourhood": "Villa Flora",
+    "suburb": "Comuna 7 - Robledo",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050034",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2737280",
+    "6.2750601",
+    "-75.5929070",
+    "-75.5905029"
+   ]
+  },
+  {
+   "place_id": 309776027,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 573282903,
+   "lat": "6.2616770",
+   "lon": "-75.5971409",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, Calasanz, Comuna 12 - La América, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050035, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "neighbourhood": "Calasanz",
+    "suburb": "Comuna 12 - La América",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050035",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2600401",
+    "6.2633189",
+    "-75.5975054",
+    "-75.5968437"
+   ]
+  },
+  {
+   "place_id": 309885355,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 99871509,
+   "lat": "6.2263151",
+   "lon": "-75.6008840",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, La Palma, Comuna 16 - Belén, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050025, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "neighbourhood": "La Palma",
+    "suburb": "Comuna 16 - Belén",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050025",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2257101",
+    "6.2269197",
+    "-75.6015297",
+    "-75.6002386"
+   ]
+  },
+  {
+   "place_id": 309503910,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 571159849,
+   "lat": "6.2737841",
+   "lon": "-75.5919205",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, Robledo, Comuna 7 - Robledo, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050034, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "neighbourhood": "Robledo",
+    "suburb": "Comuna 7 - Robledo",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050034",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2733618",
+    "6.2740025",
+    "-75.5929920",
+    "-75.5907134"
+   ]
+  },
+  {
+   "place_id": 309754678,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1499792534,
+   "lat": "6.2699342",
+   "lon": "-75.5952768",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, Ferrini, Comuna 12 - La América, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050034, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "neighbourhood": "Ferrini",
+    "suburb": "Comuna 12 - La América",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050034",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2688929",
+    "6.2709556",
+    "-75.5955140",
+    "-75.5949839"
+   ]
+  },
+  {
+   "place_id": 310097293,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 99868867,
+   "lat": "6.2710172",
+   "lon": "-75.5948699",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050034, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050034",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2703392",
+    "6.2715416",
+    "-75.5951275",
+    "-75.5943563"
+   ]
+  },
+  {
+   "place_id": 308914223,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 572200051,
+   "lat": "6.2713409",
+   "lon": "-75.5946249",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, El Pesebre, Comuna 13 - San Javier, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050034, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "neighbourhood": "El Pesebre",
+    "suburb": "Comuna 13 - San Javier",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050034",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2709556",
+    "6.2717127",
+    "-75.5949839",
+    "-75.5942517"
+   ]
+  },
+  {
+   "place_id": 307579253,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 573282882,
+   "lat": "6.2549425",
+   "lon": "-75.5986667",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, Los Pinos, Comuna 12 - La América, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050035, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "neighbourhood": "Los Pinos",
+    "suburb": "Comuna 12 - La América",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050035",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2545269",
+    "6.2553835",
+    "-75.5988573",
+    "-75.5985469"
+   ]
+  },
+  {
+   "place_id": 309474232,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1275443394,
+   "lat": "6.2545162",
+   "lon": "-75.5987885",
+   "category": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Avenida 80",
+   "display_name": "Avenida 80, El Velódromo, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050035, Colombia",
+   "address": {
+    "road": "Avenida 80",
+    "neighbourhood": "El Velódromo",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050035",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2544940",
+    "6.2545384",
+    "-75.5988004",
+    "-75.5987767"
+   ]
+  }
+ ],
+ "Calle 50, Antioquia": [
+  {
+   "place_id": 308782841,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 365579748,
+   "lat": "6.2461328",
+   "lon": "-75.5607872",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Bomboná Numero 1, Comuna 10 - La Candelaria, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050016, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Bomboná Numero 1",
+    "suburb": "Comuna 10 - La Candelaria",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2449981",
+    "6.2472742",
+    "-75.5628644",
+    "-75.5587059"
+   ]
+  },
+  {
+   "place_id": 308831258,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 579479596,
+   "lat": "6.2618055",
+   "lon": "-75.5929401",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Estadio, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050034, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Estadio",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050034",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2609721",
+    "6.2626804",
+    "-75.5947197",
+    "-75.5911409"
+   ]
+  },
+  {
+   "place_id": 308760059,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1008232759,
+   "lat": "6.2634375",
+   "lon": "-75.5965357",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Estadio, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050035, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Estadio",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050035",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2627303",
+    "6.2638276",
+    "-75.5981558",
+    "-75.5950228"
+   ]
+  },
+  {
+   "place_id": 308828750,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 99868936,
+   "lat": "6.2592149",
+   "lon": "-75.5876854",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Cuarta Brigada, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050034, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Cuarta Brigada",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050034",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2587297",
+    "6.2596900",
+    "-75.5886802",
+    "-75.5866955"
+   ]
+  },
+  {
+   "place_id": 308637917,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 53191880,
+   "lat": "6.2422923",
+   "lon": "-75.5539434",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Caicedo, Comuna 9 - Buenos Aires, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050013, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Caicedo",
+    "suburb": "Comuna 9 - Buenos Aires",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050013",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2419023",
+    "6.2427398",
+    "-75.5545985",
+    "-75.5532443"
+   ]
+  },
+  {
+   "place_id": 308704381,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 30614005,
+   "lat": "6.2528950",
+   "lon": "-75.5746229",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, San Benito, Comuna 10 - La Candelaria, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050015, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "San Benito",
+    "suburb": "Comuna 10 - La Candelaria",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050015",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2525140",
+    "6.2532760",
+    "-75.5753265",
+    "-75.5739192"
+   ]
+  },
+  {
+   "place_id": 308686572,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 30613976,
+   "lat": "6.2541801",
+   "lon": "-75.5773237",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Carlos E. Restrepo, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050015, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Carlos E. Restrepo",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050015",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2538294",
+    "6.2545308",
+    "-75.5780410",
+    "-75.5766064"
+   ]
+  },
+  {
+   "place_id": 308658788,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 30614012,
+   "lat": "6.2486813",
+   "lon": "-75.5661262",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, La Candelaria, Comuna 10 - La Candelaria, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050012, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "La Candelaria",
+    "suburb": "Comuna 10 - La Candelaria",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2483716",
+    "6.2490010",
+    "-75.5669013",
+    "-75.5653470"
+   ]
+  },
+  {
+   "place_id": 311605390,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 365580767,
+   "lat": "6.2476452",
+   "lon": "-75.5634962",
+   "category": "highway",
+   "type": "tertiary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Bomboná Numero 1, Comuna 10 - La Candelaria, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050012, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Bomboná Numero 1",
+    "suburb": "Comuna 10 - La Candelaria",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2472742",
+    "6.2480367",
+    "-75.5641150",
+    "-75.5628644"
+   ]
+  },
+  {
+   "place_id": 308652274,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 130439700,
+   "lat": "6.2340356",
+   "lon": "-75.5412686",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Los Cerros - El Vergel, Comuna 9 - Buenos Aires, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050013, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Los Cerros - El Vergel",
+    "suburb": "Comuna 9 - Buenos Aires",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050013",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2336451",
+    "6.2344239",
+    "-75.5417669",
+    "-75.5407725"
+   ]
+  },
+  {
+   "place_id": 309976445,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1020409741,
+   "lat": "6.2446849",
+   "lon": "-75.5581391",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Boston, Comuna 10 - La Candelaria, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050013, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Boston",
+    "suburb": "Comuna 10 - La Candelaria",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050013",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2443441",
+    "6.2449981",
+    "-75.5587059",
+    "-75.5575885"
+   ]
+  },
+  {
+   "place_id": 308828050,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1478576699,
+   "lat": "6.2545340",
+   "lon": "-75.5784212",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Carlos E. Restrepo, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050015, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Carlos E. Restrepo",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050015",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2540462",
+    "6.2549402",
+    "-75.5788412",
+    "-75.5781289"
+   ]
+  },
+  {
+   "place_id": 308720646,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 911290390,
+   "lat": "6.2557587",
+   "lon": "-75.5804657",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Carlos E. Restrepo, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050034, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Carlos E. Restrepo",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050034",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2554869",
+    "6.2560306",
+    "-75.5810394",
+    "-75.5798920"
+   ]
+  },
+  {
+   "place_id": 308649436,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1206471791,
+   "lat": "6.2496172",
+   "lon": "-75.5683252",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, La Candelaria, Comuna 10 - La Candelaria, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050015, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "La Candelaria",
+    "suburb": "Comuna 10 - La Candelaria",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050015",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2494467",
+    "6.2497889",
+    "-75.5686752",
+    "-75.5679748"
+   ]
+  },
+  {
+   "place_id": 308769655,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 367447068,
+   "lat": "6.2642341",
+   "lon": "-75.5995566",
+   "category": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Calasanz, Comuna 12 - La América, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050035, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Calasanz",
+    "suburb": "Comuna 12 - La América",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050035",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2641145",
+    "6.2643356",
+    "-75.6000657",
+    "-75.5990498"
+   ]
+  },
+  {
+   "place_id": 308654191,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 365579750,
+   "lat": "6.2353845",
+   "lon": "-75.5422922",
+   "category": "highway",
+   "type": "tertiary",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 50",
+   "display_name": "Calle 50, Los Cerros - El Vergel, Comuna 9 - Buenos Aires, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050013, Colombia",
+   "address": {
+    "road": "Calle 50",
+    "neighbourhood": "Los Cerros - El Vergel",
+    "suburb": "Comuna 9 - Buenos Aires",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050013",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2353241",
+    "6.2354330",
+    "-75.5423462",
+    "-75.5422519"
+   ]
+  }
+ ],
+ "Carrera 8, Chaparral, Tolima": [
+  {
+   "place_id": 308360987,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 633128579,
+   "lat": "3.7224317",
+   "lon": "-75.4862463",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Carrera 8",
+   "display_name": "Carrera 8, Juan Bautista, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Carrera 8",
+    "neighbourhood": "Juan Bautista",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7182044",
+    "3.7265890",
+    "-75.4893539",
+    "-75.4830210"
+   ]
+  },
+  {
+   "place_id": 308475763,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 567566088,
+   "lat": "3.7184087",
+   "lon": "-75.4953390",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Carrera 8",
+   "display_name": "Carrera 8, El Edén, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Carrera 8",
+    "neighbourhood": "El Edén",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7181147",
+    "3.7187797",
+    "-75.4971265",
+    "-75.4935580"
+   ]
+  },
+  {
+   "place_id": 308556945,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 567560276,
+   "lat": "3.7188081",
+   "lon": "-75.4715003",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Carrera 8",
+   "display_name": "Carrera 8, Carmenza Rocha, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Carrera 8",
+    "neighbourhood": "Carmenza Rocha",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7170628",
+    "3.7205384",
+    "-75.4717538",
+    "-75.4713935"
+   ]
+  },
+  {
+   "place_id": 308209881,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 567561602,
+   "lat": "3.7175228",
+   "lon": "-75.4898528",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Carrera 8",
+   "display_name": "Carrera 8, Cabañas, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Carrera 8",
+    "neighbourhood": "Cabañas",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7169495",
+    "3.7182125",
+    "-75.4900958",
+    "-75.4897542"
+   ]
+  },
+  {
+   "place_id": 307833992,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 565921220,
+   "lat": "3.7302861",
+   "lon": "-75.4800068",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Carrera 8",
+   "display_name": "Carrera 8, José Mariano Melo, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Carrera 8",
+    "neighbourhood": "José Mariano Melo",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7294141",
+    "3.7311580",
+    "-75.4800105",
+    "-75.4799728"
+   ]
+  }
+ ],
+ "Calle 7, Chaparral, Tolima": [
+  {
+   "place_id": 308498382,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 36109567,
+   "lat": "3.7227756",
+   "lon": "-75.4849084",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Calle 7",
+   "display_name": "Calle 7, Centro, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Calle 7",
+    "neighbourhood": "Centro",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7205016",
+    "3.7250375",
+    "-75.4878146",
+    "-75.4820064"
+   ]
+  },
+  {
+   "place_id": 306544636,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 65056255,
+   "lat": "3.7199364",
+   "lon": "-75.4780208",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Calle 7",
+   "display_name": "Calle 7, Villa del Triunfo, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Calle 7",
+    "neighbourhood": "Villa del Triunfo",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7196652",
+    "3.7202635",
+    "-75.4803404",
+    "-75.4757081"
+   ]
+  },
+  {
+   "place_id": 306710764,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 565915346,
+   "lat": "3.7212574",
+   "lon": "-75.4686734",
+   "category": "highway",
+   "type": "unclassified",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Calle 7",
+   "display_name": "Calle 7, Carmenza Rocha, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Calle 7",
+    "neighbourhood": "Carmenza Rocha",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7210124",
+    "3.7215024",
+    "-75.4702617",
+    "-75.4670852"
+   ]
+  },
+  {
+   "place_id": 308002208,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 567566085,
+   "lat": "3.7179981",
+   "lon": "-75.4954871",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Calle 7",
+   "display_name": "Calle 7, Prados del Edén, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Calle 7",
+    "neighbourhood": "Prados del Edén",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7164840",
+    "3.7195108",
+    "-75.4956998",
+    "-75.4952990"
+   ]
+  },
+  {
+   "place_id": 308134380,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 567560281,
+   "lat": "3.7204451",
+   "lon": "-75.4729741",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Calle 7",
+   "display_name": "Calle 7, Carmenza Rocha, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Calle 7",
+    "neighbourhood": "Carmenza Rocha",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7202441",
+    "3.7205384",
+    "-75.4741820",
+    "-75.4717538"
+   ]
+  },
+  {
+   "place_id": 306545096,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 627610752,
+   "lat": "3.7219634",
+   "lon": "-75.4629099",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Calle 7",
+   "display_name": "Calle 7, Santofimio, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Calle 7",
+    "neighbourhood": "Santofimio",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7219147",
+    "3.7220170",
+    "-75.4637661",
+    "-75.4620538"
+   ]
+  },
+  {
+   "place_id": 307920068,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 575298425,
+   "lat": "3.7250666",
+   "lon": "-75.4878809",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05338134508278016,
+   "addresstype": "road",
+   "name": "Calle 7",
+   "display_name": "Calle 7, Pueblo Nuevo, Chaparral, Sur, Tolima, RAP (Especial) Central, 735560, Colombia",
+   "address": {
+    "road": "Calle 7",
+    "neighbourhood": "Pueblo Nuevo",
+    "town": "Chaparral",
+    "state_district": "Sur",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "735560",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "3.7250375",
+    "3.7250957",
+    "-75.4879473",
+    "-75.4878146"
+   ]
+  }
+ ],
+ "Calle 34C, Medellin, Antioquia": [
+  {
+   "place_id": 308655742,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 151943467,
+   "lat": "6.2481328",
+   "lon": "-75.6283905",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 34C",
+   "display_name": "Calle 34C, El Corazón, Comuna 13 - San Javier, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050033, Colombia",
+   "address": {
+    "road": "Calle 34C",
+    "neighbourhood": "El Corazón",
+    "suburb": "Comuna 13 - San Javier",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050033",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2474172",
+    "6.2496516",
+    "-75.6316164",
+    "-75.6249369"
+   ]
+  },
+  {
+   "place_id": 309790787,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 98758548,
+   "lat": "6.2426173",
+   "lon": "-75.6037837",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 34C",
+   "display_name": "Calle 34C, La Castellana, Comuna 11 - Laureles-Estadio, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050032, Colombia",
+   "address": {
+    "road": "Calle 34C",
+    "neighbourhood": "La Castellana",
+    "suburb": "Comuna 11 - Laureles-Estadio",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050032",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2424898",
+    "6.2427449",
+    "-75.6042587",
+    "-75.6033087"
+   ]
+  },
+  {
+   "place_id": 308651869,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 30011618,
+   "lat": "6.2437557",
+   "lon": "-75.6127877",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 34C",
+   "display_name": "Calle 34C, Santa Teresita, Comuna 12 - La América, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050032, Colombia",
+   "address": {
+    "road": "Calle 34C",
+    "neighbourhood": "Santa Teresita",
+    "suburb": "Comuna 12 - La América",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050032",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2436528",
+    "6.2438364",
+    "-75.6134363",
+    "-75.6121420"
+   ]
+  },
+  {
+   "place_id": 308716486,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 30011708,
+   "lat": "6.2435040",
+   "lon": "-75.6140962",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 34C",
+   "display_name": "Calle 34C, Santa Teresita, Comuna 12 - La América, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050033, Colombia",
+   "address": {
+    "road": "Calle 34C",
+    "neighbourhood": "Santa Teresita",
+    "suburb": "Comuna 12 - La América",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050033",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2432946",
+    "6.2437155",
+    "-75.6143524",
+    "-75.6138382"
+   ]
+  },
+  {
+   "place_id": 308687071,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 895955876,
+   "lat": "6.2447060",
+   "lon": "-75.6177032",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Calle 34C",
+   "display_name": "Calle 34C, Betania, Comuna 13 - San Javier, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050033, Colombia",
+   "address": {
+    "road": "Calle 34C",
+    "neighbourhood": "Betania",
+    "suburb": "Comuna 13 - San Javier",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050033",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2445304",
+    "6.2448817",
+    "-75.6178239",
+    "-75.6175824"
+   ]
+  },
+  {
+   "place_id": 308662744,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 98758484,
+   "lat": "6.2436835",
+   "lon": "-75.6145016",
+   "category": "highway",
+   "type": "service",
+   "place_rank": 27,
+   "importance": 0.040069348439765,
+   "addresstype": "road",
+   "name": "Calle 34C",
+   "display_name": "Calle 34C, Santa Teresita, Comuna 12 - La América, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050033, Colombia",
+   "address": {
+    "road": "Calle 34C",
+    "neighbourhood": "Santa Teresita",
+    "suburb": "Comuna 12 - La América",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050033",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2436794",
+    "6.2437155",
+    "-75.6146543",
+    "-75.6143524"
+   ]
+  }
+ ],
+ "Carrera 118, Medellin, Antioquia": [
+  {
+   "place_id": 308746219,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 199490708,
+   "lat": "6.2910572",
+   "lon": "-75.6092593",
+   "category": "highway",
+   "type": "unclassified",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 118",
+   "display_name": "Carrera 118, Pajarito, San Cristóbal, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050036, Colombia",
+   "address": {
+    "road": "Carrera 118",
+    "hamlet": "Pajarito",
+    "city_district": "San Cristóbal",
+    "city": "Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050036",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2893393",
+    "6.2926160",
+    "-75.6098281",
+    "-75.6085462"
+   ]
+  },
+  {
+   "place_id": 308704574,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 131598356,
+   "lat": "6.2826043",
+   "lon": "-75.6241988",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 118",
+   "display_name": "Carrera 118, Comuna 7 - Robledo, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050047, Colombia",
+   "address": {
+    "road": "Carrera 118",
+    "suburb": "Comuna 7 - Robledo",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050047",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2814232",
+    "6.2838470",
+    "-75.6246114",
+    "-75.6237926"
+   ]
+  },
+  {
+   "place_id": 308730873,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 155342155,
+   "lat": "6.2536177",
+   "lon": "-75.6281395",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 118",
+   "display_name": "Carrera 118, El Salado, Comuna 13 - San Javier, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050033, Colombia",
+   "address": {
+    "road": "Carrera 118",
+    "neighbourhood": "El Salado",
+    "suburb": "Comuna 13 - San Javier",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050033",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2526033",
+    "6.2544600",
+    "-75.6284761",
+    "-75.6274268"
+   ]
+  },
+  {
+   "place_id": 308708584,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 355332839,
+   "lat": "6.2492371",
+   "lon": "-75.6295436",
+   "category": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.05340268177309831,
+   "addresstype": "road",
+   "name": "Carrera 118",
+   "display_name": "Carrera 118, Nuevos Conquistadores, Comuna 13 - San Javier, Perímetro Urbano Medellín, Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 050033, Colombia",
+   "address": {
+    "road": "Carrera 118",
+    "neighbourhood": "Nuevos Conquistadores",
+    "suburb": "Comuna 13 - San Javier",
+    "city": "Perímetro Urbano Medellín",
+    "state_district": "Valle de Aburrá",
+    "state": "Antioquia",
+    "ISO3166-2-lvl4": "CO-ANT",
+    "region": "RAP del Agua y la Montaña",
+    "postcode": "050033",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    "6.2487343",
+    "6.2497350",
+    "-75.6297640",
+    "-75.6293126"
+   ]
+  }
+ ],
+ "Calle 2 6-67, Saladoblanco, Huila": [
+  {
+   "lat": 1.9982242,
+   "lon": -76.1324321,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "hamlet": "La Cabaña",
+    "town": "Saladoblanco",
+    "state_district": "Sur",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.9979447,
+    1.9985082,
+    -76.1330035,
+    -76.1318585
+   ]
+  }
+ ],
+ "Calle 42, Bogota": [
+  {
+   "lat": 4.6277003,
+   "lon": -74.0581188,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "Mariscal Sucre",
+    "quarter": "UPZs Localidad Chapinero",
+    "suburb": "Localidad Chapinero",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "110231",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6270996,
+    4.628585,
+    -74.0602992,
+    -74.0558503
+   ]
+  },
+  {
+   "lat": 4.5742651,
+   "lon": -74.1788488,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "El Oasis",
+    "suburb": "Comuna Cazucá",
+    "city": "Soacha ciudad",
+    "subregion": "Soacha",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250055",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.5737399,
+    4.5742914,
+    -74.1821833,
+    -74.1754653
+   ]
+  },
+  {
+   "lat": 4.6523561,
+   "lon": -74.1007575,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "quarter": "UPZs Localidad Teusaquillo",
+    "suburb": "Localidad Teusaquillo",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "111321",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6515843,
+    4.6531267,
+    -74.101854,
+    -74.0996618
+   ]
+  },
+  {
+   "lat": 4.6327174,
+   "lon": -74.0776253,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "UPZs de Bogotá",
+    "suburb": "Localidad Teusaquillo",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "111311",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6324955,
+    4.6330924,
+    -74.0792648,
+    -74.0759602
+   ]
+  },
+  {
+   "lat": 4.6296803,
+   "lon": -74.0661432,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "Sucre",
+    "suburb": "Localidad Chapinero",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "110231",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6295672,
+    4.6297925,
+    -74.0668163,
+    -74.0654703
+   ]
+  },
+  {
+   "lat": 4.6299088,
+   "lon": -74.0674184,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "Sucre",
+    "suburb": "Localidad Chapinero",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "110231",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6297925,
+    4.6300007,
+    -74.0680224,
+    -74.0668163
+   ]
+  },
+  {
+   "lat": 4.6292507,
+   "lon": -74.0634457,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "Mariscal Sucre",
+    "suburb": "Localidad Chapinero",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "110231",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.62912,
+    4.629417,
+    -74.0636884,
+    -74.0631874
+   ]
+  },
+  {
+   "lat": 4.6333864,
+   "lon": -74.0803672,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "Ciudad Universitaria",
+    "suburb": "Localidad Teusaquillo",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "111321",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6333465,
+    4.6334262,
+    -74.0806919,
+    -74.0800425
+   ]
+  },
+  {
+   "lat": 4.6299796,
+   "lon": -74.0681298,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "Sucre",
+    "suburb": "Localidad Teusaquillo",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "111311",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.629969,
+    4.6299886,
+    -74.068237,
+    -74.0680224
+   ]
+  },
+  {
+   "lat": 4.6291336,
+   "lon": -74.064192,
+   "place_rank": 27,
+   "category": "highway",
+   "type": "steps",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "Mariscal Sucre",
+    "suburb": "Localidad Chapinero",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "110231",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6290757,
+    4.6292366,
+    -74.0645199,
+    -74.0638812
+   ]
+  },
+  {
+   "lat": 4.6331009,
+   "lon": -74.0793018,
+   "place_rank": 27,
+   "category": "highway",
+   "type": "footway",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "UPZs de Bogotá",
+    "suburb": "Localidad Teusaquillo",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "111311",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6330924,
+    4.6331093,
+    -74.0793388,
+    -74.0792648
+   ]
+  },
+  {
+   "lat": 4.6325899,
+   "lon": -74.0746713,
+   "place_rank": 30,
+   "category": "amenity",
+   "type": "cafe",
+   "name": "El Cafetín de la Soledad",
+   "address": {
+    "amenity": "El Cafetín de la Soledad",
+    "house_number": "22-54",
+    "road": "Calle 42",
+    "neighbourhood": "UPZs de Bogotá",
+    "suburb": "Localidad Teusaquillo",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "111311",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6325399,
+    4.6326399,
+    -74.0747213,
+    -74.0746213
+   ]
+  },
+  {
+   "lat": 9.2937624,
+   "lon": -75.3816248,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "Mano de Dios",
+    "city": "Sincelejo",
+    "county": "Sincelejo",
+    "state_district": "Montes de María",
+    "state": "Sucre",
+    "ISO3166-2-lvl4": "CO-SUC",
+    "region": "RAP Caribe",
+    "postcode": "700020",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    9.2933066,
+    9.294417,
+    -75.3824203,
+    -75.3810537
+   ]
+  },
+  {
+   "lat": 9.2929889,
+   "lon": -75.3829331,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "neighbourhood": "BOGOTÁ",
+    "city": "Sincelejo",
+    "county": "Sincelejo",
+    "state_district": "Montes de María",
+    "state": "Sucre",
+    "ISO3166-2-lvl4": "CO-SUC",
+    "region": "RAP Caribe",
+    "postcode": "700020",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    9.292654,
+    9.2933066,
+    -75.383435,
+    -75.3824203
+   ]
+  },
+  {
+   "lat": 7.8764264,
+   "lon": -72.4865983,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 42",
+   "address": {
+    "road": "Calle 42",
+    "residential": "Barrio Bogotá",
+    "city_district": "Comuna 3 - Sur Oriental",
+    "city": "Perímetro Urbano Cúcuta",
+    "county": "Cúcuta",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "540006",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8757108,
+    7.8771419,
+    -72.487632,
+    -72.4855647
+   ]
+  }
+ ],
+ "Carrera 5 9-18, Payande, Tolima": [
+  {
+   "lat": 4.3000335,
+   "lon": -75.1016418,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 5",
+   "address": {
+    "road": "Carrera 5",
+    "city_district": "Vereda Payandé",
+    "town": "San Luis",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.2988346,
+    4.3004324,
+    -75.1037392,
+    -75.0996838
+   ]
+  },
+  {
+   "lat": 4.2979439,
+   "lon": -75.0985672,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Carrera 5",
+   "address": {
+    "road": "Carrera 5",
+    "city_district": "Vereda Payandé",
+    "town": "San Luis",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.2969255,
+    4.2988346,
+    -75.0996838,
+    -75.0975686
+   ]
+  }
+ ],
+ "Calle 2 19A-18, Florencia, Caqueta": [
+  {
+   "lat": 1.6022963,
+   "lon": -75.6035331,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "city_district": "Comuna Suroriental",
+    "city": "Perímetro Urbano Florencia",
+    "county": "Florencia",
+    "state": "Caquetá",
+    "ISO3166-2-lvl4": "CO-CAQ",
+    "region": "RAP Amazonía",
+    "postcode": "180002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.6017462,
+    1.603003,
+    -75.604376,
+    -75.6028179
+   ]
+  },
+  {
+   "lat": 1.6100161,
+   "lon": -75.5976625,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "city_district": "Comuna Oriental",
+    "city": "Perímetro Urbano Florencia",
+    "county": "Florencia",
+    "state": "Caquetá",
+    "ISO3166-2-lvl4": "CO-CAQ",
+    "region": "RAP Amazonía",
+    "postcode": "180002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.6095003,
+    1.6106601,
+    -75.5983064,
+    -75.5971205
+   ]
+  },
+  {
+   "lat": 1.6618329,
+   "lon": -75.5481349,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "village": "San Antonio de Atenas",
+    "county": "Florencia",
+    "state": "Caquetá",
+    "ISO3166-2-lvl4": "CO-CAQ",
+    "region": "RAP Amazonía",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.6617519,
+    1.661871,
+    -75.5485313,
+    -75.5477506
+   ]
+  },
+  {
+   "lat": 1.8048883,
+   "lon": -75.499803,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "county": "Florencia",
+    "state": "Caquetá",
+    "ISO3166-2-lvl4": "CO-CAQ",
+    "region": "RAP Amazonía",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.8043735,
+    1.805403,
+    -75.5003944,
+    -75.4992115
+   ]
+  }
+ ],
+ "Calle 48 17C-13, Soledad, Atlantico": [
+  {
+   "lat": 10.9162608,
+   "lon": -74.7850227,
+   "place_rank": 30,
+   "category": "shop",
+   "type": "supermarket",
+   "name": "Isimo - Normandía",
+   "address": {
+    "shop": "Isimo - Normandía",
+    "house_number": "17C-13",
+    "road": "Calle 48",
+    "neighbourhood": "Urbanización Normandía",
+    "city_district": "Urbanización Normandía",
+    "town": "Soledad",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "083004",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9161445,
+    10.9163729,
+    -74.7850856,
+    -74.7849635
+   ]
+  }
+ ],
+ "Calle 82 44-52, Barranquilla, Atlantico": [
+  {
+   "lat": 10.9994887,
+   "lon": -74.8170224,
+   "place_rank": 30,
+   "category": "shop",
+   "type": "supermarket",
+   "name": "Justo & Bueno",
+   "address": {
+    "shop": "Justo & Bueno",
+    "house_number": "44 52",
+    "road": "Calle 82",
+    "neighbourhood": "Granadillo",
+    "suburb": "Granadillo",
+    "city_district": "Localidad Norte - Centro Histórico",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9993918,
+    10.9995856,
+    -74.8171413,
+    -74.8169034
+   ]
+  }
+ ],
+ "dedupe=0|Carrera 4 5-21, Tabio, Cundinamarca": [
+  {
+   "lat": 4.9200732,
+   "lon": -74.0961058,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "neighbourhood": "El Hato",
+    "hamlet": "El Centro",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.9190617,
+    4.9212283,
+    -74.0967114,
+    -74.0959275
+   ]
+  },
+  {
+   "lat": 4.9173143,
+   "lon": -74.0980623,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "hamlet": "El Salitre",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.9165054,
+    4.9181159,
+    -74.0985053,
+    -74.0976063
+   ]
+  },
+  {
+   "lat": 4.9154632,
+   "lon": -74.0991123,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.915009,
+    4.9159218,
+    -74.0993771,
+    -74.0988549
+   ]
+  },
+  {
+   "lat": 4.9184955,
+   "lon": -74.0974037,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "hamlet": "El Salitre",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.9181159,
+    4.9188721,
+    -74.0976063,
+    -74.0971965
+   ]
+  },
+  {
+   "lat": 4.9162136,
+   "lon": -74.0986801,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.9159218,
+    4.9165054,
+    -74.0988549,
+    -74.0985053
+   ]
+  },
+  {
+   "lat": 4.9189129,
+   "lon": -74.0969295,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "hamlet": "El Salitre",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.9188721,
+    4.9190617,
+    -74.0971965,
+    -74.0967114
+   ]
+  }
+ ],
+ "dedupe=0|Calle 5, Tabio, Cundinamarca": [
+  {
+   "lat": 4.9168887,
+   "lon": -74.099176,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.9165054,
+    4.9172407,
+    -74.0998625,
+    -74.0985053
+   ]
+  },
+  {
+   "lat": 4.9158851,
+   "lon": -74.0971515,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "neighbourhood": "El Hato",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.9155269,
+    4.9161933,
+    -74.097864,
+    -74.0964629
+   ]
+  },
+  {
+   "lat": 4.9163494,
+   "lon": -74.0981847,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "town": "Tabio",
+    "county": "Tabio",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250237",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.9161933,
+    4.9165054,
+    -74.0985053,
+    -74.097864
+   ]
+  }
+ ]
+}

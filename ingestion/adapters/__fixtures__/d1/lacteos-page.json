@@ -1,0 +1,665 @@
+[
+  {
+    "productId": "892",
+    "productName": "Leche Entera Bolsa UHT Latti 900 Ml",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Leches/Entera/",
+      "/Lacteos y huevos/Leches/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/31/136/",
+      "/2/31/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/leche-entera-bolsa-uht-latti-900ml-12000094/p",
+    "items": [
+      {
+        "itemId": "892",
+        "name": "Leche Entera Bolsa UHT Latti 900 Ml",
+        "nameComplete": "Leche Entera Bolsa UHT Latti 900 Ml",
+        "ean": "7707361719802",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/198962/leche-entera-latti-900ml-12000094-01.png.png?v=639179630422500000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 3090,
+              "ListPrice": 3090,
+              "PriceWithoutDiscount": 3090,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "818",
+    "productName": "Leche Deslactosada Bolsa UHT Latti 900 Ml",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Leches/Deslactosada/",
+      "/Lacteos y huevos/Leches/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/31/137/",
+      "/2/31/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/leche-deslactosada-bolsa-uht-latti-900ml-12005757/p",
+    "items": [
+      {
+        "itemId": "818",
+        "name": "Leche Deslactosada Bolsa UHT Latti 900 Ml",
+        "nameComplete": "Leche Deslactosada Bolsa UHT Latti 900 Ml",
+        "ean": "7700304855339",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/202354/leche-deslactosada-latti-900ml-12005757-01.png.png?v=639179726428470000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 3200,
+              "ListPrice": 3200,
+              "PriceWithoutDiscount": 3200,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "717",
+    "productName": "Leche Deslactosada Tetrapak UHT Latti 900 Ml",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Leches/Deslactosada/",
+      "/Lacteos y huevos/Leches/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/31/137/",
+      "/2/31/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/leche-deslac-tetrapak-uht-latti-900ml-12000245/p",
+    "items": [
+      {
+        "itemId": "717",
+        "name": "Leche Deslac Tetrapak UHT Latti 900 Ml",
+        "nameComplete": "Leche Deslactosada Tetrapak UHT Latti 900 Ml Leche Deslac Tetrapak UHT Latti 900 Ml",
+        "ean": "7709760447546",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/199194/leche-deslactosada-latti-900ml-12000245-01.png.png?v=639179635419670000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 3750,
+              "ListPrice": 3750,
+              "PriceWithoutDiscount": 3750,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "672",
+    "productName": "Crema de Leche Larga Vida 200 Gr",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Otros derivados/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/33/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/crema-de-leche-larga-vida-200-gr-12001250/p",
+    "items": [
+      {
+        "itemId": "672",
+        "name": "Crema de Leche Larga Vida 200 Gr",
+        "nameComplete": "Crema de Leche Larga Vida 200 Gr",
+        "ean": "7707188165639",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/200208/crema-de-leche-latti-200gr-12001250-01.png.png?v=639179655748870000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 2400,
+              "ListPrice": 2400,
+              "PriceWithoutDiscount": 2400,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "262",
+    "productName": "Leche Entera Tetrapak UHT Latti 900 Ml",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Leches/Entera/",
+      "/Lacteos y huevos/Leches/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/31/136/",
+      "/2/31/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/leche-entera-tetrapak-uht-latti-900ml-12000543/p",
+    "items": [
+      {
+        "itemId": "262",
+        "name": "Leche Entera Tetrapak UHT Latti 900 Ml",
+        "nameComplete": "Leche Entera Tetrapak UHT Latti 900 Ml",
+        "ean": "7709760447539",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/199818/leche-entera-latti-900ml-12000543-01.png.png?v=639179647707170000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 3550,
+              "ListPrice": 3550,
+              "PriceWithoutDiscount": 3550,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "1515",
+    "productName": "Huevo Tipo Aa 30 Und",
+    "brand": "SOL NACIENTE",
+    "categories": [
+      "/Lacteos y huevos/Huevos/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/36/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/huevo-tipo-aa-30-und-12003315/p",
+    "items": [
+      {
+        "itemId": "1515",
+        "name": "Huevo Tipo Aa 30 Und",
+        "nameComplete": "Huevo Tipo Aa 30 Und",
+        "ean": "7709990163117",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/204535/huevo-tipo-aa-30-und-12003315-01.png?v=639190869027830000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 14990,
+              "ListPrice": 14990,
+              "PriceWithoutDiscount": 14990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "1057",
+    "productName": "Yogurt Griego Natural Vita Latti 330 Gr",
+    "brand": "VITA LATTI",
+    "categories": [
+      "/Lacteos y huevos/Yogures/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/35/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/yogurt-griego-natural-vita-latti-330g-12003254/p",
+    "items": [
+      {
+        "itemId": "1057",
+        "name": "Yogurt Griego Natural Vita Latti 330 Gr",
+        "nameComplete": "Yogurt Griego Natural Vita Latti 330 Gr",
+        "ean": "7707365179367",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/201078/yogurt-griego-vita-latti-330gr-12003254-01.png.png?v=639179674502970000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 7600,
+              "ListPrice": 7600,
+              "PriceWithoutDiscount": 7600,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "934",
+    "productName": "Huevo Tipo A Sol Naciente 30 Und",
+    "brand": "SOL NACIENTE",
+    "categories": [
+      "/Lacteos y huevos/Huevos/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/36/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/huevo-tipo-a-sol-naciente-30-und-12000344/p",
+    "items": [
+      {
+        "itemId": "934",
+        "name": "Huevo Tipo A Sol Naciente 30 Und",
+        "nameComplete": "Huevo Tipo A Sol Naciente 30 Und",
+        "ean": "781159420344",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/199498/huevo-tipo-a-sol-naciente-30und-12000344-01.png.png?v=639179641011170000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 11990,
+              "ListPrice": 11990,
+              "PriceWithoutDiscount": 11990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "902",
+    "productName": "Queso Mozzarella Tajado Latti 400 Grs",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Quesos/Queso tajado/",
+      "/Lacteos y huevos/Quesos/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/34/40/",
+      "/2/34/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/queso-mozzarella-tajado-latti-12000084/p",
+    "items": [
+      {
+        "itemId": "902",
+        "name": "Queso Mozzarella Tajado Latti 400 Grs",
+        "nameComplete": "Queso Mozzarella Tajado Latti 400 Grs",
+        "ean": "7700304857340",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/198944/queso-mozzarella-tajado-latti-400gr-12000084-01.png.png?v=639179629969770000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 10500,
+              "ListPrice": 10500,
+              "PriceWithoutDiscount": 10500,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "816",
+    "productName": "Leche Equilibrio Tetrapak Uhtlatti 900 Ml",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Leches/Especializada/",
+      "/Lacteos y huevos/Leches/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/31/139/",
+      "/2/31/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/leche-equilibrio-tetrapak-uhtlatti-900ml-12005778/p",
+    "items": [
+      {
+        "itemId": "816",
+        "name": "Leche Equilibrio Tetrapak Uhtlatti 900 Ml",
+        "nameComplete": "Leche Equilibrio Tetrapak Uhtlatti 900 Ml",
+        "ean": "778",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/202394/leche-equilibrio-latti-900ml-12005778-01.png.png?v=639179726879300000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 3350,
+              "ListPrice": 3350,
+              "PriceWithoutDiscount": 3350,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "677",
+    "productName": "Leche Deslactosada Descremada Tetrapak 900 Ml",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Leches/Deslactosada/",
+      "/Lacteos y huevos/Leches/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/31/137/",
+      "/2/31/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/leche-deslacto-descrema-tetrapak-900ml-12001742/p",
+    "items": [
+      {
+        "itemId": "677",
+        "name": "Leche Deslacto Descrema Tetrapak 900 Ml",
+        "nameComplete": "Leche Deslactosada Descremada Tetrapak 900 Ml Leche Deslacto Descrema Tetrapak 900 Ml",
+        "ean": "7703032107572",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/200336/leche-descremada-0-grasa-latti-900ml-12001742-01.png.png?v=639179658428100000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 3950,
+              "ListPrice": 3950,
+              "PriceWithoutDiscount": 3950,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "1644",
+    "productName": "Yogurt Griego Natural Vita Latti 850 Gr",
+    "brand": "VITA LATTI",
+    "categories": [
+      "/Lacteos y huevos/Otros derivados/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/33/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/yogurt-griego-natural-vita-latti-850-g-12006668/p",
+    "items": [
+      {
+        "itemId": "1643",
+        "name": "Yogurt Griego Natural Vita Latti 850 Gr",
+        "nameComplete": "Yogurt Griego Natural Vita Latti 850 Gr",
+        "ean": "7700304919277",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/205129/yogurt-griego-natural-vita-latti-850-gr-01.png?v=639198322328200000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 17450,
+              "ListPrice": 17450,
+              "PriceWithoutDiscount": 17450,
+              "IsAvailable": true,
+              "AvailableQuantity": 100
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "1374",
+    "productName": "Queso Parmesano Latti 100 Grs",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Quesos/Queso delikatessen/",
+      "/Lacteos y huevos/Quesos/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/34/39/",
+      "/2/34/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/queso-parmesano-latti-100g-12000139/p",
+    "items": [
+      {
+        "itemId": "1374",
+        "name": "Queso Parmesano Latti 100 Grs",
+        "nameComplete": "Queso Parmesano Latti 100 Grs",
+        "ean": "7700304419890",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/199020/queso-parmesano-latti-100gr-12000139-01.png.png?v=639179631616500000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 6950,
+              "ListPrice": 6950,
+              "PriceWithoutDiscount": 6950,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "1007",
+    "productName": "Mantequilla Latti X 200 Gr",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Mantequillas/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/32/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/mantequilla-latti-x-200gr-12005810/p",
+    "items": [
+      {
+        "itemId": "1007",
+        "name": "Mantequilla Latti X 200 Gr",
+        "nameComplete": "Mantequilla Latti X 200 Gr",
+        "ean": "7700304546046",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/202430/mantequilla-latti-200gr-12005810-01.png.png?v=639179727717130000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 9990,
+              "ListPrice": 9990,
+              "PriceWithoutDiscount": 9990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "772",
+    "productName": "Leche Súper Cremosa Latti X900 Ml",
+    "brand": "LATTI",
+    "categories": [
+      "/Lacteos y huevos/Leches/Especializada/",
+      "/Lacteos y huevos/Leches/",
+      "/Lacteos y huevos/"
+    ],
+    "categoriesIds": [
+      "/2/31/139/",
+      "/2/31/",
+      "/2/"
+    ],
+    "link": "https://www.d1.com.co/leche-super-cremosa-latti-x900ml-12006667/p",
+    "items": [
+      {
+        "itemId": "772",
+        "name": "Leche Súper Cremosa Latti X900 Ml",
+        "nameComplete": "Leche Súper Cremosa Latti X900 Ml",
+        "ean": "7700304935079",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://d1tiendas.vteximg.com.br/arquivos/ids/203076/leche-entera-25proteina-super-cremosa-latti-900ml-12006667-01.png.png?v=639179831760230000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Tiendas D1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 4700,
+              "ListPrice": 4700,
+              "PriceWithoutDiscount": 4700,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

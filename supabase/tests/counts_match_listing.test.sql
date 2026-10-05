@@ -32,6 +32,11 @@ from public.store s where s.slug = 'exito';
 insert into public.price_snapshot (store_product_id, region_code, price_cop)
 values ('77777777-7777-7777-7777-777777777771', 'NACIONAL', 3900);
 
+-- A chain of its own with nothing priced. Not a real one: which real chains
+-- have a catalogue changes over time (D1 was empty until plan 0003).
+insert into public.store (slug, name, source_type, is_active)
+values ('test-sin-catalogo', 'Sin catálogo', 'manual', false);
+
 refresh materialized view public.current_price;
 
 -- 1. The priced one is listed.
@@ -77,7 +82,7 @@ select is(
 -- 6. A store with nothing priced still appears, showing zero. Dropping it
 --    would hide a store that exists.
 select is(
-  (select product_count from public.store_summary where slug = 'd1'),
+  (select product_count from public.store_summary where slug = 'test-sin-catalogo'),
   0,
   'una tienda sin productos con precio sigue en la lista, en cero'
 );

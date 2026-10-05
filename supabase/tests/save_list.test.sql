@@ -104,8 +104,11 @@ select throws_ok(
 -- ---------------------------------------------------------------------------
 
 reset role;
-insert into public.price_snapshot (store_product_id, region_code, price_cop)
-values ('33333333-3333-3333-3333-333333333333', 'NACIONAL', 5000);
+-- An explicit later timestamp: now() is frozen for the whole transaction, so
+-- without it both snapshots tie on captured_at and current_price may keep
+-- either one.
+insert into public.price_snapshot (store_product_id, region_code, price_cop, captured_at)
+values ('33333333-3333-3333-3333-333333333333', 'NACIONAL', 5000, now() + interval '1 minute');
 refresh materialized view public.current_price;
 
 set local role authenticated;

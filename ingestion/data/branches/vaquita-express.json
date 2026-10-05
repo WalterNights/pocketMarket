@@ -1,0 +1,71 @@
+{
+  "source": "https://vaquitaexpress.com.co/tiendas/",
+  "verifiedAt": "2026-10-04",
+  "coordinates": "Markers of the store page's own map widget (data-mage-init OXGoogleMap.locations)",
+  "branches": [
+    {
+      "externalId": "envigado",
+      "name": "La Vaquita Express Envigado",
+      "address": "Calle 37 Sur #40-48",
+      "city": "Envigado",
+      "latitude": 6.169857,
+      "longitude": -75.58579
+    },
+    {
+      "externalId": "calasanz",
+      "name": "La Vaquita Express Calasanz",
+      "address": "Carrera 80 #49-05",
+      "city": "Medellín",
+      "latitude": 6.26119,
+      "longitude": -75.597414
+    },
+    {
+      "externalId": "los-colores",
+      "name": "La Vaquita Express Los Colores",
+      "address": "Calle 52 #73-87",
+      "city": "Medellín",
+      "latitude": 6.261932,
+      "longitude": -75.589156
+    },
+    {
+      "externalId": "la-america",
+      "name": "La Vaquita Express La América",
+      "address": "Carrera 88 #41-50",
+      "city": "Medellín",
+      "latitude": 6.249708,
+      "longitude": -75.607293
+    },
+    {
+      "externalId": "belen",
+      "name": "La Vaquita Express Belén",
+      "address": "Carrera 75 #21-00",
+      "city": "Medellín",
+      "latitude": 6.22517,
+      "longitude": -75.595811
+    },
+    {
+      "externalId": "caldas",
+      "name": "La Vaquita Express Caldas",
+      "address": "Calle 130 Sur #50-45",
+      "city": "Caldas",
+      "latitude": 6.091477,
+      "longitude": -75.636429
+    },
+    {
+      "externalId": "bello",
+      "name": "La Vaquita Express Bello",
+      "address": "Cl. 55 #44-50, Andalucía",
+      "city": "Bello",
+      "latitude": 6.338461,
+      "longitude": -75.559394
+    },
+    {
+      "externalId": "itagui",
+      "name": "La Vaquita Express Itagüí",
+      "address": "Cl. 34B #50A-33, Samaria",
+      "city": "Itagüí",
+      "latitude": 6.166198,
+      "longitude": -75.621162
+    }
+  ]
+}

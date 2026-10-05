@@ -1,0 +1,4074 @@
+{
+ "Calle 4 6-57, Tello, Huila": [
+  {
+   "lat": 3.066959,
+   "lon": -75.1368733,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 4",
+   "address": {
+    "road": "Calle 4",
+    "town": "Tello",
+    "state_district": "Norte",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    3.0653129,
+    3.0685589,
+    -75.1384107,
+    -75.1353849
+   ]
+  },
+  {
+   "lat": 3.0697228,
+   "lon": -75.1396149,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Calle 4",
+   "address": {
+    "road": "Calle 4",
+    "town": "Tello",
+    "state_district": "Norte",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    3.0685589,
+    3.0709314,
+    -75.1407748,
+    -75.1384107
+   ]
+  },
+  {
+   "lat": 3.0477851,
+   "lon": -75.0161976,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 4",
+   "address": {
+    "road": "Calle 4",
+    "village": "San Andrés",
+    "town": "Tello",
+    "state_district": "Norte",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    3.0470881,
+    3.0487768,
+    -75.0174449,
+    -75.0152268
+   ]
+  },
+  {
+   "lat": 3.046689,
+   "lon": -75.0184542,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 4",
+   "address": {
+    "road": "Calle 4",
+    "village": "San Andrés",
+    "town": "Tello",
+    "state_district": "Norte",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    3.046473,
+    3.0469202,
+    -75.0191143,
+    -75.017799
+   ]
+  },
+  {
+   "lat": 2.9499461,
+   "lon": -75.0416159,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 4",
+   "address": {
+    "road": "Calle 4",
+    "town": "Tello",
+    "state_district": "Norte",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    2.9498319,
+    2.9500957,
+    -75.0418103,
+    -75.0414469
+   ]
+  },
+  {
+   "lat": 3.0470042,
+   "lon": -75.0176219,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 4",
+   "address": {
+    "road": "Calle 4",
+    "village": "San Andrés",
+    "town": "Tello",
+    "state_district": "Norte",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    3.0469202,
+    3.0470881,
+    -75.017799,
+    -75.0174449
+   ]
+  }
+ ],
+ "Carrera 6, Tello, Huila": [
+  {
+   "lat": 3.0475151,
+   "lon": -75.0164527,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "village": "San Andrés",
+    "town": "Tello",
+    "state_district": "Norte",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    3.0469677,
+    3.048072,
+    -75.0166038,
+    -75.016217
+   ]
+  },
+  {
+   "lat": 3.0468884,
+   "lon": -75.0161844,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "village": "San Andrés",
+    "town": "Tello",
+    "state_district": "Norte",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    3.0468091,
+    3.0469677,
+    -75.016217,
+    -75.0161518
+   ]
+  }
+ ],
+ "Calle 2 6-67, Saladoblanco, Huila": [
+  {
+   "lat": 1.9982242,
+   "lon": -76.1324321,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "hamlet": "La Cabaña",
+    "town": "Saladoblanco",
+    "state_district": "Sur",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.9979447,
+    1.9985082,
+    -76.1330035,
+    -76.1318585
+   ]
+  }
+ ],
+ "Carrera 6, Saladoblanco, Huila": [
+  {
+   "lat": 1.9991548,
+   "lon": -76.1297243,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 1",
+   "address": {
+    "road": "Carrera 1",
+    "hamlet": "La Cabaña",
+    "town": "Saladoblanco",
+    "state_district": "Sur",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.9984975,
+    1.9997286,
+    -76.1300987,
+    -76.1292646
+   ]
+  },
+  {
+   "lat": 1.9985513,
+   "lon": -76.1326564,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "hamlet": "La Cabaña",
+    "town": "Saladoblanco",
+    "state_district": "Sur",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.9982335,
+    1.998883,
+    -76.1328567,
+    -76.1324727
+   ]
+  },
+  {
+   "lat": 1.9983694,
+   "lon": -76.1320353,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "pedestrian",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "hamlet": "La Cabaña",
+    "town": "Saladoblanco",
+    "state_district": "Sur",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.9981039,
+    1.9986509,
+    -76.1321852,
+    -76.1319186
+   ]
+  },
+  {
+   "lat": 1.9986154,
+   "lon": -76.1310666,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 2",
+   "address": {
+    "road": "Carrera 2",
+    "hamlet": "La Cabaña",
+    "town": "Saladoblanco",
+    "state_district": "Sur",
+    "state": "Huila",
+    "ISO3166-2-lvl4": "CO-HUI",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    1.9981887,
+    1.9990419,
+    -76.1310732,
+    -76.1310455
+   ]
+  }
+ ],
+ "Carrera 4 28-53, Los Patios, Norte De Santander": [
+  {
+   "lat": 7.7430214,
+   "lon": -72.5449528,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "village": "La Garita",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.7426502,
+    7.7437026,
+    -72.545707,
+    -72.5443977
+   ]
+  },
+  {
+   "lat": 7.7426692,
+   "lon": -72.54619,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "village": "La Garita",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.7426486,
+    7.7426898,
+    -72.5463923,
+    -72.5459877
+   ]
+  },
+  {
+   "lat": 7.7426494,
+   "lon": -72.5458473,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "village": "La Garita",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.7426486,
+    7.7426502,
+    -72.5459877,
+    -72.545707
+   ]
+  }
+ ],
+ "Calle 28, Los Patios, Norte De Santander": [
+  {
+   "lat": 7.8666275,
+   "lon": -72.496607,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Urbano Pinar del Río",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "540006",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8652144,
+    7.8679899,
+    -72.4969068,
+    -72.4964601
+   ]
+  },
+  {
+   "lat": 7.866633,
+   "lon": -72.4966537,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Urbano Pinar del Río",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "540006",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8652469,
+    7.8679707,
+    -72.4969405,
+    -72.4965064
+   ]
+  },
+  {
+   "lat": 7.8343892,
+   "lon": -72.4994635,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Chaparral",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "541010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8333795,
+    7.8354802,
+    -72.5032099,
+    -72.4957152
+   ]
+  },
+  {
+   "lat": 7.8371474,
+   "lon": -72.5073245,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Patios Centro",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "541010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8367694,
+    7.8375551,
+    -72.508647,
+    -72.5059931
+   ]
+  },
+  {
+   "lat": 7.8360577,
+   "lon": -72.5051637,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Patios Centro",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "541010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8357614,
+    7.8362932,
+    -72.5061413,
+    -72.5042029
+   ]
+  },
+  {
+   "lat": 7.8648014,
+   "lon": -72.4964864,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Bella Vista",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "540006",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8643609,
+    7.8652469,
+    -72.4969405,
+    -72.4960273
+   ]
+  },
+  {
+   "lat": 7.8364661,
+   "lon": -72.5068356,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Patios Centro",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "541010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8363303,
+    7.8366444,
+    -72.5075301,
+    -72.5061312
+   ]
+  },
+  {
+   "lat": 7.8372283,
+   "lon": -72.5094317,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Patios Centro",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "541010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8370391,
+    7.8374178,
+    -72.5099545,
+    -72.5089093
+   ]
+  },
+  {
+   "lat": 7.8378698,
+   "lon": -72.5092453,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Patios Centro",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "541010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8376791,
+    7.838038,
+    -72.5097957,
+    -72.5087024
+   ]
+  },
+  {
+   "lat": 7.8356209,
+   "lon": -72.5037064,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Patios Centro",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "541010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8354802,
+    7.8357614,
+    -72.5042029,
+    -72.5032099
+   ]
+  },
+  {
+   "lat": 7.8643483,
+   "lon": -72.4959964,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 28",
+   "address": {
+    "road": "Calle 28",
+    "neighbourhood": "Bella Vista",
+    "town": "Los Patios",
+    "state_district": "Oriental",
+    "state": "Norte de Santander",
+    "ISO3166-2-lvl4": "CO-NSA",
+    "region": "RAP Gran Santander",
+    "postcode": "540006",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    7.8643357,
+    7.8643609,
+    -72.4960273,
+    -72.4959655
+   ]
+  }
+ ],
+ "Calle 2 7-100, Cartagena, Bolivar": [
+  {
+   "lat": 10.5429677,
+   "lon": -75.440513,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "village": "Pontezuela",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130007",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.5423827,
+    10.5436083,
+    -75.4414124,
+    -75.4395791
+   ]
+  },
+  {
+   "lat": 10.3902941,
+   "lon": -75.4757944,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "neighbourhood": "La Concepción",
+    "suburb": "La Concepción",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.3898712,
+    10.3907171,
+    -75.4764904,
+    -75.4750984
+   ]
+  },
+  {
+   "lat": 10.4033769,
+   "lon": -75.4822445,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "neighbourhood": "13 De Junio",
+    "suburb": "13 De Junio",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.4031732,
+    10.4035817,
+    -75.4824276,
+    -75.4820601
+   ]
+  },
+  {
+   "lat": 10.3686446,
+   "lon": -75.50757,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 2",
+   "address": {
+    "road": "Calle 2",
+    "neighbourhood": "Albornoz",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130013",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.3685904,
+    10.3686604,
+    -75.5079603,
+    -75.5071852
+   ]
+  }
+ ],
+ "Carrera 7, Cartagena, Bolivar": [
+  {
+   "lat": 10.4776112,
+   "lon": -75.4933766,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "hamlet": "Marlinda",
+    "village": "Tierra Baja",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.4731676,
+    10.4824892,
+    -75.4965556,
+    -75.4907772
+   ]
+  },
+  {
+   "lat": 10.3564764,
+   "lon": -75.4919477,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "neighbourhood": "Arroz Barato",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130013",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.3552109,
+    10.3576237,
+    -75.4928874,
+    -75.4908481
+   ]
+  },
+  {
+   "lat": 10.541931,
+   "lon": -75.4400422,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "village": "Pontezuela",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130007",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.5410487,
+    10.5428161,
+    -75.4409021,
+    -75.4391863
+   ]
+  },
+  {
+   "lat": 10.4482048,
+   "lon": -75.5154935,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "neighbourhood": "Crespo",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.4480143,
+    10.4483953,
+    -75.5173466,
+    -75.5136404
+   ]
+  },
+  {
+   "lat": 10.4835027,
+   "lon": -75.490559,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "hamlet": "Marlinda",
+    "village": "Tierra Baja",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.4824892,
+    10.4844866,
+    -75.4907772,
+    -75.4902419
+   ]
+  },
+  {
+   "lat": 10.5335641,
+   "lon": -75.39978,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "village": "Bayunca",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.5331987,
+    10.5339239,
+    -75.4004194,
+    -75.3991439
+   ]
+  },
+  {
+   "lat": 10.5358985,
+   "lon": -75.4013784,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "village": "Bayunca",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.5345561,
+    10.5372322,
+    -75.4015514,
+    -75.4013622
+   ]
+  },
+  {
+   "lat": 10.3581446,
+   "lon": -75.4892548,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "neighbourhood": "Arroz Barato",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130013",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.357943,
+    10.3583928,
+    -75.4897904,
+    -75.4887309
+   ]
+  },
+  {
+   "lat": 10.3577961,
+   "lon": -75.4903234,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "neighbourhood": "Arroz Barato",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130013",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.3576237,
+    10.357943,
+    -75.4908481,
+    -75.4897904
+   ]
+  },
+  {
+   "lat": 10.4484761,
+   "lon": -75.5180494,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "neighbourhood": "Crespo",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.4483953,
+    10.448557,
+    -75.5187521,
+    -75.5173466
+   ]
+  },
+  {
+   "lat": 10.5321117,
+   "lon": -75.3974887,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "village": "Bayunca",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.531907,
+    10.5323086,
+    -75.3976821,
+    -75.3973043
+   ]
+  },
+  {
+   "lat": 10.3964929,
+   "lon": -75.5547873,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 7",
+   "address": {
+    "road": "Carrera 7",
+    "neighbourhood": "Castillogrande",
+    "city_district": "Castillogrande",
+    "city": "Cartagena de Indias",
+    "state_district": "Dique",
+    "state": "Bolívar",
+    "ISO3166-2-lvl4": "CO-BOL",
+    "region": "RAP Caribe",
+    "postcode": "130001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.3955999,
+    10.3973857,
+    -75.5553521,
+    -75.5542221
+   ]
+  }
+ ],
+ "Calle 5 19-62, Santa Marta, Magdalena": [
+  {
+   "lat": 11.2502791,
+   "lon": -74.1799899,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "neighbourhood": "17 de Diciembre",
+    "city_district": "Localidad 2 Histórica - Rodrigo de Bastidas",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2501899,
+    11.2504808,
+    -74.180661,
+    -74.1793254
+   ]
+  },
+  {
+   "lat": 11.2515536,
+   "lon": -74.2016534,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "city_district": "Localidad 2 Histórica - Rodrigo de Bastidas",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470004",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2505415,
+    11.2521413,
+    -74.2100945,
+    -74.1933966
+   ]
+  },
+  {
+   "lat": 11.2522469,
+   "lon": -74.2108299,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "city_district": "Localidad 2 Histórica - Rodrigo de Bastidas",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470004",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2522361,
+    11.2525768,
+    -74.2116707,
+    -74.2100845
+   ]
+  },
+  {
+   "lat": 11.2509325,
+   "lon": -74.1914042,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "city_district": "Localidad 2 Histórica - Rodrigo de Bastidas",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.250805,
+    11.2510581,
+    -74.1920198,
+    -74.1907882
+   ]
+  },
+  {
+   "lat": 11.2512314,
+   "lon": -74.1903477,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "city_district": "Localidad 2 Histórica - Rodrigo de Bastidas",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2511501,
+    11.2512968,
+    -74.1907932,
+    -74.1899007
+   ]
+  },
+  {
+   "lat": 11.1936349,
+   "lon": -74.2210069,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "city_district": "Localidad 3 Turística - Perla del Caribe",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470005",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.1933568,
+    11.1939211,
+    -74.2234358,
+    -74.2185762
+   ]
+  },
+  {
+   "lat": 11.2083296,
+   "lon": -74.2274114,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "city_district": "Localidad 3 Turística - Perla del Caribe",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470005",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2077468,
+    11.2089223,
+    -74.2282542,
+    -74.2265792
+   ]
+  },
+  {
+   "lat": 11.1941623,
+   "lon": -74.2171589,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "city_district": "Localidad 3 Turística - Perla del Caribe",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470005",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.1940856,
+    11.1942389,
+    -74.2175554,
+    -74.2167625
+   ]
+  },
+  {
+   "lat": 11.2348512,
+   "lon": -74.1254191,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "village": "Bonda",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2331821,
+    11.2360088,
+    -74.1319243,
+    -74.1189907
+   ]
+  },
+  {
+   "lat": 11.1406564,
+   "lon": -74.1187862,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "village": "Minca",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470008",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.140636,
+    11.1406767,
+    -74.1190787,
+    -74.1184938
+   ]
+  },
+  {
+   "lat": 11.1404834,
+   "lon": -74.1172197,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "village": "Minca",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470008",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.1404717,
+    11.140495,
+    -74.1175349,
+    -74.1169046
+   ]
+  },
+  {
+   "lat": 11.2715008,
+   "lon": -74.1856761,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "village": "Taganga",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2709987,
+    11.2719645,
+    -74.1866299,
+    -74.1847327
+   ]
+  },
+  {
+   "lat": 11.1935233,
+   "lon": -74.2246324,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "city_district": "Localidad 3 Turística - Perla del Caribe",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "005075",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.1934864,
+    11.193718,
+    -74.2257689,
+    -74.2235124
+   ]
+  },
+  {
+   "lat": 11.2386353,
+   "lon": -73.6982647,
+   "place_rank": 27,
+   "category": "highway",
+   "type": "service",
+   "name": "Calle 5",
+   "address": {
+    "road": "Calle 5",
+    "village": "Don Diego",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2385952,
+    11.2386873,
+    -73.6990117,
+    -73.6975172
+   ]
+  }
+ ],
+ "Carrera 19, Santa Marta, Magdalena": [
+  {
+   "lat": 11.2193018,
+   "lon": -74.1970126,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "quarter": "El Pando",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2174448,
+    11.2211588,
+    -74.1981374,
+    -74.1958877
+   ]
+  },
+  {
+   "lat": 11.2271863,
+   "lon": -74.1945086,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "neighbourhood": "Portal Universitario",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2260262,
+    11.2286412,
+    -74.1953985,
+    -74.1942723
+   ]
+  },
+  {
+   "lat": 11.2285587,
+   "lon": -74.1949116,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "neighbourhood": "Urbanización Villa Marbella",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2268,
+    11.2304485,
+    -74.1954699,
+    -74.1947815
+   ]
+  },
+  {
+   "lat": 11.2244644,
+   "lon": -74.1956721,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "suburb": "Ciudadela",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2242091,
+    11.2247207,
+    -74.1959703,
+    -74.1953731
+   ]
+  },
+  {
+   "lat": 11.226905,
+   "lon": -74.1940073,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "neighbourhood": "Portal Universitario",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2266427,
+    11.227124,
+    -74.1942787,
+    -74.1937039
+   ]
+  },
+  {
+   "lat": 11.2219074,
+   "lon": -74.1956246,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "suburb": "Ciudadela",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2212727,
+    11.2225816,
+    -74.1958169,
+    -74.1956242
+   ]
+  },
+  {
+   "lat": 11.189095,
+   "lon": -74.2099506,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470005",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.1888151,
+    11.1893747,
+    -74.2100988,
+    -74.2098027
+   ]
+  },
+  {
+   "lat": 11.2238405,
+   "lon": -74.1956894,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "suburb": "Ciudadela",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2231881,
+    11.2244929,
+    -74.195708,
+    -74.1956775
+   ]
+  },
+  {
+   "lat": 11.2281957,
+   "lon": -74.1938514,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "neighbourhood": "Portal Universitario",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2281502,
+    11.2282411,
+    -74.1940014,
+    -74.1937014
+   ]
+  },
+  {
+   "lat": 11.2212157,
+   "lon": -74.1958523,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2211588,
+    11.2212727,
+    -74.1958877,
+    -74.1958169
+   ]
+  },
+  {
+   "lat": 11.2335529,
+   "lon": -74.1245301,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "village": "Bonda",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.232085,
+    11.2348314,
+    -74.1254915,
+    -74.1240041
+   ]
+  },
+  {
+   "lat": 11.2310242,
+   "lon": -74.1240629,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "village": "Bonda",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2301325,
+    11.232043,
+    -74.1241232,
+    -74.1236095
+   ]
+  },
+  {
+   "lat": 11.1894259,
+   "lon": -74.2126123,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 4",
+   "address": {
+    "road": "Carrera 4",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470005",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.1889191,
+    11.1899315,
+    -74.2131425,
+    -74.2120832
+   ]
+  },
+  {
+   "lat": 11.2239515,
+   "lon": -74.1955699,
+   "place_rank": 27,
+   "category": "highway",
+   "type": "footway",
+   "name": "Carrera 19",
+   "address": {
+    "road": "Carrera 19",
+    "suburb": "Ciudadela",
+    "city_district": "Localidad 1 Cultural Tayrona - San Pedro Alejandrino",
+    "city": "Perímetro Urbano Santa Marta",
+    "county": "Santa Marta",
+    "state": "Magdalena",
+    "ISO3166-2-lvl4": "CO-MAG",
+    "region": "RAP Caribe",
+    "postcode": "470003",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    11.2237947,
+    11.2241084,
+    -74.1957063,
+    -74.1954336
+   ]
+  }
+ ],
+ "Carrera 3 11-02, Anzoategui, Tolima": [
+  {
+   "lat": 4.6326151,
+   "lon": -75.0937354,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Centro",
+    "hamlet": "La Camelia",
+    "town": "Anzoátegui",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6311303,
+    4.6341493,
+    -75.0949858,
+    -75.0925506
+   ]
+  },
+  {
+   "lat": 4.6357076,
+   "lon": -75.0917199,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Tres Puertas",
+    "hamlet": "La Camelia",
+    "town": "Anzoátegui",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6341493,
+    4.6369711,
+    -75.0925506,
+    -75.0905163
+   ]
+  },
+  {
+   "lat": 4.6308258,
+   "lon": -75.0952161,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Centro",
+    "hamlet": "La Camelia",
+    "town": "Anzoátegui",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6305212,
+    4.6311303,
+    -75.0954465,
+    -75.0949858
+   ]
+  },
+  {
+   "lat": 4.6310567,
+   "lon": -75.0948916,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Centro",
+    "hamlet": "La Camelia",
+    "town": "Anzoátegui",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.630983,
+    4.6311303,
+    -75.0949858,
+    -75.0947974
+   ]
+  },
+  {
+   "lat": 4.6368061,
+   "lon": -75.0908065,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Vía a Anzoátegui",
+   "address": {
+    "road": "Vía a Anzoátegui",
+    "neighbourhood": "El Reposo",
+    "hamlet": "La Camelia",
+    "town": "Anzoátegui",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6341493,
+    4.6381459,
+    -75.0925506,
+    -75.0877478
+   ]
+  }
+ ],
+ "Calle 11, Anzoategui, Tolima": [
+  {
+   "lat": 4.6316835,
+   "lon": -75.0942469,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 11",
+   "address": {
+    "road": "Calle 11",
+    "neighbourhood": "Centro",
+    "hamlet": "La Camelia",
+    "town": "Anzoátegui",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6315386,
+    4.6318312,
+    -75.0944063,
+    -75.0940849
+   ]
+  },
+  {
+   "lat": 4.6318852,
+   "lon": -75.0944776,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 11",
+   "address": {
+    "road": "Calle 11",
+    "neighbourhood": "Centro",
+    "hamlet": "La Camelia",
+    "town": "Anzoátegui",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6318184,
+    4.631952,
+    -75.094538,
+    -75.0944172
+   ]
+  }
+ ],
+ "Calle 6 6-10, Palocabildo, Tolima": [
+  {
+   "lat": 5.1207457,
+   "lon": -75.0239034,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 6",
+   "address": {
+    "road": "Calle 6",
+    "neighbourhood": "Centro",
+    "village": "Guadualito",
+    "town": "Palocabildo",
+    "state_district": "Norte",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    5.1205398,
+    5.1230505,
+    -75.02755,
+    -75.0203276
+   ]
+  },
+  {
+   "lat": 5.1239589,
+   "lon": -75.0179461,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 6",
+   "address": {
+    "road": "Calle 6",
+    "neighbourhood": "El Jardín",
+    "village": "Guadualito",
+    "town": "Palocabildo",
+    "state_district": "Norte",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    5.1230505,
+    5.125923,
+    -75.0203276,
+    -75.0169573
+   ]
+  }
+ ],
+ "Carrera 6, Palocabildo, Tolima": [
+  {
+   "lat": 5.1204754,
+   "lon": -75.0214447,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Brisas del Palmar",
+    "village": "Guadualito",
+    "town": "Palocabildo",
+    "state_district": "Norte",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    5.1195484,
+    5.1213278,
+    -75.0222467,
+    -75.0206943
+   ]
+  },
+  {
+   "lat": 5.1196433,
+   "lon": -75.0208772,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Villa Nueva",
+    "village": "Guadualito",
+    "town": "Palocabildo",
+    "state_district": "Norte",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    5.1195465,
+    5.1198353,
+    -75.020962,
+    -75.0206943
+   ]
+  }
+ ],
+ "Calle 21 6-30, Chia, Cundinamarca": [
+  {
+   "lat": 4.867317,
+   "lon": -74.0526452,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 21",
+   "address": {
+    "road": "Calle 21",
+    "residential": "Covadonga",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8651368,
+    4.871141,
+    -74.060829,
+    -74.0441091
+   ]
+  },
+  {
+   "lat": 4.8647604,
+   "lon": -74.0438586,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 21",
+   "address": {
+    "road": "Calle 21",
+    "neighbourhood": "Delicias Norte",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8644094,
+    4.8651368,
+    -74.0441091,
+    -74.0435563
+   ]
+  },
+  {
+   "lat": 4.8671916,
+   "lon": -74.0515875,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 21",
+   "address": {
+    "road": "Calle 21",
+    "neighbourhood": "Los Chilacos",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8670216,
+    4.8672988,
+    -74.051873,
+    -74.0513645
+   ]
+  },
+  {
+   "lat": 4.8650252,
+   "lon": -74.0440352,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 21",
+   "address": {
+    "road": "Calle 21",
+    "neighbourhood": "Delicias Norte",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8649017,
+    4.8651368,
+    -74.0441091,
+    -74.0439839
+   ]
+  },
+  {
+   "lat": 4.8646779,
+   "lon": -74.0439356,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 21",
+   "address": {
+    "road": "Calle 21",
+    "neighbourhood": "Delicias Norte",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8644547,
+    4.8649017,
+    -74.0439879,
+    -74.043935
+   ]
+  }
+ ],
+ "Carrera 6, Chia, Cundinamarca": [
+  {
+   "lat": 4.8501549,
+   "lon": -74.060818,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Parmalat",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8493449,
+    4.8512087,
+    -74.0614316,
+    -74.0603296
+   ]
+  },
+  {
+   "lat": 4.8589138,
+   "lon": -74.0561797,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Alegría",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8581282,
+    4.8597098,
+    -74.0565755,
+    -74.0558051
+   ]
+  },
+  {
+   "lat": 4.8609736,
+   "lon": -74.055035,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Kinsay",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8602765,
+    4.8616784,
+    -74.0553988,
+    -74.0546861
+   ]
+  },
+  {
+   "lat": 4.8568682,
+   "lon": -74.0571964,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Alegría",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8562477,
+    4.8574899,
+    -74.057507,
+    -74.0568884
+   ]
+  },
+  {
+   "lat": 4.86786,
+   "lon": -74.0525303,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Los Chilacos",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.86736,
+    4.8683618,
+    -74.0527476,
+    -74.0523167
+   ]
+  },
+  {
+   "lat": 4.852808,
+   "lon": -74.0592868,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Parmalat",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8523299,
+    4.8532822,
+    -74.0594991,
+    -74.0590661
+   ]
+  },
+  {
+   "lat": 4.8517024,
+   "lon": -74.0601219,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Parmalat",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8512087,
+    4.8521962,
+    -74.0603296,
+    -74.0599143
+   ]
+  },
+  {
+   "lat": 4.8578091,
+   "lon": -74.0567319,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "neighbourhood": "Alegría",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8574899,
+    4.8581282,
+    -74.0568884,
+    -74.0565755
+   ]
+  },
+  {
+   "lat": 4.8559338,
+   "lon": -74.0576553,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "hamlet": "San Pedro",
+    "city": "Casco urbano de Chía",
+    "municipality": "Chía",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8556198,
+    4.8562477,
+    -74.0578035,
+    -74.057507
+   ]
+  },
+  {
+   "lat": 4.8902974,
+   "lon": -74.0419854,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 6",
+   "address": {
+    "road": "Carrera 6",
+    "town": "Cajicá",
+    "municipality": "Chía",
+    "county": "Cajicá",
+    "state_district": "Sabana Centro",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250202",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.8895178,
+    4.891079,
+    -74.0423421,
+    -74.0416332
+   ]
+  }
+ ],
+ "Carrera 3 13-12, Mosquera, Cundinamarca": [
+  {
+   "lat": 4.6920329,
+   "lon": -74.1725432,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Porvenir Río",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6907998,
+    4.6932661,
+    -74.1728053,
+    -74.1722812
+   ]
+  },
+  {
+   "lat": 4.7132274,
+   "lon": -74.2189482,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Villa Nueva",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7124605,
+    4.7140155,
+    -74.2206175,
+    -74.2172866
+   ]
+  },
+  {
+   "lat": 4.694383,
+   "lon": -74.2001016,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "El Diamante Occidental",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6926775,
+    4.6960745,
+    -74.2003267,
+    -74.1998433
+   ]
+  },
+  {
+   "lat": 4.7123127,
+   "lon": -74.2210442,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Serrezuelita",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.712172,
+    4.7124605,
+    -74.2214733,
+    -74.2206175
+   ]
+  },
+  {
+   "lat": 4.6971286,
+   "lon": -74.1993665,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "El Diamante Occidental",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6963127,
+    4.6979443,
+    -74.1993991,
+    -74.1993263
+   ]
+  },
+  {
+   "lat": 4.7119074,
+   "lon": -74.2221929,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Bremen",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7118551,
+    4.7119597,
+    -74.2223432,
+    -74.2220426
+   ]
+  },
+  {
+   "lat": 4.7121177,
+   "lon": -74.2216173,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Serrezuelita",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7120633,
+    4.712172,
+    -74.2217613,
+    -74.2214733
+   ]
+  },
+  {
+   "lat": 4.7119911,
+   "lon": -74.2219523,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Serrezuelita",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7119597,
+    4.7120232,
+    -74.2220426,
+    -74.2218622
+   ]
+  },
+  {
+   "lat": 4.7100259,
+   "lon": -74.2250618,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "El Carmen",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7099866,
+    4.7100651,
+    -74.2251331,
+    -74.2249904
+   ]
+  },
+  {
+   "lat": 4.7101111,
+   "lon": -74.2249318,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "El Carmen",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7100651,
+    4.7101568,
+    -74.2249904,
+    -74.224873
+   ]
+  },
+  {
+   "lat": 4.7100715,
+   "lon": -74.2250504,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "El Carmen",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7100639,
+    4.7101042,
+    -74.2251011,
+    -74.2249904
+   ]
+  },
+  {
+   "lat": 4.7120433,
+   "lon": -74.2218117,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Serrezuelita",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7120232,
+    4.7120633,
+    -74.2218622,
+    -74.2217613
+   ]
+  },
+  {
+   "lat": 4.7118464,
+   "lon": -74.2223659,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Bremen",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7118376,
+    4.7118551,
+    -74.2223887,
+    -74.2223432
+   ]
+  },
+  {
+   "lat": 4.7039891,
+   "lon": -74.210786,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 3",
+   "address": {
+    "road": "Carrera 3",
+    "neighbourhood": "Provivienda",
+    "town": "Funza",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250020",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7034485,
+    4.704517,
+    -74.2115885,
+    -74.2099751
+   ]
+  }
+ ],
+ "Calle 13, Mosquera, Cundinamarca": [
+  {
+   "lat": 4.6920798,
+   "lon": -74.1722874,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 13",
+   "address": {
+    "road": "Calle 13",
+    "neighbourhood": "Porvenir Río",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6919088,
+    4.6922508,
+    -74.1732282,
+    -74.1713465
+   ]
+  },
+  {
+   "lat": 4.692384,
+   "lon": -74.173978,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 13",
+   "address": {
+    "road": "Calle 13",
+    "neighbourhood": "Porvenir Río",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.6922508,
+    4.6925264,
+    -74.1747262,
+    -74.1732282
+   ]
+  },
+  {
+   "lat": 4.7120318,
+   "lon": -74.2236224,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 13",
+   "address": {
+    "road": "Calle 13",
+    "neighbourhood": "Bremen",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7113907,
+    4.7126725,
+    -74.2239674,
+    -74.223269
+   ]
+  },
+  {
+   "lat": 4.7175305,
+   "lon": -74.2269475,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 13",
+   "address": {
+    "road": "Calle 13",
+    "neighbourhood": "Villa Marcela",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7171244,
+    4.7179344,
+    -74.2272294,
+    -74.2266686
+   ]
+  },
+  {
+   "lat": 4.7160653,
+   "lon": -74.2259236,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 13",
+   "address": {
+    "road": "Calle 13",
+    "neighbourhood": "San Sebastián",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7158157,
+    4.7163148,
+    -74.2261115,
+    -74.2257357
+   ]
+  },
+  {
+   "lat": 4.7158864,
+   "lon": -74.2261614,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 13",
+   "address": {
+    "road": "Calle 13",
+    "neighbourhood": "San Sebastián",
+    "town": "Mosquera",
+    "subregion": "Sabana Occidente",
+    "state": "Cundinamarca",
+    "ISO3166-2-lvl4": "CO-CUN",
+    "region": "RAP (Especial) Central",
+    "postcode": "250040",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.7156357,
+    4.716137,
+    -74.226343,
+    -74.2259798
+   ]
+  }
+ ],
+ "Transversal 13 35B-28, Ibague, Tolima": [
+  {
+   "lat": 4.4499429,
+   "lon": -75.2305407,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Transversal 13",
+   "address": {
+    "road": "Transversal 13",
+    "neighbourhood": "Viña de Calambeo",
+    "suburb": "Comuna 2 - Calambeo",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.449372,
+    4.4504339,
+    -75.2311617,
+    -75.2299997
+   ]
+  },
+  {
+   "lat": 4.4452047,
+   "lon": -75.2173068,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "primary",
+   "name": "Avenida Ambalá",
+   "address": {
+    "road": "Avenida Ambalá",
+    "neighbourhood": "Villa Pinzón",
+    "suburb": "Comuna 3 - San Simón",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.444316,
+    4.4464283,
+    -75.2203949,
+    -75.2143326
+   ]
+  },
+  {
+   "lat": 4.4448327,
+   "lon": -75.2191066,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "primary",
+   "name": "Avenida Ambalá",
+   "address": {
+    "road": "Avenida Ambalá",
+    "neighbourhood": "Viveros",
+    "suburb": "Comuna 3 - San Simón",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.444437,
+    4.4451167,
+    -75.2203645,
+    -75.2178196
+   ]
+  },
+  {
+   "lat": 4.4462657,
+   "lon": -75.2150828,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "primary",
+   "name": "Avenida Ambalá",
+   "address": {
+    "road": "Avenida Ambalá",
+    "neighbourhood": "Villa Pinzón",
+    "suburb": "Comuna 3 - San Simón",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.4459406,
+    4.4465333,
+    -75.215839,
+    -75.2143089
+   ]
+  },
+  {
+   "lat": 4.4453243,
+   "lon": -75.2173183,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "primary",
+   "name": "Avenida Ambalá",
+   "address": {
+    "road": "Avenida Ambalá",
+    "neighbourhood": "Villa Pinzón",
+    "suburb": "Comuna 3 - San Simón",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.4451167,
+    4.4455332,
+    -75.2178196,
+    -75.2168175
+   ]
+  },
+  {
+   "lat": 4.445737,
+   "lon": -75.2163283,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "primary",
+   "name": "Avenida Ambalá",
+   "address": {
+    "road": "Avenida Ambalá",
+    "neighbourhood": "Villa Pinzón",
+    "suburb": "Comuna 3 - San Simón",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.4455332,
+    4.4459406,
+    -75.2168175,
+    -75.215839
+   ]
+  }
+ ],
+ "Calle 35B, Ibague, Tolima": [
+  {
+   "lat": 4.4294705,
+   "lon": -75.2202632,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 35B",
+   "address": {
+    "road": "Calle 35B",
+    "neighbourhood": "Nacional",
+    "suburb": "Comuna 10 - Estadio",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "740004",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.4288449,
+    4.4300938,
+    -75.2206451,
+    -75.2198775
+   ]
+  },
+  {
+   "lat": 4.431762,
+   "lon": -75.2190039,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 35B",
+   "address": {
+    "road": "Calle 35B",
+    "neighbourhood": "Nacional",
+    "hamlet": "Casa Club",
+    "suburb": "Comuna 10 - Estadio",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730006",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.4310954,
+    4.4324268,
+    -75.2190673,
+    -75.2189221
+   ]
+  },
+  {
+   "lat": 4.4464507,
+   "lon": -75.2152538,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 35B",
+   "address": {
+    "road": "Calle 35B",
+    "neighbourhood": "Villa Pinzón",
+    "suburb": "Comuna 3 - San Simón",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730002",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.4462319,
+    4.4466694,
+    -75.2153441,
+    -75.2151636
+   ]
+  },
+  {
+   "lat": 4.4267821,
+   "lon": -75.2213414,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 35B",
+   "address": {
+    "road": "Calle 35B",
+    "suburb": "Comuna 11 - Ferias",
+    "city_district": "Perímetro Urbano Ibagué",
+    "city": "Ibagué",
+    "state_district": "Centro",
+    "state": "Tolima",
+    "ISO3166-2-lvl4": "CO-TOL",
+    "region": "RAP (Especial) Central",
+    "postcode": "730001",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.4265701,
+    4.426994,
+    -75.2213484,
+    -75.2213344
+   ]
+  }
+ ],
+ "Carrera 33 52G-38, Bogota": [
+  {
+   "lat": 4.5896023,
+   "lon": -74.1219354,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Avenida Carrera 33",
+   "address": {
+    "road": "Avenida Carrera 33",
+    "neighbourhood": "Villa Mayor",
+    "suburb": "Localidad Antonio Nariño",
+    "city": "Bogotá ciudad",
+    "state": "Bogotá, Distrito Capital",
+    "ISO3166-2-lvl4": "CO-DC",
+    "region": "RAP (Especial) Central",
+    "postcode": "111511",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    4.5895132,
+    4.5896028,
+    -74.1223679,
+    -74.1214908
+   ]
+  }
+ ],
+ "Calle 70C 26B-23, Barranquilla, Atlantico": [
+  {
+   "lat": 10.9617745,
+   "lon": -74.8166577,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "Cuchilla de Villate",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9594007,
+    10.9639486,
+    -74.8195562,
+    -74.8135397
+   ]
+  },
+  {
+   "lat": 10.9744326,
+   "lon": -74.8102045,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "San Felipe",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9723541,
+    10.9765148,
+    -74.8106492,
+    -74.8097767
+   ]
+  },
+  {
+   "lat": 10.9706191,
+   "lon": -74.8110002,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "San Felipe",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.968882,
+    10.9723541,
+    -74.8113439,
+    -74.8106492
+   ]
+  },
+  {
+   "lat": 10.9668625,
+   "lon": -74.8120201,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "El Valle",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9658711,
+    10.9678541,
+    -74.8124015,
+    -74.8116391
+   ]
+  },
+  {
+   "lat": 10.9653346,
+   "lon": -74.8125966,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "El Valle",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9647995,
+    10.9658711,
+    -74.8127954,
+    -74.8124015
+   ]
+  },
+  {
+   "lat": 10.9819183,
+   "lon": -74.810048,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "Olaya",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9810783,
+    10.9827583,
+    -74.8101591,
+    -74.8099368
+   ]
+  },
+  {
+   "lat": 10.9683634,
+   "lon": -74.8114752,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "tertiary",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "El Valle",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9678541,
+    10.968882,
+    -74.8116391,
+    -74.8113439
+   ]
+  },
+  {
+   "lat": 10.9775535,
+   "lon": -74.8094428,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "Olaya",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9768644,
+    10.9782427,
+    -74.8095462,
+    -74.8093394
+   ]
+  },
+  {
+   "lat": 10.9834127,
+   "lon": -74.8102224,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "Olaya",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9827583,
+    10.984067,
+    -74.8102858,
+    -74.8101591
+   ]
+  },
+  {
+   "lat": 10.9766852,
+   "lon": -74.8097461,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "San Felipe",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9765148,
+    10.9768554,
+    -74.8097767,
+    -74.8097147
+   ]
+  },
+  {
+   "lat": 10.964401,
+   "lon": -74.8131806,
+   "place_rank": 27,
+   "category": "highway",
+   "type": "footway",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "La Esmeralda",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9639178,
+    10.9647995,
+    -74.8134698,
+    -74.8127954
+   ]
+  },
+  {
+   "lat": 10.9206798,
+   "lon": -74.8192163,
+   "place_rank": 27,
+   "category": "highway",
+   "type": "service",
+   "name": "Calle 70C",
+   "address": {
+    "road": "Calle 70C",
+    "neighbourhood": "Villa Valery",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "083010",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9206034,
+    10.9207563,
+    -74.8192895,
+    -74.8191432
+   ]
+  }
+ ],
+ "Carrera 26B, Barranquilla, Atlantico": [
+  {
+   "lat": 10.9775005,
+   "lon": -74.8155554,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "El Silencio",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.976072,
+    10.977582,
+    -74.8196595,
+    -74.8117443
+   ]
+  },
+  {
+   "lat": 10.9761881,
+   "lon": -74.8290199,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "Por Fin",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9751557,
+    10.9772238,
+    -74.8319109,
+    -74.8261364
+   ]
+  },
+  {
+   "lat": 10.9707486,
+   "lon": -74.7955892,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "San Isidro",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9699296,
+    10.9720056,
+    -74.7972189,
+    -74.7936794
+   ]
+  },
+  {
+   "lat": 10.9755746,
+   "lon": -74.8086533,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "San Felipe",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9748987,
+    10.976072,
+    -74.8117443,
+    -74.8056008
+   ]
+  },
+  {
+   "lat": 10.9750158,
+   "lon": -74.8328557,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "Los Olivos I",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9746585,
+    10.9753115,
+    -74.8337191,
+    -74.8319699
+   ]
+  },
+  {
+   "lat": 10.9738336,
+   "lon": -74.8358348,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "Los Olivos I",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9736342,
+    10.9740762,
+    -74.8364145,
+    -74.8352701
+   ]
+  },
+  {
+   "lat": 10.9675163,
+   "lon": -74.7871117,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "secondary",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "Barrio Atlántico",
+    "suburb": "Localidad Suroriente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9674317,
+    10.9676319,
+    -74.7876543,
+    -74.7865789
+   ]
+  },
+  {
+   "lat": 10.9733656,
+   "lon": -74.8380573,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "Los Olivos II",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9732937,
+    10.9734267,
+    -74.8383685,
+    -74.8377436
+   ]
+  },
+  {
+   "lat": 10.9698443,
+   "lon": -74.7934573,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "San Isidro",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080012",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9697591,
+    10.9699296,
+    -74.7936794,
+    -74.7932352
+   ]
+  },
+  {
+   "lat": 10.9734679,
+   "lon": -74.8372553,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "Los Olivos II",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9734267,
+    10.9734883,
+    -74.8377436,
+    -74.8367664
+   ]
+  },
+  {
+   "lat": 10.9775423,
+   "lon": -74.8199557,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "El Silencio",
+    "suburb": "Localidad Suroccidente",
+    "city": "Perímetro Urbano Barranquilla",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9775418,
+    10.9775546,
+    -74.820252,
+    -74.8196595
+   ]
+  },
+  {
+   "lat": 10.9585601,
+   "lon": -74.861603,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "Villas de San Pablo",
+    "suburb": "Localidad Suroccidente",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9582801,
+    10.958842,
+    -74.8618482,
+    -74.8613601
+   ]
+  },
+  {
+   "lat": 10.9581189,
+   "lon": -74.861984,
+   "place_rank": 26,
+   "category": "highway",
+   "type": "residential",
+   "name": "Carrera 26B",
+   "address": {
+    "road": "Carrera 26B",
+    "neighbourhood": "Villas de San Pablo",
+    "suburb": "Localidad Suroccidente",
+    "county": "Barranquilla",
+    "state": "Atlántico",
+    "ISO3166-2-lvl4": "CO-ATL",
+    "region": "RAP Caribe",
+    "postcode": "080016",
+    "country": "Colombia",
+    "country_code": "co"
+   },
+   "boundingbox": [
+    10.9579802,
+    10.9582801,
+    -74.8621375,
+    -74.8618482
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+  "source": "OpenStreetMap (© OpenStreetMap contributors, ODbL 1.0) via Nominatim; addresses from plan 0003",
+  "verifiedAt": "2026-10-04",
+  "coordinates": "OSM features named 'Mercado Madrid' at the known addresses: a shop=supermarket node on Avenida 80 (= Carrera 80) by Calle 50, and a building tagged Calle 27A Sur 47-61",
+  "branches": [
+    {
+      "externalId": "medellin-carrera-80",
+      "name": "Mercado Madrid Carrera 80",
+      "address": "Cra. 80 #50-87",
+      "city": "Medellín",
+      "latitude": 6.2640563,
+      "longitude": -75.5967106
+    },
+    {
+      "externalId": "envigado",
+      "name": "Mercado Madrid Envigado",
+      "address": "Cl. 27A Sur #47-61",
+      "city": "Envigado",
+      "latitude": 6.1810803,
+      "longitude": -75.5868351
+    }
+  ]
+}

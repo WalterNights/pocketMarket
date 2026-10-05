@@ -1,0 +1,119 @@
+{
+  "source": "https://supermu.com/pages/directorio-de-tiendas",
+  "verifiedAt": "2026-10-04",
+  "coordinates": "Pin (!3d/!4d) of the Google Maps link each shop has in the directory",
+  "branches": [
+    {
+      "externalId": "bello",
+      "name": "Supermú Bello",
+      "address": "Cra. 49 #47-35, Prado",
+      "city": "Bello",
+      "latitude": 6.333354,
+      "longitude": -75.557456
+    },
+    {
+      "externalId": "intermedia",
+      "name": "Supermú Intermedia",
+      "address": "Cra. 27 #Sur-195, La Frontera",
+      "city": "Envigado",
+      "latitude": 6.1730879,
+      "longitude": -75.567481
+    },
+    {
+      "externalId": "poblado",
+      "name": "Supermú Poblado",
+      "address": "Cl. 9 Sur #29d-76, El Poblado",
+      "city": "Medellín",
+      "latitude": 6.1917963,
+      "longitude": -75.5664724
+    },
+    {
+      "externalId": "la-33",
+      "name": "Supermú La 33",
+      "address": "Av. 33 #83a-36, Laureles",
+      "city": "Medellín",
+      "latitude": 6.2387388,
+      "longitude": -75.6071703
+    },
+    {
+      "externalId": "laureles",
+      "name": "Supermú Laureles",
+      "address": "Cl. 33A #72-107",
+      "city": "Medellín",
+      "latitude": 6.2392936,
+      "longitude": -75.5962898
+    },
+    {
+      "externalId": "sabaneta-avenida",
+      "name": "Supermú Sabaneta Avenida",
+      "address": "Cra. 43A #63 Sur-190, Alto Las Flores",
+      "city": "Sabaneta",
+      "latitude": 6.1520277,
+      "longitude": -75.6113591
+    },
+    {
+      "externalId": "sabaneta-parque",
+      "name": "Supermú Sabaneta Parque",
+      "address": "Cra. 45 #69 Sur-25 Int. 123",
+      "city": "Sabaneta",
+      "latitude": 6.1520953,
+      "longitude": -75.6161553
+    },
+    {
+      "externalId": "envigado-san-marcos",
+      "name": "Supermú Envigado San Marcos",
+      "address": "Cra. 43 #32a Sur-27, Zona 9",
+      "city": "Envigado",
+      "latitude": 6.17469,
+      "longitude": -75.5855784
+    },
+    {
+      "externalId": "san-antonio-de-prado",
+      "name": "Supermú San Antonio de Prado",
+      "address": "Cra. 79 #41 Sur-56",
+      "city": "Medellín",
+      "latitude": 6.1848181,
+      "longitude": -75.6560377
+    },
+    {
+      "externalId": "san-cristobal",
+      "name": "Supermú San Cristóbal",
+      "address": "Cl. 63 #128-85, Nazaret, San Cristóbal",
+      "city": "Medellín",
+      "latitude": 6.279236,
+      "longitude": -75.6341381
+    },
+    {
+      "externalId": "floresta",
+      "name": "Supermú Floresta",
+      "address": "Cra. 84 #45F-28, La América",
+      "city": "Medellín",
+      "latitude": 6.2560617,
+      "longitude": -75.6009515
+    },
+    {
+      "externalId": "san-joaquin",
+      "name": "Supermú San Joaquín",
+      "address": "Cra. 69 #42-49, Laureles",
+      "city": "Medellín",
+      "latitude": 6.2476334,
+      "longitude": -75.5878737
+    },
+    {
+      "externalId": "rionegro",
+      "name": "Supermú Rionegro",
+      "address": "Mall Río del Este",
+      "city": "Rionegro",
+      "latitude": 6.1513669,
+      "longitude": -75.3912269
+    },
+    {
+      "externalId": "pedregal",
+      "name": "Supermú Pedregal",
+      "address": "Cra. 74 #104-4",
+      "city": "Medellín",
+      "latitude": 6.3018441,
+      "longitude": -75.5723649
+    }
+  ]
+}

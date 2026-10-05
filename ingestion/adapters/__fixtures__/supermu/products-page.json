@@ -1,0 +1,1293 @@
+{
+  "products": [
+    {
+      "id": 7460531667166,
+      "title": "GALLETA ANTOJOS 170G PROVOCACION",
+      "handle": "galleta-antojos-170g-provocacion",
+      "published_at": "2026-09-25T14:15:25-05:00",
+      "created_at": "2021-11-23T16:07:21-05:00",
+      "updated_at": "2026-10-04T15:13:35-05:00",
+      "vendor": "ANTOJOS",
+      "product_type": "Despensa",
+      "tags": [
+        "ABARROTES",
+        "ANTOJOS",
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "GALLETAS",
+        "GALLETAS DULCES",
+        "GALLETAS NAVIDAD",
+        "NAVIDAD",
+        "NO APLICA",
+        "NUTRESA SNACK/GOLOSINAS",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 42103924818142,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "025431",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "8290.00",
+          "grams": 170,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 7460531667166,
+          "created_at": "2021-11-23T16:07:21-05:00",
+          "updated_at": "2026-10-04T15:13:35-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 36187215593694,
+          "created_at": "2021-11-23T16:07:21-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T02:53:40-05:00",
+          "product_id": 7460531667166,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/products/lavaquita_supervaquita_noel_galletas_antojos_provocacion_vainilla_170g.jpg?v=1747900420",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8089287295198,
+      "title": "LECHE COLANTA 1000C ENTERA",
+      "handle": "leche-colanta-1000c-entera",
+      "published_at": "2023-07-17T16:40:34-05:00",
+      "created_at": "2023-07-17T16:40:34-05:00",
+      "updated_at": "2026-10-04T15:14:35-05:00",
+      "vendor": "COLANTA",
+      "product_type": "Bebidas",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "AVICOLANDIA (COLANTA)",
+        "LACTEOS LECHES",
+        "LACTEOS LECHES LIQUIDAS",
+        "LACTEOS LECHES LIQUIDAS ENTERAS",
+        "LACTEOS Y DERIVADOS",
+        "LECHES",
+        "TRASNOCHON"
+      ],
+      "variants": [
+        {
+          "id": 44272193667294,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "038206",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": false,
+          "price": "5450.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8089287295198,
+          "created_at": "2023-07-17T16:40:34-05:00",
+          "updated_at": "2026-10-04T15:14:35-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 39572273430750,
+          "created_at": "2023-07-17T16:40:34-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T02:56:38-05:00",
+          "product_id": 8089287295198,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/TERCERATANDAIMAGENES-31.jpg?v=1747900598",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6727676625050,
+      "title": "YOGURT COLANTA 6U 200C SURTIDO",
+      "handle": "yogurt_colanta_6u_200c_surtido",
+      "published_at": "2026-01-19T10:31:18-05:00",
+      "created_at": "2021-05-08T10:27:47-05:00",
+      "updated_at": "2026-10-04T15:13:54-05:00",
+      "vendor": "COLANTA",
+      "product_type": "Desayuno",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "AVICOLANDIA (COLANTA)",
+        "COLANTA",
+        "DESAYUNO",
+        "LACTEOS DERIVADOS",
+        "LACTEOS DERIVADOS BEBIDAS LACTEAS",
+        "LACTEOS Y DERIVADOS",
+        "NO APLICA",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 39835950514330,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "010951",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "11290.00",
+          "grams": 10,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6727676625050,
+          "created_at": "2021-05-08T10:27:47-05:00",
+          "updated_at": "2026-10-04T15:13:54-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 28935267909786,
+          "created_at": "2021-05-08T10:27:47-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T03:44:47-05:00",
+          "product_id": 6727676625050,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/products/supermercados_la_vaquita_supervaquita_yogurt_colanta_6u_200c_surtido_lacteos_derivados.jpg?v=1747903487",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9264599040222,
+      "title": "PAPEL ALUMINIO HAAS 7M",
+      "handle": "papel-aluminio-haas-7m",
+      "published_at": "2026-07-09T11:15:18-05:00",
+      "created_at": "2026-07-09T11:15:16-05:00",
+      "updated_at": "2026-10-04T15:13:38-05:00",
+      "vendor": "HAAS",
+      "product_type": "",
+      "tags": [
+        "ASEO Y ARTICULOS PARA EL HOGAR",
+        "HAAS",
+        "MERCAVENTAS SAS",
+        "PRODUCTOS DESECHABLES",
+        "PRODUCTOS DESECHABLES ALUMINIOS"
+      ],
+      "variants": [
+        {
+          "id": 48417774272734,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "009021",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "4750.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 9264599040222,
+          "created_at": "2026-07-09T11:15:16-05:00",
+          "updated_at": "2026-10-04T15:13:38-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 47255497474270,
+          "created_at": "2026-07-09T11:10:34-05:00",
+          "position": 1,
+          "updated_at": "2026-07-09T11:11:06-05:00",
+          "product_id": 9264599040222,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/images_68.jpg?v=1783613466",
+          "width": 414,
+          "height": 414
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6725919244442,
+      "title": "NARANJA VALENCIA Aprox 5000gr",
+      "handle": "naranja_valencia_-malla_3000gr",
+      "published_at": "2026-02-23T15:54:05-05:00",
+      "created_at": "2021-05-07T12:20:20-05:00",
+      "updated_at": "2026-10-04T15:13:49-05:00",
+      "vendor": "SUPERMU",
+      "product_type": "Frutas y verduras",
+      "tags": [
+        "FRUTAS",
+        "FRUTAS FRESCAS",
+        "FRUTAS Y VERDURAS",
+        "FRUVER",
+        "FRUVER ECOMMERCE",
+        "GENERICO",
+        "NO APLICA",
+        "SIN RASTREO INVENTARIO",
+        "TRASNOCHON"
+      ],
+      "variants": [
+        {
+          "id": 39829721350298,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "036674",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "23000.00",
+          "grams": 10,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6725919244442,
+          "created_at": "2021-05-07T12:20:20-05:00",
+          "updated_at": "2026-10-04T15:13:49-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 47953853153502,
+          "created_at": "2026-09-22T11:33:53-05:00",
+          "position": 1,
+          "updated_at": "2026-09-22T11:33:54-05:00",
+          "product_id": 6725919244442,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/images_36_510x.progressive_d9dcf831-3df3-41bb-8232-f24490fbd836.webp?v=1790094834",
+          "width": 447,
+          "height": 447
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6725900370074,
+      "title": "MONDONGO ESPECIAL*500gr",
+      "handle": "mondongo_especial-500gr_porcionado",
+      "published_at": "2026-02-23T15:11:01-05:00",
+      "created_at": "2021-05-07T12:16:13-05:00",
+      "updated_at": "2026-10-04T15:13:49-05:00",
+      "vendor": "SUPERMU",
+      "product_type": "Carnes, pollo y pescado",
+      "tags": [
+        "CARNES",
+        "CARNES DE RES",
+        "CARNES ECOMMERCE",
+        "CARNES FRESCAS RES",
+        "CARNES-POLLO-PESCADO",
+        "GENERICO",
+        "NO APLICA",
+        "SIN RASTREO INVENTARIO"
+      ],
+      "variants": [
+        {
+          "id": 39829682552986,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "035809",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "12450.00",
+          "grams": 500,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6725900370074,
+          "created_at": "2021-05-07T12:16:13-05:00",
+          "updated_at": "2026-10-04T15:13:49-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 29289339977882,
+          "created_at": "2021-05-28T05:25:15-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T02:27:48-05:00",
+          "product_id": 6725900370074,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/products/184f9d99-326a-4a91-bd2a-a83b20c13c49.png?v=1747898868",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9054607376606,
+      "title": "PASTA DORIA SPAGUETTI 500G PG 2 LLVE 3",
+      "handle": "pasta-doria-spaguetti-500g-pg-2-llve-3",
+      "published_at": "2026-01-29T10:25:00-05:00",
+      "created_at": "2025-11-11T08:03:00-05:00",
+      "updated_at": "2026-10-04T15:13:51-05:00",
+      "vendor": "DORIA",
+      "product_type": "Producto",
+      "tags": [
+        "ABARROTES",
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "COMERCIAL NUTRESA SA",
+        "DORIA",
+        "NO APLICA",
+        "PASTAS ALIMENTICIAS",
+        "PASTAS ALIMENTICIAS LARGAS",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 47669387755742,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "0018677",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": false,
+          "price": "8150.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 9054607376606,
+          "created_at": "2025-11-11T08:03:00-05:00",
+          "updated_at": "2026-10-04T15:13:51-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 46116976165086,
+          "created_at": "2026-01-29T10:24:23-05:00",
+          "position": 1,
+          "updated_at": "2026-01-29T10:24:24-05:00",
+          "product_id": 9054607376606,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/7702085058312_1.jpg?v=1769700264",
+          "width": 700,
+          "height": 700
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8262862635230,
+      "title": "ACEITE DIANA 3000M VITAMINA",
+      "handle": "aceite-diana-3000m-vitamina",
+      "published_at": "2024-01-24T11:44:12-05:00",
+      "created_at": "2024-01-24T11:44:12-05:00",
+      "updated_at": "2026-10-04T15:14:32-05:00",
+      "vendor": "DIANA",
+      "product_type": "",
+      "tags": [
+        "ABARROTES",
+        "ACEITES",
+        "ACEITES LIQUIDOS CREMOSOS Y EN SPRAY",
+        "ACEITES LIQUIDOS FINOS",
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "DIANA",
+        "DIANA CORPORACION",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 44703875825886,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "032687",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": false,
+          "price": "29650.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8262862635230,
+          "created_at": "2024-01-24T11:44:13-05:00",
+          "updated_at": "2026-10-04T15:14:32-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 40325338464478,
+          "created_at": "2024-01-24T11:44:12-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T03:45:36-05:00",
+          "product_id": 8262862635230,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/supermercados_la_vaquita_supervaquita_aceire_diana_3000m_vitamina.jpg?v=1747903536",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9306296025310,
+      "title": "LIMPIADOR BLANCOX 1500ML BICARBONATO",
+      "handle": "limpiador-blancox-1500ml-bicarbonato",
+      "published_at": "2026-08-11T13:50:59-05:00",
+      "created_at": "2026-08-11T13:50:58-05:00",
+      "updated_at": "2026-10-04T15:13:35-05:00",
+      "vendor": "BLANCOX",
+      "product_type": "",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "ASEO Y ARTICULOS PARA EL HOGAR",
+        "BLANCOX",
+        "BRINSA",
+        "CUID HOGAR LIMPIADORES DESINFECTANTES",
+        "CUIDADO DEL HOGAR",
+        "CUIDADO DEL HOGAR LIMPIADORES"
+      ],
+      "variants": [
+        {
+          "id": 48591195406558,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "034775",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "12190.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 9306296025310,
+          "created_at": "2026-08-11T13:50:58-05:00",
+          "updated_at": "2026-10-04T15:13:35-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 47608169464030,
+          "created_at": "2026-08-11T13:44:05-05:00",
+          "position": 1,
+          "updated_at": "2026-08-11T13:44:06-05:00",
+          "product_id": 9306296025310,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/7703812403115_comprimida.png?v=1786473846",
+          "width": 800,
+          "height": 930
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8075496751326,
+      "title": "Limpia Pisos Fabuloso Antibacterial Violeta 5L",
+      "handle": "limp-fabuloso-violeta-5l",
+      "published_at": "2023-06-30T07:54:08-05:00",
+      "created_at": "2023-06-30T07:54:08-05:00",
+      "updated_at": "2026-10-04T15:14:35-05:00",
+      "vendor": "FABULOSO",
+      "product_type": "Aseo",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "ASEO",
+        "ASEO HOGAR",
+        "ASEO Y ARTICULOS PARA EL HOGAR",
+        "COLGATE PALMOLIVE",
+        "CUID HOGAR LIMPIADORES DESINFECTANTES",
+        "CUIDADO DEL HOGAR",
+        "CUIDADO DEL HOGAR LIMPIADORES",
+        "DICIEMBRE",
+        "FABULOSO",
+        "LIMPIAPISOS",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 44251593507038,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "039970",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "32190.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 8075496751326,
+          "created_at": "2023-06-30T07:54:08-05:00",
+          "updated_at": "2026-10-04T15:14:35-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 40540954591454,
+          "created_at": "2024-03-07T14:36:50-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T03:09:55-05:00",
+          "product_id": 8075496751326,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/supermercados_la_vaquita_supervaquita_limpiador_fabuloso_500m_violeta.jpg?v=1747901395",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9247255462110,
+      "title": "ARENA GATOS MAUCAT 4000G LIMON",
+      "handle": "arena-gatos-maucat-4000g-limon",
+      "published_at": "2026-06-23T16:13:48-05:00",
+      "created_at": "2026-06-23T16:13:47-05:00",
+      "updated_at": "2026-10-04T15:13:41-05:00",
+      "vendor": "MAUCAT",
+      "product_type": "",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "ARENA PARA GATOS",
+        "GATOS",
+        "MASCOTAS",
+        "PRODUCTOS PARA ANIMALES",
+        "PRODUCTOS PARA ANIMALES ASEO/LIMPIEZA"
+      ],
+      "variants": [
+        {
+          "id": 48359662944478,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "0018660",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": false,
+          "price": "18450.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 9247255462110,
+          "created_at": "2026-06-23T16:13:47-05:00",
+          "updated_at": "2026-10-04T15:13:41-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 47158786982110,
+          "created_at": "2026-06-23T16:02:33-05:00",
+          "position": 1,
+          "updated_at": "2026-06-23T16:02:34-05:00",
+          "product_id": 9247255462110,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/D_NQ_NP_2X_996206-MCO108430368985_032026-F.webp?v=1782248554",
+          "width": 793,
+          "height": 872
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6727715258522,
+      "title": "GASEOSA POSTOBON 1.5L COLOMBIANA",
+      "handle": "gaseosa_postobon_1-5l_colombiana",
+      "published_at": "2021-05-08T10:56:43-05:00",
+      "created_at": "2021-05-08T10:56:44-05:00",
+      "updated_at": "2026-10-04T15:14:51-05:00",
+      "vendor": "POSTOBON",
+      "product_type": "GASEOSA",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "BEBIDAS LIQUIDAS",
+        "BEBIDAS LIQUIDAS GASEOSAS",
+        "BEBIDAS Y PASABOCAS",
+        "GASEOSA POSADA TOBON SA",
+        "NO APLICA",
+        "PGC",
+        "POSTOBON",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 39836039643290,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "013097",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "4500.00",
+          "grams": 10,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6727715258522,
+          "created_at": "2021-05-08T10:56:44-05:00",
+          "updated_at": "2026-10-04T15:14:51-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 40015386607838,
+          "created_at": "2023-11-09T10:05:38-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T02:36:48-05:00",
+          "product_id": 6727715258522,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/supermercados_la_vaquita_supervaquita_GASEOSA_POSTOBON_1.5L_COLOMBIANA.png?v=1747899408",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7077792645274,
+      "title": "TEQUILA 1800 750C ANEJO",
+      "handle": "tequila-1800-750c-anejo",
+      "published_at": "2026-06-22T13:30:35-05:00",
+      "created_at": "2021-10-05T10:33:20-05:00",
+      "updated_at": "2026-10-04T15:13:41-05:00",
+      "vendor": "1800",
+      "product_type": "Licores",
+      "tags": [
+        "1800",
+        "APLICA PARA ECOMMERCE",
+        "BEBIDAS ALCOHOLICAS",
+        "BEBIDAS ALCOHOLICAS LICORES",
+        "BEBIDAS ALCOHOLICAS TEQUILA",
+        "DISLICORES LICORES",
+        "LICORES Y CIGARRILLOS",
+        "NO APLICA PARA TRASNOCHON",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 41042026135706,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "019391",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "292850.00",
+          "grams": 750,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 7077792645274,
+          "created_at": "2021-10-05T10:33:20-05:00",
+          "updated_at": "2026-10-04T15:13:41-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 31734325346458,
+          "created_at": "2021-10-05T10:33:20-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T02:48:30-05:00",
+          "product_id": 7077792645274,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/products/supermercados_la_vaquita_1800_tequila_anejo_750ml_1.jpg?v=1747900110",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7033947783322,
+      "title": "DESODORANTE AXE BS 150M DARK/TEMPT",
+      "handle": "desodorante-axe-bs-150m-dark-tempt",
+      "published_at": "2021-09-21T09:35:43-05:00",
+      "created_at": "2021-09-17T08:32:26-05:00",
+      "updated_at": "2026-10-04T15:14:43-05:00",
+      "vendor": "AXE",
+      "product_type": "Aseo",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "ASEO",
+        "ASEO PERSONAL",
+        "AXE",
+        "BELLEZA Y CUIDADO PERSONAL",
+        "CUIDADO CORPORAL",
+        "CUIDADO CORPORAL DESODORANTES",
+        "CUIDADO CORPORAL DESODORANTES AEROSOL",
+        "DESODORANTES",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS",
+        "UNILEVER PERSONAL CARE"
+      ],
+      "variants": [
+        {
+          "id": 40900694376602,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "023645",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "19290.00",
+          "grams": 150,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 7033947783322,
+          "created_at": "2021-09-17T08:32:26-05:00",
+          "updated_at": "2026-10-04T15:14:43-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 31405111640218,
+          "created_at": "2021-09-17T08:32:26-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T02:02:17-05:00",
+          "product_id": 7033947783322,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/products/supermercados_la_vaquita_supervaquita_axe_dark_temptation_antitranspirante_desodorante_150g_aca9983f-a127-41fd-80cd-04c62202a921.jpg?v=1747897337",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9345254326494,
+      "title": "COMBO CINE",
+      "handle": "combo-cine",
+      "published_at": "2026-09-18T13:58:13-05:00",
+      "created_at": "2026-09-17T16:16:26-05:00",
+      "updated_at": "2026-10-04T15:13:35-05:00",
+      "vendor": "SUPERMU",
+      "product_type": "",
+      "tags": [],
+      "variants": [
+        {
+          "id": 49075488489694,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": null,
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "40000.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 9345254326494,
+          "created_at": "2026-09-17T16:16:26-05:00",
+          "updated_at": "2026-10-04T15:13:35-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 47920437199070,
+          "created_at": "2026-09-18T13:57:41-05:00",
+          "position": 1,
+          "updated_at": "2026-09-18T13:58:02-05:00",
+          "product_id": 9345254326494,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/WhatsAppImage2026-09-18at1.44.47PM3.jpg?v=1789757882",
+          "width": 1341,
+          "height": 1120
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6727716929690,
+      "title": "JUGO HIT 1000L MORA",
+      "handle": "jugo_hit_1l_mora",
+      "published_at": "2021-11-09T12:31:00-05:00",
+      "created_at": "2021-05-08T10:57:43-05:00",
+      "updated_at": "2026-10-04T15:14:41-05:00",
+      "vendor": "HIT",
+      "product_type": "Bebidas y Snacks",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "BEBIDAS LIQUIDAS",
+        "BEBIDAS LIQUIDAS JUGOS",
+        "BEBIDAS LIQUIDAS JUGOS BOTELLA",
+        "BEBIDAS Y PASABOCAS",
+        "GASEOSA POSADA TOBON SA",
+        "HIT",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 39836042166426,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "030335",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "3250.00",
+          "grams": 10,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6727716929690,
+          "created_at": "2021-05-08T10:57:43-05:00",
+          "updated_at": "2026-10-04T15:14:41-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 40005249859806,
+          "created_at": "2023-11-07T17:07:48-05:00",
+          "position": 1,
+          "updated_at": "2025-05-22T02:37:02-05:00",
+          "product_id": 6727716929690,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/supermercados_la_vaquita_supervaquita_JUGO_HIT_1L_MORA.png?v=1747899422",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9138478743774,
+      "title": "CHURRASCO POLLO FRIKO 500G IQF MARINADO",
+      "handle": "churrasco-pollo-friko-500g-iqf-marinado",
+      "published_at": "2026-03-05T09:23:49-05:00",
+      "created_at": "2026-03-05T09:20:37-05:00",
+      "updated_at": "2026-10-04T15:13:46-05:00",
+      "vendor": "FRIKO",
+      "product_type": "CONGELADOS",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "CARNES BLANCAS",
+        "CARNES BLANCAS POLLO",
+        "CARNES BLANCAS POLLO BANDEJA",
+        "CARNES-POLLO-PESCADO",
+        "CONGELADOS",
+        "PGC",
+        "POLLO",
+        "POLLO CONGELADO",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 47950153810142,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "0020195",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "11550.00",
+          "grams": 0,
+          "compare_at_price": "11550.00",
+          "position": 1,
+          "product_id": 9138478743774,
+          "created_at": "2026-03-05T09:20:37-05:00",
+          "updated_at": "2026-10-04T15:13:46-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 46283755159774,
+          "created_at": "2026-03-05T09:21:59-05:00",
+          "position": 1,
+          "updated_at": "2026-03-05T09:23:49-05:00",
+          "product_id": 9138478743774,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/WhatsAppImage2026-03-05at8.53.23AM_bc233f76-f442-42c4-a2c1-adf8809ff61e.jpg?v=1772720629",
+          "width": 1484,
+          "height": 1600
+        },
+        {
+          "id": 46283755127006,
+          "created_at": "2026-03-05T09:21:59-05:00",
+          "position": 2,
+          "updated_at": "2026-03-05T09:23:49-05:00",
+          "product_id": 9138478743774,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/WhatsAppImage2026-03-05at8.53.23AM_1_3f1bf7b7-d311-4fa4-979c-df930614ccf9.jpg?v=1772720629",
+          "width": 1484,
+          "height": 1600
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9168828793054,
+      "title": "PAN HAMBURGUESA SUPERMU 320G",
+      "handle": "pan-hamburguesa-supermu-320g",
+      "published_at": "2026-04-10T11:01:13-05:00",
+      "created_at": "2026-04-07T15:16:53-05:00",
+      "updated_at": "2026-10-04T15:13:46-05:00",
+      "vendor": "SUPERMU",
+      "product_type": "PANADERIA",
+      "tags": [
+        "APLICA PARA ECOMMERCE",
+        "PANADERIA",
+        "PANADERIA COMIDAS RAPIDAS",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS"
+      ],
+      "variants": [
+        {
+          "id": 48067347710174,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "0020037",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "3950.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 9168828793054,
+          "created_at": "2026-04-07T15:16:53-05:00",
+          "updated_at": "2026-10-04T15:13:46-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 46577385439454,
+          "created_at": "2026-04-10T11:00:43-05:00",
+          "position": 1,
+          "updated_at": "2026-04-10T11:00:45-05:00",
+          "product_id": 9168828793054,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/WhatsAppImage2026-04-07at3.22.38PM.jpg?v=1775836845",
+          "width": 485,
+          "height": 1111
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9317712593118,
+      "title": "GALLETA GRECO 156G INTEGRAL AVENA/UVAS/C",
+      "handle": "galleta-greco-156g-integral-avena-uvas-c",
+      "published_at": "2026-08-24T11:59:05-05:00",
+      "created_at": "2026-08-24T11:59:04-05:00",
+      "updated_at": "2026-10-04T15:13:35-05:00",
+      "vendor": "GRECO",
+      "product_type": "",
+      "tags": [
+        "ABARROTES",
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "GALLETAS",
+        "GALLETAS DULCES",
+        "GRECO"
+      ],
+      "variants": [
+        {
+          "id": 48632848515294,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "0020825",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": false,
+          "price": "7150.00",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 9317712593118,
+          "created_at": "2026-08-24T11:59:04-05:00",
+          "updated_at": "2026-10-04T15:13:35-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 47702992945374,
+          "created_at": "2026-08-24T11:57:36-05:00",
+          "position": 1,
+          "updated_at": "2026-08-24T11:57:38-05:00",
+          "product_id": 9317712593118,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/Avenapasas.jpg?v=1787590658",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9054606065886,
+      "title": "CHOCOLATE TESALIA 200G CLASICO PASTILLA",
+      "handle": "chocolate-tesalia-200g-clasico-pastilla",
+      "published_at": "2026-01-27T15:29:43-05:00",
+      "created_at": "2025-11-11T08:02:13-05:00",
+      "updated_at": "2026-10-04T15:13:54-05:00",
+      "vendor": "TESALIA",
+      "product_type": "Producto",
+      "tags": [
+        "ABARROTES",
+        "APLICA PARA ECOMMERCE",
+        "APLICA PARA TRASNOCHON",
+        "CHOCOLATES AMARGOS",
+        "CHOCOLATES INSTANTANEOS",
+        "COMERCIAL NUTRESA SA",
+        "COMPRAS PLAZA",
+        "NO APLICA",
+        "PGC",
+        "PRODUCTOS COMERCIALIZADOS",
+        "SEPARATA",
+        "TESALIA"
+      ],
+      "variants": [
+        {
+          "id": 47669386313950,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "0018866",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "10490.00",
+          "grams": 0,
+          "compare_at_price": "15490.00",
+          "position": 1,
+          "product_id": 9054606065886,
+          "created_at": "2025-11-11T08:02:13-05:00",
+          "updated_at": "2026-10-04T15:13:54-05:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 46104304746718,
+          "created_at": "2026-01-27T15:29:12-05:00",
+          "position": 1,
+          "updated_at": "2026-01-27T15:37:53-05:00",
+          "product_id": 9054606065886,
+          "variant_ids": [],
+          "src": "https://cdn.shopify.com/s/files/1/0492/2458/1274/files/7702007088151.webp?v=1769546273",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    }
+  ]
+}

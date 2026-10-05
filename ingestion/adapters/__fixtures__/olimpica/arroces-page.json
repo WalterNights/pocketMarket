@@ -1,0 +1,677 @@
+[
+  {
+    "productId": "2000025",
+    "productName": "Arroz Sabrosón 5 Kg",
+    "brand": "Sabroson",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-sabroson-5-kg-7707105805105-2000025/p",
+    "items": [
+      {
+        "itemId": "2000025",
+        "name": "ARROZ SABROSON 5 KG",
+        "nameComplete": "Arroz Sabrosón 5 Kg ARROZ SABROSON 5 KG",
+        "ean": "7707105805105",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/735866/7707105805105.jpg?v=638896015834200000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 20990,
+              "ListPrice": 20990,
+              "PriceWithoutDiscount": 20990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "2000024",
+    "productName": "Arroz Sabrosón 3 Kg",
+    "brand": "Sabroson",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-sabroson-3-kg-7707105805068-2000024/p",
+    "items": [
+      {
+        "itemId": "2000024",
+        "name": "ARROZ SABROSON 3 KG",
+        "nameComplete": "Arroz Sabrosón 3 Kg ARROZ SABROSON 3 KG",
+        "ean": "7707105805068",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/735865/7707105805068.jpg?v=637782323841970000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 11990,
+              "ListPrice": 11990,
+              "PriceWithoutDiscount": 11990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "566554",
+    "productName": "Arroz Diana 5 Kg",
+    "brand": "Diana",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-diana-5-kg-7702511000045-566554/p",
+    "items": [
+      {
+        "itemId": "566554",
+        "name": "ARROZ DIANA 5 kg",
+        "nameComplete": "ARROZ DIANA 5 kg",
+        "ean": "7702511000045",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/866350/7702511000045.jpg?v=637910008783030000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 21950,
+              "ListPrice": 21950,
+              "PriceWithoutDiscount": 21950,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "518231",
+    "productName": "Arroz Diana 500 G",
+    "brand": "Diana",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-diana-500-gr-7702511000014-518231/p",
+    "items": [
+      {
+        "itemId": "518231",
+        "name": "ARROZ DIANA 500 GR",
+        "nameComplete": "ARROZ DIANA 500 GR",
+        "ean": "7702511000014",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/866337/7702511000014.jpg?v=637910004853900000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 2100,
+              "ListPrice": 2100,
+              "PriceWithoutDiscount": 2100,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "2331765",
+    "productName": "ARROZ TAILANDES 2.500 G",
+    "brand": "Tailandes",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-tailandes-2-500-g/p",
+    "items": [
+      {
+        "itemId": "2331765",
+        "name": "ARROZ TAILANDES 2.500 G",
+        "nameComplete": "ARROZ TAILANDES 2.500 G",
+        "ean": "7707105807055",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/1895417/7707105807055.jpg?v=638884560344400000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 13650,
+              "ListPrice": 13650,
+              "PriceWithoutDiscount": 13650,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "2317851",
+    "productName": "Arroz Diana Paca 12,5 Kg X25 Unds",
+    "brand": "Diana",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-diana-paca-25-und-12-500-g/p",
+    "items": [
+      {
+        "itemId": "2317851",
+        "name": "ARROZ DIANA PACA 25 UND 12.500 G",
+        "nameComplete": "Arroz Diana Paca 12,5 Kg X25 Unds ARROZ DIANA PACA 25 UND 12.500 G",
+        "ean": "7702511000052",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/1548941/7702511000052.jpg?v=638654026694500000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 46990,
+              "ListPrice": 49990,
+              "PriceWithoutDiscount": 49990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "2281376",
+    "productName": "ARROZ  O 500 GRS",
+    "brand": "Olimpica",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz--o-500-grs/p",
+    "items": [
+      {
+        "itemId": "2281376",
+        "name": "ARROZ  O 500 GRS",
+        "nameComplete": "ARROZ  O 500 GRS",
+        "ean": "7707105817016",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/1488537/7707105817016.jpg?v=638627258712800000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 1640,
+              "ListPrice": 1640,
+              "PriceWithoutDiscount": 1640,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "518233",
+    "productName": "Arroz Diana 3 Kg",
+    "brand": "Diana",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-diana-3-kg-7702511000038-518233/p",
+    "items": [
+      {
+        "itemId": "518233",
+        "name": "ARROZ DIANA 3 KG",
+        "nameComplete": "ARROZ DIANA 3 KG",
+        "ean": "7702511000038",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/866346/7702511000038.jpg?v=637910007481170000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 11135,
+              "ListPrice": 13100,
+              "PriceWithoutDiscount": 13100,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "2327554",
+    "productName": "ARROZ OLIMPICA 2500 G",
+    "brand": "Olimpica",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-olimpica-2500-g/p",
+    "items": [
+      {
+        "itemId": "2327554",
+        "name": "ARROZ OLIMPICA 2500 G",
+        "nameComplete": "ARROZ OLIMPICA 2500 G",
+        "ean": "7707105817054",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/1896276/7707105817054.jpg?v=638887248831800000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 7990,
+              "ListPrice": 8990,
+              "PriceWithoutDiscount": 8990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "2282035",
+    "productName": "Arroz Olimpica Paca Económica 500 G X25 Unds",
+    "brand": "Olimpica",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-olimpica-paca-econ-500g-x25-un/p",
+    "items": [
+      {
+        "itemId": "2282035",
+        "name": "ARROZ OLIMPICA PACA ECON 500g X25 un",
+        "nameComplete": "Arroz Olimpica Paca Económica 500 G X25 Unds ARROZ OLIMPICA PACA ECON 500g X25 un",
+        "ean": "7707105817252",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/1099687/7707105817252.jpg?v=638199535840730000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 40990,
+              "ListPrice": 40990,
+              "PriceWithoutDiscount": 40990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "1515360",
+    "productName": "Arroz Diana Premium 2,5 Kg",
+    "brand": "Diana",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-diana-premiun-2-5-kg-7702511000748-1515360/p",
+    "items": [
+      {
+        "itemId": "1515360",
+        "name": "ARROZ DIANA PREMIUN 2.5 KG",
+        "nameComplete": "Arroz Diana Premium 2,5 Kg ARROZ DIANA PREMIUN 2.5 KG",
+        "ean": "7702511000748",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/866353/7702511000748.jpg?v=637910009524130000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 15990,
+              "ListPrice": 15990,
+              "PriceWithoutDiscount": 15990,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "1176741",
+    "productName": "Arroz Diana Premium 1 Kg",
+    "brand": "Diana",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-diana-premium-1-kg-7702511000427-1176741/p",
+    "items": [
+      {
+        "itemId": "1176741",
+        "name": "ARROZ DIANA PREMIUM 1 KG",
+        "nameComplete": "ARROZ DIANA PREMIUM 1 KG",
+        "ean": "7702511000427",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/866356/7702511000427.jpg?v=637910010365730000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 6500,
+              "ListPrice": 6500,
+              "PriceWithoutDiscount": 6500,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "518232",
+    "productName": "Arroz Diana 1 Kg",
+    "brand": "Diana",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-diana-1-kg-7702511000021-518232/p",
+    "items": [
+      {
+        "itemId": "518232",
+        "name": "ARROZ DIANA 1 KG",
+        "nameComplete": "ARROZ DIANA 1 KG",
+        "ean": "7702511000021",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/866342/7702511000021.jpg?v=637910006294070000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 4200,
+              "ListPrice": 4200,
+              "PriceWithoutDiscount": 4200,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "59051",
+    "productName": "Arroz Tailandés 1 Kg",
+    "brand": "Tailandes",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-tailandes-1-kg-7707105807024-59051/p",
+    "items": [
+      {
+        "itemId": "59051",
+        "name": "ARROZ TAILANDES 1 KG",
+        "nameComplete": "Arroz Tailandés 1 Kg ARROZ TAILANDES 1 KG",
+        "ean": "7707105807024",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/615043/7707105807024.jpg?v=637626520332330000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 6350,
+              "ListPrice": 6350,
+              "PriceWithoutDiscount": 6350,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "59008",
+    "productName": "Arroz Tailandés 500 G",
+    "brand": "Tailandes",
+    "categories": [
+      "/Supermercado/Despensa/Arroces Empacados Y Granel/",
+      "/Supermercado/Despensa/",
+      "/Supermercado/"
+    ],
+    "categoriesIds": [
+      "/900000000/900020000/900020400/",
+      "/900000000/900020000/",
+      "/900000000/"
+    ],
+    "link": "https://www.olimpica.com/arroz-tailandes-500-gr-7707105807017-59008/p",
+    "items": [
+      {
+        "itemId": "59008",
+        "name": "ARROZ TAILANDES 500 GR",
+        "nameComplete": "Arroz Tailandés 500 G ARROZ TAILANDES 500 GR",
+        "ean": "7707105807017",
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "imageUrl": "https://olimpica.vteximg.com.br/arquivos/ids/615033/7707105807017.jpg?v=638809266107000000"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Olimpica",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 3250,
+              "ListPrice": 3250,
+              "PriceWithoutDiscount": 3250,
+              "IsAvailable": true,
+              "AvailableQuantity": 99999
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

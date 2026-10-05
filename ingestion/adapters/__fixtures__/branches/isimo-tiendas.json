@@ -1,0 +1,114 @@
+[
+ {
+  "id": 2272,
+  "slug": "isimo-el-corazon",
+  "link": "https://tiendasisimo.com/tiendas/isimo-el-corazon/",
+  "title": {
+   "rendered": "ISIMO EL CORAZÓN"
+  },
+  "content": {
+   "rendered": "<p>CLL 34C 118 13</p>\n",
+   "protected": false
+  },
+  "tiendas-departamento": [
+   134
+  ],
+  "tiendas-municipios": [
+   141
+  ],
+  "class_list": [
+   "post-2272",
+   "tiendas",
+   "type-tiendas",
+   "status-publish",
+   "hentry",
+   "tiendas-departamento-antioquia",
+   "tiendas-municipios-medellin",
+   "horarios-0700-am-0900-pm"
+  ]
+ },
+ {
+  "id": 2266,
+  "slug": "melgar",
+  "link": "https://tiendasisimo.com/tiendas/melgar/",
+  "title": {
+   "rendered": "MELGAR"
+  },
+  "content": {
+   "rendered": "<p>Calle 8 # 24 &#8211; 11 CENTRO</p>\n",
+   "protected": false
+  },
+  "tiendas-departamento": [
+   297
+  ],
+  "tiendas-municipios": [
+   348
+  ],
+  "class_list": [
+   "post-2266",
+   "tiendas",
+   "type-tiendas",
+   "status-publish",
+   "hentry",
+   "tiendas-departamento-tolima",
+   "tiendas-municipios-melgar",
+   "horarios-0700-am-0900-pm"
+  ]
+ },
+ {
+  "id": 2263,
+  "slug": "isimo-espinosa",
+  "link": "https://tiendasisimo.com/tiendas/isimo-espinosa/",
+  "title": {
+   "rendered": "ISIMO ESPINOSA"
+  },
+  "content": {
+   "rendered": "<p>Urbanización Modelia Manzana 61 Casas 6, 7 y 8</p>\n",
+   "protected": false
+  },
+  "tiendas-departamento": [
+   297
+  ],
+  "tiendas-municipios": [
+   298
+  ],
+  "class_list": [
+   "post-2263",
+   "tiendas",
+   "type-tiendas",
+   "status-publish",
+   "hentry",
+   "tiendas-departamento-tolima",
+   "tiendas-municipios-ibague",
+   "horarios-0700-am-0900-pm"
+  ]
+ },
+ {
+  "id": 2138,
+  "slug": "isimo-hacienda-madrid",
+  "link": "https://tiendasisimo.com/tiendas/isimo-hacienda-madrid/",
+  "title": {
+   "rendered": "ISIMO HACIENDA MADRID"
+  },
+  "content": {
+   "rendered": "<p>CALLE 21 # 1-03</p>\n",
+   "protected": false
+  },
+  "tiendas-departamento": [
+   434
+  ],
+  "tiendas-municipios": [
+   435
+  ],
+  "class_list": [
+   "post-2138",
+   "tiendas",
+   "type-tiendas",
+   "status-publish",
+   "hentry",
+   "tiendas-departamento-madrid",
+   "tiendas-municipios-cundinamarca",
+   "horarios-0700-am-0900-pm"
+  ]
+ }
+]

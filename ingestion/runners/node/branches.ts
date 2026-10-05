@@ -1,9 +1,18 @@
 import { z } from 'zod'
 
 import { araBranchAdapter } from '../../adapters/ara-branches'
+import { carullaBranchAdapter } from '../../adapters/carulla-branches'
+import {
+  mercadoMadridBranchAdapter,
+  supermuBranchAdapter,
+  vaquitaExpressBranchAdapter,
+} from '../../adapters/curated-branches'
 import { d1BranchAdapter } from '../../adapters/d1-branches'
 import { dollarcityBranchAdapter } from '../../adapters/dollarcity-branches'
 import { exitoBranchAdapter } from '../../adapters/exito-branches'
+import { isimoBranchAdapter } from '../../adapters/isimo-branches'
+import { jumboBranchAdapter } from '../../adapters/jumbo-branches'
+import { olimpicaBranchAdapter } from '../../adapters/olimpica-branches'
 import { runBranches, type BranchRunReport } from '../../core/branch-pipeline'
 import type { BranchAdapter } from '../../core/branch-types'
 import { trustMissingIntermediates } from '../../core/tls'
@@ -28,6 +37,14 @@ const ADAPTERS = {
   dollarcity: dollarcityBranchAdapter,
   exito: exitoBranchAdapter,
   d1: d1BranchAdapter,
+  olimpica: olimpicaBranchAdapter,
+  jumbo: jumboBranchAdapter,
+  carulla: carullaBranchAdapter,
+  supermu: supermuBranchAdapter,
+  'vaquita-express': vaquitaExpressBranchAdapter,
+  'mercado-madrid': mercadoMadridBranchAdapter,
+  // Last: geocoding runs at 1 request/s (~10 min without cache).
+  isimo: isimoBranchAdapter,
 } as const satisfies Record<string, BranchAdapter>
 
 type ChainName = keyof typeof ADAPTERS
