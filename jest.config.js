@@ -16,6 +16,15 @@
 const RN_PACKAGES =
   '(?:\\.pnpm/)?((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?|@expo-google-fonts|react-navigation|@react-navigation|@unimodules|unimodules|native-base|react-native-svg|nativewind|react-native-css-interop)'
 
+/**
+ * react-native-worklets is a dependency of Reanimated, not of this project, so
+ * under pnpm it is not reachable by name from the root. Resolved from where
+ * Reanimated lives, which works however Jest is launched.
+ */
+const WORKLETS_RESOLVER = require.resolve('react-native-worklets/jest/resolver', {
+  paths: [require.resolve('react-native-reanimated/package.json')],
+})
+
 /** @type {import('jest').Config} */
 module.exports = {
   projects: [
@@ -41,10 +50,14 @@ module.exports = {
     {
       displayName: 'components',
       preset: 'jest-expo',
+      // Reanimated's worklets load a native module from their `.native` files;
+      // the library's own resolver skips those under Jest.
+      resolver: WORKLETS_RESOLVER,
       setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
       testMatch: ['<rootDir>/src/**/components/**/*.test.tsx'],
       moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',
+        '^lucide-react-native/icons/.*$': '<rootDir>/test/mocks/lucide-icon.js',
       },
       transformIgnorePatterns: [`node_modules/(?!${RN_PACKAGES})`],
     },

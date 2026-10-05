@@ -1,6 +1,7 @@
 import { supabase } from '@/shared/lib/supabase'
 
 import { productSchema, type Product } from '../model/product'
+import { toPrefixQuery } from '../model/search-query'
 import { parseResponse, RepositoryError } from './errors'
 import type { ProductSearchFilters } from './keys'
 
@@ -77,14 +78,12 @@ export const productRepository = {
       .order('id')
       .range(offset, offset + PAGE_SIZE - 1)
 
-    const trimmed = query.trim()
-    if (trimmed.length > 0) {
-      // Accent- and case-insensitive: the index is a tsvector built with
-      // immutable_unaccent, so "platano" finds "plátano".
-      request = request.textSearch('search_vector', trimmed, {
-        type: 'websearch',
-        config: 'spanish',
-      })
+    const prefixQuery = toPrefixQuery(query)
+    if (prefixQuery !== null) {
+      // Prefix search, so results appear while typing ("gom" finds "gomitas").
+      // Against `search_prefix`, which keeps words as written: the stemmed
+      // `search_vector` turns "pera" into "per" and would also find "perros".
+      request = request.textSearch('search_prefix', prefixQuery, { config: 'simple' })
     }
     if (storeSlug) request = request.eq('store_slug', storeSlug)
     if (categorySlug) request = request.eq('category_slug', categorySlug)

@@ -5,6 +5,8 @@
  * `invalidateQueries({ queryKey: catalogKeys.searches() })` drops every search
  * result and no product detail.
  */
+import type { NearbyOrigin } from '../model/store'
+
 export type ProductSearchFilters = {
   query: string
   storeSlug?: string
@@ -14,6 +16,9 @@ export type ProductSearchFilters = {
 export const catalogKeys = {
   all: ['catalog'] as const,
   stores: () => [...catalogKeys.all, 'stores'] as const,
+  /** `near` must already be rounded (`roundOrigin`), or GPS jitter refetches. */
+  storeList: (near: NearbyOrigin | null) =>
+    [...catalogKeys.stores(), near ? [near.latitude, near.longitude] : 'all'] as const,
   categories: (storeSlug: string) => [...catalogKeys.all, 'categories', storeSlug] as const,
   searches: () => [...catalogKeys.all, 'search'] as const,
   search: (filters: ProductSearchFilters) => [...catalogKeys.searches(), filters] as const,

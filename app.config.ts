@@ -11,8 +11,9 @@ const config: ExpoConfig = {
   orientation: 'portrait',
   scheme: 'pocketmarket',
   userInterfaceStyle: 'automatic',
-  // Provisional artwork: lucide's shopping cart, the icon the app already uses.
-  // Replace with the final brand mark before release (docs/guias/probar-avisos.md).
+  // The Pocket Market mark. icon, adaptive-icon and both splash images are
+  // generated from assets/Poket_Market_logo_001.png; changing any of them needs
+  // a new build, not an OTA update.
   icon: './assets/icon.png',
   // No newArchEnabled flag: the New Architecture is mandatory from SDK 55 on,
   // so the option no longer exists.

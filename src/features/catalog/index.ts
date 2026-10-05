@@ -31,5 +31,6 @@ export {
 export { isBrowsable, freshnessLabel } from './model/store'
 export type { Product, UnitPrice, PriceChange } from './model/product'
 export type { Store } from './model/store'
+export type { StoreListOrigin } from './components/StoreListScreen'
 export type { StoreCategory } from './model/category'
 export type { Presentation } from './model/presentation'
