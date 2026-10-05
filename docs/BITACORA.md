@@ -32,7 +32,7 @@
   productos reubicados al reclasificar.
 - **Buscador por prefijo**: "g", "go", "gom" ya encuentran "gomitas". Antes solo casaban
   palabras completas.
-- Primer **test de componente** del proyecto (lista de tiendas). Jest 318 → 644.
+- Primer **test de componente** del proyecto (lista de tiendas). Jest 318 → 647.
 
 **Decidido**
 
@@ -41,7 +41,7 @@
 
 **Problemas**
 
-- `EXPO-004` (contención), `ING-010` a `ING-013`, `DATA-001`, `SB-002` y `BUILD-002` en
+- `EXPO-004` (contención), `ING-010` a `ING-014`, `DATA-001`, `SB-002` y `BUILD-002` en
   known-issues.
 - Una revisión independiente del diff encontró 9 fallos importantes, todos corregidos antes de
   la carga definitiva:

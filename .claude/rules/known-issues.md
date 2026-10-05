@@ -200,6 +200,18 @@
   comunes del dominio ("pera", "papa", "sal", "mora"), no solo con el ejemplo que motivó el
   cambio.
 
+### ING-014: un precio imposible tumbó el lote entero de precios
+- **Síntoma**: la corrida del Éxito terminó con `price_snapshot: value "3450034500" is out of
+  range for type integer` y 101 productos recién leídos se quedaron sin precio.
+- **Causa raíz**: la fuente publicó un precio de 3.450 millones. No cabe en un `integer` de
+  Postgres, y el `insert` es por lotes: falla uno, fallan todos los del lote. El corte de
+  "precio ×10" no lo vio porque necesita un precio anterior con el que comparar.
+- **Solución**: tope `MAX_PRICE_COP` (50 millones) en `normalizedProductSchema`. El producto
+  absurdo se descarta solo, como ilegible, antes de llegar a la base.
+- **Prevención**: lo que se escribe por lotes se valida **por fila** antes, contra los límites
+  de la columna y no solo contra los del dominio. Un valor que la base rechaza se lleva por
+  delante a sus vecinos.
+
 ### SB-001: Supabase arranca pero la app se queda en el skeleton para siempre (Windows)
 - **Síntoma**: tras reiniciar el PC, la app muestra el skeleton de tiendas y nunca carga.
   `docker ps` dice que todo está *healthy*, pero `curl :54321` da conexión rechazada y

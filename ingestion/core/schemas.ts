@@ -13,6 +13,15 @@ export const UNIT_MEASURES = ['g', 'kg', 'ml', 'l', 'un'] as const
 export type UnitKind = (typeof UNIT_KINDS)[number]
 export type UnitMeasure = (typeof UNIT_MEASURES)[number]
 
+/**
+ * No grocery item costs more than this. Anything above is a source typo, and
+ * it must be rejected HERE, one product at a time: Éxito once published a
+ * price of 3.450.034.500, which does not fit a Postgres integer, and the
+ * insert failed for the whole batch — 101 good prices lost with it. The x10
+ * jump check does not catch it either: it needs a previous price to compare.
+ */
+export const MAX_PRICE_COP = 50_000_000
+
 export const normalizedProductSchema = z.object({
   /** SKU in the source store. Unique together with the store. */
   externalId: z.string().min(1),
@@ -43,8 +52,8 @@ export const normalizedProductSchema = z.object({
   isAvailable: z.boolean(),
 
   /** Integer COP. The peso has no cents and floats lose money. */
-  priceCop: z.number().int().positive(),
-  listPriceCop: z.number().int().positive().nullable(),
+  priceCop: z.number().int().positive().max(MAX_PRICE_COP),
+  listPriceCop: z.number().int().positive().max(MAX_PRICE_COP).nullable(),
 })
 
 export type NormalizedProduct = z.infer<typeof normalizedProductSchema>

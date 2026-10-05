@@ -283,10 +283,10 @@ cualquiera dentro de unos meses. Estimación (fila + índices):
 | 3 tiendas, categorías de mercado | 76 MB | 261 MB | 337 MB |
 | 3 tiendas, catálogo completo | 189 MB | 653 MB | **841 MB — no cabe** |
 
-**Medido el 2026-10-05** con las cuatro cadenas del MVP cargadas (unos 31.000 productos con
-precio, primera corrida de cada una): la base local pesa **68 MB** — catálogo 27 MB, snapshots
-6 MB, y el resto sucursales, índices y sistema. La estimación de arriba queda holgada para el
-catálogo; lo que sigue creciendo sin techo son los snapshots.
+**Medido el 2026-10-05** con las cuatro cadenas del MVP cargadas (unos 32.000 productos con
+precio; el Éxito ya recorrido entero, en 74 subcategorías): la base local pesa **80 MB**. La
+estimación de arriba queda holgada para el catálogo; lo que sigue creciendo sin techo son los
+snapshots.
 
 Dos consecuencias de diseño, ambas desde el principio y no cuando explote:
 

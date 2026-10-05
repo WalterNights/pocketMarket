@@ -10,7 +10,7 @@
 
 ## En una frase
 
-La app lee un catálogo real de **cuatro cadenas** (Éxito, Olímpica, Supermú y D1: unos 31.000
+La app lee un catálogo real de **cuatro cadenas** (Éxito, Olímpica, Supermú y D1: unos 32.000
 productos con precio) desde Supabase local. La lista de inicio muestra **las cadenas con tienda
 cerca** del usuario. Con cuenta, **guarda listas, las edita y les pone avisos**. En un **mapa**
 ve las tiendas de las 11 cadenas que conocemos y puede **navegar hasta una** dentro de la app, a
@@ -42,7 +42,7 @@ Corre fuera del dispositivo y es lo único que escribe el catálogo.
 
 | Cadena | Vistos | Escritos |
 |---|---|---|
-| Éxito (2026-09-23) | 27.217 | 13.750 |
+| Éxito (74 subcategorías) | 49.859 | 15.265 (el 69% restante está agotado) |
 | Olímpica | 12.083 | 12.080 |
 | Supermú | 7.615 | 5.772 (el resto es licor, cuidado personal y hogar: fuera de mercado) |
 | D1 | 1.182 | 1.145 |
@@ -53,7 +53,7 @@ geocodifican; las que no se ubican con seguridad se descartan en vez de adivinar
 ### Base de datos (`supabase/`)
 
 20 migraciones. RLS en todas las tablas; **95 tests pgTAP** en verde. La base local pesa
-**68 MB** con las cuatro cadenas (límite del plan gratuito: 500 MB).
+**80 MB** con las cuatro cadenas (límite del plan gratuito: 500 MB).
 
 Dos mundos con reglas distintas: **catálogo** (precios, sucursales — lectura pública, escribe solo
 `service_role`) y **datos de usuario** (listas, avisos — solo el dueño). La ausencia de política de
@@ -78,7 +78,7 @@ como secreto, nunca en la app ([ADR-0007](adr/0007-rutas-openrouteservice.md)).
 | Ruta dibujada a pie / en vehículo | ✅ probado en el teléfono |
 | Navegación en vivo (tiempo restante, recálculo, llegada) | 🟡 **sin probar caminando** |
 
-**Tests:** 644 de Jest (modelo puro, ingesta, utilidades y el primer test de componente) + 95
+**Tests:** 647 de Jest (modelo puro, ingesta, utilidades y el primer test de componente) + 95
 pgTAP. `pnpm run quality` en
 verde. Revisión general de código hecha el 2026-10-05 ([bitácora](BITACORA.md)).
 
@@ -159,6 +159,12 @@ Reglas por **palabra entera** con plural; las raíces se marcan con `*` (`ING-00
 7. **Eliminar la cuenta desde la app**: Google Play lo exige.
 
 ### Deuda pequeña del plan 0003
+
+- **101 productos del Éxito quedaron sin precio** en la carga del 2026-10-05: un precio
+  imposible de la fuente tumbó su lote (`ING-014`, ya corregido). Se llenan solos en la
+  siguiente corrida del Éxito.
+- D1, Olímpica y Supermú se cargaron antes del último ajuste de medidas: unos 120 combos y
+  multipacks conservan una medida por unidad hasta su siguiente corrida.
 
 - El reporte de precios dice "saltados" sin desglosar el motivo (agotado, fuera de mercado, sin
   pasillo). El de sucursales ya lo desglosa.

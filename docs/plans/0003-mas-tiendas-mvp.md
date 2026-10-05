@@ -10,14 +10,14 @@
 Todo el plan está implementado y cargado en el Supabase local. Falta **probarlo en el
 teléfono** y hacer el commit.
 
-- **Precios**: Éxito 13.323 · Olímpica 12.081 · Supermú 4.692 · D1 1.145 productos visibles,
+- **Precios**: Éxito 14.476 · Olímpica 12.081 · Supermú 4.692 · D1 1.145 productos visibles,
   con 0 ilegibles en las tres cargas nuevas.
 - **Sucursales nuevas**: Ísimo 137 (de 310; el resto no se pudo ubicar con seguridad),
   Olímpica 73, Jumbo 59, Carulla 44, Supermú 14, La Vaquita Express 8 y Mercado Madrid 2.
 - **Lista por cercanía**: `stores_near`, origen compartido con el mapa y ciudad recordada.
 - **Revisión independiente** del diff: 9 hallazgos importantes corregidos (ver
   [BITÁCORA](../BITACORA.md)).
-- **Gate**: `quality` (644 tests), `db:test` (95) y `db:lint` en verde. Base local: 68 MB.
+- **Gate**: `quality` (647 tests), `db:test` (95) y `db:lint` en verde. Base local: 80 MB.
 
 **Queda fuera, anotado en ESTADO**: desglose de "saltados" por motivo en el reporte de precios,
 y recordar "Ver todas" entre aperturas.
