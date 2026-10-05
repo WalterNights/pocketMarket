@@ -70,6 +70,9 @@ Canales: `production` y `preview`, alineados con los perfiles de build.
 
 ## Antes de subir a las stores
 
+> Paso a paso para Android (APK directo y Google Play), con lo que falta hoy:
+> [guias/publicar-android.md](../guias/publicar-android.md).
+
 - [ ] `pnpm run type-check && pnpm run lint && pnpm test` en verde
 - [ ] Checklist de seguridad de [08](08-security.md) completa
 - [ ] Probado en dispositivo físico **iOS y Android**, build de release, no simulador

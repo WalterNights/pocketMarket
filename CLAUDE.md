@@ -83,6 +83,7 @@ Toda decisión estructural está documentada. **Consúltala antes de proponer ca
 | [0005](docs/adr/0005-autenticacion.md) | Email + contraseña con Supabase Auth; catálogo público; sesión troceada en SecureStore |
 | [0006](docs/adr/0006-mapa-maplibre.md) | Mapa con MapLibre + OpenFreeMap: sin key ni facturación; estilo sin negocios |
 | [0007](docs/adr/0007-rutas-openrouteservice.md) | Rutas en el mapa con OpenRouteService detrás de una Edge Function (key fuera del bundle) |
+| [0008](docs/adr/0008-cadenas-del-mvp.md) | MVP con 4 cadenas con precios (Éxito, D1, Olímpica, Supermú); todas en el mapa; lista por cercanía |
 
 ## Reglas activas
 

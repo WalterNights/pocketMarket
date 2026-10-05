@@ -121,6 +121,85 @@
   Solo es autoritativo un pasillo **homogéneo**: `carnes` no lo es, porque mezcla pollo, res
   y pescado y el nombre tiene que separarlos. Misma idea que la llave de frescos de ING-002.
 
+### ING-010: el sustantivo que abre el nombre es el producto
+- **Síntoma**: "Galleta Leche" en Leche, "Pan tajado mantequilla" en Mantequilla, "Salsa para
+  carnes" en Carnes, "Gaseosa sin azúcar" en Azúcar, "Atún en aceite" en Aceites, "Blanqueador
+  ropa color" en Condimentos. Unas 60 malas clasificaciones de D1, Olímpica y Supermú, todas
+  distintas en apariencia.
+- **Causa raíz**: las reglas de ingrediente daban el mismo peso a todas las palabras del nombre
+  y ganaba la que estaba más arriba en la tabla. En español el tipo de producto va primero y lo
+  que lo califica (sabor, acompañamiento, aroma) va después: la posición era información que
+  no se usaba.
+- **Solución**:
+  - Capa `HEAD_RULES`: se ancla al inicio del nombre y solo contiene tipos de producto, nunca
+    ingredientes.
+  - Delante de ella van `NON_FOOD_RULES` (un limpiador con aroma a canela no es canela) y los
+    congelados.
+  - En el pasillo de frescos gana la fruta o verdura que aparece primero ("Tomate pera").
+- **Prevención**:
+  - Si una regla falla con el ingrediente "de abajo", antes de añadir la palabra hay que
+    preguntar si esa palabra *es* el producto o lo *describe*.
+  - `\bkeyword(?:e?s)?\b` no cubre grafías alternativas ("yogurt" no casa con `yogur`): en esos
+    casos, raíz con `*`.
+
+### ING-011: "2.500 G" se leía como 2,5 gramos
+- **Síntoma**: "ARROZ 2.500 G" (Olímpica) con medida 2,5 g, y "Aceite 3.000 Ml" (D1) con 3 ml.
+  El precio por medida salía mil veces más caro.
+- **Causa raíz**: `extractMeasure` leía el punto siempre como decimal porque el Éxito escribe
+  "110.5 gr". D1 y Olímpica usan el punto como separador de miles, que es la trampa conocida del
+  separador de miles, esta vez en la medida en vez del precio.
+- **Solución**: un punto seguido de **exactamente tres dígitos**, con parte entera distinta de
+  cero, se lee como miles (`measureNumber`). "0.250 kg", "1.5 L" y "110.5 gr" siguen siendo
+  decimales, y la coma es siempre decimal.
+- **Prevención**: cada tienda nueva trae su propia forma de escribir números. Al añadir una
+  fuente, buscar en su muestra medidas con punto o coma antes de dar el adaptador por bueno.
+
+### ING-012: todas las tiendas de Bogotá descartadas por "municipio desconocido"
+- **Síntoma**: al geocodificar Ísimo, 69 de 310 tiendas se saltaban con "municipio desconocido".
+  Eran exactamente las de Bogotá.
+- **Causa raíz**: la fuente a veces pone un departamento en el campo del municipio, y el código
+  descarta ese caso. La lista de departamentos incluía `bogota`, que es una ciudad.
+- **Solución**: Bogotá fuera de la lista de departamentos, con test.
+- **Prevención**: cuando un motivo de descarte se lleva una cifra redonda y grande, mirar qué
+  tienen en común los descartados antes de aceptar que "la fuente viene así".
+
+### SB-002: tests pgTAP que dependían de los datos reales
+- **Síntoma**: tras cargar D1, `db:test` falló en dos tests que nadie había tocado.
+- **Causa raíz**: uno usaba D1 como "la tienda sin catálogo". El otro insertaba dos precios del
+  mismo producto en la misma transacción: `now()` no avanza dentro de una transacción, los dos
+  empataban en `captured_at` y `current_price` se quedaba con cualquiera.
+- **Solución**: el primero crea su propia tienda de prueba; el segundo da al segundo precio un
+  `captured_at` explícito posterior.
+- **Prevención**: un test crea lo que necesita y no asume el estado del catálogo. Y dentro de
+  una transacción, dos filas que deben ordenarse por fecha necesitan fechas explícitas.
+
+### ING-013: el Éxito tenía seis pasillos truncados y parecía uno
+- **Síntoma**: ninguno visible. Se creía que solo "Despensa" rozaba el tope de 2.500 de VTEX.
+  Al pedir el total real de cada pasillo: Despensa 12.261, Aseo 7.968, Lácteos 4.621, Dulces
+  3.284, Panadería 2.563 y Mascotas 23.356. Se leía poco más de la mitad del catálogo.
+- **Causa raíz**: se miraba cuántos productos había **guardados** por pasillo, y nunca pasaban
+  de ~2.500 justamente porque el tope los cortaba. Además los agotados se saltan después de
+  leerlos, así que lo guardado siempre queda por debajo de lo leído.
+- **Solución**: recorrer los pasillos grandes por subcategorías de nivel 3 (74 consultas, todas
+  bajo el tope). Un pasillo que llegue al tope ahora se reporta como página perdida, con su
+  nombre.
+- **Prevención**: el tamaño de una categoría se le pregunta a la fuente (cabecera `resources`
+  con `_from=0&_to=0`), no a nuestra base. Lo que guardamos ya pasó por el límite que queremos
+  medir.
+
+### DATA-001: buscar por prefijo sobre raíces devuelve ruido
+- **Síntoma**: al hacer la búsqueda "mientras se escribe", "pera" devolvía juguetes para perros
+  y "sal" 2.010 productos.
+- **Causa raíz**: `search_vector` usa la configuración `spanish`, que guarda **raíces**. Postgres
+  reduce también el término ("pera" → "per") y luego busca por prefijo: `per:*` casa con
+  "perros".
+- **Solución**: columna `search_prefix` con configuración `simple` (palabras tal cual, sin
+  tildes) e índice GIN propio. La búsqueda por prefijo va contra esa; `search_vector` queda
+  para búsqueda por palabra completa.
+- **Prevención**: prefijo y raíces no se mezclan. Y un buscador se prueba con palabras cortas y
+  comunes del dominio ("pera", "papa", "sal", "mora"), no solo con el ejemplo que motivó el
+  cambio.
+
 ### SB-001: Supabase arranca pero la app se queda en el skeleton para siempre (Windows)
 - **Síntoma**: tras reiniciar el PC, la app muestra el skeleton de tiendas y nunca carga.
   `docker ps` dice que todo está *healthy*, pero `curl :54321` da conexión rechazada y
@@ -213,6 +292,12 @@
 - **Prevención**: tras añadir o cambiar una dependencia nativa o un config plugin, el orden es
   siempre build → instalar → `expo start --dev-client --clear`. Es el mismo fallo que el OTA más
   caro del stack (JS nuevo sobre binario viejo), en versión de desarrollo.
+- **Contención (2026-10-04)**: el mapa tumbaba **toda** la app, porque `app/index.tsx` importa
+  `MapButton` del `index.ts` de `branches`, que importaba el mapa y con él MapLibre. Ahora
+  `StoreMapScreen` carga la implementación (`StoreMap.tsx`) con `React.lazy` + `require` al abrir
+  el mapa, tras comprobar `TurboModuleRegistry.get('MLRNCameraModule')`; sin el módulo muestra
+  "El mapa no está disponible" con "Volver". Regla: un módulo nativo opcional nunca se importa
+  arriba de un archivo alcanzable desde el `index.ts` de un feature.
 
 ### BUILD-001: `drawable/splashscreen_logo not found` en la primera build de Android
 - **Síntoma**: EAS Build falla en `:app:processDebugResources` con *Android resource linking
@@ -229,6 +314,29 @@
   segundos frente a 15 minutos de cola. Para leer el log de una build fallida:
   `pnpm dlx eas-cli@latest build:view <id> --json` → `logFiles` (NDJSON, pedirlo con
   `curl --compressed`; la URL caduca a los 15 min).
+
+### BUILD-002: Windows bloquea `pnpm-native.exe` a mitad de sesión
+- **Síntoma**: todo comando `pnpm ...` falla de golpe con `Could not run the pnpm binary ...
+  spawnSync ... UNKNOWN`. Al lanzar el ejecutable a mano: *"Una directiva de Control de
+  aplicaciones bloqueó este archivo"*. Minutos antes funcionaba.
+- **Causa raíz**: el Control de aplicaciones de Windows (Smart App Control) decidió bloquear el
+  binario nativo de pnpm 12 que instala Corepack. No es un fallo del proyecto ni de pnpm.
+- **Solución aplicada**: ninguna sobre la política (es una decisión de seguridad del equipo y
+  le toca al dueño). Para seguir trabajando, las herramientas del proyecto son scripts de Node
+  y se pueden lanzar sin pnpm, dándoles la misma ruta de módulos que pone `pnpm exec`:
+  ```bash
+  export NODE_PATH="$(pwd -W)/node_modules/.pnpm/node_modules"
+  node node_modules/typescript/bin/tsc --noEmit
+  node node_modules/eslint/bin/eslint.js . --max-warnings 0
+  node node_modules/prettier/bin/prettier.cjs --check .
+  node node_modules/jest/bin/jest.js
+  node node_modules/tsx/dist/cli.mjs ingestion/runners/node/ingest.ts --store d1
+  node node_modules/supabase/dist/supabase.js test db
+  ```
+  Esto **no** sirve para instalar dependencias: instalar exige pnpm (regla 18).
+- **Prevención**: si pnpm deja de arrancar sin haber tocado nada, probar el ejecutable a mano
+  antes de sospechar del proyecto. Para recuperarlo: reiniciar, o revisar *Seguridad de Windows
+  → Control de aplicaciones y navegador → Control inteligente de aplicaciones*.
 
 ### ING-009: Dollarcity falla con `UNABLE_TO_VERIFY_LEAF_SIGNATURE` en Node (y no en curl)
 - **Síntoma**: el runner de sucursales muere con `fetch failed ... unable to verify the first
@@ -390,6 +498,15 @@ herramienta rompe. Verificado 2026-09-23 montando el proyecto:
   mutación persistida no sabe qué función ejecutar.
 - Logout sin `queryClient.clear()` **y** sin limpiar el persister filtra datos al siguiente
   usuario del dispositivo.
+
+### Jest: tests de componente (`UI`)
+Verificado 2026-10-05 al escribir el primero:
+- `@testing-library/react-native` v14 es **asíncrono**: `await render(...)`,
+  `await fireEvent.press(...)`. Ya no existe `extend-expect`; los matchers se registran solos.
+- `jest.mock('./hook')` sin fábrica carga el módulo real (y con él Supabase y la validación del
+  entorno). Usar fábrica: `jest.mock('./hook', () => ({ useX: jest.fn() }))`.
+- Los iconos de lucide son `.mjs` y Jest no los carga: `moduleNameMapper` a `test/mocks`.
+- Reanimated necesita `resolver: 'react-native-worklets/jest/resolver'`.
 
 ### Zustand
 - Store persistido sin `version` + `migrate`: un usuario que actualiza con estado antiguo

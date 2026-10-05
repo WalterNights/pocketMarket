@@ -12,12 +12,11 @@ Razonado en [ADR-0003](../adr/0003-ingesta-centralizada.md).
 ```
 ┌─────────────────────────────────────────────────────────┐
 │  FUENTES CON API                                         │
-│  Éxito (VTEX)                                            │
-│       └─► Supabase Edge Function (Deno) + pg_cron        │
+│  Éxito, D1, Olímpica (VTEX) · Supermú (Shopify)          │
+│       └─► runner de Node (cron: plan 0002)               │
 │                                                           │
-│  FUENTES QUE EXIGEN NAVEGADOR                            │
-│  D1, Dollarcity                                          │
-│       └─► GitHub Actions (cron) + Playwright             │
+│  Ninguna fuente del MVP exige navegador (ADR-0008).      │
+│  Dollarcity y Ara no publican catálogo: solo sucursales. │
 └──────────────────────────┬──────────────────────────────┘
                            │ service_role
                            ▼
@@ -184,23 +183,33 @@ paginada llega con **HTTP 206**, no 200: tratar 206 como éxito.
 
 ### Categorías de Mercado (raíz `34185082`)
 
-| ID | Éxito | Nuestra taxonomía |
-|---|---|---|
-| 34185101 | Despensa | `viveres` |
-| 34185103 | Lácteos, huevos y refrigerados | `lacteos` |
-| 34185097 | Pollo, carne y pescado | `carnes` |
-| 34185098 | Charcutería y delicatessen | `carnes` |
-| 34185099 | Frutas y verduras | `frutas-verduras` |
-| 34185100 | Panadería y repostería | `panaderia` |
-| 346084837 | Bebidas | `bebidas` |
-| 34185104 | Congelados | `congelados` |
-| 34185106 | Aseo del hogar | `aseo-hogar` |
-| 34185107 | Mascotas | `mascotas` |
-| 347733901 | Alimentación para bebés | `bebes` |
-| 34185105 · 346098434 · 348959797 | Snacks · Dulces · Comidas preparadas | `otros` |
+Total real de cada pasillo, leído de la cabecera `resources` el 2026-10-05. Los que pasan de
+~1.800 productos se recorren por sus **subcategorías de nivel 3** (74 consultas en total; la
+lista exacta está en `ingestion/adapters/exito.ts`), porque VTEX no pagina más allá de 2.500.
+
+| ID | Éxito | Total | Se recorre como | Nuestra taxonomía |
+|---|---|---:|---|---|
+| 34185101 | Despensa | 12.261 | 20 subcategorías | `viveres` |
+| 34185103 | Lácteos, huevos y refrigerados | 4.621 | 12 subcategorías | `lacteos` |
+| 34185097 | Pollo, carne y pescado | 2.415 | 5 subcategorías | `carnes` |
+| 34185098 | Charcutería y delicatessen | 1.629 | entero | `carnes` |
+| 34185099 | Frutas y verduras | 1.730 | entero | `frutas-verduras` |
+| 34185100 | Panadería y repostería | 2.563 | 4 subcategorías | `panaderia` |
+| 346084837 | Bebidas | 2.227 | 6 subcategorías | `bebidas` |
+| 34185104 | Congelados | 1.449 | entero | `congelados` |
+| 34185106 | Aseo del hogar | 7.968 | 9 subcategorías | `aseo-hogar` |
+| 34185107 | Mascotas | 23.356 | 4 subcategorías (solo comida y aseo) | `mascotas` |
+| 347733901 | Alimentación para bebés | 188 | entero | `bebes` |
+| 34185105 | Pasabocas y snacks | 2.251 | 3 subcategorías | `otros` |
+| 346098434 | Dulces y chocolatería | 3.284 | 6 subcategorías | `otros` |
+| 348959797 | Comidas preparadas | 372 | entero | `otros` |
 
 Filtramos a estas categorías: Éxito vende televisores, y un televisor en una lista de compra
 es ruido además de espacio ([presupuesto](#presupuesto-de-almacenamiento)).
+
+**De Mascotas solo entran comida y aseo.** El resto del pasillo (unos 16.000 anuncios de
+correas, juguetes y accesorios de vendedores externos, muchos sin precio) no es mercado, y dos
+de sus subcategorías pasan del tope sin un nivel más abajo.
 
 ### Forma del dato
 
@@ -222,11 +231,15 @@ página vacía. Una categoría con más productos que eso no se puede recorrer e
 endpoint.
 
 El adaptador trata ese 400 como *fin de categoría* y sigue con la siguiente; abortar ahí
-perdería todas las categorías pendientes. Consecuencia aceptada: de las categorías más grandes
-(Despensa ronda los 2500) se ingiere el tope y no el total.
+perdería todas las categorías pendientes.
 
-Para cobertura completa habría que bajar a las **subcategorías de nivel 3** del árbol, de modo
-que cada consulta devuelva menos de 2500. Pendiente hasta que el tope estorbe de verdad.
+Hasta el 2026-10-05 se recorrían los 14 pasillos enteros y se creía que solo Despensa "rondaba
+los 2.500". En realidad **seis pasillos pasaban del tope** y se leía poco más de la mitad del
+catálogo (`ING-013`). Ahora cada consulta queda por debajo, y un pasillo que llegue al tope se
+reporta como página perdida: la corrida sale incompleta y avisa qué pasillo hay que partir.
+
+**A vigilar:** "Salsas, especias y condimentos" (2.367) y "Perros > Comida y snack" (2.195)
+están cerca del tope y no tienen un nivel más abajo.
 
 ### Lo que hay que normalizar
 
@@ -269,6 +282,11 @@ cualquiera dentro de unos meses. Estimación (fila + índices):
 | Éxito catálogo completo (~50k SKU) | 63 MB | 218 MB | 280 MB |
 | 3 tiendas, categorías de mercado | 76 MB | 261 MB | 337 MB |
 | 3 tiendas, catálogo completo | 189 MB | 653 MB | **841 MB — no cabe** |
+
+**Medido el 2026-10-05** con las cuatro cadenas del MVP cargadas (unos 31.000 productos con
+precio, primera corrida de cada una): la base local pesa **68 MB** — catálogo 27 MB, snapshots
+6 MB, y el resto sucursales, índices y sistema. La estimación de arriba queda holgada para el
+catálogo; lo que sigue creciendo sin techo son los snapshots.
 
 Dos consecuencias de diseño, ambas desde el principio y no cuando explote:
 

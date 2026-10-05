@@ -14,6 +14,57 @@
 
 ---
 
+## 2026-10-05 — Cuatro cadenas con precios, todas en el mapa y lista por cercanía
+
+**Hecho** ([plan 0003](plans/0003-mas-tiendas-mvp.md))
+
+- **Precios de tres cadenas nuevas.** D1 y Olímpica usan la misma API VTEX que el Éxito, así
+  que el adaptador del Éxito pasó a ser uno genérico (`vtex-catalog.ts`) y cada cadena es una
+  configuración. Supermú tiene adaptador propio (Shopify). Cargados: Olímpica 12.080, Supermú
+  5.772 y D1 1.145, con 0 ilegibles.
+- **Sucursales de siete cadenas más**: Olímpica, Jumbo y Carulla desde su localizador; Supermú,
+  La Vaquita Express y Mercado Madrid desde un archivo curado; Ísimo geocodificando sus
+  direcciones con Nominatim (137 de 310 ubicadas con seguridad).
+- **Lista de inicio por cercanía**: función `stores_near`, origen compartido entre lista y mapa
+  (Zustand + MMKV; solo se guarda la ciudad) y hoja para elegir ubicación o ciudad.
+- **El mapa ya no tumba la app** si el binario no trae MapLibre: se carga al abrirlo.
+- **Clasificador**: capas nuevas de sustantivo inicial, no comestibles y congelados; 1.545
+  productos reubicados al reclasificar.
+- **Buscador por prefijo**: "g", "go", "gom" ya encuentran "gomitas". Antes solo casaban
+  palabras completas.
+- Primer **test de componente** del proyecto (lista de tiendas). Jest 318 → 644.
+
+**Decidido**
+
+- [ADR-0008](adr/0008-cadenas-del-mvp.md): qué cadenas llevan precios, lista por cercanía y
+  reglas para aceptar una dirección geocodificada.
+
+**Problemas**
+
+- `EXPO-004` (contención), `ING-010` a `ING-013`, `DATA-001`, `SB-002` y `BUILD-002` en
+  known-issues.
+- Una revisión independiente del diff encontró 9 fallos importantes, todos corregidos antes de
+  la carga definitiva:
+  - medidas: "1.200 Kg" leído como 1.200 kg y multipacks leídos como una unidad;
+  - Olímpica: un producto en dos pasillos se quedaba con el último;
+  - geocodificación: reglas demasiado laxas (pines a media calle);
+  - lista: la distancia se medía desde un punto redondeado a 1 km.
+- Una **segunda revisión**, sobre las correcciones, encontró más:
+  - el buscador por prefijo devolvía ruido ("pera" → juguetes para perros): `DATA-001`;
+  - el Éxito tenía seis pasillos truncados, no uno, y se leía la mitad del catálogo: `ING-013`.
+    Ahora se recorre en 74 subcategorías;
+  - tiendas de Ísimo ubicadas en una vereda a 10 km del pueblo;
+  - helados repartidos por sabor y 225 productos de aseo en pasillos de comida;
+  - combos y "six pack" leídos como una sola unidad.
+- Windows bloqueó el ejecutable de pnpm a mitad de sesión (`BUILD-002`); se siguió lanzando las
+  herramientas con Node.
+- Logo definitivo en icono y pantalla de arranque (requiere build nueva para verse).
+- Nueva guía: [publicar en Android](guias/publicar-android.md).
+- `D1 requiere navegador` era falso: lo decía la documentación desde el primer día y nadie lo
+  había comprobado.
+
+---
+
 ## 2026-10-05 — Revisión general de código
 
 **Hecho**

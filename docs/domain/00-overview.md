@@ -33,12 +33,22 @@ actualiza **y muestra la variación**.
 
 ## Tiendas objetivo y sus fuentes
 
-| Tienda | Fuente | Estado | Dificultad |
-|---|---|---|---|
-| **Éxito** | VTEX — API de catálogo (`/api/catalog_system/pub/products/search`) | **v1** | 🟢 JSON estructurado |
-| **D1** | `tiendasd1.com` — tienda online con domicilios | v2 | 🟡 Requiere navegador |
-| **Dollarcity** | `dollarcity.com/co` — catálogo online | v2 | 🟡 Requiere navegador |
-| **Ara** | Sin tienda online; solo app con folletos de promociones | v3 | 🔴 Sin catálogo estructurado |
+Elección y razones en [ADR-0008](../adr/0008-cadenas-del-mvp.md). Todas las cadenas salen en el
+mapa; la lista de inicio muestra las que tienen sucursal cerca.
+
+| Tienda | Fuente de precios | Estado |
+|---|---|---|
+| **Éxito** | VTEX — API pública de catálogo (`/api/catalog_system/pub/products/search`) | **MVP, con precios** |
+| **D1** | VTEX, la misma API (`d1.com.co`) — **no** necesita navegador | **MVP, con precios** |
+| **Olímpica** | VTEX (`olimpica.com`) | **MVP, con precios** |
+| **Supermú** (antes La Vaquita, Medellín) | Shopify — `/products.json` | **MVP, con precios** |
+| Jumbo | VTEX (`jumbocolombia.com`) | Próximamente: solo es configurarla |
+| Carulla | VTEX bajo `/io/` (`carulla.com`) | Próximamente: solo es configurarla |
+| La Vaquita Express (Medellín) | Magento — GraphQL público | Próximamente |
+| Ísimo | Solo un PDF mensual de ofertas | Próximamente |
+| Mercado Madrid (Medellín) | PrestaShop; la web no respondió al investigar | Próximamente |
+| Dollarcity | Sin catálogo online (web corporativa) | Solo mapa |
+| **Ara** | Sin tienda online; solo app con folletos de promociones | Solo mapa |
 
 **Ara es el caso duro:** no publica catálogo con precios. Sus datos tendrían que salir de
 folletos (imagen/PDF) o de carga manual. Queda fuera del alcance automatizable hasta que exista

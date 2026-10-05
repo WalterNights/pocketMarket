@@ -4,16 +4,17 @@
 > Para las reglas permanentes, ver [CLAUDE.md](../CLAUDE.md); para el porqué de cada decisión,
 > [`docs/adr/`](adr/); para **cómo se llegó aquí**, sesión a sesión, la [BITACORA](BITACORA.md).
 
-**Última actualización:** 2026-10-05 · rama `main` · todo subido (ver `git log`)
+**Última actualización:** 2026-10-05 · rama `main` · **plan 0003 implementado, sin commitear**
 
 ---
 
 ## En una frase
 
-La app lee un catálogo real de Éxito (13.750 productos) desde Supabase local. Con cuenta, el
-usuario **guarda listas, las edita y les pone avisos**; y en un **mapa** ve las tiendas de Éxito,
-D1, Dollarcity y Ara más cercanas (4.557 cargadas) y puede **navegar hasta una** dentro de la app,
-a pie o en vehículo. Se prueba con un **development build** de EAS, no con Expo Go.
+La app lee un catálogo real de **cuatro cadenas** (Éxito, Olímpica, Supermú y D1: unos 31.000
+productos con precio) desde Supabase local. La lista de inicio muestra **las cadenas con tienda
+cerca** del usuario. Con cuenta, **guarda listas, las edita y les pone avisos**. En un **mapa**
+ve las tiendas de las 11 cadenas que conocemos y puede **navegar hasta una** dentro de la app, a
+pie o en vehículo. Se prueba con un **development build** de EAS, no con Expo Go.
 
 ---
 
@@ -25,23 +26,34 @@ Corre fuera del dispositivo y es lo único que escribe el catálogo.
 
 | Pieza | Estado |
 |---|---|
-| Precios de Éxito (API VTEX pública), 14 subcategorías de "Mercado" | ✅ |
+| Precios de Éxito, D1 y Olímpica (API VTEX pública, un adaptador genérico) | ✅ |
+| Precios de Supermú (Shopify) | ✅ |
 | Pipeline: fetch → normalize → validate → upsert → diff → append → publish | ✅ |
 | Clasificador a taxonomía colombiana (39 categorías) | ✅ ver abajo |
 | Reclasificar sin volver a la fuente (`pnpm run reclassify`) | ✅ |
-| Sucursales de las 4 cadenas (`pnpm run branches`) | ✅ Ara 1.657 · Dollarcity 421 · Éxito 154 · D1 2.325 |
-| Precios de D1 y Dollarcity | ❌ requieren Playwright |
+| Sucursales de 11 cadenas (`pnpm run branches`) | ✅ D1 2.325 · Ara 1.657 · Dollarcity 421 · Éxito 154 · Ísimo 137 · Olímpica 73 · Jumbo 59 · Carulla 44 · Supermú 14 · La Vaquita Express 8 · Mercado Madrid 2 |
+| Precios de Jumbo y Carulla | 🟡 misma API VTEX; esperan por espacio ([ADR-0008](adr/0008-cadenas-del-mvp.md)) |
+| Precios de Dollarcity | ❌ **no tiene catálogo online** |
 | Precios de Ara | ❌ **no tiene catálogo online** — solo folletos. Ya se investigó |
 | Cron diario de precios | ❌ **pendiente** — [plan 0002](plans/0002-cron-de-ingesta-diaria.md) |
 | Carga mensual de sucursales en CI | 🟡 workflow `branches.yml` listo, en manual hasta tener Supabase remoto |
 
-**Última corrida de precios:** 27.217 vistos · 13.750 escritos · 49% agotados · **0% ilegibles**.
-El 49% de agotados es real: VTEX ordena los disponibles primero y la cola de cada categoría es
-stock agotado.
+**Últimas corridas de precios** (0% ilegibles en todas):
+
+| Cadena | Vistos | Escritos |
+|---|---|---|
+| Éxito (2026-09-23) | 27.217 | 13.750 |
+| Olímpica | 12.083 | 12.080 |
+| Supermú | 7.615 | 5.772 (el resto es licor, cuidado personal y hogar: fuera de mercado) |
+| D1 | 1.182 | 1.145 |
+
+**Ísimo en el mapa:** solo 137 de sus 310 tiendas. Publica direcciones sin coordenadas y se
+geocodifican; las que no se ubican con seguridad se descartan en vez de adivinarlas.
 
 ### Base de datos (`supabase/`)
 
-17 migraciones. RLS en todas las tablas; **85 tests pgTAP** en verde.
+20 migraciones. RLS en todas las tablas; **95 tests pgTAP** en verde. La base local pesa
+**68 MB** con las cuatro cadenas (límite del plan gratuito: 500 MB).
 
 Dos mundos con reglas distintas: **catálogo** (precios, sucursales — lectura pública, escribe solo
 `service_role`) y **datos de usuario** (listas, avisos — solo el dueño). La ausencia de política de
@@ -54,7 +66,9 @@ como secreto, nunca en la app ([ADR-0007](adr/0007-rutas-openrouteservice.md)).
 
 | Pantalla | Estado |
 |---|---|
-| Tiendas → categorías → productos, con búsqueda y scroll infinito | ✅ |
+| Lista de tiendas por cercanía (ubicación o ciudad; sin ninguna, todas) | 🟡 **sin probar en el teléfono** |
+| Tiendas → categorías → productos, con scroll infinito | ✅ |
+| Búsqueda mientras se escribe (por comienzo de palabra, sin tildes) | ✅ comprobada contra la base; 🟡 sin probar en el teléfono |
 | Hoja de producto: cantidad y presentación (cartón, docena, panal…) | ✅ |
 | Borrador con total por tienda | ✅ en memoria (se pierde al cerrar la app) |
 | Inicio de sesión y registro (email + contraseña) | ✅ [ADR-0005](adr/0005-autenticacion.md) |
@@ -64,7 +78,8 @@ como secreto, nunca en la app ([ADR-0007](adr/0007-rutas-openrouteservice.md)).
 | Ruta dibujada a pie / en vehículo | ✅ probado en el teléfono |
 | Navegación en vivo (tiempo restante, recálculo, llegada) | 🟡 **sin probar caminando** |
 
-**Tests:** 318 de Jest (modelo puro, ingesta y utilidades) + 85 pgTAP. `pnpm run quality` en
+**Tests:** 644 de Jest (modelo puro, ingesta, utilidades y el primer test de componente) + 95
+pgTAP. `pnpm run quality` en
 verde. Revisión general de código hecha el 2026-10-05 ([bitácora](BITACORA.md)).
 
 ---
@@ -78,8 +93,8 @@ verde. Revisión general de código hecha el 2026-10-05 ([bitácora](BITACORA.md
 3. **El borrador se pierde al cerrar la app.** Ya hay development build, así que MMKV es viable;
    falta hacerlo.
 4. **Sin error boundary en la raíz.** Un error de render deja la pantalla en blanco.
-5. **Tests de componente vacíos.** El proyecto `components` de Jest está configurado pero sin
-   tests.
+5. **Un solo test de componente** (la lista de tiendas). El entorno ya funciona; faltan las
+   demás pantallas.
 6. **OpenFreeMap no garantiza disponibilidad** y el cupo de OpenRouteService (~2.000 rutas/día)
    es de toda la app. Si alguno falla, la lista de tiendas sigue funcionando.
 
@@ -127,13 +142,29 @@ Reglas por **palabra entera** con plural; las raíces se marcan con `*` (`ING-00
 
 ## Siguiente paso sugerido
 
-1. **Probar en la calle** la navegación en vivo y **oír sonar un aviso**
+1. **Probar el plan 0003 en el teléfono** y hacer el commit:
+   - con ciudad Bogotá no sale Supermú; con Medellín sí;
+   - sin ubicación ni ciudad se ven todas las cadenas;
+   - la ciudad elegida se recuerda al reabrir;
+   - D1, Olímpica y Supermú abren con productos.
+2. **Probar en la calle** la navegación en vivo y **oír sonar un aviso**
    ([guias/probar-avisos.md](guias/probar-avisos.md)).
-2. **Proyecto remoto de Supabase**: destraba el cron de precios (0002), la carga de sucursales y
-   una build que funcione fuera de casa.
-3. **Cron diario de precios** ([plan 0002](plans/0002-cron-de-ingesta-diaria.md)).
-4. **Borrador persistente con MMKV** y error boundary en la raíz.
-5. **Mejora de la clasificación** aplicada a las demás tiendas cuando tengan catálogo.
+3. **Publicar**: los pasos y lo que falta están en
+   [guias/publicar-android.md](guias/publicar-android.md). El primer hito es un APK que funcione
+   fuera de casa.
+4. **Proyecto remoto de Supabase** y, antes de usarlo, la **retención de precios**: con cuatro
+   cadenas es requisito ([ADR-0008](adr/0008-cadenas-del-mvp.md)).
+5. **Cron diario de precios** ([plan 0002](plans/0002-cron-de-ingesta-diaria.md)).
+6. **Borrador persistente con MMKV** y error boundary en la raíz.
+7. **Eliminar la cuenta desde la app**: Google Play lo exige.
+
+### Deuda pequeña del plan 0003
+
+- El reporte de precios dice "saltados" sin desglosar el motivo (agotado, fuera de mercado, sin
+  pasillo). El de sucursales ya lo desglosa.
+- "Ver todas" se respeta durante la sesión, pero no entre aperturas.
+- Un pasillo VTEX que llegue al tope de 2.500 productos ahora marca la corrida como incompleta:
+  si pasa, hay que partirlo en subcategorías (como la Despensa de Olímpica).
 
 ### Decisiones pendientes del usuario
 
@@ -141,7 +172,6 @@ Reglas por **palabra entera** con plural; las raíces se marcan con `*` (`ING-00
   nueva "Comidas preparadas" o congelados/otros?
 - **Papas y pasabocas "sabor pollo"** siguen en Pollo: moverlas a snacks (arreglo claro, falta
   hacerlo).
-- **Icono definitivo de la app**: el actual es provisional.
 
 ---
 
@@ -167,9 +197,10 @@ pnpm run db:test                 # pgTAP de RLS
 pnpm exec supabase migration up --local   # aplicar migraciones nuevas sin borrar datos
 pnpm run db:reset                # desde cero (BORRA catálogo y sucursales)
 
-pnpm run ingest                  # precios de Éxito (~23 min, una al día)
+pnpm run ingest -- --store all   # precios de las 4 cadenas (~45 min, una al día)
+pnpm run ingest -- --store d1    # o una sola: exito | d1 | olimpica | supermu
 pnpm run reclassify -- --dry-run # refilar sin tocar la fuente
-pnpm run branches -- --store all # sucursales (D1 tarda ~13 min; mensual)
+pnpm run branches -- --store all # sucursales (D1 ~13 min, Ísimo ~17 min; mensual)
 ```
 
 La ingesta necesita `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY`, que salen de
