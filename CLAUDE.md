@@ -7,8 +7,9 @@ Guía para Claude Code al trabajar en este repositorio.
 **Pocket Market** — app **solo móvil** (iOS + Android) para **planear el mercado y saber cuánto
 va a costar antes de ir**.
 
-El usuario arma listas con productos reales de tiendas reales (Éxito, D1, Dollarcity, Ara) a
-precios actualizados, y la app le da **total general y total por tienda**. Guarda listas
+El usuario arma listas con productos reales de tiendas reales (Éxito, Olímpica, D1 y Supermú
+con precios; 11 cadenas en el mapa, [ADR-0008](docs/adr/0008-cadenas-del-mvp.md)) a precios
+actualizados, y la app le da **total general y total por tienda**. Guarda listas
 reutilizables con recordatorios periódicos (semanal, quincenal, mensual) y los precios se
 actualizan solos, mostrando la variación desde que se añadió cada producto.
 

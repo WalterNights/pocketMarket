@@ -1,25 +1,26 @@
 # Plan 0003 — Más tiendas para el MVP y lista de tiendas por cercanía
 
-**Estado:** implementado 2026-10-05; falta probar en el teléfono · **Complejidad:** alta
+**Estado:** implementado y subido; falta probar en el teléfono · **Complejidad:** alta
 **Escrito:** 2026-10-04 · **¿OTA-able?:** sí (la app no gana código nativo; la ingesta corre fuera)
 
 ---
 
-## Progreso (implementado 2026-10-05, sin commitear)
+## Progreso: implementado y subido (2026-10-05 → 2026-10-08)
 
-Todo el plan está implementado y cargado en el Supabase local. Falta **probarlo en el
-teléfono** y hacer el commit.
+Commits `08521ae`, `d954969`, `21f1a86`, `bb95d96` y `87522b6` en `main`. Solo falta **probarlo
+en el teléfono** (lista en [ESTADO](../ESTADO.md#siguiente-paso-sugerido)).
 
-- **Precios**: Éxito 14.476 · Olímpica 12.081 · Supermú 4.692 · D1 1.145 productos visibles,
-  con 0 ilegibles en las tres cargas nuevas.
-- **Sucursales nuevas**: Ísimo 137 (de 310; el resto no se pudo ubicar con seguridad),
+- **Precios** (corrida del 2026-10-08): Éxito ~17.400 · Olímpica ~12.150 · Supermú ~5.780 ·
+  D1 ~1.160 productos visibles, 0 ilegibles.
+- **Sucursales nuevas**: Ísimo 137 de 310 (el resto no se pudo ubicar con seguridad),
   Olímpica 73, Jumbo 59, Carulla 44, Supermú 14, La Vaquita Express 8 y Mercado Madrid 2.
 - **Lista por cercanía**: `stores_near`, origen compartido con el mapa y ciudad recordada.
-- **Revisión independiente** del diff: 9 hallazgos importantes corregidos (ver
+- **Dos revisiones independientes**, con todo lo importante corregido (ver
   [BITÁCORA](../BITACORA.md)).
-- **Gate**: `quality` (647 tests), `db:test` (95) y `db:lint` en verde. Base local: 80 MB.
+- **Fuera del plan pero hecho en el camino**: búsqueda por prefijo, Éxito completo en 74
+  subcategorías, productos sin precio ocultos en toda la app, logo.
 
-**Queda fuera, anotado en ESTADO**: desglose de "saltados" por motivo en el reporte de precios,
+**Deuda menor**, anotada en ESTADO: desglose de "saltados" por motivo en el reporte de precios,
 y recordar "Ver todas" entre aperturas.
 
 ## Resumen

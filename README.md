@@ -3,7 +3,7 @@
 App **solo móvil** (iOS + Android) para **planear el mercado y saber cuánto va a costar antes
 de ir**.
 
-Arma listas con productos reales de tiendas reales — Éxito, D1, Dollarcity — a precios
+Arma listas con productos reales de tiendas reales — Éxito, Olímpica, D1 y Supermú — a precios
 actualizados, y te dice cuánto necesitas: **total general y total por tienda**. Guarda listas
 reutilizables con recordatorios semanales, quincenales o mensuales, y los precios se actualizan
 solos mostrando cuánto cambió cada producto desde que lo agregaste.
@@ -11,15 +11,16 @@ solos mostrando cuánto cambió cada producto desde que lo agregaste.
 No es una app de compra: no hay pago, pedido ni entrega. Es una calculadora de presupuesto de
 mercado con precios reales.
 
-> **Estado:** catálogo real de Éxito (13.750 productos) navegable con listas en memoria.
-> Falta autenticación para guardarlas. Detalle en [docs/ESTADO.md](docs/ESTADO.md).
+> **Estado:** unos 36.000 productos con precio de cuatro cadenas, cuentas, listas guardadas con
+> avisos, mapa con las tiendas de 11 cadenas y navegación hasta ellas. Corre contra Supabase
+> local; falta el proyecto en la nube para publicar. Detalle en [docs/ESTADO.md](docs/ESTADO.md).
 
 ## Arquitectura en una imagen
 
 ```
-Éxito (API VTEX)  ─► Edge Function + pg_cron  ─┐
-                                                ├─► Supabase ─► App React Native
-D1 / Dollarcity   ─► GH Actions + Playwright  ─┘   (catálogo)    (solo lectura)
+Éxito, D1, Olímpica (VTEX) ─┐
+Supermú (Shopify)           ├─► ingestion/ (Node) ─► Supabase ─► App React Native
+Sucursales de 11 cadenas    ─┘   service_role        (catálogo)    (solo lectura)
 ```
 
 La app es 100% React Native y **solo lee**. La ingesta de precios corre fuera del dispositivo:
@@ -42,6 +43,9 @@ NativeWind v4 + React Native Reusables · FlashList v2 · Reanimated · EAS Buil
 | Saber dónde va un archivo | [`docs/architecture/02-folder-structure.md`](docs/architecture/02-folder-structure.md) |
 | Ver la dirección visual | [`docs/design/00-visual-direction.md`](docs/design/00-visual-direction.md) |
 | Ver las decisiones tomadas | [`docs/adr/`](docs/adr/) |
+| Saber **dónde va el proyecto hoy** y cómo retomarlo | [`docs/ESTADO.md`](docs/ESTADO.md) |
+| Ver cómo se llegó aquí, sesión a sesión | [`docs/BITACORA.md`](docs/BITACORA.md) |
+| Generar un APK o publicar en Google Play | [`docs/guias/publicar-android.md`](docs/guias/publicar-android.md) |
 | Trabajar con Claude Code aquí | [`CLAUDE.md`](CLAUDE.md) |
 
 ## Principios
@@ -51,8 +55,17 @@ NativeWind v4 + React Native Reusables · FlashList v2 · Reanimated · EAS Buil
 3. El hilo de UI es sagrado.
 4. La app no obtiene datos de las tiendas; los lee de Supabase.
 
-## Pendiente antes de escribir código
+## Arrancar en local
 
-- [ ] Inicializar el proyecto Expo y el repositorio git
-- [ ] Crear el proyecto de Supabase (dev) y aplicar el modelo de datos
-- [ ] Construir el adaptador de Éxito y verificar la primera corrida de ingesta
+Requisitos: Node, pnpm (vía Corepack), Docker Desktop y un development build de EAS instalado en
+el teléfono. Cada comando en su terminal:
+
+```bash
+pnpm install
+pnpm run db:start                      # Supabase local (puertos 553xx)
+pnpm run functions                     # Edge Functions (rutas del mapa)
+pnpm expo start --dev-client --clear   # Metro
+```
+
+Detalle, variables de entorno y problemas conocidos en
+[docs/ESTADO.md](docs/ESTADO.md#para-trabajar).

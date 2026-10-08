@@ -4,13 +4,31 @@
 > Para las reglas permanentes, ver [CLAUDE.md](../CLAUDE.md); para el porqué de cada decisión,
 > [`docs/adr/`](adr/); para **cómo se llegó aquí**, sesión a sesión, la [BITACORA](BITACORA.md).
 
-**Última actualización:** 2026-10-08 · rama `main` · **plan 0003 implementado, sin commitear**
+**Última actualización:** 2026-10-08 · rama `main` · todo commiteado y subido (último commit `87522b6`)
+
+---
+
+## Cómo retomar en una sesión nueva
+
+1. Leer este archivo entero y la última entrada de la [BITÁCORA](BITACORA.md).
+2. Consultar [known-issues](../.claude/rules/known-issues.md) antes de tocar código: cada
+   problema ya pagado está ahí con su causa.
+3. Levantar el entorno con los comandos de [Para trabajar](#para-trabajar) y seguir por
+   [Siguiente paso sugerido](#siguiente-paso-sugerido).
+4. Al cerrar la sesión: entrada nueva en la BITÁCORA, este archivo al día y commit.
+
+**Cómo se trabaja aquí** (preferencias del dueño del proyecto):
+
+- Documentación y conversación en español; código y comentarios en inglés.
+- Algo no trivial: plan primero (`rn-plan`), aprobación, y después implementación.
+- Antes de subir: revisión de código independiente, correcciones aplicadas, gate en verde.
+- Se sube directo a `main`.
 
 ---
 
 ## En una frase
 
-La app lee un catálogo real de **cuatro cadenas** (Éxito, Olímpica, Supermú y D1: unos 32.000
+La app lee un catálogo real de **cuatro cadenas** (Éxito, Olímpica, Supermú y D1: unos 36.000
 productos con precio) desde Supabase local. La lista de inicio muestra **las cadenas con tienda
 cerca** del usuario. Con cuenta, **guarda listas, las edita y les pone avisos**. En un **mapa**
 ve las tiendas de las 11 cadenas que conocemos y puede **navegar hasta una** dentro de la app, a
@@ -38,14 +56,17 @@ Corre fuera del dispositivo y es lo único que escribe el catálogo.
 | Cron diario de precios | ❌ **pendiente** — [plan 0002](plans/0002-cron-de-ingesta-diaria.md) |
 | Carga mensual de sucursales en CI | 🟡 workflow `branches.yml` listo, en manual hasta tener Supabase remoto |
 
-**Últimas corridas de precios** (0% ilegibles en todas):
+**Última corrida de precios: 2026-10-08**, las cuatro con `--store all`, 0 páginas perdidas:
 
-| Cadena | Vistos | Escritos |
-|---|---|---|
-| Éxito (74 subcategorías) | 49.859 | 15.265 (el 69% restante está agotado) |
-| Olímpica | 12.083 | 12.080 |
-| Supermú | 7.615 | 5.772 (el resto es licor, cuidado personal y hogar: fuera de mercado) |
-| D1 | 1.182 | 1.145 |
+| Cadena | Vistos | Escritos | Retirados | Duración |
+|---|---|---|---|---|
+| Éxito (74 subcategorías) | 49.949 | 15.122 (el resto está agotado) | 405 | 52 min |
+| Olímpica | 12.131 | 12.128 | 29 | 13 min |
+| Supermú | 7.619 | 5.776 (el resto es licor, cuidado personal y hogar) | 1 | 1 min |
+| D1 | 1.191 | 1.154 | 4 | 1,5 min |
+
+Productos visibles en la app (con precio): Éxito ~17.400, Olímpica ~12.150, Supermú ~5.780,
+D1 ~1.160. Sin precio: 4 del Éxito, ya retirados porque la tienda dejó de venderlos.
 
 **Ísimo en el mapa:** solo 137 de sus 310 tiendas. Publica direcciones sin coordenadas y se
 geocodifican; las que no se ubican con seguridad se descartan en vez de adivinarlas.
@@ -73,15 +94,15 @@ como secreto, nunca en la app ([ADR-0007](adr/0007-rutas-openrouteservice.md)).
 | Hoja de producto: cantidad y presentación (cartón, docena, panal…) | ✅ |
 | Borrador con total por tienda | ✅ en memoria (se pierde al cerrar la app) |
 | Inicio de sesión y registro (email + contraseña) | ✅ [ADR-0005](adr/0005-autenticacion.md) |
-| Guardar lista, "Mis listas" con total de hoy y variación, editar | ✅ totales en servidor |
+| Guardar lista, "Mis listas" con total de hoy y variación, editar | ✅ totales en servidor. Un producto que perdió su precio sigue en la lista, atenuado, con "Sin precio hoy" |
 | Avisos semanal / quincenal / mensual | ✅ se guardan y reconcilian — 🟡 **falta oírlos sonar** en el development build |
 | Mapa de tiendas cercanas, sin otros negocios | ✅ MapLibre + OpenFreeMap ([ADR-0006](adr/0006-mapa-maplibre.md)), probado |
 | Ruta dibujada a pie / en vehículo | ✅ probado en el teléfono |
 | Navegación en vivo (tiempo restante, recálculo, llegada) | 🟡 **sin probar caminando** |
 
-**Tests:** 647 de Jest (modelo puro, ingesta, utilidades y el primer test de componente) + 95
-pgTAP. `pnpm run quality` en
-verde. Revisión general de código hecha el 2026-10-05 ([bitácora](BITACORA.md)).
+**Tests:** 647 de Jest (modelo puro, ingesta, utilidades y el primer test de componente) + 97
+pgTAP. `pnpm run quality` en verde. Última revisión de código independiente: 2026-10-05, con todo lo importante corregido
+([bitácora](BITACORA.md)).
 
 ---
 
@@ -124,16 +145,21 @@ Están en los ADR, pero estas son las que más veces han vuelto a surgir:
 
 ## El clasificador, que es donde más se ha iterado
 
-`ingestion/core/classify.ts` decide en qué pasillo va cada producto. En orden:
+`ingestion/core/classify.ts` decide en qué pasillo va cada producto. Capas, de la más fuerte a
+la más débil:
 
-1. **Pasillos con autoridad** — si la fuente dice `mascotas`, es de mascotas (`ING-008`).
-2. **Se borran los modificadores** — `sabor [a] X` y `relleno de X` dicen a qué sabe, no qué es.
-3. **Excepciones** — la leche en polvo SÍ es leche, aunque "en polvo" suela ser condimento.
-4. **Forma** — mermelada, en lata, en polvo, embutido. La presentación manda sobre el
-   ingrediente.
-5. **Ingrediente** — lo evidente.
-6. **Frescos, con llave** — fruta y verdura **solo** si la fuente dice pasillo de frutas y
+1. **Pasillo con autoridad**: si la fuente dice `mascotas`, es de mascotas (`ING-008`).
+2. **Se borran los modificadores**: `sabor [a] X` y `relleno de X` dicen a qué sabe, no qué es.
+3. **Mascotas y no comestibles**: un limpiador "aroma canela" no es canela (`ING-010`).
+4. **Pasillos cerrados**: en aseo y congelados manda el pasillo de la fuente.
+5. **Congelados por nombre**, helados incluidos.
+6. **Excepciones**: la leche en polvo SÍ es leche; "pasta de ajo" es un condimento.
+7. **Sustantivo inicial**: "Galleta leche" es una galleta (`ING-010`). Algunos dependen del
+   pasillo ("Papa" es verdura en frescos y snack en otros).
+8. **Forma**: mermelada, en lata, en polvo, embutido.
+9. **Frescos, con llave**: fruta y verdura **solo** si la fuente dice pasillo de frutas y
    verduras.
+10. **Ingrediente**: lo evidente.
 
 Reglas por **palabra entera** con plural; las raíces se marcan con `*` (`ING-006`).
 
@@ -143,11 +169,14 @@ Reglas por **palabra entera** con plural; las raíces se marcan con `*` (`ING-00
 
 ## Siguiente paso sugerido
 
-1. **Probar el plan 0003 en el teléfono** y hacer el commit:
+1. **Probar en el teléfono** lo del plan 0003 y la búsqueda:
    - con ciudad Bogotá no sale Supermú; con Medellín sí;
    - sin ubicación ni ciudad se ven todas las cadenas;
    - la ciudad elegida se recuerda al reabrir;
-   - D1, Olímpica y Supermú abren con productos.
+   - D1, Olímpica y Supermú abren con productos;
+   - la búsqueda encuentra mientras se escribe ("go" → gomitas);
+   - el logo nuevo: exige **build nueva** (`pnpm dlx eas-cli@latest build --profile development
+     --platform android`), porque icono y splash son nativos.
 2. **Probar en la calle** la navegación en vivo y **oír sonar un aviso**
    ([guias/probar-avisos.md](guias/probar-avisos.md)).
 3. **Publicar**: los pasos y lo que falta están en
@@ -169,10 +198,10 @@ Reglas por **palabra entera** con plural; las raíces se marcan con `*` (`ING-00
 
 ### Decisiones pendientes del usuario
 
-- **Comida preparada** (empanadas, lasaña, raviolis, tamal, sándwich) sale en Pollo: ¿categoría
-  nueva "Comidas preparadas" o congelados/otros?
-- **Papas y pasabocas "sabor pollo"** siguen en Pollo: moverlas a snacks (arreglo claro, falta
-  hacerlo).
+- **Comida preparada** (empanadas, lasaña, tamal, sándwich): hoy casi toda cae en congelados
+  (107) y unas pocas en otros o pollo. ¿Categoría propia "Comidas preparadas"?
+- **Lista guardada con un producto sin precio**: hoy se muestra atenuado con "Sin precio hoy".
+  ¿Mantenerlo o esconderlo?
 
 ---
 
@@ -191,6 +220,10 @@ pnpm expo start --dev-client --clear   # Metro; abrir "Pocket Market", no Expo G
   (`pnpm dlx eas-cli@latest build --profile development --platform android`), instalarla y
   después Metro (`EXPO-004`).
 - La key de OpenRouteService va en `supabase/functions/.env` (no se versiona).
+- `db:start`, `functions` y `expo start` van **cada uno en su terminal**: los dos últimos no
+  terminan nunca.
+- Si `pnpm` deja de arrancar ("Control de aplicaciones bloqueó este archivo"), es Windows y no
+  el proyecto: ver `BUILD-002` en known-issues, que lista los comandos equivalentes con Node.
 
 ```bash
 pnpm run quality                 # type-check + lint + format + test — gate obligatorio
@@ -198,11 +231,21 @@ pnpm run db:test                 # pgTAP de RLS
 pnpm exec supabase migration up --local   # aplicar migraciones nuevas sin borrar datos
 pnpm run db:reset                # desde cero (BORRA catálogo y sucursales)
 
-pnpm run ingest -- --store all   # precios de las 4 cadenas (~45 min, una al día)
+pnpm run ingest -- --store all   # precios de las 4 cadenas (~70 min, una al día)
 pnpm run ingest -- --store d1    # o una sola: exito | d1 | olimpica | supermu
 pnpm run reclassify -- --dry-run # refilar sin tocar la fuente
 pnpm run branches -- --store all # sucursales (D1 ~13 min, Ísimo ~17 min; mensual)
 ```
 
-La ingesta necesita `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY`, que salen de
-`pnpm exec supabase status -o json`.
+La ingesta necesita `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY`. En Git Bash:
+
+```bash
+eval $(pnpm exec supabase status -o env | grep -E '^(API_URL|SERVICE_ROLE_KEY)=')
+export SUPABASE_URL="$API_URL" SUPABASE_SERVICE_ROLE_KEY="$SERVICE_ROLE_KEY"
+```
+
+El reporte de cada corrida dice cuántos productos sin precio había antes y después; en una
+corrida sana el "después" es cero o casi.
+
+**Regla de la casa con las fuentes:** una corrida al día por tienda. Repetir una carga el mismo
+día "para probar" va contra [la regla de ingesta](../.claude/rules/ingestion.md).
