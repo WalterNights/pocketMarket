@@ -4,7 +4,7 @@
 > Para las reglas permanentes, ver [CLAUDE.md](../CLAUDE.md); para el porqué de cada decisión,
 > [`docs/adr/`](adr/); para **cómo se llegó aquí**, sesión a sesión, la [BITACORA](BITACORA.md).
 
-**Última actualización:** 2026-10-08 · rama `main` · todo commiteado y subido (último commit `87522b6`)
+**Última actualización:** 2026-10-08 · rama `main` · todo commiteado y subido (ver `git log`)
 
 ---
 
