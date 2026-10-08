@@ -21,7 +21,7 @@ import {
   useProduct,
   type Product,
 } from '@/features/catalog'
-import { ErrorState } from '@/shared/ui'
+import { ErrorState, NotFound } from '@/shared/ui'
 import { formatCop } from '@/shared/utils/format-money'
 
 import { useDraftListStore } from '../store/draft-list-store'
@@ -48,6 +48,17 @@ export function AddToListSheet({ productId }: AddToListSheetProps) {
 
   if (isError || product === undefined) {
     return <ErrorState title="No se pudo cargar el producto" onRetry={() => void refetch()} />
+  }
+
+  // The catalogue only returns priced products: null means no price today (or
+  // gone), and a product without a price cannot be budgeted.
+  if (product === null) {
+    return (
+      <NotFound
+        title="Este producto no tiene precio hoy"
+        message="Cuando la tienda vuelva a publicar su precio, podrás añadirlo a tu lista."
+      />
+    )
   }
 
   return <SheetContent product={product} />

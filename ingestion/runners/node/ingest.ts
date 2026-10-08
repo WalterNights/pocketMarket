@@ -43,6 +43,19 @@ function percent(part: number, whole: number): string {
   return whole > 0 ? ` (${Math.round((part / whole) * 100)}%)` : ''
 }
 
+/**
+ * "12 -> 0 (12 recuperados)". Products without a price are hidden in the app;
+ * this line says whether the run gave them one back.
+ */
+function unpricedLine(report: RunReport): string {
+  const { unpricedBefore: before, unpricedAfter: after } = report
+  if (before === null || after === null) return 'sin dato'
+  const recovered = before - after
+  return recovered > 0
+    ? `${before} -> ${after} (${recovered} recuperados)`
+    : `${before} -> ${after}`
+}
+
 function printReport(report: RunReport): void {
   const lines = [
     '',
@@ -59,6 +72,7 @@ function printReport(report: RunReport): void {
     `  paginas perdidas  ${report.pagesDropped}`,
     `  retirados         ${report.retired}` +
       (report.retireSkipped === null ? '' : ` (OMITIDO: ${report.retireSkipped})`),
+    `  sin precio        ${unpricedLine(report)}`,
     `  duracion          ${(report.durationMs / 1000).toFixed(1)}s`,
   ]
 

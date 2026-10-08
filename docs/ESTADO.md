@@ -4,7 +4,7 @@
 > Para las reglas permanentes, ver [CLAUDE.md](../CLAUDE.md); para el porqué de cada decisión,
 > [`docs/adr/`](adr/); para **cómo se llegó aquí**, sesión a sesión, la [BITACORA](BITACORA.md).
 
-**Última actualización:** 2026-10-05 · rama `main` · **plan 0003 implementado, sin commitear**
+**Última actualización:** 2026-10-08 · rama `main` · **plan 0003 implementado, sin commitear**
 
 ---
 
@@ -52,8 +52,8 @@ geocodifican; las que no se ubican con seguridad se descartan en vez de adivinar
 
 ### Base de datos (`supabase/`)
 
-20 migraciones. RLS en todas las tablas; **95 tests pgTAP** en verde. La base local pesa
-**80 MB** con las cuatro cadenas (límite del plan gratuito: 500 MB).
+21 migraciones. RLS en todas las tablas; **97 tests pgTAP** en verde. La base local pesa
+**84 MB** con las cuatro cadenas (límite del plan gratuito: 500 MB).
 
 Dos mundos con reglas distintas: **catálogo** (precios, sucursales — lectura pública, escribe solo
 `service_role`) y **datos de usuario** (listas, avisos — solo el dueño). La ausencia de política de
@@ -68,6 +68,7 @@ como secreto, nunca en la app ([ADR-0007](adr/0007-rutas-openrouteservice.md)).
 |---|---|
 | Lista de tiendas por cercanía (ubicación o ciudad; sin ninguna, todas) | 🟡 **sin probar en el teléfono** |
 | Tiendas → categorías → productos, con scroll infinito | ✅ |
+| Un producto sin precio nunca se muestra (lo filtra la vista del catálogo) | ✅ |
 | Búsqueda mientras se escribe (por comienzo de palabra, sin tildes) | ✅ comprobada contra la base; 🟡 sin probar en el teléfono |
 | Hoja de producto: cantidad y presentación (cartón, docena, panal…) | ✅ |
 | Borrador con total por tienda | ✅ en memoria (se pierde al cerrar la app) |
@@ -159,12 +160,6 @@ Reglas por **palabra entera** con plural; las raíces se marcan con `*` (`ING-00
 7. **Eliminar la cuenta desde la app**: Google Play lo exige.
 
 ### Deuda pequeña del plan 0003
-
-- **101 productos del Éxito quedaron sin precio** en la carga del 2026-10-05: un precio
-  imposible de la fuente tumbó su lote (`ING-014`, ya corregido). Se llenan solos en la
-  siguiente corrida del Éxito.
-- D1, Olímpica y Supermú se cargaron antes del último ajuste de medidas: unos 120 combos y
-  multipacks conservan una medida por unidad hasta su siguiente corrida.
 
 - El reporte de precios dice "saltados" sin desglosar el motivo (agotado, fuera de mercado, sin
   pasillo). El de sucursales ya lo desglosa.

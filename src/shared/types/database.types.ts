@@ -786,6 +786,7 @@ export type Database = {
           source_type: string
         }[]
       }
+      unpriced_product_count: { Args: { p_store_id: string }; Returns: number }
     }
     Enums: {
       [_ in never]: never

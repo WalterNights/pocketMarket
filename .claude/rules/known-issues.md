@@ -207,7 +207,9 @@
   Postgres, y el `insert` es por lotes: falla uno, fallan todos los del lote. El corte de
   "precio ×10" no lo vio porque necesita un precio anterior con el que comparar.
 - **Solución**: tope `MAX_PRICE_COP` (50 millones) en `normalizedProductSchema`. El producto
-  absurdo se descarta solo, como ilegible, antes de llegar a la base.
+  absurdo se descarta solo, como ilegible, antes de llegar a la base. Y debajo, una red: si
+  Postgres rechaza un lote de precios, `insertSnapshots` lo reintenta **fila a fila**, de modo
+  que una fila mala pierde una fila (verificado contra la base: 2 de 3 escritas, 1 reportada).
 - **Prevención**: lo que se escribe por lotes se valida **por fila** antes, contra los límites
   de la columna y no solo contra los del dominio. Un valor que la base rechaza se lleva por
   delante a sus vecinos.

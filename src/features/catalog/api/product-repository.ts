@@ -96,14 +96,20 @@ export const productRepository = {
     return parseResponse(productSchema.array(), (data ?? []).map(toProductInput), 'catalog.search')
   },
 
-  async byId(id: string, signal?: AbortSignal): Promise<Product> {
-    // abortSignal must come before single(): single() returns a builder that
+  /**
+   * One product, or null when it has no price today: `catalog_product` only
+   * returns priced products, so "not found" and "no price" look the same here,
+   * and both mean there is nothing to add to a list.
+   */
+  async byId(id: string, signal?: AbortSignal): Promise<Product | null> {
+    // abortSignal must come before maybeSingle(): it returns a builder that
     // no longer exposes it.
     const base = supabase.from('catalog_product').select(COLUMNS).eq('id', id)
     const request = signal ? base.abortSignal(signal) : base
 
-    const { data, error } = await request.single()
+    const { data, error } = await request.maybeSingle()
     if (error) throw new RepositoryError('catalog.byId', error)
+    if (data === null) return null
 
     return parseResponse(productSchema, toProductInput(data), 'catalog.byId')
   },

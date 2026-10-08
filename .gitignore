@@ -49,3 +49,5 @@ yarn-error.log*
 
 # Salida de verificacion de bundle
 .expo-export-check/
+
+docs/logs/logs.md
