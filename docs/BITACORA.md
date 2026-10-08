@@ -14,6 +14,32 @@
 
 ---
 
+## 2026-10-08 — Productos sin precio: nunca se muestran y la corrida los recupera
+
+**Hecho**
+
+- **La vista `catalog_product` ya no devuelve productos sin precio.** Antes cada consulta lo
+  filtraba por su cuenta y la hoja de producto no lo hacía: un producto sin precio daba "No se
+  pudo cargar". Ahora la regla vive en un solo sitio, y la hoja dice "Este producto no tiene
+  precio hoy".
+- **Un lote de precios rechazado se reintenta fila a fila** (`ING-014`): una fila mala pierde
+  una fila, no cien. Probado contra la base: 2 de 3 escritas, la mala reportada.
+- **El reporte de cada corrida dice cuántos productos sin precio había antes y después**
+  (`unpriced_product_count`), así se ve qué recuperó.
+- Corrida diaria de las cuatro cadenas con el código corregido: 0 páginas perdidas.
+  - Los 101 productos del Éxito sin precio: 97 recuperados. Los 4 restantes ya no están en la
+    fuente: quedan retirados e invisibles.
+  - Los multipacks y combos señalados en la revisión ya no tienen medida por unidad.
+- El bloqueo de pnpm (`BUILD-002`) no se repitió.
+
+**Decidido**
+
+- En una **lista guardada**, un producto que perdió su precio sigue apareciendo, atenuado, con
+  "Sin precio hoy" y el precio que tenía al guardarlo. Es la lista del usuario: esconderlo lo
+  haría desaparecer sin aviso.
+
+---
+
 ## 2026-10-05 — Cuatro cadenas con precios, todas en el mapa y lista por cercanía
 
 **Hecho** ([plan 0003](plans/0003-mas-tiendas-mvp.md))

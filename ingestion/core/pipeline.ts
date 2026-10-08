@@ -37,6 +37,14 @@ export type RunReport = {
   retired: number
   /** Why retirement did not run, or null if it ran. */
   retireSkipped: string | null
+  /**
+   * The store's products with no published price, before and after the run
+   * (null in a dry run or if the count failed). The app never shows them; a
+   * full run re-reads every listed product, so whatever lost its price to a
+   * failed write gets it back here, and `after` says what is still missing.
+   */
+  unpricedBefore: number | null
+  unpricedAfter: number | null
   errors: string[]
   durationMs: number
   aborted: boolean
@@ -129,6 +137,8 @@ export async function runIngestion(
     pagesDropped: 0,
     retired: 0,
     retireSkipped: null,
+    unpricedBefore: null,
+    unpricedAfter: null,
     errors: [],
     durationMs: 0,
     aborted: false,
@@ -140,6 +150,7 @@ export async function runIngestion(
 
   const storeId = await resolveStoreId(supabase, adapter.storeSlug)
   const categoryIds = await loadCategoryIds(supabase)
+  report.unpricedBefore = await countUnpriced(supabase, storeId, report, options)
 
   const known: KnownPrices = new Map()
   const write = (batch: NormalizedProduct[]) =>
@@ -227,9 +238,30 @@ export async function runIngestion(
   }
 
   await retireVanished(supabase, storeId, startedAt, known.size, report, options)
+  report.unpricedAfter = await countUnpriced(supabase, storeId, report, options)
 
   report.durationMs = Date.now() - startedAt
   return report
+}
+
+/**
+ * Products of the store without a published price. Counted, not listed: the
+ * report needs the size of the gap, and the next run closes it by itself.
+ */
+async function countUnpriced(
+  supabase: SupabaseClient,
+  storeId: string,
+  report: RunReport,
+  options: PipelineOptions,
+): Promise<number | null> {
+  if (options.dryRun) return null
+
+  const { data, error } = await supabase.rpc('unpriced_product_count', { p_store_id: storeId })
+  if (error) {
+    report.errors.push(`unpriced_product_count: ${error.message}`)
+    return null
+  }
+  return typeof data === 'number' ? data : null
 }
 
 /**
@@ -508,16 +540,44 @@ async function flush(
   }
 
   if (diff.snapshots.length > 0) {
-    const { error: snapshotError } = await supabase.from('price_snapshot').insert(diff.snapshots)
-    if (snapshotError) {
-      report.errors.push(`price_snapshot: ${snapshotError.message}`)
-      return false
-    }
-    report.pricesChanged += diff.snapshots.length
+    const written = await insertSnapshots(supabase, diff.snapshots, report)
+    report.pricesChanged += written.length
+    rememberPrices(known, previous, written)
+    return written.length === diff.snapshots.length
   }
 
   rememberPrices(known, previous, diff.snapshots)
   return true
+}
+
+/**
+ * Inserts the batch; if Postgres refuses it, retries ROW BY ROW so one bad
+ * price loses one price, not a hundred. A batch insert is all-or-nothing: an
+ * Éxito price that did not fit an integer once took 101 good prices down with
+ * it (ING-014). The schema now rejects such values earlier; this is the net
+ * under it, for whatever the next source invents.
+ *
+ * Returns the rows that made it in.
+ */
+export async function insertSnapshots(
+  supabase: SupabaseClient,
+  snapshots: readonly SnapshotRow[],
+  report: RunReport,
+): Promise<SnapshotRow[]> {
+  const { error } = await supabase.from('price_snapshot').insert([...snapshots])
+  if (!error) return [...snapshots]
+
+  console.warn(`  lote de precios rechazado (${error.message}); reintentando fila a fila`)
+  const written: SnapshotRow[] = []
+  for (const row of snapshots) {
+    const { error: rowError } = await supabase.from('price_snapshot').insert(row)
+    if (rowError) {
+      report.errors.push(`price_snapshot ${row.store_product_id}: ${rowError.message}`)
+      continue
+    }
+    written.push(row)
+  }
+  return written
 }
 
 /**

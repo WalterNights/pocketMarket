@@ -16,7 +16,7 @@
 
 begin;
 
-select plan(6);
+select plan(8);
 
 -- Two products in the same category. Only one of them will get a price.
 insert into public.store_product (id, store_id, external_id, name, unit_kind, category_id)
@@ -46,11 +46,12 @@ select isnt_empty(
   'el producto con precio aparece en el listado'
 );
 
--- 2. The unpriced one is not — this is what the repository filters on.
+-- 2. The unpriced one is not returned AT ALL: the view itself drops it, so no
+--    reader can show a product without a price, whatever it filters on.
 select is_empty(
   $$select id from public.catalog_product
-    where id = '77777777-7777-7777-7777-777777777772' and price_cop is not null$$,
-  'el producto sin precio no tiene precio en el listado'
+    where id = '77777777-7777-7777-7777-777777777772'$$,
+  'un producto sin precio no aparece en el catálogo, ni siquiera sin precio'
 );
 
 -- 3 y 4. The category count agrees with the listing, not with the table.
@@ -86,6 +87,24 @@ select is(
   0,
   'una tienda sin productos con precio sigue en la lista, en cero'
 );
+
+-- 7. The ingestion can count what is left without a price.
+select is(
+  public.unpriced_product_count((select id from public.store where slug = 'exito'))
+    >= 1,
+  true,
+  'unpriced_product_count cuenta el producto sin precio'
+);
+
+-- 8. Nobody else can call it.
+set local role anon;
+select throws_ok(
+  $$ select public.unpriced_product_count(gen_random_uuid()) $$,
+  '42501',
+  null,
+  'anon NO puede ejecutar unpriced_product_count'
+);
+reset role;
 
 select * from finish();
 
