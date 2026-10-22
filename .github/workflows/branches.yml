@@ -40,6 +40,9 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: '.nvmrc'
+          # The runner's cached Node 24 can lag behind security releases; the
+          # scrapers decode third-party (Brotli) responses with this Node.
+          check-latest: true
 
       # pnpm version comes from package.json's packageManager field (Corepack).
       - run: corepack enable
